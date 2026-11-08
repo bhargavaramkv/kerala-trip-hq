@@ -1,0 +1,1266 @@
+{
+ "people": {},
+ "roster": {},
+ "reviews": {},
+ "decisions": {},
+ "itinerary": {
+  "v1": {
+   "n": 1,
+   "at": 1794164336689,
+   "by": "ai",
+   "why": "Research baseline: Plan A, budget version (the plan as it stood)",
+   "status": "draft",
+   "plan": "A",
+   "days": [
+    {
+     "key": "d1",
+     "date": "2026-12-22",
+     "dow": "Tue",
+     "dd": "22",
+     "title": "Arrive and bus up to Munnar",
+     "base": "Munnar",
+     "stay": "Triple room in Old Munnar (Est. ₹3,000)",
+     "travel": {
+      "text": "Ernakulam Jn → Munnar by KSRTC bus",
+      "km": "125 km",
+      "time": "2–4 h on the bus",
+      "basis": "listed"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c1-1",
+        "t": "06:00",
+        "text": "Arrive Ernakulam Jn on 12684"
+       },
+       {
+        "id": "c1-2",
+        "t": "06:20",
+        "text": "Auto to the KSRTC stand, 1.6 km (₹100–150)"
+       },
+       {
+        "id": "c1-3",
+        "t": "07:00",
+        "text": "First Munnar bus, ₹140–230 each; bus times for 22 Dec not verified"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c1-4",
+        "t": "12:00",
+        "text": "Reach Old Munnar, check in to the triple room"
+       },
+       {
+        "id": "c1-5",
+        "t": "13:00",
+        "text": "Banana-leaf lunch (₹80–120 each)"
+       },
+       {
+        "id": "c1-6",
+        "t": "15:00",
+        "text": "Walk to the Tata Tea Museum (₹150 each)"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c1-7",
+        "t": "19:00",
+        "text": "Early night after the train"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Banana-leaf lunch in town; simple dinner",
+     "cost": {
+      "transport": 1000,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 450,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d2",
+     "date": "2026-12-23",
+     "dow": "Wed",
+     "dd": "23",
+     "title": "Jeep day around Munnar",
+     "base": "Munnar",
+     "stay": "Same Munnar room",
+     "travel": {
+      "text": "Full-day jeep for three",
+      "km": "about 60 km",
+      "time": "in short hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c2-1",
+        "t": "07:30",
+        "text": "Eravikulam National Park, first slot booked online (₹250 each)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c2-2",
+        "t": "13:00",
+        "text": "Lunch"
+       },
+       {
+        "id": "c2-3",
+        "t": "14:30",
+        "text": "Mattupetty Dam (₹20) and Echo Point"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c2-4",
+        "t": "19:00",
+        "text": "Dinner in town"
+       }
+      ],
+      "optional": [
+       {
+        "id": "c2-5",
+        "t": "",
+        "text": "Save about ₹2,000: local buses at ₹15–40 a leg instead of the jeep"
+       },
+       {
+        "id": "c2-6",
+        "t": "",
+        "text": "Upgrade: Kolukkumalai sunrise jeep (Est. ₹4,000)"
+       }
+      ]
+     },
+     "food": "Local meals, about ₹600 per person a day",
+     "cost": {
+      "transport": 2500,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 750,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d3",
+     "date": "2026-12-24",
+     "dow": "Thu",
+     "dd": "24",
+     "title": "Down to the backwaters",
+     "base": "Alleppey houseboat",
+     "stay": "Cheapest licensed 1BR houseboat, meals included (Est. ₹10,000)",
+     "travel": {
+      "text": "Munnar → Ernakulam → Alleppey by bus",
+      "km": "about 180 km",
+      "time": "6+ h with the change",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c3-1",
+        "t": "06:30",
+        "text": "Earliest Munnar–Ernakulam bus, ₹185–221 each"
+       },
+       {
+        "id": "c3-2",
+        "t": "10:30",
+        "text": "Ernakulam–Alleppey bus"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c3-3",
+        "t": "13:30",
+        "text": "Board the houseboat (agreed in advance; a later boarding shortens the cruise)"
+       },
+       {
+        "id": "c3-4",
+        "t": "14:00",
+        "text": "Cruise and lunch on board"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c3-5",
+        "t": "18:00",
+        "text": "Moor for the night, Christmas Eve dinner on board"
+       }
+      ],
+      "optional": [
+       {
+        "id": "c3-6",
+        "t": "",
+        "text": "First upgrade to buy: private cab Munnar → Alleppey (Est. ₹4,500–5,000), saves 5+ hours of buses on Christmas Eve"
+       }
+      ]
+     },
+     "food": "Houseboat meals included",
+     "cost": {
+      "transport": 1000,
+      "stays": 10000,
+      "food": 600,
+      "activities": 0,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d4",
+     "date": "2026-12-25",
+     "dow": "Fri",
+     "dd": "25",
+     "title": "Christmas in Fort Kochi",
+     "base": "Fort Kochi",
+     "stay": "Budget room or homestay in Fort Kochi (Est. ₹4,500)",
+     "travel": {
+      "text": "Alleppey → Ernakulam bus, ferry to Fort Kochi",
+      "km": "about 60 km",
+      "time": "2–3 h",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c4-1",
+        "t": "09:00",
+        "text": "Disembark"
+       },
+       {
+        "id": "c4-2",
+        "t": "09:30",
+        "text": "Bus to Ernakulam"
+       },
+       {
+        "id": "c4-3",
+        "t": "12:00",
+        "text": "Ferry to Fort Kochi (₹6–10)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c4-4",
+        "t": "13:00",
+        "text": "Lunch, check in"
+       },
+       {
+        "id": "c4-5",
+        "t": "15:00",
+        "text": "Free walking day: St Francis Church, Santa Cruz Basilica"
+       },
+       {
+        "id": "c4-6",
+        "t": "17:30",
+        "text": "Chinese fishing nets at sunset"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c4-7",
+        "t": "19:30",
+        "text": "Christmas lights on Princess Street"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Cafés and seafood along the front",
+     "cost": {
+      "transport": 600,
+      "stays": 4500,
+      "food": 1800,
+      "activities": 0,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d5",
+     "date": "2026-12-26",
+     "dow": "Sat",
+     "dd": "26",
+     "title": "Last day and the train",
+     "base": "Fort Kochi → train",
+     "stay": "Night on the train",
+     "travel": {
+      "text": "Ferry to Ernakulam, auto to Ernakulam Jn",
+      "km": "about 12 km",
+      "time": "45–60 min",
+      "basis": "listed"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c5-1",
+        "t": "10:00",
+        "text": "Jew Town (verify opening days)"
+       },
+       {
+        "id": "c5-2",
+        "t": "12:00",
+        "text": "Check out; leave bags at the stay"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c5-3",
+        "t": "13:00",
+        "text": "Lunch"
+       },
+       {
+        "id": "c5-4",
+        "t": "15:00",
+        "text": "Shikara hour on the backwaters",
+        "opt": true
+       }
+      ],
+      "evening": [
+       {
+        "id": "c5-5",
+        "t": "17:00",
+        "text": "Kathakali show",
+        "opt": true
+       },
+       {
+        "id": "c5-6",
+        "t": "18:30",
+        "text": "Ferry back to Ernakulam, auto to the Junction"
+       },
+       {
+        "id": "c5-7",
+        "t": "19:30",
+        "text": "At Ernakulam Jn"
+       },
+       {
+        "id": "c5-8",
+        "t": "20:35",
+        "text": "Return train 16316, 3A (time to confirm on IRCTC; not booked yet)"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Station dinner or a packed meal",
+     "cost": {
+      "transport": 4400,
+      "stays": 0,
+      "food": 2000,
+      "activities": 2200,
+      "misc": 600
+     }
+    }
+   ],
+   "adjust": {},
+   "adjustNotes": []
+  },
+  "v2": {
+   "n": 2,
+   "at": 1794164337689,
+   "by": "ai",
+   "why": "Same route and dates, better choices: Chinnar and Marayoor on Wed, Kumbalangi and Kayees, a Saturday that no longer hits the closed synagogue. ₹51,810 for the group, about ₹17,270 each, under the ₹20,000 cap.",
+   "status": "draft",
+   "plan": "A",
+   "days": [
+    {
+     "key": "d1",
+     "date": "2026-12-22",
+     "dow": "Tue",
+     "dd": "22",
+     "title": "Arrive and bus up to Munnar",
+     "base": "Munnar",
+     "stay": "Triple room in Old Munnar (Est. ₹3,000)",
+     "travel": {
+      "text": "Ernakulam Jn → Munnar by KSRTC bus",
+      "km": "125 km",
+      "time": "2–4 h on the bus",
+      "basis": "listed"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c1-1",
+        "t": "06:00",
+        "text": "Arrive Ernakulam Jn on 12684"
+       },
+       {
+        "id": "c1-2",
+        "t": "06:20",
+        "text": "Auto to the KSRTC stand, 1.6 km (₹100–150)"
+       },
+       {
+        "id": "c1-3",
+        "t": "07:00",
+        "text": "First Munnar bus, ₹140–230 each; bus times for 22 Dec not verified"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c1-4",
+        "t": "12:00",
+        "text": "Reach Old Munnar, check in to the triple room"
+       },
+       {
+        "id": "c1-5",
+        "t": "13:00",
+        "text": "Banana-leaf lunch (₹80–120 each)"
+       },
+       {
+        "id": "c1-6",
+        "t": "15:00",
+        "text": "Walk to the Tata Tea Museum (₹150 each)"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c1-7",
+        "t": "19:00",
+        "text": "Early night after the train"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Banana-leaf lunch in town; simple dinner",
+     "cost": {
+      "transport": 1000,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 450,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d2",
+     "date": "2026-12-23",
+     "dow": "Wed",
+     "dd": "23",
+     "title": "Tahr at breakfast, sandalwood forest after lunch",
+     "base": "Munnar",
+     "stay": "Same Munnar room",
+     "travel": {
+      "text": "Munnar → Eravikulam → Marayoor → Chinnar and back by cab",
+      "km": "about 110–120 km round trip",
+      "time": "about 4 h of driving, in hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "e2-1",
+        "t": "07:30",
+        "text": "Eravikulam National Park, first slot booked online (₹250 each): forest bus up, Nilgiri tahr walk"
+       },
+       {
+        "id": "e2-2",
+        "t": "10:45",
+        "text": "Cab east to Marayoor, about 1.5 h (shared cab for three, Est. ₹3,500 for the day)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "e2-3",
+        "t": "12:15",
+        "text": "Lunch in Marayoor; fill water bottles"
+       },
+       {
+        "id": "e2-4",
+        "t": "13:00",
+        "text": "Muniyara dolmens, a short stop at the megalithic burial chambers"
+       },
+       {
+        "id": "e2-5",
+        "t": "13:45",
+        "text": "Chinnar Wildlife Sanctuary: guided walk to Thoovanam Falls, about 4 km. Guided groups are advised to start by 14:00 so they finish before the gates close; sightings (grizzled giant squirrel, deer) are not guaranteed"
+       }
+      ],
+      "evening": [
+       {
+        "id": "e2-6",
+        "t": "17:15",
+        "text": "Drive back to Munnar, about 1.5 h"
+       },
+       {
+        "id": "e2-7",
+        "t": "19:30",
+        "text": "Dinner in town, early night"
+       }
+      ],
+      "optional": [
+       {
+        "id": "e2-8",
+        "t": "",
+        "text": "Phone the Munnar Forest Information Centre or DTPC Idukki (+91 85476 03199 is listed) a few days ahead: sources disagree on the Chinnar fee, the guide rules and booking"
+       },
+       {
+        "id": "e2-9",
+        "t": "",
+        "text": "Not feeling it? Swap Chinnar for Mattupetty Dam (₹20) and Echo Point, 20 min from town but the busiest loop in Munnar"
+       },
+       {
+        "id": "e2-10",
+        "t": "",
+        "text": "Kolukkumalai sunrise jeep (Est. ₹4,000) instead of the Eravikulam slot. 23 Dec is a weekday; 27 Dec last year was the heaviest day, with 3,060 visitors in 510 jeeps"
+       }
+      ]
+     },
+     "food": "Banana-leaf lunch in Marayoor; carry water for the Chinnar walk",
+     "cost": {
+      "transport": 3500,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 1650,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d3",
+     "date": "2026-12-24",
+     "dow": "Thu",
+     "dd": "24",
+     "title": "Down to the backwaters",
+     "base": "Alleppey houseboat",
+     "stay": "Cheapest licensed 1BR houseboat, meals included (Est. ₹10,000)",
+     "travel": {
+      "text": "Munnar → Ernakulam → Alleppey by bus",
+      "km": "about 180 km",
+      "time": "6+ h with the change",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c3-1",
+        "t": "06:30",
+        "text": "Earliest Munnar–Ernakulam bus, ₹185–221 each"
+       },
+       {
+        "id": "c3-2",
+        "t": "10:30",
+        "text": "Ernakulam–Alleppey bus"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c3-3",
+        "t": "13:30",
+        "text": "Board the houseboat (agreed in advance; a later boarding shortens the cruise)"
+       },
+       {
+        "id": "c3-4",
+        "t": "14:00",
+        "text": "Cruise and lunch on board"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c3-5",
+        "t": "18:00",
+        "text": "Moor for the night, Christmas Eve dinner on board"
+       }
+      ],
+      "optional": [
+       {
+        "id": "c3-6",
+        "t": "",
+        "text": "First upgrade to buy: private cab Munnar → Alleppey (Est. ₹4,500–5,000), saves 5+ hours of buses on Christmas Eve"
+       },
+       {
+        "id": "e3-7",
+        "t": "",
+        "text": "Cheaper swap: a Kuttanad canal homestay with a small-canoe trip instead of a houseboat. Several bloggers prefer it to the big boats; not priced, so check a quote before dropping the boat"
+       },
+       {
+        "id": "e3-8",
+        "t": "",
+        "text": "Book the boat by name now and ask for its registration number and written terms. Kumarakom rooms were full from 23 Dec to 3 Jan last year"
+       }
+      ]
+     },
+     "food": "Houseboat meals included",
+     "cost": {
+      "transport": 1000,
+      "stays": 10000,
+      "food": 600,
+      "activities": 0,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d4",
+     "date": "2026-12-25",
+     "dow": "Fri",
+     "dd": "25",
+     "title": "Christmas in Fort Kochi, eaten well and out before the crush",
+     "base": "Fort Kochi",
+     "stay": "Budget room or homestay in Fort Kochi (Est. ₹4,500)",
+     "travel": {
+      "text": "Alleppey → Ernakulam bus, ferry to Fort Kochi",
+      "km": "about 60 km",
+      "time": "2–3 h",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c4-1",
+        "t": "09:00",
+        "text": "Disembark"
+       },
+       {
+        "id": "c4-2",
+        "t": "09:30",
+        "text": "Bus to Ernakulam"
+       },
+       {
+        "id": "c4-3",
+        "t": "12:00",
+        "text": "Ferry to Fort Kochi (₹6–10)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "e4-1",
+        "t": "13:00",
+        "text": "Malabar biryani lunch at Kayees, Mattancherry (a Kochi regular's pick; confirm it is open on Christmas Day)"
+       },
+       {
+        "id": "e4-2",
+        "t": "15:00",
+        "text": "Check in; St Francis Church and Santa Cruz Basilica (Christmas services will be on; times not checked)"
+       },
+       {
+        "id": "c4-6",
+        "t": "17:30",
+        "text": "Chinese fishing nets at sunset"
+       }
+      ],
+      "evening": [
+       {
+        "id": "e4-3",
+        "t": "19:00",
+        "text": "Early dinner, then Princess Street lights; be back at the stay by about 21:00"
+       }
+      ],
+      "optional": [
+       {
+        "id": "e4-4",
+        "t": "",
+        "text": "Veli Ground Christmas tree: reported at about 50,000 people an evening in earlier years, so go early or skip"
+       },
+       {
+        "id": "e4-5",
+        "t": "",
+        "text": "Cochin Carnival events (2026 dates unconfirmed; New Year's Eve is the big night and we are gone by then)"
+       }
+      ]
+     },
+     "food": "Kayees for lunch; cafés and seafood along the front",
+     "cost": {
+      "transport": 600,
+      "stays": 4500,
+      "food": 1800,
+      "activities": 0,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d5",
+     "date": "2026-12-26",
+     "dow": "Sat",
+     "dd": "26",
+     "title": "Kumbalangi, the old port, and the train",
+     "base": "Fort Kochi → train",
+     "stay": "Night on the train",
+     "travel": {
+      "text": "Fort Kochi → Kumbalangi → Fort Kochi → Ernakulam Jn",
+      "km": "about 40 km in all",
+      "time": "short hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "e5-1",
+        "t": "08:00",
+        "text": "Puttu breakfast"
+       },
+       {
+        "id": "e5-2",
+        "t": "09:00",
+        "text": "Kumbalangi village by auto or cab (Est. ₹800 round trip): canoe through the backwaters, fish-farm and Chinese-net visit, about 3 h. Pick a village operator the day before"
+       },
+       {
+        "id": "e5-3",
+        "t": "12:30",
+        "text": "Back in Fort Kochi, check out; bags stay at the stay"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "e5-4",
+        "t": "13:00",
+        "text": "Lunch"
+       },
+       {
+        "id": "e5-5",
+        "t": "14:00",
+        "text": "Mattancherry Palace and Jew Town's spice and antique lanes. The palace is thought to close on Fridays, so Saturday is fine (verify). The Paradesi Synagogue is closed on Saturdays, so we skip it"
+       }
+      ],
+      "evening": [
+       {
+        "id": "e5-6",
+        "t": "17:00",
+        "text": "Kathakali at the Kerala Kathakali Centre"
+       },
+       {
+        "id": "e5-7",
+        "t": "18:15",
+        "text": "Collect bags, cab to Ernakulam Jn"
+       },
+       {
+        "id": "e5-8",
+        "t": "19:30",
+        "text": "At the station, dinner"
+       },
+       {
+        "id": "e5-9",
+        "t": "20:35",
+        "text": "Return train 16316, 3A (time to confirm on IRCTC; not booked yet)"
+       }
+      ],
+      "optional": [
+       {
+        "id": "e5-10",
+        "t": "",
+        "text": "Early dinner at the Nettoor toddy shop (crab roast; listed 13:00–22:00). Sources disagree on its exact location, so check Maps first"
+       }
+      ]
+     },
+     "food": "Station dinner or a packed meal",
+     "cost": {
+      "transport": 5200,
+      "stays": 0,
+      "food": 2000,
+      "activities": 2200,
+      "misc": 600
+     }
+    }
+   ],
+   "adjust": {},
+   "adjustNotes": [],
+   "basedOn": "v1"
+  },
+  "v3": {
+   "n": 3,
+   "at": 1794164338689,
+   "by": "ai",
+   "why": "7 days (22–28 Dec): adds Thekkady and Periyar, houseboat moves to Sat 26, Christmas Day in the forest instead of Fort Kochi, home Mon 28 Dec. ₹77,880 for the group, about ₹25,960 each, over the ₹20,000 cap by about ₹5,960 each.",
+   "status": "draft",
+   "plan": "A",
+   "days": [
+    {
+     "key": "d1",
+     "date": "2026-12-22",
+     "dow": "Tue",
+     "dd": "22",
+     "title": "Arrive and bus up to Munnar",
+     "base": "Munnar",
+     "stay": "Triple room in Old Munnar (Est. ₹3,000)",
+     "travel": {
+      "text": "Ernakulam Jn → Munnar by KSRTC bus",
+      "km": "125 km",
+      "time": "2–4 h on the bus",
+      "basis": "listed"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "c1-1",
+        "t": "06:00",
+        "text": "Arrive Ernakulam Jn on 12684"
+       },
+       {
+        "id": "c1-2",
+        "t": "06:20",
+        "text": "Auto to the KSRTC stand, 1.6 km (₹100–150)"
+       },
+       {
+        "id": "c1-3",
+        "t": "07:00",
+        "text": "First Munnar bus, ₹140–230 each; bus times for 22 Dec not verified"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "c1-4",
+        "t": "12:00",
+        "text": "Reach Old Munnar, check in to the triple room"
+       },
+       {
+        "id": "c1-5",
+        "t": "13:00",
+        "text": "Banana-leaf lunch (₹80–120 each)"
+       },
+       {
+        "id": "c1-6",
+        "t": "15:00",
+        "text": "Walk to the Tata Tea Museum (₹150 each)"
+       }
+      ],
+      "evening": [
+       {
+        "id": "c1-7",
+        "t": "19:00",
+        "text": "Early night after the train"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Banana-leaf lunch in town; simple dinner",
+     "cost": {
+      "transport": 1000,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 450,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d2",
+     "date": "2026-12-23",
+     "dow": "Wed",
+     "dd": "23",
+     "title": "Tahr at breakfast, sandalwood forest after lunch",
+     "base": "Munnar",
+     "stay": "Same Munnar room",
+     "travel": {
+      "text": "Munnar → Eravikulam → Marayoor → Chinnar and back by cab",
+      "km": "about 110–120 km round trip",
+      "time": "about 4 h of driving, in hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "e2-1",
+        "t": "07:30",
+        "text": "Eravikulam National Park, first slot booked online (₹250 each): forest bus up, Nilgiri tahr walk"
+       },
+       {
+        "id": "e2-2",
+        "t": "10:45",
+        "text": "Cab east to Marayoor, about 1.5 h (shared cab for three, Est. ₹3,500 for the day)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "e2-3",
+        "t": "12:15",
+        "text": "Lunch in Marayoor; fill water bottles"
+       },
+       {
+        "id": "e2-4",
+        "t": "13:00",
+        "text": "Muniyara dolmens, a short stop at the megalithic burial chambers"
+       },
+       {
+        "id": "e2-5",
+        "t": "13:45",
+        "text": "Chinnar Wildlife Sanctuary: guided walk to Thoovanam Falls, about 4 km. Guided groups are advised to start by 14:00 so they finish before the gates close; sightings (grizzled giant squirrel, deer) are not guaranteed"
+       }
+      ],
+      "evening": [
+       {
+        "id": "e2-6",
+        "t": "17:15",
+        "text": "Drive back to Munnar, about 1.5 h"
+       },
+       {
+        "id": "e2-7",
+        "t": "19:30",
+        "text": "Dinner in town, early night"
+       }
+      ],
+      "optional": [
+       {
+        "id": "e2-8",
+        "t": "",
+        "text": "Phone the Munnar Forest Information Centre or DTPC Idukki (+91 85476 03199 is listed) a few days ahead: sources disagree on the Chinnar fee, the guide rules and booking"
+       },
+       {
+        "id": "e2-9",
+        "t": "",
+        "text": "Not feeling it? Swap Chinnar for Mattupetty Dam (₹20) and Echo Point, 20 min from town but the busiest loop in Munnar"
+       },
+       {
+        "id": "e2-10",
+        "t": "",
+        "text": "Kolukkumalai sunrise jeep (Est. ₹4,000) instead of the Eravikulam slot. 23 Dec is a weekday; 27 Dec last year was the heaviest day, with 3,060 visitors in 510 jeeps"
+       }
+      ]
+     },
+     "food": "Banana-leaf lunch in Marayoor; carry water for the Chinnar walk",
+     "cost": {
+      "transport": 3500,
+      "stays": 3000,
+      "food": 1800,
+      "activities": 1650,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d3",
+     "date": "2026-12-24",
+     "dow": "Thu",
+     "dd": "24",
+     "title": "Over the cardamom hills to Thekkady",
+     "base": "Thekkady",
+     "stay": "Kumily or Thekkady homestay, triple room (Est. ₹3,500; no December price seen)",
+     "travel": {
+      "text": "Munnar → Thekkady (Kumily) by cab",
+      "km": "90 km",
+      "time": "about 3 h",
+      "basis": "listed"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "t3-1",
+        "t": "08:00",
+        "text": "Check out, cab to Thekkady (Est. ₹3,500; Christmas Eve buses will be full)"
+       },
+       {
+        "id": "t3-2",
+        "t": "11:30",
+        "text": "Reach Kumily, leave bags, lunch"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "t3-3",
+        "t": "14:00",
+        "text": "Spice-plantation walk (a few hundred rupees; confirm with the homestay)"
+       },
+       {
+        "id": "t3-4",
+        "t": "16:30",
+        "text": "Kumily spice market, where one blogger reports better buying than in Munnar"
+       }
+      ],
+      "evening": [
+       {
+        "id": "t3-5",
+        "t": "19:00",
+        "text": "Kalaripayattu or Kathakali show in Kumily (Est. ₹300–400 each; check show times)"
+       },
+       {
+        "id": "t3-6",
+        "t": "20:30",
+        "text": "Christmas Eve dinner at the homestay. Resorts here may add gala-dinner charges; ask before booking"
+       }
+      ],
+      "optional": [
+       {
+        "id": "t3-7",
+        "t": "",
+        "text": "Book the Periyar forest activity for tomorrow before arriving; slots are limited"
+       }
+      ]
+     },
+     "food": "Homestay dinner; Kerala meals in Kumily",
+     "cost": {
+      "transport": 3500,
+      "stays": 3500,
+      "food": 1800,
+      "activities": 1000,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d4",
+     "date": "2026-12-25",
+     "dow": "Fri",
+     "dd": "25",
+     "title": "Christmas Day in the Periyar forest",
+     "base": "Thekkady",
+     "stay": "Same Thekkady homestay",
+     "travel": {
+      "text": "Local, by auto and on foot",
+      "km": "under 20 km",
+      "time": "short hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "t4-1",
+        "t": "07:30",
+        "text": "Periyar Tiger Reserve guided activity run by the Forest Department. Options: nature walk, bamboo rafting (half day: 3 h walk plus 1.5 h raft) or the night jungle patrol (19:00–04:00 listed). Prices seen ₹1,000–2,400 each, possibly out of date"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "t4-2",
+        "t": "13:00",
+        "text": "Lunch, rest"
+       },
+       {
+        "id": "t4-3",
+        "t": "15:30",
+        "text": "Periyar Lake boat ride, optional (price not checked)"
+       }
+      ],
+      "evening": [
+       {
+        "id": "t4-4",
+        "t": "19:30",
+        "text": "Christmas dinner at the homestay; ask the price first"
+       }
+      ],
+      "optional": [
+       {
+        "id": "t4-5",
+        "t": "",
+        "text": "Rafting or patrol is the one place to spend more on this trip; Est. ₹3,000 for the group is budgeted for a walk plus one upgrade"
+       }
+      ]
+     },
+     "food": "Homestay meals",
+     "cost": {
+      "transport": 600,
+      "stays": 3500,
+      "food": 1800,
+      "activities": 3000,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d5",
+     "date": "2026-12-26",
+     "dow": "Sat",
+     "dd": "26",
+     "title": "Thekkady to the backwaters",
+     "base": "Alleppey houseboat",
+     "stay": "Cheapest licensed Alleppey 1BR houseboat, meals included (Est. ₹10,000)",
+     "travel": {
+      "text": "Thekkady → Alleppey jetty by cab",
+      "km": "about 150 km",
+      "time": "about 4–4.5 h",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "t5-1",
+        "t": "08:30",
+        "text": "Check out, cab to Alleppey (Est. ₹4,500)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "t5-2",
+        "t": "13:00",
+        "text": "Board the houseboat (agreed in advance), lunch on board"
+       },
+       {
+        "id": "t5-3",
+        "t": "14:00",
+        "text": "Cruise until about 17:30"
+       }
+      ],
+      "evening": [
+       {
+        "id": "t5-4",
+        "t": "17:30",
+        "text": "Moor, village walk, sunset"
+       },
+       {
+        "id": "t5-5",
+        "t": "20:00",
+        "text": "Dinner on board"
+       }
+      ],
+      "optional": [
+       {
+        "id": "t5-6",
+        "t": "",
+        "text": "Kumarakom instead of Alleppey is shorter from Thekkady and calmer, but listed peak 1BR boats are ₹13,500–18,000 (about +₹3,500 for the group) and rooms were full last year"
+       }
+      ]
+     },
+     "food": "Houseboat meals included. Take one overnight bag",
+     "cost": {
+      "transport": 4500,
+      "stays": 10000,
+      "food": 600,
+      "activities": 0,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d6",
+     "date": "2026-12-27",
+     "dow": "Sun",
+     "dd": "27",
+     "title": "Down to Fort Kochi",
+     "base": "Fort Kochi",
+     "stay": "Budget room or homestay in Fort Kochi (Est. ₹4,500)",
+     "travel": {
+      "text": "Alleppey → Ernakulam bus, ferry to Fort Kochi",
+      "km": "about 60 km",
+      "time": "2–3 h",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "t6-1",
+        "t": "09:00",
+        "text": "Disembark"
+       },
+       {
+        "id": "t6-2",
+        "t": "09:30",
+        "text": "Bus to Ernakulam"
+       },
+       {
+        "id": "t6-3",
+        "t": "12:00",
+        "text": "Ferry to Fort Kochi (₹6–10)"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "t6-4",
+        "t": "13:00",
+        "text": "Malabar biryani lunch at Kayees, Mattancherry"
+       },
+       {
+        "id": "t6-5",
+        "t": "14:30",
+        "text": "Check in, then Mattancherry Palace and Jew Town (the synagogue is closed Fri and Sat, so Sunday works; verify)"
+       },
+       {
+        "id": "t6-6",
+        "t": "17:30",
+        "text": "Chinese fishing nets at sunset"
+       }
+      ],
+      "evening": [
+       {
+        "id": "t6-7",
+        "t": "19:00",
+        "text": "Dinner and a walk along Princess Street; carnival crowds build towards New Year's Eve, but 27 Dec is quieter than Christmas"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Kayees for lunch; seafood along the front",
+     "cost": {
+      "transport": 600,
+      "stays": 4500,
+      "food": 1800,
+      "activities": 300,
+      "misc": 600
+     }
+    },
+    {
+     "key": "d7",
+     "date": "2026-12-28",
+     "dow": "Mon",
+     "dd": "28",
+     "title": "Kumbalangi and the train",
+     "base": "Fort Kochi → train",
+     "stay": "Night on the train",
+     "travel": {
+      "text": "Fort Kochi → Kumbalangi → Fort Kochi → Ernakulam Jn",
+      "km": "about 40 km in all",
+      "time": "short hops",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "t7-1",
+        "t": "08:00",
+        "text": "Puttu breakfast"
+       },
+       {
+        "id": "t7-2",
+        "t": "09:00",
+        "text": "Kumbalangi village by auto or cab (Est. ₹800 round trip): canoe, fish farm and Chinese nets, about 3 h"
+       },
+       {
+        "id": "t7-3",
+        "t": "12:30",
+        "text": "Back in Fort Kochi, check out; bags stay at the stay"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "t7-4",
+        "t": "13:00",
+        "text": "Lunch"
+       },
+       {
+        "id": "t7-5",
+        "t": "14:30",
+        "text": "Free time: shops and cafés in Jew Town and Fort Kochi"
+       }
+      ],
+      "evening": [
+       {
+        "id": "t7-6",
+        "t": "17:00",
+        "text": "Kathakali at the Kerala Kathakali Centre"
+       },
+       {
+        "id": "t7-7",
+        "t": "18:15",
+        "text": "Collect bags, cab to Ernakulam Jn"
+       },
+       {
+        "id": "t7-8",
+        "t": "19:30",
+        "text": "At the station, dinner"
+       },
+       {
+        "id": "t7-9",
+        "t": "20:35",
+        "text": "Return train 16316, 3A (daily; time to confirm on IRCTC; not booked yet). Reaches Bengaluru on the morning of Tue 29 Dec"
+       }
+      ],
+      "optional": [
+       {
+        "id": "t7-10",
+        "t": "",
+        "text": "Swap Kumbalangi for the Muziris heritage trail: Paravur synagogue, Chendamangalam and Paliam Palace, about 45 km out. Tours run 7–8 h and Monday opening hours are not checked"
+       },
+       {
+        "id": "t7-11",
+        "t": "",
+        "text": "Early dinner at the Nettoor toddy shop (crab roast); check its location on Maps"
+       }
+      ]
+     },
+     "food": "Station dinner or a packed meal",
+     "cost": {
+      "transport": 5200,
+      "stays": 0,
+      "food": 2000,
+      "activities": 2200,
+      "misc": 600
+     }
+    }
+   ],
+   "adjust": {},
+   "adjustNotes": [],
+   "basedOn": "v2"
+  }
+ },
+ "bookings": {},
+ "meta": {
+  "state": {
+   "current": "v2",
+   "at": 1794164338689
+  }
+ },
+ "updated": 1794164338689
+}
