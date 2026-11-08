@@ -1,41 +1,46 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Kerala Trip HQ</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="theme-color" content="#1D5A3E">
+<meta name="theme-color" content="#1D5A3E" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1510" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: one phone-width column of content on a leaf-tinted ground, fixed bottom tab bar, bottom sheets for every action; desktop centres the column. */
 :root{
-  --bg:#EDF2EA; --surface:#FBFDF9; --surface-2:#E2EBDD; --ink:#13241B; --ink-2:#4B5E53; --ink-3:#6E8275; --line:#D2DDCD;
+  --bg:#EDF2EA; --surface:#FBFDF9; --surface-2:#E2EBDD; --ink:#13241B; --ink-2:#4B5E53; --ink-3:#6E8275; --line:#D9E3D4;
   --brand:#1D5A3E; --brand-ink:#F2F8F1; --leaf:#3C8B51; --laterite:#B0502A; --turmeric:#B97C0C; --sea:#1E6A7B;
   --ok:#2D7A4C; --ok-bg:#DDEFE2; --warn:#8C600C; --warn-bg:#F7EBCB; --bad:#A93A3A; --bad-bg:#F6DEDB; --info:#1E6A7B; --info-bg:#D9ECEF; --ai:#5443A8; --ai-bg:#E7E3F8;
   --shadow:0 1px 2px rgba(19,36,27,.06),0 8px 24px rgba(19,36,27,.08);
+  --shadow-sm:0 1px 2px rgba(19,36,27,.05),0 1px 1px rgba(19,36,27,.03);
+  --ease-out:cubic-bezier(0.23,1,0.32,1); --ease-in-out:cubic-bezier(0.77,0,0.175,1); --ease-drawer:cubic-bezier(0.32,0.72,0,1);
   --map-sea:#CFE3E6; --map-land:#E9F0DF; --map-hill:#CFE0C3; --map-ink:#3B5246;
   --f-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
   --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --r:18px; --nav-h:66px;
+  --r:18px; --r-sm:12px; --nav-h:66px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B1510; --surface:#13201A; --surface-2:#1B2C22; --ink:#E6EFE8; --ink-2:#A8BAAE; --ink-3:#83978A; --line:#27382E;
   --brand:#84CF9F; --brand-ink:#0B1510; --leaf:#86CF97; --laterite:#E8906A; --turmeric:#EDB74B; --sea:#79C6D5;
   --ok:#86D7A2; --ok-bg:#173525; --warn:#EDC266; --warn-bg:#382D11; --bad:#F2A097; --bad-bg:#3C1D1A; --info:#84CCDA; --info-bg:#11303A; --ai:#BDB2F5; --ai-bg:#262140;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
-  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; color-scheme:dark}}
+  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; --shadow-sm:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B1510; --surface:#13201A; --surface-2:#1B2C22; --ink:#E6EFE8; --ink-2:#A8BAAE; --ink-3:#83978A; --line:#27382E;
   --brand:#84CF9F; --brand-ink:#0B1510; --leaf:#86CF97; --laterite:#E8906A; --turmeric:#EDB74B; --sea:#79C6D5;
   --ok:#86D7A2; --ok-bg:#173525; --warn:#EDC266; --warn-bg:#382D11; --bad:#F2A097; --bad-bg:#3C1D1A; --info:#84CCDA; --info-bg:#11303A; --ai:#BDB2F5; --ai-bg:#262140;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
-  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; color-scheme:dark}
+  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; --shadow-sm:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 button,input,textarea,select{font:inherit;color:inherit}
+button{touch-action:manipulation}
+.btn,.chip,.act,.navbtn,.seg button,.quick button{-webkit-user-select:none;user-select:none}
 a{color:var(--sea)}
-h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.01em}
-.app{max-width:560px;margin:0 auto;min-height:100%;overflow-x:clip;padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.022em}
+.app{max-width:560px;margin:0 auto;min-height:100%;min-height:100dvh;overflow-x:clip;padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom,0px))}
 .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .stack{display:flex;flex-direction:column;gap:14px}
 .row{display:flex;gap:10px;align-items:center}
@@ -44,16 +49,20 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1
 .grow{flex:1;min-width:0}
 .muted{color:var(--ink-2)} .faint{color:var(--ink-3)} .small{font-size:13px} .tiny{font-size:12px}
 .num{font-variant-numeric:tabular-nums}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
 .page-head{padding-top:18px;padding-bottom:6px}
-.page-head h1{font-size:30px;font-weight:800}
-.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:10px}
-.section-title h2{font-size:20px;font-weight:800}
+.page-head h1{font-size:32px;font-weight:800}
+.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px}
+.section-title h2{font-size:18px;font-weight:700}
 .link-btn{background:none;border:0;padding:6px 0;color:var(--sea);font-weight:600;cursor:pointer;min-height:36px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:var(--shadow-sm)}
 .card.tight{padding:12px}
-.card.press{cursor:pointer;transition:transform .15s ease}
-.card.press:active{transform:scale(.985)}
+.card.press{cursor:pointer}
+.btn,.chip,.act,.icon-btn,.seg button,.quick button,.link-btn{transition:transform 160ms var(--ease-out),background-color 150ms ease,border-color 150ms ease,color 150ms ease}
+.btn:active:not(:disabled),.chip:active:not(:disabled),.act:active:not(:disabled),.icon-btn:active:not(:disabled),.seg button:active:not(:disabled),.quick button:active:not(:disabled),.link-btn:active:not(:disabled){transform:scale(.97)}
+.card.press,.dcard,.dbig,.day-head,.item{transition:transform 160ms var(--ease-out),box-shadow 200ms ease}
+.card.press:active,.dcard:active,.dbig:active{transform:scale(.985)}
+.day-head:active,.item:active{transform:scale(.99)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-weight:600;cursor:pointer}
 .btn.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 .btn.ai{background:var(--ai);color:var(--surface);border-color:var(--ai)}
@@ -75,7 +84,11 @@ h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1
 .seg{display:flex;gap:4px;background:var(--surface-2);border-radius:14px;padding:4px;overflow-x:auto;scrollbar-width:none}
 .seg::-webkit-scrollbar{display:none}
 .seg button{flex:1 0 auto;border:0;background:transparent;border-radius:10px;min-height:38px;padding:0 12px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
-.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.seg button.on{color:var(--ink)}
+.seg-track{position:relative;display:flex;gap:4px;flex:1 0 auto;min-width:100%}
+.seg-hl{position:absolute;inset:0;display:flex;gap:4px;pointer-events:none;transition:clip-path 220ms var(--ease-out)}
+.seg-hl span{flex:1 0 auto;display:flex;align-items:center;justify-content:center;border-radius:10px;min-height:38px;padding:0 12px;font-weight:600;white-space:nowrap;background:var(--surface);color:var(--ink)}
+.seg-hl[data-instant]{transition:none}
 .scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:2px 16px 6px;scrollbar-width:none}
 .scroller::-webkit-scrollbar{display:none}
 .scroller>*{scroll-snap-align:start;flex:none}
@@ -100,30 +113,30 @@ label.lbl{font-weight:600;font-size:14px;display:block;margin-bottom:6px}
 .kv dt{color:var(--ink-3)} .kv dd{margin:0;min-width:0}
 ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
 /* hero */
-.hero{position:relative;height:300px;border-radius:0 0 28px 28px;overflow:hidden;color:#fff}
+.hero{position:relative;height:320px;border-radius:0 0 28px 28px;overflow:hidden;color:#fff}
 .hero .scene{position:absolute;inset:0}
-.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,24,16,.0) 25%,rgba(8,24,16,.72) 100%)}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,24,16,0) 30%,rgba(8,24,16,.78) 100%)}
 .hero .in{position:absolute;left:0;right:0;bottom:0;padding-bottom:18px}
-.hero h1{font-size:40px;font-weight:800;letter-spacing:-.02em}
+.hero h1{font-size:44px;font-weight:800;letter-spacing:-.03em}
 .hero .tagline{font-size:16px;opacity:.92;margin-top:4px}
 .count{display:flex;gap:8px;margin-top:12px}
-.count div{background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:6px 10px;min-width:62px;text-align:center}
+.count div{background:rgba(255,255,255,.14);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:8px 12px;min-width:68px;text-align:center}
 .count b{font-family:var(--f-display);font-size:22px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
 .count span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.quick button{border:1px solid var(--line);background:var(--surface);border-radius:16px;min-height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
-.quick svg{width:22px;height:22px;color:var(--brand)}
+.quick{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.quick button{border:1px solid var(--line);background:var(--surface);border-radius:18px;min-height:84px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
+.quick svg{width:36px;height:36px;padding:8px;border-radius:50%;background:var(--ok-bg);color:var(--brand);box-sizing:border-box}
 /* destination cards */
-.dcard{width:min(78vw,300px);border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0}
+.dcard{width:min(78vw,300px);border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0;box-shadow:var(--shadow-sm)}
 .dcard .scene{height:150px}
 .dcard .body{padding:12px 14px}
-.dbig{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0;width:100%}
+.dbig{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0;width:100%;box-shadow:var(--shadow-sm)}
 .dbig .scene{height:190px}
 .dbig .body{padding:14px}
 .dbig h3{font-size:24px;font-weight:800}
 .plan-badge{position:absolute;top:12px;left:12px;background:rgba(10,30,20,.62);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;backdrop-filter:blur(4px)}
 /* itinerary */
-.day{border-radius:20px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.day{border-radius:20px;background:var(--surface);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-sm)}
 .day-head{display:flex;gap:12px;align-items:center;padding:14px;cursor:pointer;width:100%;background:none;border:0;text-align:left}
 .datebox{width:54px;flex:none;border-radius:14px;background:var(--brand);color:var(--brand-ink);text-align:center;padding:6px 0}
 .datebox b{font-family:var(--f-display);font-size:24px;display:block;line-height:1}
@@ -155,28 +168,42 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
 .ai-box h4{margin:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ai)}
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cmp>div{background:var(--surface);border-radius:12px;padding:10px;font-size:14px;min-width:0}
-.spinner{width:18px;height:18px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;animation:spin .8s linear infinite;display:inline-block;flex:none}
+.spinner{width:18px;height:18px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;animation:spin .6s linear infinite;display:inline-block;flex:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 /* nav */
-.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
 .nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);height:var(--nav-h)}
 .navbtn{border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;font-weight:600;color:var(--ink-3);cursor:pointer;position:relative}
 .navbtn svg{width:24px;height:24px}
-.navbtn .ic{display:grid;place-items:center;width:52px;height:30px;border-radius:99px;transition:background .2s}
+@supports not (backdrop-filter:blur(1px)){.nav{background:var(--surface)}}
+.navbtn .ic{display:grid;place-items:center;width:52px;height:30px;border-radius:99px;transition:background-color 150ms ease,transform 160ms var(--ease-out)}
+.navbtn:active .ic{transform:scale(.92)}
 .navbtn.on{color:var(--brand)}
 .navbtn.on .ic{background:var(--surface-2)}
-.navbtn .badge{position:absolute;top:6px;left:calc(50% + 8px);background:var(--laterite);color:#fff;border-radius:99px;font-size:10px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px}
+.navbtn .badge{position:absolute;top:6px;left:calc(50% + 8px);background:var(--laterite);color:#fff;border-radius:99px;font-size:10px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px;font-variant-numeric:tabular-nums;font-weight:700;box-shadow:0 0 0 2px var(--surface)}
 /* sheets */
-.sheet-bg{position:fixed;inset:0;z-index:40;background:rgba(6,16,10,.48);display:flex;align-items:flex-end;justify-content:center;animation:fade .18s ease}
-.sheet{width:100%;max-width:560px;max-height:92%;background:var(--bg);border-radius:24px 24px 0 0;display:flex;flex-direction:column;animation:up .26s cubic-bezier(.2,.8,.2,1);padding-bottom:env(safe-area-inset-bottom,0px)}
-.sheet-head{display:flex;align-items:center;gap:8px;padding:14px max(16px,env(safe-area-inset-left,0px)) 6px;position:relative}
+.sheet-bg{position:fixed;inset:0;z-index:40;background:rgba(6,16,10,.48);display:flex;align-items:flex-end;justify-content:center;animation:fade 200ms var(--ease-out)}
+.sheet{width:100%;max-width:560px;max-height:92%;background:var(--bg);border-radius:24px 24px 0 0;box-shadow:0 -8px 32px rgba(0,0,0,.12);display:flex;flex-direction:column;animation:sheet-in 420ms var(--ease-drawer);will-change:transform;padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet-bg.closing{animation:fade-out 180ms ease-out forwards}
+.sheet-bg.closing .sheet{animation:sheet-out 200ms var(--ease-out) forwards!important}
+.sheet-head{display:flex;align-items:center;gap:8px;padding:14px max(16px,env(safe-area-inset-left,0px)) 6px;position:relative;touch-action:none;cursor:grab}
 .sheet-head h2{font-size:20px;font-weight:800;flex:1;min-width:0}
 .grab{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:40px;height:4px;border-radius:9px;background:var(--line)}
+.grab::before{content:"";position:absolute;inset:-8px -20px}
 .sheet-body{overflow-y:auto;padding:6px max(16px,env(safe-area-inset-right,0px)) 22px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:14px;overscroll-behavior:contain}
-@keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+@keyframes sheet-in{from{transform:translateY(100%)}}
+@keyframes sheet-out{to{transform:translateY(100%)}}
 @keyframes fade{from{opacity:0}}
+@keyframes fade-out{to{opacity:0}}
+.view{animation:view-in 180ms var(--ease-out)}
+@keyframes view-in{from{opacity:0;transform:translateY(4px)}}
+.stagger>*{animation:rise 360ms var(--ease-out) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+.stagger>:nth-child(2){animation-delay:40ms}.stagger>:nth-child(3){animation-delay:80ms}.stagger>:nth-child(4){animation-delay:120ms}.stagger>:nth-child(5){animation-delay:160ms}.stagger>:nth-child(6){animation-delay:200ms}.stagger>:nth-child(7){animation-delay:240ms}.stagger>:nth-child(8){animation-delay:280ms}.stagger>:nth-child(9){animation-delay:320ms}.stagger>:nth-child(n+10){animation-delay:360ms}
 .toasts{position:fixed;left:0;right:0;bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;padding:0 16px}
-.toast{background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 16px;font-weight:600;font-size:14px;box-shadow:var(--shadow);max-width:520px}
+.toast{background:var(--ink);color:var(--bg);border-radius:14px;padding:11px 16px;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,.12),0 0 0 1px rgba(255,255,255,.06) inset;max-width:520px;transition:opacity 400ms ease,transform 400ms ease}
+@starting-style{.toast{opacity:0;transform:translateY(100%)}}
+.toast.leaving{opacity:0;transform:translateY(8px) scale(.97);transition-duration:200ms}
 .boot{padding:40px 20px;text-align:center;color:var(--ink-2)}
 .feed .li .av{margin-top:2px}
 .donut-wrap{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center}
@@ -190,8 +217,20 @@ table.t th{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spa
 .map svg{width:100%;height:auto;display:block}
 .route{fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 6;animation:dash 1.6s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-26}}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-@media (min-width:600px){.hero{border-radius:0 0 28px 28px;margin-top:0}}
+@media (hover:hover) and (pointer:fine){
+  .btn:not(.primary):not(.ai):hover,.chip:not(.on):hover,.act:not(.on):not(.onbad):hover,.quick button:hover{background:var(--surface-2)}
+  .btn.primary:hover,.btn.ai:hover{filter:brightness(1.08)}
+  .icon-btn:hover{background:var(--surface-2)}
+  .link-btn:hover{text-decoration:underline;text-underline-offset:3px}
+  .navbtn:not(.on):hover .ic{background:var(--surface-2)}
+  .card.press:hover,.dcard:hover,.dbig:hover{box-shadow:var(--shadow)}
+}
+@media (prefers-reduced-motion: reduce){
+  .sheet{animation-name:fade} .sheet-bg.closing .sheet{animation-name:fade-out!important} .view,.stagger>*{animation-name:fade} .route{animation:none} .toast{transform:none!important} @starting-style{.toast{transform:none}}
+  .btn:active,.chip:active,.act:active,.icon-btn:active,.seg button:active,.quick button:active,.card.press:active,.dcard:active,.dbig:active,.day-head:active,.item:active,.navbtn:active .ic{transform:none}
+  .seg-hl{transition-duration:0ms}
+}
+@media (min-width:600px){.hero{height:360px;border-radius:0 0 28px 28px;margin-top:0}}
 </style>
 
 <div id="app"><div class="boot">Loading Kerala Trip HQ…</div></div>
@@ -204,7 +243,7 @@ table.t th{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spa
 (function(){
 "use strict";
 const {h, render} = preact;
-const {useState, useEffect, useMemo, useRef} = preactHooks;
+const {useState, useEffect, useLayoutEffect, useMemo, useRef} = preactHooks;
 const html = htm.bind(h);
 
 /* ====================================================================
@@ -505,9 +544,9 @@ const listeners = new Set();
 function set(p){ Object.assign(S,p); listeners.forEach(f=>f()); }
 function useStore(){ const [,f]=useState(0); const r=useRef(null); if(!r.current){ r.current=()=>f(x=>x+1); listeners.add(r.current); } useEffect(()=>()=>listeners.delete(r.current),[]); return S; }
 let API = {db:null,user:null,sample:null};
-function toast(msg){ const id=rid(); set({toasts:[...S.toasts,{id,msg}]}); setTimeout(()=>set({toasts:S.toasts.filter(t=>t.id!==id)}),3200); }
-const openSheet = (type, props) => set({sheet:{type, props:props||{}}});
-const closeSheet = () => set({sheet:null});
+function toast(msg){ const id=rid(); set({toasts:[...S.toasts,{id,msg}]}); setTimeout(()=>set({toasts:S.toasts.map(t=>t.id===id?Object.assign({},t,{leaving:true}):t)}),2800); setTimeout(()=>set({toasts:S.toasts.filter(t=>t.id!==id)}),3000); }
+const openSheet = (type, props) => set({sheet:{type, props:props||{}}, sheetClosing:false});
+const closeSheet = () => { if(!S.sheet||S.sheetClosing) return; set({sheetClosing:true}); setTimeout(()=>{ if(S.sheetClosing) set({sheet:null, sheetClosing:false}); },200); };
 function dbErr(e){ const c=e&&e.code; if(c==="invalid_argument") return "You don't have permission to change that."; if(c==="quota_exceeded") return "The trip database is full."; if(c==="resource_exhausted") return "Too many changes at once. Try again in a moment."; return "Couldn't save. Check your connection and try again."; }
 
 async function boot(){
@@ -829,10 +868,22 @@ function Avatar({id, size}){
   return html`<span class=${"av "+(size||"")} style=${{background:col}} title=${name}>${real ? html`<img src=${p.avatarUrl} alt=""/>` : name.slice(0,1).toUpperCase()}</span>`;
 }
 function Who({id, at, extra}){ return html`<div class="row" style="gap:8px"><${Avatar} id=${id} size="sm"/><span class="small"><b>${nameOf(id)}</b>${roleOf(id)==="owner"&&id!=="ai"?html` <span class="tag">Admin</span>`:null} <span class="faint">· ${ago(at)}</span>${extra}</span></div>`; }
-function Seg({value, opts, onChange}){ return html`<div class="seg" role="tablist">${opts.map(([v,l])=>html`<button role="tab" aria-selected=${value===v} class=${value===v?"on":""} onClick=${()=>onChange(v)}>${l}</button>`)}</div>`; }
-function Sheet({title, onClose, children}){
+function Seg({value, opts, onChange}){
+  const tr=useRef(null), hl=useRef(null), first=useRef(true), m=useRef(null);
+  m.current=(instant)=>{ const t=tr.current, h=hl.current; if(!t||!h) return; const b=t.children[opts.findIndex(o=>o[0]===value)]; if(instant) h.setAttribute("data-instant",""); if(b){ const L=b.offsetLeft, R=t.offsetWidth-(L+b.offsetWidth); h.style.clipPath=`inset(0 ${R}px 0 ${L}px round 10px)`; } else h.style.clipPath="inset(0 100% 0 0)"; if(instant) requestAnimationFrame(()=>h.removeAttribute("data-instant")); };
+  useLayoutEffect(()=>{ m.current(first.current); first.current=false; },[value]);
+  useEffect(()=>{ const f=()=>m.current(true); addEventListener("resize",f); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(f); return ()=>removeEventListener("resize",f); },[]);
+  return html`<div class="seg" role="tablist"><div class="seg-track" ref=${tr}>${opts.map(([v,l])=>html`<button role="tab" aria-selected=${value===v} class=${value===v?"on":""} onClick=${()=>onChange(v)}>${l}</button>`)}<div class="seg-hl" ref=${hl} aria-hidden="true">${opts.map(([v,l])=>html`<span>${l}</span>`)}</div></div></div>`;
+}
+function Sheet({title, onClose, children, nodrag}){
+  const s=useStore(); const el=useRef(null); const dr=useRef(null);
   useEffect(()=>{ const o=document.body.style.overflow; document.body.style.overflow="hidden"; const k=e=>{ if(e.key==="Escape") onClose(); }; addEventListener("keydown",k); return ()=>{ document.body.style.overflow=o; removeEventListener("keydown",k); }; },[]);
-  return html`<div class="sheet-bg" onClick=${e=>{ if(e.target===e.currentTarget) onClose(); }}><div class="sheet" role="dialog" aria-modal="true" aria-label=${title}><div class="sheet-head"><span class="grab"></span><h2>${title}</h2><button class="icon-btn" onClick=${onClose} aria-label="Close">${ic(IC.x)}</button></div><div class="sheet-body">${children}</div></div></div>`;
+  const down=e=>{ if(nodrag||dr.current||e.target.closest("button")) return; e.currentTarget.setPointerCapture(e.pointerId); dr.current={id:e.pointerId,y:e.clientY,t:Date.now(),dy:0}; const st=el.current.style; st.transition="none"; st.animation="none"; };
+  const move=e=>{ const d=dr.current; if(!d||e.pointerId!==d.id) return; let dy=e.clientY-d.y; if(dy<0) dy=-Math.pow(-dy,0.6); d.dy=dy; el.current.style.transform=`translateY(${dy}px)`; };
+  const up=e=>{ const d=dr.current; if(!d||e.pointerId!==d.id) return; dr.current=null; const sh=el.current, st=sh.style, v=Math.abs(d.dy)/Math.max(1,Date.now()-d.t);
+    if(d.dy>0&&(d.dy>sh.offsetHeight*0.25||v>0.11)){ st.transition="transform 200ms var(--ease-out)"; st.transform="translateY(100%)"; sh.parentNode.style.transition="opacity 200ms ease-out"; sh.parentNode.style.opacity="0"; setTimeout(()=>set({sheet:null, sheetClosing:false}),200); }
+    else { st.transition="transform 300ms var(--ease-drawer)"; st.transform="translateY(0)"; setTimeout(()=>{ if(!dr.current){ st.transition=""; st.transform=""; } },300); } };
+  return html`<div class=${"sheet-bg"+(s.sheetClosing?" closing":"")} onClick=${e=>{ if(e.target===e.currentTarget) onClose(); }}><div class="sheet" ref=${el} role="dialog" aria-modal="true" aria-label=${title}><div class="sheet-head" onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerCancel=${up}><span class="grab"></span><h2>${title}</h2><button class="icon-btn" onClick=${onClose} aria-label="Close">${ic(IC.x)}</button></div><div class="sheet-body">${children}</div></div></div>`;
 }
 function VoteBar({target, compact}){
   const s=useStore(); const v=votesFor(target); const mine=s.people[s.me]&&s.people[s.me].votes&&s.people[s.me].votes[target];
@@ -877,7 +928,9 @@ function Countdown(){
   const d=Math.floor(ms/864e5); ms-=d*864e5; const hh=Math.floor(ms/36e5); ms-=hh*36e5; const m=Math.floor(ms/6e4);
   return html`<div class="count" aria-label=${d+" days until the train leaves"}><div><b>${d}</b><span>days</span></div><div><b>${hh}</b><span>hrs</span></div><div><b>${m}</b><span>min</span></div></div>`;
 }
+let homeEntered=false;
 function Home({go}){
+  const stag=useRef(!homeEntered).current; useEffect(()=>{ homeEntered=true; },[]);
   const s=useStore(); const v=currentVersion(); const pr=projection(v); const mem=members();
   const bks=Object.values(s.bookings); const booked=bks.filter(b=>b.status==="booked").length;
   const outstanding=bks.filter(b=>b.status!=="booked"&&b.status!=="cancelled").sort((a,b)=>(a.order||99)-(b.order||99));
@@ -891,7 +944,7 @@ function Home({go}){
   return html`<div>
     <section class="hero"><${Scene} kind="hero"/><div class="shade"></div>
       <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–26 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">Three friends. One Kerala adventure.</div><${Countdown}/></div></section>
-    <div class="wrap stack" style="margin-top:16px">
+    <div class=${"wrap stack"+(stag?" stagger":"")} style="margin-top:16px">
             <div class="row between">
         <div class="row" style="gap:10px"><div class="avs">${mem.length?mem.map(m=>html`<${Avatar} id=${m._id} key=${m._id}/>`):html`<span class="small faint">Crew appears as people join</span>`}</div><span class="small muted">${mem.map(m=>nameOf(m._id)).join(", ")}</span></div>
       </div>
@@ -930,7 +983,7 @@ function PollCard({poll}){
   return html`<div class="card stack" style="gap:10px"><div class="row between"><b>${poll.q}</b>${win0?html`<span class="pill ok">Majority</span>`:html`<span class="pill warn">${total?"Tied":"No votes"}</span>`}</div>
     ${poll.opts.map(o=>{ const n=(pv[o.id]||[]).length; const on=mine&&mine.o===o.id; const win=win0===o.id;
       return html`<button key=${o.id} class="card tight" disabled=${!canContribute()} onClick=${()=>pollVote("poll-"+poll.id,o.id)} style=${{textAlign:"left",cursor:canContribute()?"pointer":"default",borderColor:on||win?"var(--brand)":"var(--line)",position:"relative",overflow:"hidden",background:"var(--surface)"}}>
-        <span style=${{position:"absolute",inset:"0 auto 0 0",width:(total?n/total*100:0)+"%",background:"var(--surface-2)"}}></span>
+        <span style=${{position:"absolute",inset:"0",transform:`scaleX(${total?n/total:0})`,transformOrigin:"left",transition:"transform 300ms var(--ease-out)",background:"var(--surface-2)"}}></span>
         <span style="position:relative" class="row between"><span class="small"><b>${win?"✓ ":""}${o.label}</b></span><span class="row" style="gap:6px"><span class="avs">${(pv[o.id]||[]).map(id=>html`<${Avatar} id=${id} size="sm" key=${id}/>`)}</span><span class="num small">${n}</span></span></span></button>`; })}
     <div class="tiny faint">Tap to vote. The majority decides, and you can change your vote any time.</div>
   </div>`;
@@ -1085,7 +1138,7 @@ function Itinerary(){
 function DayCard({d,i,open,toggle,readonly}){
   useStore(); const tot=BUDGET_CATS.reduce((a,c)=>a+(d.cost[c.id]||0),0);
   return html`<div class="day">
-    <button class="day-head" onClick=${toggle} aria-expanded=${open}><div class="datebox"><b>${d.dd}</b><span>${d.dow}</span></div><div class="grow"><div class="eyebrow">Day ${i+1} · ${d.base}</div><b style="font-size:17px">${d.title}</b><div class="small muted">${d.travel.time} · ${inr(tot)}</div></div><span style=${{transform:open?"rotate(180deg)":"none",transition:"transform .2s",display:"grid"}}>${ic(IC.chevd)}</span></button>
+    <button class="day-head" onClick=${toggle} aria-expanded=${open}><div class="datebox"><b>${d.dd}</b><span>${d.dow}</span></div><div class="grow"><div class="eyebrow">Day ${i+1} · ${d.base}</div><b style="font-size:17px">${d.title}</b><div class="small muted">${d.travel.time} · ${inr(tot)}</div></div><span style=${{transform:open?"rotate(180deg)":"none",transition:"transform 200ms var(--ease-out)",display:"grid"}}>${ic(IC.chevd)}</span></button>
     ${open?html`<div class="day-body">
       <div class="travel">${ic(IC.car)}<div class="grow"><b>${d.travel.text}</b> ${basisTag(d.travel.basis)}<div class="small muted">${d.travel.km} · ${d.travel.time}</div></div></div>
       ${SLOTS.map(([sl,label])=>(d.slots[sl]||[]).length?html`<div class="slot" key=${sl}><h4>${label}</h4>${d.slots[sl].map(it=>html`<${ItemRow} key=${it.id} it=${it} readonly=${readonly}/>`)}</div>`:null)}
@@ -1292,7 +1345,7 @@ function JoinSheet({edit}){
   const save=async(nm)=>{ const n=clip((typeof nm==="string"?nm:nick).trim(),30); if(!n) return; setBusy(true);
     try{ if(cur){ await mutateMe(d=>{ d.nick=n; }); } else { await API.db.doc("people/"+s.me).set({nick:n, joinedAt:Date.now(), posts:[], expenses:[], votes:{}, reacts:{}, polls:{}, updatedAt:Date.now()}); } toast(edit?"Name updated":"Welcome to the crew, "+n); closeSheet(); }catch(e){ toast(dbErr(e)); }
     setBusy(false); };
-  return html`<${Sheet} title=${edit?"Your display name":"Welcome to Kerala Trip HQ"} onClose=${edit?closeSheet:()=>{}}>
+  return html`<${Sheet} title=${edit?"Your display name":"Welcome to Kerala Trip HQ"} onClose=${edit?closeSheet:()=>{}} nodrag=${!edit}>
     ${!edit?html`<div class="small muted">You're signed in through Claude. Pick the name the crew will see on your votes and ideas.</div>`:null}
     ${edit?html`<div class="chips">${CREW_NAMES.map(n=>html`<button key=${n} class=${"chip "+(nick===n?"on":"")} onClick=${()=>setNick(n)}>${n}</button>`)}</div>`:html`<div class="stack" style="gap:10px"><div class="eyebrow">Tap your name to join</div>${CREW_NAMES.map(n=>{ const taken=Object.values(s.people).some(q=>q._id!==s.me&&String(q.nick||"").toLowerCase()===n.toLowerCase()); return html`<button key=${n} class="btn primary block" style="min-height:56px;font-size:18px" disabled=${busy||taken} onClick=${()=>save(n)}>${taken?n+" (already joined)":"I'm "+n}</button>`; })}<div class="tiny faint">Someone else? Type a name below.</div></div>`}
     <input id="join-nick" class="field" maxlength="30" placeholder="Or type your name" value=${nick} onInput=${e=>setNick(e.target.value)}/>
@@ -1434,11 +1487,11 @@ function App(){
   const badge=awaitingReview().length+pendingDecisions().filter(x=>x.kind==="post").length;
   return html`<div class="app">
     ${tab!=="home"?html`<${Banner}/>`:null}
-    <main>${tab==="home"?html`<${Home} go=${go}/>`:tab==="explore"?html`<${Explore}/>`:tab==="itinerary"?html`<${Itinerary}/>`:tab==="crew"?html`<${Crew}/>`:html`<${Budget}/>`}</main>
+    <main key=${tab} class="view">${tab==="home"?html`<${Home} go=${go}/>`:tab==="explore"?html`<${Explore}/>`:tab==="itinerary"?html`<${Itinerary}/>`:tab==="crew"?html`<${Crew}/>`:html`<${Budget}/>`}</main>
     
     <nav class="nav" aria-label="Main"><div class="nav-in">${TABS.map(([k,l,icn])=>html`<button key=${k} class=${"navbtn "+(tab===k?"on":"")} aria-current=${tab===k?"page":null} onClick=${()=>go(k)}><span class="ic">${ic(IC[icn])}</span>${l}${k==="crew"&&badge?html`<span class="badge">${badge}</span>`:null}</button>`)}</div></nav>
     <${SheetHost}/>
-    <div class="toasts" aria-live="polite">${s.toasts.map(t=>html`<div class="toast" key=${t.id}>${t.msg}</div>`)}</div>
+    <div class="toasts" aria-live="polite">${s.toasts.map(t=>html`<div class=${"toast"+(t.leaving?" leaving":"")} key=${t.id}>${t.msg}</div>`)}</div>
   </div>`;
 }
 render(html`<${App}/>`, document.getElementById("app"));
