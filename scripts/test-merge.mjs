@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import { merge, parseIssue } from "./merge-inputs.mjs";
+const doc = { nick: "Sahith", joinedAt: 1, posts: [{ id: "p1", at: 5, kind: "suggestion", cat: "food", title: "Appam <b>x</b>", body: "b", cost: 500 }, { id: "c1", at: 6, kind: "comment", target: "munnar", body: "yes" }, { id: "bad", kind: "evil" }], expenses: [{ id: "e1", amount: 1200, cat: "stays", note: "n", paidBy: "name:Manoj", at: 9 }], votes: { munnar: { v: 1, at: 2 }, x: { v: 7 } }, reacts: {}, polls: { "poll-plan": { o: "A", at: 3 } } };
+const issue = n => ({ number: n, title: "Crew update: Sahith", user: { login: "sahith123" }, body: "text\n```json\n" + JSON.stringify({ v: 1, who: "sahith", name: "Sahith", doc }) + "\n```" });
+let st = { people: {}, bookings: { a: 1 } };
+let r = merge(st, issue(1)); assert.ok(r.merged); const p = r.state.people.sahith;
+assert.equal(p.posts.length, 2); assert.equal(p.expenses[0].paidBy, "name:Manoj"); assert.deepEqual(Object.keys(p.votes), ["munnar"]); assert.equal(r.state.bookings.a, 1);
+assert.equal(r.state.inputLog[0].by, "sahith123");
+assert.equal(parseIssue({ title: "random", body: "" }), null);
+assert.equal(parseIssue({ title: "Crew update: x", body: "```json\n{\"v\":1,\"who\":\"../etc\"}\n```" }), null);
+assert.equal(parseIssue({ title: "Crew update: x", body: "no json" }), null);
+const empty = { number: 2, title: "Crew update: Sahith", body: "```json\n" + JSON.stringify({ v: 1, who: "sahith", doc: { posts: [], expenses: [], votes: {} } }) + "\n```" };
+r = merge(r.state, empty); assert.equal(r.merged, false); assert.equal(r.state.people.sahith.posts.length, 2);
+console.log("merge tests: ok");

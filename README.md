@@ -1,38 +1,20 @@
-# Kerala Trip HQ (standalone)
+# Kerala Trip HQ
 
-One invite link for the whole group. Anyone who opens it joins as a member, signed in with Google
-(or by name only if you allow it). No approvals, no emails collected, no per-person setup.
+Static trip planner for 22–26 Dec 2026, hosted on GitHub Pages. No server, no accounts, nothing to install.
 
-* **Membership** lives in this app's own database. Claude Share/Editor is not used.
-* **Contributions** (votes, comments, suggestions, expenses) are stored under the signed-in user's id.
-* **Sessions** last a year, so people stay in when they come back.
-* **Administrator** (Bhargava): Crew tab → copy the invite link, make a new link, remove a member.
-  Removing a member cuts them off immediately. Making a new link stops the old one admitting new people.
-* **AI** (Ask AI, suggestion reviews) is administrator-only and needs `ANTHROPIC_API_KEY`.
-* No npm dependencies. Needs Node 22.13+.
+* Open the page, tap **I'm Sahith / Manoj / Bhargava**, and start planning: explore places, vote, comment,
+  suggest changes, log expenses (also on behalf of someone else).
+* Your inputs are saved in your browser straight away. **Crew → Send my updates** files them as a GitHub issue; a
+  workflow (`.github/workflows/site.yml`) merges them into `public/data/state.json` and redeploys, so everyone sees
+  each other's inputs about a minute later.
+* Claude Code reads `public/data/state.json` (people → posts, votes, comments, expenses), improves the plan, and
+  writes the result back to the same file (`itinerary`, `meta`, `reviews`, `decisions`, `bookings`).
+* Same pattern as `fundamentals-tracker` and `jobintel`: static site, Actions deploy, data in the repo.
 
-## Run locally
-```
-BASE_URL=http://localhost:3000 node server.js
-```
-The terminal prints an admin link and the invite link.
+## One-time setup
+Settings → Pages → Source: **GitHub Actions**. Then every push to `main` deploys. Site: https://bhargavaramkv.github.io/kerala-trip-hq/
 
-## Google sign-in (recommended)
-Google Cloud Console → APIs & Services → Credentials → Create OAuth client ID → Web application.
-Authorised redirect URI: `https://YOURAPP.fly.dev/auth/google/callback`. Put the client id/secret in the secrets above.
-Signing in with `OWNER_EMAIL` makes that account the administrator. Emails are only compared, never stored.
-
-## No Google? Name-only joining
-Set `ALLOW_ANON=1`. People join by typing a name. They are marked "Name only" in the Crew tab, and they
-need the same browser to come back. To become administrator without Google, open `/admin/<ADMIN_KEY>` once.
-
-## Start it (GitHub only, no setup)
-1. Open **https://codespaces.new/bhargavaramkv/kerala-trip-hq** and press *Create codespace*.
-2. Wait about a minute. The terminal prints a box with an **admin link**. Open it once: you become the administrator.
-3. In the app go to **Crew**, copy the invite message and post it in the group. Friends tap the link, enter their name, and they are in.
-
-Nothing else is needed: no secrets, no accounts. Port 8080 is made public automatically.
-Limits: a Codespace stops after idle time (Settings > Codespaces > idle timeout, up to 4 h; restart it from
-github.com/codespaces and the same link works again), the free tier is about 60 core-hours a month, and the data lives
-on the Codespace disk, so don't delete it. Optional extras via Codespaces secrets: `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET`/`OWNER_EMAIL`
-(verified Google sign-in) and `ANTHROPIC_API_KEY` (AI reviews, administrator only).
+## Notes
+* Identity is "pick your name". It is not verified, which is fine for three friends; the issue author is logged in `inputLog`.
+* Sending updates needs a free GitHub account (signed in once). Reading the site needs nothing.
+* `scripts/merge-inputs.mjs` validates and size-limits every update before merging; `node scripts/test-merge.mjs` tests it.

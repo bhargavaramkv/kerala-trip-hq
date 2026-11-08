@@ -1,0 +1,54 @@
+name: Site
+
+on:
+  push:
+    branches: [main]
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Tests
+        run: node scripts/test-merge.mjs && node --check public/shim.js
+      - name: Merge a crew update from the issue
+        if: github.event_name == 'issues'
+        run: node scripts/merge-inputs.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit merged data
+        if: github.event_name == 'issues'
+        run: |
+          if ! git diff --quiet -- public/data; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/data
+            git commit -m "Merge crew update (issue #${{ github.event.issue.number }})"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - id: deployment
+        uses: actions/deploy-pages@v4

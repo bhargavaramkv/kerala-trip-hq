@@ -196,10 +196,10 @@ table.t th{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spa
 
 <div id="app"><div class="boot">Loading Kerala Trip HQ…</div></div>
 
-<script src="/shim.js"></script>
-<script src="/vendor/preact.umd.js"></script>
-<script src="/vendor/hooks.umd.js"></script>
-<script src="/vendor/htm.umd.js"></script>
+<script src="shim.js"></script>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/hooks.umd.js"></script>
+<script src="vendor/htm.umd.js"></script>
 <script>
 (function(){
 "use strict";
@@ -902,7 +902,7 @@ function Home({go}){
         <button onClick=${()=>canContribute()?openSheet("expense",{}):go("budget")}>${ic(IC.wallet)}Expense</button>
         <button onClick=${()=>go("itinerary")}>${ic(IC.itin)}Day plan</button>
       </div>
-      ${waiting.length && s.mode==="live" ? html`<button class="card press banner ai" style="border:0;text-align:left" onClick=${()=>go("crew")}>${ic(IC.spark)}<div class="grow"><b>${waiting.length} new suggestion${waiting.length>1?"s":""} waiting for AI review</b><div class="small">${waiting.slice(0,2).map(p=>nameOf(p.by)+": "+clip(p.title,40)).join(" · ")}</div></div></button>`:null}
+      ${waiting.length && s.mode==="live" ? html`<button class="card press banner ai" style="border:0;text-align:left" onClick=${()=>go("crew")}>${ic(IC.spark)}<div class="grow"><b>${waiting.length} new suggestion${waiting.length>1?"s":""} waiting for Claude's review</b><div class="small">${waiting.slice(0,2).map(p=>nameOf(p.by)+": "+clip(p.title,40)).join(" · ")}</div></div></button>`:null}
       <div class="section-title"><h2>Pending decisions</h2><button class="link-btn" onClick=${()=>go("crew")}>Crew board</button></div>
       ${pend.length===0 ? html`<div class="small faint">Nothing waiting on a decision.</div>` : html`<div class="stack" style="gap:10px">${pend.slice(0,4).map(x=> x.kind==="poll" ? html`<${PollCard} poll=${x.poll} key=${x.poll.id}/>` : html`<button key=${x.post.id} class="card press" style="text-align:left" onClick=${()=>openSheet("post",{id:x.post.id})}><div class="row between"><b>${clip(x.post.title,60)}</b>${statusPill(x.post)}</div><div class="small muted">AI reviewed · waiting for the group and Bhargava</div></button>`)}</div>`}
       <div class="section-title"><h2>Bookings</h2><button class="link-btn" onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}>All</button></div>
@@ -1149,7 +1149,7 @@ function Board(){
   const reviewAll=async()=>{ setBusy(true); for(const p of waiting){ const ok=await runReview(p); if(!ok) break; } setBusy(false); };
   return html`<div class="stack">
     ${canContribute()?html`<button class="btn primary block" style="min-height:52px" onClick=${()=>openSheet("newpost",{})}>${ic(IC.plus)} Suggest something</button>`:null}
-    ${waiting.length&&s.mode==="live"?html`<div class="ai-box"><div class="row between"><b>${waiting.length} waiting for AI review</b>${ic(IC.spark)}</div><div class="small">Claude researches each idea against our dates, routes and budget, then recommends what to do. It runs on Bhargava's Claude account, automatically when he has the app open, or when he taps review.</div>${s.isOwner&&s.sampleOK&&canContribute()?html`<button class="btn ai" disabled=${busy} onClick=${reviewAll}>${busy?html`<span class="spinner"></span> Reviewing…`:"Review "+(waiting.length>1?"all "+waiting.length:"it")+" now"}</button>`:html`<div class="small">${s.isOwner?"AI isn't available in this view. Open a suggestion to add a manual review.":"Bhargava's app reviews new suggestions, or he runs it himself. You can keep adding ideas and comments."}</div>`}</div>`:null}
+    ${waiting.length&&s.mode==="live"?html`<div class="ai-box"><div class="row between"><b>${waiting.length} waiting for Claude's review</b>${ic(IC.spark)}</div><div class="small">Claude Code reads the crew's suggestions, comments and votes, checks them against our dates, routes and budget, and updates the plan.</div>${s.isOwner&&s.sampleOK&&canContribute()?html`<button class="btn ai" disabled=${busy} onClick=${reviewAll}>${busy?html`<span class="spinner"></span> Reviewing…`:"Review "+(waiting.length>1?"all "+waiting.length:"it")+" now"}</button>`:html`<div class="small">${s.isOwner?"AI isn't available in this view. Open a suggestion to add a manual review.":"Keep adding ideas and comments. Claude Code reviews them and improves the plan."}</div>`}</div>`:null}
     <div class="chips" role="tablist">${[{id:"all",label:"All"}].concat(CATS).map(c=>html`<button key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}>${c.color?html`<span class="dot" style=${{background:c.color}}></span>`:null}${c.label}</button>`)}</div>
     ${posts.length===0?html`<div class="card stack" style="gap:6px;text-align:center"><b>No suggestions${cat!=="all"?" here":""} yet</b><div class="small muted">Ideas for places, food, stays, routes or budget go here. Everyone can vote, react and comment, and the AI planner checks each one.</div></div>`:posts.map(p=>html`<${PostCard} p=${p} key=${p.id}/>`)}
   </div>`;
@@ -1272,22 +1272,19 @@ function FeedList({items, full}){
   return html`<div class="card list feed">${items.map((e,i)=>html`<div class="li" key=${i} style=${e.open?{cursor:"pointer"}:null} onClick=${e.open?()=>openSheet(e.open[0],e.open[1]):null}><${Avatar} id=${e.who} size="sm"/><div class="grow small"><b>${nameOf(e.who)}</b> ${e.text}${e.quote?html`<div class="muted">“${e.quote}”</div>`:null}<div class="tiny faint">${ago(e.at)}</div></div></div>`)}</div>`;
 }
 function Members(){
-  const s=useStore(); const all=Object.values(s.people).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); const [copied,setCopied]=useState(false); const [inv,setInv]=useState("");
-  useEffect(()=>{ if(s.isOwner) window.claude.inviteUrl().then(r=>setInv(r.url)).catch(()=>{}); },[s.isOwner]);
-  const msg=inv?"Join our Kerala trip planner: "+inv+"\nTap the link and you're in.":"";
-  const copy=async()=>{ try{ await navigator.clipboard.writeText(msg); setCopied(true); setTimeout(()=>setCopied(false),2000); }catch(e){ const el=document.getElementById("invite-msg"); if(el){ el.select(); } toast("Select the text and copy it"); } };
-  const regen=async()=>{ if(!confirm("Make a new invite link? The old link stops working for new people. Existing members stay in.")) return; try{ const r=await window.claude.regenerateInvite(); setInv(r.url); toast("New invite link created"); }catch(e){ toast(dbErr(e)); } };
+  const s=useStore(); const all=Object.values(s.people).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); const st=window.claude.static; const me=st.who();
+  const [sent,setSent]=useState(null); const pend=st.pending(); const up=st.updatedAt();
+  const send=()=>{ const r=st.sendUpdate(); setSent(r); window.open(r.url,"_blank","noopener"); };
   return html`<div class="stack">
-    ${all.length===0?html`<div class="card small muted">No one has joined yet.</div>`:null}
-    ${all.map(p=>{ const id=p._id; const rem=isRemoved(id); const n=(p.posts||[]).length; const pr=s.profiles[id]; const ver=pr&&pr.verified;
-      return html`<div class="card row" key=${id} style=${{opacity:rem?.55:1}}><${Avatar} id=${id} size="lg"/><div class="grow"><b style="font-size:17px">${nameOf(id)}</b> ${id===s.me?html`<span class="tag">You</span>`:null} ${pr?(ver?html`<span class="tag verified">Google</span>`:html`<span class="tag est">Name only</span>`):null}<div class="small muted">${roleOf(id)==="owner"?"Administrator":rem?"Removed":"Member"} · joined ${ago(p.joinedAt)} · ${n} contribution${n===1?"":"s"}</div></div>
-        ${s.isOwner&&id!==s.me?html`<button class="btn sm ${rem?"":"danger"}" onClick=${()=>ownerWrite("roster/"+id,{role:"member",status:rem?"active":"removed",at:Date.now()}).then(ok=>ok&&toast(rem?"Restored":"Removed. They can no longer open the trip."))}>${rem?"Restore":"Remove"}</button>`:null}</div>`; })}
-    ${s.people[s.me]?html`<button class="btn" onClick=${()=>openSheet("join",{edit:true})}>Change my display name</button>`:null}
-    ${s.isOwner?html`<div class="card stack" style="gap:8px"><div class="eyebrow">Invite link</div>
-      <div class="small">One link for everyone. Post it in the group chat; whoever opens it joins automatically. Add as many travellers as you like.</div>
-      <textarea id="invite-msg" class="field small" readonly value=${msg}></textarea>
-      <div class="row wrapr"><button class="btn primary sm" disabled=${!inv} onClick=${copy}>${copied?"Copied":"Copy invite message"}</button><button class="btn sm danger" onClick=${regen}>Make a new link</button></div>
-      <div class="tiny faint">Remove a member above to cut off their access. Making a new link only stops the old link from admitting new people.</div></div>`:null}
+    <div class="card stack" style="gap:8px;border-color:var(--brand)"><div class="eyebrow">You are ${me?me.name:""}</div>
+      <div class="small">Your votes, comments, suggestions and expenses show up here straight away. To share them with Sahith and Manoj (and so Claude can improve the plan), tap <b>Send my updates</b>, then press <b>Submit new issue</b> on the GitHub page that opens. Your updates appear for everyone about a minute later.</div>
+      <button class="btn primary block" onClick=${send}>${pend?"Send my updates":"Send again"}</button>
+      ${pend?html`<div class="tiny faint">You have changes the crew has not seen yet.</div>`:html`<div class="tiny faint">Everything you did is already sent.</div>`}
+      ${sent&&sent.pasted?html`<div class="banner warn small">Your update was too long to prefill, so it was copied. Paste it into the box on the GitHub page, then press Submit.</div>`:null}
+      <div class="tiny faint">Needs a free GitHub account, signed in once. ${up?"Crew data last updated "+ago(up)+".":"No crew updates have been merged yet."}</div>
+      <button class="link-btn small" style="align-self:flex-start" onClick=${()=>st.switchUser()}>Not ${me?me.name:"you"}? Switch person</button></div>
+    ${all.map(p=>{ const id=p._id; const n=(p.posts||[]).length+(p.expenses||[]).length; return html`<div class="card row" key=${id}><${Avatar} id=${id} size="lg"/><div class="grow"><b style="font-size:17px">${nameOf(id)}</b> ${me&&id===me.id?html`<span class="tag">You</span>`:null}<div class="small muted">${roleOf(id)==="owner"?"Trip owner":"Traveller"} · ${n} contribution${n===1?"":"s"}</div></div></div>`; })}
+    <div class="small faint">Not here yet? Sahith and Manoj appear once they open the page and pick their name.</div>
   </div>`;
 }
 function JoinSheet({edit}){
