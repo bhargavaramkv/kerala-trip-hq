@@ -1,0 +1,1452 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kerala Trip HQ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#1D5A3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one phone-width column of content on a leaf-tinted ground, fixed bottom tab bar, bottom sheets for every action; desktop centres the column. */
+:root{
+  --bg:#EDF2EA; --surface:#FBFDF9; --surface-2:#E2EBDD; --ink:#13241B; --ink-2:#4B5E53; --ink-3:#6E8275; --line:#D2DDCD;
+  --brand:#1D5A3E; --brand-ink:#F2F8F1; --leaf:#3C8B51; --laterite:#B0502A; --turmeric:#B97C0C; --sea:#1E6A7B;
+  --ok:#2D7A4C; --ok-bg:#DDEFE2; --warn:#8C600C; --warn-bg:#F7EBCB; --bad:#A93A3A; --bad-bg:#F6DEDB; --info:#1E6A7B; --info-bg:#D9ECEF; --ai:#5443A8; --ai-bg:#E7E3F8;
+  --shadow:0 1px 2px rgba(19,36,27,.06),0 8px 24px rgba(19,36,27,.08);
+  --map-sea:#CFE3E6; --map-land:#E9F0DF; --map-hill:#CFE0C3; --map-ink:#3B5246;
+  --f-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:18px; --nav-h:66px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1510; --surface:#13201A; --surface-2:#1B2C22; --ink:#E6EFE8; --ink-2:#A8BAAE; --ink-3:#83978A; --line:#27382E;
+  --brand:#84CF9F; --brand-ink:#0B1510; --leaf:#86CF97; --laterite:#E8906A; --turmeric:#EDB74B; --sea:#79C6D5;
+  --ok:#86D7A2; --ok-bg:#173525; --warn:#EDC266; --warn-bg:#382D11; --bad:#F2A097; --bad-bg:#3C1D1A; --info:#84CCDA; --info-bg:#11303A; --ai:#BDB2F5; --ai-bg:#262140;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1510; --surface:#13201A; --surface-2:#1B2C22; --ink:#E6EFE8; --ink-2:#A8BAAE; --ink-3:#83978A; --line:#27382E;
+  --brand:#84CF9F; --brand-ink:#0B1510; --leaf:#86CF97; --laterite:#E8906A; --turmeric:#EDB74B; --sea:#79C6D5;
+  --ok:#86D7A2; --ok-bg:#173525; --warn:#EDC266; --warn-bg:#382D11; --bad:#F2A097; --bad-bg:#3C1D1A; --info:#84CCDA; --info-bg:#11303A; --ai:#BDB2F5; --ai-bg:#262140;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  --map-sea:#10303A; --map-land:#1A2A20; --map-hill:#21382A; --map-ink:#B9CDBF; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,input,textarea,select{font:inherit;color:inherit}
+a{color:var(--sea)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12;letter-spacing:-.01em}
+.app{max-width:560px;margin:0 auto;min-height:100%;overflow-x:clip;padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom,0px))}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.stack{display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:10px;align-items:center}
+.row.wrapr{flex-wrap:wrap}
+.between{justify-content:space-between}
+.grow{flex:1;min-width:0}
+.muted{color:var(--ink-2)} .faint{color:var(--ink-3)} .small{font-size:13px} .tiny{font-size:12px}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.page-head{padding-top:18px;padding-bottom:6px}
+.page-head h1{font-size:30px;font-weight:800}
+.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:10px}
+.section-title h2{font-size:20px;font-weight:800}
+.link-btn{background:none;border:0;padding:6px 0;color:var(--sea);font-weight:600;cursor:pointer;min-height:36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.card.tight{padding:12px}
+.card.press{cursor:pointer;transition:transform .15s ease}
+.card.press:active{transform:scale(.985)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-weight:600;cursor:pointer}
+.btn.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn.ai{background:var(--ai);color:var(--surface);border-color:var(--ai)}
+.btn.danger{color:var(--bad);border-color:var(--bad)}
+.btn.block{width:100%}
+.btn.sm{min-height:38px;padding:0 12px;font-size:14px;border-radius:12px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn:focus-visible,.chip:focus-visible,.navbtn:focus-visible,.icon-btn:focus-visible,.seg button:focus-visible{outline:3px solid var(--turmeric);outline-offset:2px}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--ink-2)}
+.icon-btn svg,.btn svg{width:20px;height:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:0 14px;min-height:38px;display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-weight:500;font-size:14px}
+.chip.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700;white-space:nowrap}
+.pill.ok{background:var(--ok-bg);color:var(--ok)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)} .pill.info{background:var(--info-bg);color:var(--info)} .pill.ai{background:var(--ai-bg);color:var(--ai)} .pill.neutral{background:var(--surface-2);color:var(--ink-2)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.04em;border-radius:6px;padding:1px 6px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.tag.listed{background:var(--info-bg);color:var(--info)} .tag.est{background:var(--warn-bg);color:var(--warn)} .tag.verified{background:var(--ok-bg);color:var(--ok)} .tag.gk{background:var(--ai-bg);color:var(--ai)}
+.seg{display:flex;gap:4px;background:var(--surface-2);border-radius:14px;padding:4px;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:1 0 auto;border:0;background:transparent;border-radius:10px;min-height:38px;padding:0 12px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:2px 16px 6px;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.scroller>*{scroll-snap-align:start;flex:none}
+.av{width:32px;height:32px;border-radius:50%;flex:none;display:inline-grid;place-items:center;overflow:hidden;font-weight:700;font-size:13px;color:#fff;border:2px solid var(--surface)}
+.av img{width:100%;height:100%;object-fit:cover}
+.av.lg{width:52px;height:52px;font-size:20px}
+.av.sm{width:24px;height:24px;font-size:11px;border-width:1.5px}
+.avs{display:flex}.avs .av+.av{margin-left:-8px}
+.bar{height:10px;background:var(--surface-2);border-radius:99px;overflow:hidden;display:flex}
+.bar>span{height:100%;display:block}
+.scene{position:relative;overflow:hidden;background:var(--surface-2)}
+.scene>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+input.field,textarea.field,select.field{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px;min-height:46px;font-size:16px}
+textarea.field{min-height:92px;resize:vertical}
+label.lbl{font-weight:600;font-size:14px;display:block;margin-bottom:6px}
+.banner{border-radius:14px;padding:12px 14px;font-size:14px;display:flex;gap:10px;align-items:flex-start}
+.banner.info{background:var(--info-bg);color:var(--info)} .banner.warn{background:var(--warn-bg);color:var(--warn)} .banner.ai{background:var(--ai-bg);color:var(--ai)}
+.list{display:flex;flex-direction:column}
+.list>.li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);align-items:flex-start}
+.list>.li:first-child{border-top:0}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0;min-width:0}
+ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+/* hero */
+.hero{position:relative;height:300px;border-radius:0 0 28px 28px;overflow:hidden;color:#fff}
+.hero .scene{position:absolute;inset:0}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,24,16,.0) 25%,rgba(8,24,16,.72) 100%)}
+.hero .in{position:absolute;left:0;right:0;bottom:0;padding-bottom:18px}
+.hero h1{font-size:40px;font-weight:800;letter-spacing:-.02em}
+.hero .tagline{font-size:16px;opacity:.92;margin-top:4px}
+.count{display:flex;gap:8px;margin-top:12px}
+.count div{background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:6px 10px;min-width:62px;text-align:center}
+.count b{font-family:var(--f-display);font-size:22px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.count span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.quick button{border:1px solid var(--line);background:var(--surface);border-radius:16px;min-height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
+.quick svg{width:22px;height:22px;color:var(--brand)}
+/* destination cards */
+.dcard{width:min(78vw,300px);border-radius:20px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0}
+.dcard .scene{height:150px}
+.dcard .body{padding:12px 14px}
+.dbig{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);cursor:pointer;text-align:left;padding:0;width:100%}
+.dbig .scene{height:190px}
+.dbig .body{padding:14px}
+.dbig h3{font-size:24px;font-weight:800}
+.plan-badge{position:absolute;top:12px;left:12px;background:rgba(10,30,20,.62);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px;backdrop-filter:blur(4px)}
+/* itinerary */
+.day{border-radius:20px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.day-head{display:flex;gap:12px;align-items:center;padding:14px;cursor:pointer;width:100%;background:none;border:0;text-align:left}
+.datebox{width:54px;flex:none;border-radius:14px;background:var(--brand);color:var(--brand-ink);text-align:center;padding:6px 0}
+.datebox b{font-family:var(--f-display);font-size:24px;display:block;line-height:1}
+.datebox span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.day-body{padding:0 14px 14px;display:flex;flex-direction:column;gap:14px}
+.travel{display:flex;gap:10px;align-items:center;background:var(--surface-2);border-radius:12px;padding:10px 12px;font-size:14px}
+.travel svg{width:20px;height:20px;color:var(--sea);flex:none}
+.slot h4{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.item{display:flex;gap:10px;width:100%;text-align:left;background:none;border:0;padding:9px 0;border-top:1px dashed var(--line);cursor:pointer;align-items:flex-start}
+.slot .item:first-of-type{border-top:0}
+.item .t{width:48px;flex:none;font-weight:700;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums;padding-top:1px}
+.item .meta{display:flex;gap:8px;margin-top:4px;font-size:12px;color:var(--ink-3)}
+.costline{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;color:var(--ink-2)}
+/* posts */
+.post{display:flex;flex-direction:column;gap:8px}
+.post h3{font-size:17px;font-weight:700;font-family:var(--f-body);letter-spacing:0}
+.actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.act{border:1px solid var(--line);background:var(--surface);border-radius:999px;min-height:36px;padding:0 12px;display:inline-flex;gap:6px;align-items:center;cursor:pointer;font-size:14px;font-weight:600}
+.act.on{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+.act.onbad{background:var(--bad-bg);color:var(--bad);border-color:transparent}
+.act svg{width:16px;height:16px}
+.comment{display:flex;gap:10px}
+.comment .bubble{background:var(--surface-2);border-radius:4px 14px 14px 14px;padding:8px 12px;min-width:0;flex:1}
+.replies{margin-left:42px;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.composer{display:flex;gap:8px;align-items:flex-end}
+.composer textarea{min-height:46px;height:46px}
+/* AI */
+.ai-box{border:1px solid var(--ai);border-radius:16px;padding:14px;background:var(--ai-bg);display:flex;flex-direction:column;gap:10px}
+.ai-box h4{margin:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ai)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmp>div{background:var(--surface);border-radius:12px;padding:10px;font-size:14px;min-width:0}
+.spinner{width:18px;height:18px;border-radius:50%;border:2.5px solid currentColor;border-right-color:transparent;animation:spin .8s linear infinite;display:inline-block;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);height:var(--nav-h)}
+.navbtn{border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;font-weight:600;color:var(--ink-3);cursor:pointer;position:relative}
+.navbtn svg{width:24px;height:24px}
+.navbtn .ic{display:grid;place-items:center;width:52px;height:30px;border-radius:99px;transition:background .2s}
+.navbtn.on{color:var(--brand)}
+.navbtn.on .ic{background:var(--surface-2)}
+.navbtn .badge{position:absolute;top:6px;left:calc(50% + 8px);background:var(--laterite);color:#fff;border-radius:99px;font-size:10px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px}
+/* sheets */
+.sheet-bg{position:fixed;inset:0;z-index:40;background:rgba(6,16,10,.48);display:flex;align-items:flex-end;justify-content:center;animation:fade .18s ease}
+.sheet{width:100%;max-width:560px;max-height:92%;background:var(--bg);border-radius:24px 24px 0 0;display:flex;flex-direction:column;animation:up .26s cubic-bezier(.2,.8,.2,1);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet-head{display:flex;align-items:center;gap:8px;padding:14px max(16px,env(safe-area-inset-left,0px)) 6px;position:relative}
+.sheet-head h2{font-size:20px;font-weight:800;flex:1;min-width:0}
+.grab{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:40px;height:4px;border-radius:9px;background:var(--line)}
+.sheet-body{overflow-y:auto;padding:6px max(16px,env(safe-area-inset-right,0px)) 22px max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:14px;overscroll-behavior:contain}
+@keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+@keyframes fade{from{opacity:0}}
+.toasts{position:fixed;left:0;right:0;bottom:calc(var(--nav-h) + 14px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none;padding:0 16px}
+.toast{background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 16px;font-weight:600;font-size:14px;box-shadow:var(--shadow);max-width:520px}
+.boot{padding:40px 20px;text-align:center;color:var(--ink-2)}
+.feed .li .av{margin-top:2px}
+.donut-wrap{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center}
+.legend{display:flex;flex-direction:column;gap:7px;font-size:14px}
+.legend div{display:flex;gap:8px;align-items:center}
+.legend .v{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:600}
+.table-wrap{overflow-x:auto}
+table.t{border-collapse:collapse;width:100%;font-size:14px}
+table.t th,table.t td{text-align:left;padding:9px 8px;border-top:1px solid var(--line);vertical-align:top}
+table.t th{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;border-top:0}
+.map svg{width:100%;height:auto;display:block}
+.route{fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7 6;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-26}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media (min-width:600px){.hero{border-radius:0 0 28px 28px;margin-top:0}}
+</style>
+
+<div id="app"><div class="boot">Loading Kerala Trip HQ…</div></div>
+
+<script src="/shim.js"></script>
+<script src="/vendor/preact.umd.js"></script>
+<script src="/vendor/hooks.umd.js"></script>
+<script src="/vendor/htm.umd.js"></script>
+<script>
+(function(){
+"use strict";
+const {h, render} = preact;
+const {useState, useEffect, useMemo, useRef} = preactHooks;
+const html = htm.bind(h);
+
+/* ====================================================================
+   1. TRIP RESEARCH (content carried over from the research doc)
+   ==================================================================== */
+const SHARE_URL = location.origin;
+const DEPART_AT = Date.parse("2026-12-21T19:00:00+05:30");
+const TRIP_END = Date.parse("2026-12-27T09:00:00+05:30");
+const BASELINE = 48840; // research doc (revised): Plan A budget version, group total incl. 10% contingency (₹16,280 pp)
+const CONTINGENCY = 0.10;
+const BUDGET_CATS = [
+  {id:"transport", label:"Transport", color:"#1E6A7B"},
+  {id:"stays", label:"Stays", color:"#3C8B51"},
+  {id:"food", label:"Food", color:"#C98A12"},
+  {id:"activities", label:"Activities", color:"#B0502A"},
+  {id:"misc", label:"Misc", color:"#7C6BBF"}
+];
+const CATS = [
+  {id:"destination", label:"Destinations", color:"#3C8B51"},
+  {id:"activity", label:"Activities", color:"#B0502A"},
+  {id:"food", label:"Food", color:"#C98A12"},
+  {id:"stay", label:"Accommodation", color:"#1D5A3E"},
+  {id:"transport", label:"Transportation", color:"#1E6A7B"},
+  {id:"budget", label:"Budget", color:"#7C6BBF"},
+  {id:"other", label:"Other ideas", color:"#6E8275"}
+];
+const SLOTS = [["morning","Morning"],["afternoon","Afternoon"],["evening","Evening"],["optional","Optional"]];
+
+const L = (u, t) => ({u, t});
+const SRC = {
+  trekgo: L("https://trekgo.in/blog/how-to-reach-munnar-from-bangalore-and-kochi-airport","TrekGo"),
+  transr: L("https://transrentals.in/outstation-cab/kochi","Transrentals"),
+  hosteller: L("https://www.thehosteller.com/blogs/how-to-reach-vagamon","The Hosteller"),
+  hostNear: L("https://www.thehosteller.com/blogs/places-to-visit-near-vagamon","The Hosteller"),
+  munnarcom: L("https://munnar.com/Eravikulam-national-park.htm","Munnar.com"),
+  munnarReach: L("https://munnar.com/how-to-reach-munnar","Munnar.com"),
+  paradiseHB: L("https://paradise-kerala.com/blog/?p=10139","Paradise Kerala"),
+  paradiseCrowd: L("https://paradise-kerala.com/blog/?p=10096","Paradise Kerala"),
+  kumarakomHB: L("https://kumarakom.com/houseboats","Kumarakom.com"),
+  onmanorama: L("https://www.onmanorama.com/travel/kerala/2025/12/26/kumarakom-new-year-holiday-season.html","Onmanorama"),
+  kilikkoodu: L("https://www.onmanorama.com/food/features/2023/09/14/kilikkoodu-shaap-toddy-shop-kumarakom-curries-delicious.html","Onmanorama"),
+  spiceRoute: L("https://layla.ai/trip/wagamon-winter-getaway%3A-nature-and-adventure-awaits!/01JDS014AW9729E7HB6YVTGFJR","Layla"),
+  unstumbled: L("https://www.theunstumbled.com/?p=35731","Unstumbled"),
+  happyfares: L("https://happyfares.in/blog/cochin-carnival-2026-fort-kochi-new-year/","HappyFares"),
+  thrillo: L("https://www.thrillophilia.com/best-homestays-in-kochi","Thrillophilia"),
+  homestay: L("https://travell-xyz.pages.dev/kochi/best-homestays-in-fort-kochi","2026 homestay guide"),
+  layla: L("https://layla.ai/hotels/accommodation-in-munnar%2C-india-from-december-27-30%2C-2025/01JN3VY6G5VZ9TY785KHW3XY7M","Layla"),
+  expediaV: L("https://www.expedia.com/es/Peermade-Hoteles-VAASTA-Vagamon.h118333817.Informacion-Hotel","Expedia"),
+  adaniV: L("https://www.adanione.com/india-hotels/woodcastle-residency-vagamon-3964392","Adani One"),
+  kondody: L("https://kondodyhotels.com/greenwoods-resort-tea-woods-02-nights-munnar-01-night-thekkady-package.html","Kondody Hotels"),
+  fog: L("https://www.expedia.com/es/Udumbanchola-Hoteles-The-Fog-Munnar-Resorts-Spa.h10347815.Informacion-Hotel","Expedia"),
+  t12684: L("https://www.totaltraininfo.com/train/12684/schedule","TotalTrainInfo"),
+  rm12684: L("https://www.railmitra.com/train-schedule/12684","RailMitra"),
+  erail: L("https://erail.in/trains-between-stations/ernakulam-jn-ERS/mysore-jn-MYS","erail"),
+  ctkt16316: L("https://www.confirmtkt.com/train-schedule/16316--KCVL-MYS-EXP","ConfirmTkt"),
+  tk16316: L("https://www.travelkhana.com/travelkhana/track-train/16316-Kochuveli---Mysuru-Express","Travelkhana"),
+  t16525: L("https://www.totaltraininfo.com/train/16525/schedule","TotalTrainInfo"),
+  ts16525: L("https://www.tripshrip.com/trains/16525-kanyakumari-ksr-bengaluru-express","TripShrip"),
+  mmt: L("https://www.makemytrip.com/bus-tickets/ksrtc-kerala-state-road-transport-corporation-from-ernakulam-to-bangalore-online-bus-tickets.html","MakeMyTrip"),
+  kaumudi: L("https://keralakaumudi.com/en/news/news.php?id=1666913","Kerala Kaumudi"),
+  t12683: L("https://www.totaltraininfo.com/train/12683/schedule","TotalTrainInfo"),
+  irctc: L("https://www.irctc.co.in","IRCTC"),
+  goibibo: L("https://goibibo.com/trains/ernakulam-sfexp-12684-detail","Goibibo"),
+  rome2rio: L("https://www.rome2rio.com/s/Kadavanthara/Munnar","Rome2rio"),
+  cabbazar: L("https://cabbazar.com/taxi/cab/kumarakom-to-munnar","CabBazar"),
+  mts: L("https://munnartaxiservice.com/book-taxi-cochin-munnar-thekkady-alleppey-kovalam-kaniyakumari-trivandrum-cochin-7nights8days.html","Munnar Taxi Service"),
+  ktdc: L("https://www.keralatourism.org","Kerala Tourism"),
+  ersInfo: L("https://erail.in/info/ernakulam-railway-station-ERS","erail")
+};
+
+const DEST = [
+  {id:"munnar", name:"Munnar", plan:"A", scene:"tea", tagline:"Tea-carpeted hills at about 1,600 m",
+   about:"Rolling tea estates, cool December air and the Nilgiri tahr of Eravikulam. The long climb happens on arrival day, when no hotel would release a room at 06:00 anyway.",
+   why:["The classic Kerala hill landscape: tea estates in every direction","Eravikulam National Park and its Nilgiri tahr","Its main sights don't depend on the weather","We leave before the 24 Dec resort gala-dinner surcharges"],
+   exp:[["Kolukkumalai sunrise jeep","About 2 h up a rough track from 04:45; one jeep for three (Est. ₹4,000)","est"],["Eravikulam National Park, Rajamala","Forest bus up, then a walk. Open 07:30–16:00. ₹200 + ₹50 booking each","listed",SRC.munnarcom],["Tata Tea Museum","Afternoon of day 1",""],["Mattupetty Dam, Echo Point, Kundala Lake","Easy afternoon loop",""],["Pothamedu viewpoint","Sunset over the tea estates",""]],
+   gems:[["Marayoor and Chinnar","Sandalwood country, megalithic dolmens and dry rain-shadow forest east of Munnar. About 6 h round trip; current Chinnar entry rules unconfirmed."],["Cheeyappara and Valara waterfalls","Roadside falls on the climb up from Kochi, a 30-minute stop"]],
+   time:"2 nights (22–23 Dec)",
+   dist:[["Ernakulam Jn","125 km · 3.5–4 h","listed",SRC.trekgo],["Alleppey jetty","about 180 km via Kochi · 5–5.5 h","est",SRC.transr],["Thekkady","90 km · about 3 h","listed",SRC.munnarReach]],
+   stays:[["Tea-estate stay 5–10 km out of town","Chithirapuram, Pallivasal or Devikulam: quieter than the bazaar","",null],["Names with good guest ratings","Ama Stays and Trails, Windermere Estate, Zenha Resorts, The Tall Trees","listed",SRC.layla],["Rate for three","₹7,000–8,000 per night","est",null]],
+   food:[["Christmas duck roast and plum cake","Most hotels serve them in Christmas week","listed",SRC.unstumbled],["Highway breakfast","Kothamangalam or Neriamangalam on the way up","",null]],
+   cost:"Our plan: ₹6,000 for 2 nights in a triple room, plus about ₹1,200 of entries and a ₹2,500 jeep day (Est.). Mid-range: about ₹15,000 for 2 nights",
+   pros:["Iconic scenery","Weather-proof activities","Uses the dead first morning for the drive"],
+   cons:["Among the busiest places at year end","Ghat roads after a night train","Early starts for the best of it"]},
+  {id:"alleppey", name:"Alleppey", plan:"A", scene:"houseboat", tagline:"Christmas Eve on the backwaters",
+   about:"An overnight kettuvallam houseboat on the Vembanad backwaters, with every meal cooked on board. Christmas Eve dinner on the water.",
+   why:["Meals included, so Christmas Eve costs no extra","The defining Kerala experience","Close to Fort Kochi for Christmas Day"],
+   exp:[["Overnight houseboat cruise","Board about 13:00, cruise until 17:30, moor for the night",""],["Village walk at the mooring","Sunset along the paddy bunds",""],["Karimeen on board","Ask the cook for pearl-spot fish for Christmas Eve",""]],
+   gems:[["Choose a licensed boat","KBOA-certified or KTDC boats; ask for photos of the actual boat"]],
+   time:"1 night (24 Dec)",
+   dist:[["Munnar","about 180 km · 5–5.5 h","est",SRC.transr],["Fort Kochi","55–60 km · 1.5–2 h, longer on Christmas Day","listed",SRC.transr]],
+   stays:[["1-bedroom boat in December","₹8,000–14,000","listed",SRC.paradiseHB],["For 24 Dec with an extra bed","₹14,000–18,000","est",null],["AC hours","Deluxe AC usually runs only 21:00–06:00","",SRC.ktdc]],
+   food:[["All meals on board","Lunch, snacks, dinner and breakfast are included","",null]],
+   cost:"Our plan: cheapest licensed 1BR, about ₹10,000 (Est.). Mid-range: about ₹16,000",
+   pros:["Meals included","Christmas Eve on the water","Sets up an easy Christmas Day"],
+   cons:["AC limited to night hours","Anonymous portal listings and scams","Sells out first"]},
+  {id:"fortkochi", name:"Fort Kochi", plan:"A+B", scene:"nets", tagline:"Fishing nets, churches and Christmas lights",
+   about:"The old port quarter: Chinese fishing nets at sunset, centuries-old churches, Jew Town and Kathakali. It ends the trip 30–60 minutes from the return train.",
+   why:["Christmas Day atmosphere on Princess Street","Close to the return train","A full Saturday before a late departure"],
+   exp:[["Santa Cruz Basilica and St Francis Church","Afternoon of 25 Dec",""],["Chinese fishing nets at sunset","17:30 on the beach front",""],["Jew Town and Mattancherry Palace","Saturday morning; the palace is thought to close on Fridays (verify)",""],["Kathakali at the Kerala Kathakali Centre","17:00 on Saturday",""],["Princess Street lights","Christmas night",""]],
+   gems:[["Kumbalangi fishing village","About 1.5 h round trip by cab on Saturday afternoon"],["Ferry to Ernakulam","₹6 a person, 20 minutes"]],
+   time:"1 night (25 Dec) + Saturday",
+   dist:[["Ernakulam Jn","about 12 km · 30–60 min by road","listed",SRC.ersInfo],["Alleppey","55–60 km · 1.5–2 h","listed",SRC.transr],["Kumarakom","about 70 km · 2–2.5 h","est",null]],
+   stays:[["The Old Courtyard","Princess Street, from ₹5,400 a night","listed",SRC.thrillo],["Walton's Homestay","₹2,000–4,000 off-peak","listed",SRC.homestay],["Old Harbour Hotel","₹5,000–12,000","listed",SRC.homestay],["Rate for Christmas night","₹8,000–10,000 for three","est",null]],
+   food:[["Fort House","Waterfront seafood","",null],["Ask about Christmas dinner charges","A hotel may add a compulsory one on the 25th (₹3,000–4,500 per adult)","listed",SRC.fog]],
+   cost:"Our plan: about ₹4,500 for the night (Est.). Mid-range: about ₹9,000",
+   pros:["Close to the station","Christmas atmosphere","Walkable"],
+   cons:["Christmas Day traffic on the Goshree bridges","Synagogue closed Fri and Sat (verify)","Cochin Carnival 2026 dates unconfirmed"]},
+  {id:"vagamon", name:"Vagamon", plan:"B", scene:"meadow", tagline:"Meadows, pine forest and paragliding",
+   about:"Open grassy hills and pine forest at about 1,100 m, quieter than Munnar, with tandem paragliding at Kolahalamedu.",
+   why:["Far fewer year-end crowds than Munnar","Paragliding over the meadows","Cheaper stays"],
+   exp:[["Tandem paragliding, Kolahalamedu","About 20 min, 4 km from town. ₹3,000–4,500 each. Wind-dependent","listed",null],["Vagamon Meadows and the pine forest","Afternoon of day 1",""],["Kurisumala Ashram","A quiet hilltop monastery",""],["Marmala waterfall","Reached through forest",""]],
+   gems:[["Tea-estate walk at dusk","Day 2 evening"]],
+   time:"2 nights (22–23 Dec)",
+   dist:[["Ernakulam Jn","100–110 km · 3.5–4.5 h","listed",SRC.hosteller],["Kumarakom","76 km · about 2 h","listed",SRC.hostNear],["Alleppey","98 km · about 3 h","listed",SRC.hostNear]],
+   stays:[["Names seen on listings","VAASTA Vagamon, Voye Homes Whitestone Cottage, Winter Vale Green Stay, Woodcastle Residency (prices not seen)","listed",SRC.expediaV],["Rate for three","₹5,000–6,500 per night","est",null]],
+   food:[["The Spice Route","Kerala meals","listed",SRC.spiceRoute]],
+   cost:"About ₹11,000 for 2 nights + ₹12,250 activities incl. paragliding (Est.)",
+   pros:["Quieter","Paragliding","Shorter hops between bases"],
+   cons:["Paragliding cancelled in strong wind or fog","Fewer headline sights"]},
+  {id:"kumarakom", name:"Kumarakom", plan:"B", scene:"lake", tagline:"Lake village on Vembanad",
+   about:"Houseboats on the open lake, a bird sanctuary and the best toddy-shop food in Kuttanad.",
+   why:["Open-lake houseboat cruise","Bird sanctuary","Kuttanad toddy-shop food"],
+   exp:[["Kumarakom Bird Sanctuary","Short visit before boarding",""],["Lake houseboat","Board 12:30, cruise lake and canals, moor at dusk",""],["Kilikkoodu toddy shop","Karimeen, duck and 'shaap' curries","listed",SRC.kilikkoodu]],
+   gems:[["Dawn village walk from the mooring","07:00 on Christmas morning"]],
+   time:"1 night (24 Dec)",
+   dist:[["Vagamon","76 km · about 2 h","listed",SRC.hostNear],["Fort Kochi","about 70 km · 2–2.5 h","est",null]],
+   stays:[["Peak 1BR deluxe / premium","₹13,500 / ₹18,000","listed",SRC.kumarakomHB],["Peak 2BR luxury","₹32,000","listed",SRC.kumarakomHB]],
+   food:[["Kilikkoodu","Toddy-shop meal","listed",SRC.kilikkoodu]],
+   cost:"About ₹16,000 for the boat (Est.)",
+   pros:["Calmer than Alleppey","Bird life","Great local food"],
+   cons:["Every room was booked 23 Dec–3 Jan last year","Fallback to Alleppey adds about 1 h of driving"]}
+];
+const CUT = [
+  ["Thekkady","90 km and about 3 h from Munnar; forces a third hill base into four nights.",SRC.munnarReach],
+  ["Wayanad","About 6 h each way from Ernakulam (estimate) and closer to Bengaluru than to our arrival station.",null],
+  ["Varkala and Kovalam","Far south of Ernakulam, New Year party crowds, and they end far from the return train.",SRC.paradiseCrowd]
+];
+
+function I(id,t,text,extra){ return Object.assign({id,t,text},extra||{}); }
+const PLAN_A = [
+  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and climb",base:"Munnar",
+   stay:"Tea-estate stay near Munnar (Est. ₹7,500)",
+   travel:{text:"Ernakulam Jn → Munnar",km:"125 km",time:"3.5–4 h",basis:"listed"},
+   slots:{morning:[I("a1-1","06:00","Arrive Ernakulam Jn on 12684; driver waits at the exit, bags straight into the car"),I("a1-2","06:30","Leave on NH85"),I("a1-3","08:00","Breakfast at Kothamangalam or Neriamangalam"),I("a1-4","09:15","Cheeyappara and Valara waterfall viewpoints, 30 min"),I("a1-5","11:30","Reach Munnar, leave bags, ask for early check-in")],
+     afternoon:[I("a1-6","13:00","Lunch in town"),I("a1-7","14:30","Tata Tea Museum"),I("a1-8","16:30","Pothamedu viewpoint over the tea estates")],
+     evening:[I("a1-9","19:00","Early dinner, in bed by 21:30 after the overnight train")],optional:[]},
+   food:"Highway breakfast stop; hotel dinner",
+   cost:{transport:5000,stays:7500,food:2700,activities:500,misc:500}},
+  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Munnar's big day",base:"Munnar",
+   stay:"Same Munnar stay",travel:{text:"Local sightseeing",km:"about 60 km",time:"in short hops",basis:"est"},
+   slots:{morning:[I("a2-1","04:45","Kolukkumalai sunrise jeep, about 2 h up a rough track",{opt:true}),I("a2-2","09:30","Back for breakfast"),I("a2-3","11:00","Eravikulam National Park at Rajamala: forest bus up, Nilgiri tahr walk")],
+     afternoon:[I("a2-4","13:30","Lunch"),I("a2-5","15:00","Mattupetty Dam, Echo Point and Kundala Lake loop")],
+     evening:[I("a2-6","19:00","Early night")],
+     optional:[I("a2-7","","Hidden-gem swap: Marayoor and Chinnar instead of Eravikulam (about 6 h round trip)")]},
+   food:"Skip Kolukkumalai if tired and take the first 08:30 Eravikulam slot instead",
+   cost:{transport:5000,stays:7500,food:2700,activities:4750,misc:500}},
+  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Hills to backwaters",base:"Alleppey houseboat",
+   stay:"Alleppey houseboat, all meals included (Est. ₹16,000)",
+   travel:{text:"Munnar → Alleppey jetty via Kochi",km:"about 180 km",time:"5–5.5 h with stops",basis:"est"},
+   slots:{morning:[I("a3-1","07:30","Check out"),I("a3-2","09:30","Tea stop at Kothamangalam")],
+     afternoon:[I("a3-3","12:30","Reach the Alleppey boat jetty"),I("a3-4","13:00","Board the houseboat, lunch on board"),I("a3-5","14:00","Cruise until about 17:30")],
+     evening:[I("a3-6","17:30","Moor, village walk, sunset"),I("a3-7","20:00","Christmas Eve dinner on board: ask the cook for karimeen")],optional:[]},
+   food:"Houseboat meals included. Take one overnight bag",
+   cost:{transport:5000,stays:16000,food:1200,activities:0,misc:500}},
+  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
+   stay:"Fort Kochi heritage hotel or homestay (Est. ₹9,000)",
+   travel:{text:"Alleppey → Fort Kochi",km:"55–60 km",time:"1.5–2 h, longer on Christmas Day",basis:"listed"},
+   slots:{morning:[I("a4-1","08:30","Breakfast on board"),I("a4-2","09:00","Disembark, cab to Fort Kochi"),I("a4-3","11:30","Arrive, bags to the hotel (rooms usually from 14:00)")],
+     afternoon:[I("a4-4","13:00","Lunch"),I("a4-5","15:00","Santa Cruz Basilica and St Francis Church"),I("a4-6","17:30","Chinese fishing nets at sunset")],
+     evening:[I("a4-7","19:30","Princess Street lights, dinner, Christmas Day crowds")],
+     optional:[I("a4-8","","Cochin Carnival events (2026 dates unconfirmed)")]},
+   food:"Fort House for waterfront seafood",
+   cost:{transport:5000,stays:9000,food:2700,activities:0,misc:500}},
+  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
+   stay:"Night on the train",travel:{text:"Fort Kochi → Ernakulam Jn",km:"about 12 km",time:"30–60 min by cab (Est. ₹500–700)",basis:"listed"},
+   slots:{morning:[I("a5-1","08:00","Breakfast"),I("a5-2","10:00","Jew Town and Mattancherry Palace (verify opening days)"),I("a5-3","12:00","Check out; bags stay at the hotel")],
+     afternoon:[I("a5-4","12:30","Lunch"),I("a5-5","14:30","Kumbalangi fishing village by cab, about 1.5 h round trip",{opt:true})],
+     evening:[I("a5-6","17:00","Kathakali at the Kerala Kathakali Centre"),I("a5-7","18:15","Collect bags, cab to Ernakulam Jn"),I("a5-8","19:30","At the station, dinner"),I("a5-9","20:35","Return train 16316 (time to confirm on IRCTC; not booked yet)")],optional:[]},
+   food:"Station dinner or a packed meal",
+   cost:{transport:3900,stays:0,food:2700,activities:1250,misc:500}}
+];
+const PLAN_AB = [
+  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and bus up to Munnar",base:"Munnar",
+   stay:"Triple room in Old Munnar (Est. ₹3,000)",
+   travel:{text:"Ernakulam Jn → Munnar by KSRTC bus",km:"125 km",time:"2–4 h on the bus",basis:"listed"},
+   slots:{morning:[I("c1-1","06:00","Arrive Ernakulam Jn on 12684"),I("c1-2","06:20","Auto to the KSRTC stand, 1.6 km (₹100–150)"),I("c1-3","07:00","First Munnar bus, ₹140–230 each; bus times for 22 Dec not verified")],
+     afternoon:[I("c1-4","12:00","Reach Old Munnar, check in to the triple room"),I("c1-5","13:00","Banana-leaf lunch (₹80–120 each)"),I("c1-6","15:00","Walk to the Tata Tea Museum (₹150 each)")],
+     evening:[I("c1-7","19:00","Early night after the train")],optional:[]},
+   food:"Banana-leaf lunch in town; simple dinner",
+   cost:{transport:1000,stays:3000,food:1800,activities:450,misc:600}},
+  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Jeep day around Munnar",base:"Munnar",
+   stay:"Same Munnar room",travel:{text:"Full-day jeep for three",km:"about 60 km",time:"in short hops",basis:"est"},
+   slots:{morning:[I("c2-1","07:30","Eravikulam National Park, first slot booked online (₹250 each)")],
+     afternoon:[I("c2-2","13:00","Lunch"),I("c2-3","14:30","Mattupetty Dam (₹20) and Echo Point")],
+     evening:[I("c2-4","19:00","Dinner in town")],
+     optional:[I("c2-5","","Save about ₹2,000: local buses at ₹15–40 a leg instead of the jeep"),I("c2-6","","Upgrade: Kolukkumalai sunrise jeep (Est. ₹4,000)")]},
+   food:"Local meals, about ₹600 per person a day",
+   cost:{transport:2500,stays:3000,food:1800,activities:750,misc:600}},
+  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Down to the backwaters",base:"Alleppey houseboat",
+   stay:"Cheapest licensed 1BR houseboat, meals included (Est. ₹10,000)",
+   travel:{text:"Munnar → Ernakulam → Alleppey by bus",km:"about 180 km",time:"6+ h with the change",basis:"est"},
+   slots:{morning:[I("c3-1","06:30","Earliest Munnar–Ernakulam bus, ₹185–221 each"),I("c3-2","10:30","Ernakulam–Alleppey bus")],
+     afternoon:[I("c3-3","13:30","Board the houseboat (agreed in advance; a later boarding shortens the cruise)"),I("c3-4","14:00","Cruise and lunch on board")],
+     evening:[I("c3-5","18:00","Moor for the night, Christmas Eve dinner on board")],
+     optional:[I("c3-6","","First upgrade to buy: private cab Munnar → Alleppey (Est. ₹4,500–5,000), saves 5+ hours of buses on Christmas Eve")]},
+   food:"Houseboat meals included",
+   cost:{transport:1000,stays:10000,food:600,activities:0,misc:600}},
+  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
+   stay:"Budget room or homestay in Fort Kochi (Est. ₹4,500)",
+   travel:{text:"Alleppey → Ernakulam bus, ferry to Fort Kochi",km:"about 60 km",time:"2–3 h",basis:"est"},
+   slots:{morning:[I("c4-1","09:00","Disembark"),I("c4-2","09:30","Bus to Ernakulam"),I("c4-3","12:00","Ferry to Fort Kochi (₹6–10)")],
+     afternoon:[I("c4-4","13:00","Lunch, check in"),I("c4-5","15:00","Free walking day: St Francis Church, Santa Cruz Basilica"),I("c4-6","17:30","Chinese fishing nets at sunset")],
+     evening:[I("c4-7","19:30","Christmas lights on Princess Street")],optional:[]},
+   food:"Cafés and seafood along the front",
+   cost:{transport:600,stays:4500,food:1800,activities:0,misc:600}},
+  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
+   stay:"Night on the train",travel:{text:"Ferry to Ernakulam, auto to Ernakulam Jn",km:"about 12 km",time:"45–60 min",basis:"listed"},
+   slots:{morning:[I("c5-1","10:00","Jew Town (verify opening days)"),I("c5-2","12:00","Check out; leave bags at the stay")],
+     afternoon:[I("c5-3","13:00","Lunch"),I("c5-4","15:00","Shikara hour on the backwaters",{opt:true})],
+     evening:[I("c5-5","17:00","Kathakali show",{opt:true}),I("c5-6","18:30","Ferry back to Ernakulam, auto to the Junction"),I("c5-7","19:30","At Ernakulam Jn"),I("c5-8","20:35","Return train 16316, 3A (time to confirm on IRCTC; not booked yet)")],optional:[]},
+   food:"Station dinner or a packed meal",
+   cost:{transport:4400,stays:0,food:2000,activities:2200,misc:600}}
+];
+const PLAN_B = [
+  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and head for the meadows",base:"Vagamon",
+   stay:"Vagamon cottage or resort (Est. ₹5,500)",travel:{text:"Ernakulam Jn → Vagamon",km:"100–110 km",time:"3.5–4.5 h",basis:"listed"},
+   slots:{morning:[I("b1-1","06:00","Arrive Ernakulam Jn on 12684"),I("b1-2","06:30","Car via Muvattupuzha and Thodupuzha"),I("b1-3","08:15","Breakfast at Muvattupuzha"),I("b1-4","11:00","Reach Vagamon, early check-in if possible")],
+     afternoon:[I("b1-5","13:00","Lunch"),I("b1-6","14:30","Vagamon Meadows and the pine forest")],
+     evening:[I("b1-7","17:00","Sunset on the hills, early dinner and bed")],optional:[]},
+   food:"The Spice Route for Kerala meals",
+   cost:{transport:4000,stays:5500,food:2700,activities:750,misc:500}},
+  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Fly and wander",base:"Vagamon",
+   stay:"Same Vagamon stay",travel:{text:"Local sightseeing",km:"about 40 km",time:"in short hops",basis:"est"},
+   slots:{morning:[I("b2-1","08:00","Tandem paragliding at Kolahalamedu, about 20 min; wind-dependent, keep the morning free"),I("b2-2","11:30","Kurisumala Ashram")],
+     afternoon:[I("b2-3","13:00","Lunch"),I("b2-4","14:30","Marmala waterfall through the forest")],
+     evening:[I("b2-5","17:00","Tea-estate walk, evening in town")],optional:[]},
+   food:"Local Kerala meals",
+   cost:{transport:4000,stays:5500,food:2700,activities:11500,misc:500}},
+  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Down to the lake",base:"Kumarakom houseboat",
+   stay:"Kumarakom houseboat, all meals included (Est. ₹16,000)",travel:{text:"Vagamon → Kumarakom",km:"76 km",time:"about 2 h",basis:"listed"},
+   slots:{morning:[I("b3-1","08:30","Check out"),I("b3-2","10:30","Reach Kumarakom"),I("b3-3","11:00","Kumarakom Bird Sanctuary, short visit")],
+     afternoon:[I("b3-4","12:30","Board the houseboat, lunch on board"),I("b3-5","14:00","Cruise the open lake and canals")],
+     evening:[I("b3-6","18:00","Moor at dusk, Christmas Eve dinner on board")],optional:[]},
+   food:"Houseboat meals included",
+   cost:{transport:4000,stays:16000,food:1200,activities:500,misc:500}},
+  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
+   stay:"Fort Kochi heritage hotel or homestay (Est. ₹9,000)",travel:{text:"Kumarakom → Fort Kochi",km:"about 70 km",time:"2–2.5 h",basis:"est"},
+   slots:{morning:[I("b4-1","07:00","Village walk from the mooring",{opt:true}),I("b4-2","09:00","Disembark, cab to Fort Kochi"),I("b4-3","11:45","Arrive, bags to the hotel")],
+     afternoon:[I("b4-4","13:00","Lunch"),I("b4-5","15:00","Santa Cruz Basilica and St Francis Church"),I("b4-6","17:30","Chinese fishing nets at sunset")],
+     evening:[I("b4-7","19:30","Princess Street lights and dinner")],optional:[]},
+   food:"Fort House for waterfront seafood",
+   cost:{transport:4000,stays:9000,food:2700,activities:0,misc:500}},
+  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
+   stay:"Night on the train",travel:{text:"Fort Kochi → Ernakulam Jn",km:"about 12 km",time:"30–60 min by cab",basis:"listed"},
+   slots:{morning:[I("b5-1","08:00","Breakfast"),I("b5-2","10:00","Jew Town and Mattancherry Palace (verify opening days)"),I("b5-3","12:00","Check out; bags stay at the hotel")],
+     afternoon:[I("b5-4","12:30","Lunch"),I("b5-5","15:00","Mangalavanam bird sanctuary, 4 km from Ernakulam Jn",{opt:true})],
+     evening:[I("b5-6","17:00","Kathakali at the Kerala Kathakali Centre"),I("b5-7","18:15","Collect bags, cab to Ernakulam Jn"),I("b5-8","20:35","Return train 16316 (time to confirm on IRCTC; not booked yet)")],optional:[]},
+   food:"Station dinner or a packed meal",
+   cost:{transport:3900,stays:0,food:2700,activities:1250,misc:500}}
+];
+
+const POLLS = [
+  {id:"plan",q:"Which plan do we book?",opts:[{id:"A",label:"Plan A: Munnar, Alleppey, Fort Kochi"},{id:"B",label:"Plan B: Vagamon, Kumarakom, Fort Kochi"}]},
+  {id:"return",q:"How do we get home on Sat 26 Dec?",opts:[{id:"16316",label:"Train 16316 from Ernakulam Jn, about 20:35–21:00"},{id:"16525",label:"Train 16525 from Ernakulam Town, 17:40"},{id:"bus",label:"KSRTC Volvo sleeper bus"}]},
+  {id:"boat",q:"Houseboat layout",opts:[{id:"1br",label:"1 bedroom + extra bed (cheaper, snug)"},{id:"2br",label:"2 bedrooms (about ₹3,000–6,000 more)"}]}
+];
+
+const RETURN = [
+  {id:"16316",name:"16316 Kochuveli–Mysuru Express",pick:true,runs:"Daily",leaves:"Ernakulam Jn about 20:35–21:00 (sources differ)",arrives:"KSR Bengaluru about 08:20–08:50 Sun 27 Dec",fare:"3A Est. ₹1,250–1,450 pp · SL Listed ₹360–400",note:"Leaves from Ernakulam Jn, so we keep Saturday evening.",src:[SRC.erail,SRC.ctkt16316,SRC.tk16316]},
+  {id:"16525",name:"16525 Island Express",runs:"Daily",leaves:"Ernakulam Town 17:40",arrives:"KSR Bengaluru about 06:40–07:00",fare:"Similar to 16316",note:"Boards at Ernakulam Town, 4 km from the Junction, and costs us the evening.",src:[SRC.ts16525,SRC.t16525]},
+  {id:"bus",name:"KSRTC Volvo multi-axle sleeper",runs:"Daily",leaves:"Ernakulam about 21:00 or 23:10",arrives:"about 07:10 or 08:24",fare:"Listed from ₹1,273 pp; past Christmas surge ₹2,200–2,665",note:"Backup if both trains are waitlisted.",src:[SRC.mmt,SRC.kaumudi]},
+  {id:"12683",name:"12683 Ernakulam–SMVT Bengaluru",runs:"Sun, Mon, Wed only",leaves:"16:50",arrives:"03:55 next day",fare:"—",note:"Does not run on Saturday. Only usable if we stay until Sun 27 Dec.",src:[SRC.t12683]}
+];
+
+const HOUSEBOAT = {
+  alleppey:{label:"Alleppey (Plan A)", "1br":{lo:14000,hi:18000,basis:"est",note:"Listed 1BR ₹8,000–14,000 in December, plus an extra bed and peak-night premium",src:SRC.paradiseHB}, "2br":{lo:17000,hi:24000,basis:"est",note:"1BR estimate plus ₹3,000–6,000",src:null}},
+  kumarakom:{label:"Kumarakom (Plan B)", "1br":{lo:13500,hi:18000,basis:"listed",note:"Peak 1BR deluxe ₹13,500, premium ₹18,000",src:SRC.kumarakomHB}, "2br":{lo:32000,hi:32000,basis:"listed",note:"Peak 2BR luxury ₹32,000",src:SRC.kumarakomHB}}
+};
+
+/* ====================================================================
+   2. HELPERS
+   ==================================================================== */
+const inr = n => (n<0?"−":"") + "₹" + Math.abs(Math.round(n||0)).toLocaleString("en-IN");
+const signed = n => (n>0?"+":"") + inr(n);
+const rid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+const clone = o => JSON.parse(JSON.stringify(o||null));
+const clip = (s,n) => { s = String(s||""); return s.length>n ? s.slice(0,n-1)+"…" : s; };
+function ago(ts){ if(!ts) return ""; const s=(Date.now()-ts)/1000; if(s<60) return "just now"; if(s<3600) return Math.floor(s/60)+"m ago"; if(s<86400) return Math.floor(s/3600)+"h ago"; if(s<604800) return Math.floor(s/86400)+"d ago"; return new Date(ts).toLocaleDateString("en-IN",{day:"numeric",month:"short"}); }
+const basisTag = b => b==="listed" ? html`<span class="tag listed">Listed</span>` : b==="est" ? html`<span class="tag est">Est.</span>` : b==="verified" ? html`<span class="tag verified">Verified</span>` : b==="gk" ? html`<span class="tag gk">AI knowledge</span>` : null;
+const srcLink = s => s ? html`<a href=${s.u} target="_blank" rel="noopener">${s.t}</a>` : null;
+function hashColor(str){ let x=0; for(const c of String(str)) x=(x*31+c.charCodeAt(0))|0; const hues=[150,20,195,40,265,340,95]; return `hsl(${hues[Math.abs(x)%hues.length]} 45% 38%)`; }
+
+/* ====================================================================
+   3. STORE + PLATFORM (claude.ai runtime: db, user, sample)
+   ==================================================================== */
+const S = {mode:"loading", me:null, isOwner:false, canWrite:null, people:{}, roster:{}, reviews:{}, decisions:{}, itin:{}, bookings:{}, meta:{}, requests:{}, profiles:{}, loaded:{}, running:{}, sheet:null, toasts:[], sampleOK:false};
+const listeners = new Set();
+function set(p){ Object.assign(S,p); listeners.forEach(f=>f()); }
+function useStore(){ const [,f]=useState(0); const r=useRef(null); if(!r.current){ r.current=()=>f(x=>x+1); listeners.add(r.current); } useEffect(()=>()=>listeners.delete(r.current),[]); return S; }
+let API = {db:null,user:null,sample:null};
+function toast(msg){ const id=rid(); set({toasts:[...S.toasts,{id,msg}]}); setTimeout(()=>set({toasts:S.toasts.filter(t=>t.id!==id)}),3200); }
+const openSheet = (type, props) => set({sheet:{type, props:props||{}}});
+const closeSheet = () => set({sheet:null});
+function dbErr(e){ const c=e&&e.code; if(c==="invalid_argument") return "You don't have permission to change that."; if(c==="quota_exceeded") return "The trip database is full."; if(c==="resource_exhausted") return "Too many changes at once. Try again in a moment."; return "Couldn't save. Check your connection and try again."; }
+
+async function boot(){
+  if(!window.claude || !window.claude.use){ set({mode:"offline"}); return; }
+  const [db,user,sample] = await Promise.all(["db","user","sample"].map(n=>window.claude.use(n).catch(()=>null)));
+  API = {db,user,sample};
+  if(!db || !user){ set({mode:"offline"}); return; }
+  const me = await user.me();
+  if(!me.id){ set({mode:"signin"}); return; }
+  const canWrite = await user.can("data.write");
+  set({me:me.id, isOwner:!!me.isOwner, canWrite, mode:"live", sampleOK:!!sample});
+  const sub = (col,key) => db.collection(col).onSnapshot(snap => {
+    const o={}; snap.docs.forEach(d=>{ o[d.id]=Object.assign({_id:d.id}, d.data()); });
+    set({[key]:o, loaded:Object.assign({},S.loaded,{[key]:true})});
+    if(key==="people") refreshProfiles();
+    if(key==="roster") ensureOwnerRoster();
+  }, e => { if(e.code==="revoked") set({mode:"revoked"}); else toast("Live updates paused ("+e.code+"). Reload to reconnect."); });
+  sub("people","people"); sub("roster","roster"); sub("reviews","reviews"); sub("decisions","decisions");
+  sub("itinerary","itin"); sub("bookings","bookings"); sub("meta","meta");
+}
+let profKey="";
+async function refreshProfiles(){
+  const ids = Object.keys(S.people); if(S.me && !ids.includes(S.me)) ids.push(S.me);
+  const k = ids.sort().join(","); if(!ids.length || k===profKey) return; profKey=k;
+  try{ const p = await API.user.profiles(ids); set({profiles:p}); }catch(e){}
+}
+async function ensureOwnerRoster(){
+  if(!S.isOwner || !S.me || (S.roster[S.me] && S.roster[S.me].role==="owner")) return;
+  try{ await API.db.doc("roster/"+S.me).set({role:"owner",status:"active",at:Date.now()}); }catch(e){}
+}
+
+/* --- my own document: everything a person contributes lives in people/<their id> --- */
+let wq = Promise.resolve();
+function mutateMe(fn){
+  if(!canContribute()){ toast("You can view but not contribute here."); return Promise.resolve(false); }
+  wq = wq.then(async ()=>{
+    const cur = clone(S.people[S.me]) || {}; delete cur._id;
+    cur.posts=cur.posts||[]; cur.expenses=cur.expenses||[]; cur.votes=cur.votes||{}; cur.reacts=cur.reacts||{}; cur.polls=cur.polls||{};
+    fn(cur); cur.updatedAt=Date.now();
+    await API.db.doc("people/"+S.me).set(cur); return true;
+  }).catch(e=>{ toast(dbErr(e)); return false; });
+  return wq;
+}
+const canContribute = () => S.mode==="live" && S.canWrite!==false && !!S.people[S.me] && !isRemoved(S.me);
+const isRemoved = id => S.roster[id] && S.roster[id].status==="removed";
+
+/* --- derived data --- */
+function members(){
+  return Object.values(S.people).filter(p=>!isRemoved(p._id)).sort((a,b)=>(roleOf(b._id)==="owner")-(roleOf(a._id)==="owner") || (a.joinedAt||0)-(b.joinedAt||0));
+}
+const roleOf = id => (S.roster[id] && S.roster[id].role) || (id===S.me && S.isOwner ? "owner" : "member");
+function nameOf(id){ if(id==="ai") return "AI planner"; if(String(id).startsWith("name:")) return id.slice(5); const p=S.people[id]; const pr=S.profiles[id]; return (p&&p.nick) || (pr&&pr.name) || "Traveller"; }
+function allPosts(){ const out=[]; Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; (p.posts||[]).forEach(x=>out.push(Object.assign({by:p._id},x))); }); return out; }
+const CREW_NAMES=["Bhargava","Sahith","Manoj"];
+function resolvePayer(pid, logger){ if(!pid) return logger; if(S.people[pid]) return pid; if(String(pid).startsWith("name:")){ const n=pid.slice(5).toLowerCase(); const m=Object.values(S.people).find(q=>!isRemoved(q._id)&&String(q.nick||"").toLowerCase()===n); return m?m._id:pid; } return logger; }
+function payerOptions(){ const mem=members(); const ids=mem.map(m=>m._id); CREW_NAMES.forEach(n=>{ if(!mem.some(m=>String(m.nick||"").toLowerCase()===n.toLowerCase())) ids.push("name:"+n); }); return ids; }
+function allExpenses(){ const out=[]; Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; (p.expenses||[]).forEach(x=>out.push(Object.assign({},x,{by:p._id, payer:resolvePayer(x.paidBy,p._id)}))); }); return out.sort((a,b)=>b.at-a.at); }
+function votesFor(target){ const up=[],down=[]; Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; const v=p.votes&&p.votes[target]; if(v&&v.v===1) up.push(p._id); if(v&&v.v===-1) down.push(p._id); }); return {up,down}; }
+function reactsFor(target){ const m={}; Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; const r=p.reacts&&p.reacts[target]; if(r&&r.e){ (m[r.e]=m[r.e]||[]).push(p._id);} }); return m; }
+function pollWinner(pid){ const m=pollVotes("poll-"+pid); const a=Object.entries(m).map(([k,v])=>[k,v.length]).sort((x,y)=>y[1]-x[1]); return a.length&&a[0][1]>0&&(a.length<2||a[0][1]>a[1][1])?a[0][0]:null; }
+function pollVotes(pid){ const m={}; Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; const v=p.polls&&p.polls[pid]; if(v&&v.o){ (m[v.o]=m[v.o]||[]).push(p._id);} }); return m; }
+const commentsOn = target => allPosts().filter(p=>p.kind==="comment" && p.target===target);
+
+function versions(){ return Object.values(S.itin).filter(v=>v.days).sort((a,b)=>b.n-a.n); }
+function baseVersion(){ return {_id:"base", n:0, plan:"A", days:PLAN_AB, status:"draft", why:"Research baseline: Plan A budget version (not saved yet)", adjust:{}, unsaved:true}; }
+function currentVersion(){ const m=S.meta.state; if(m && m.current && S.itin[m.current]) return S.itin[m.current]; const v=versions(); return v[0] || baseVersion(); }
+function projection(v){
+  const cat={}; BUDGET_CATS.forEach(c=>cat[c.id]=0);
+  (v.days||[]).forEach(d=>BUDGET_CATS.forEach(c=>cat[c.id]+=(d.cost&&d.cost[c.id])||0));
+  Object.entries(v.adjust||{}).forEach(([k,x])=>{ if(k in cat) cat[k]+=Number(x)||0; });
+  const sub=Object.values(cat).reduce((a,b)=>a+b,0); const cont=Math.round(sub*CONTINGENCY);
+  return {cat, sub, cont, total:sub+cont};
+}
+function flatItems(days){ const m={}; (days||[]).forEach((d,di)=>SLOTS.forEach(([sl])=>((d.slots&&d.slots[sl])||[]).forEach(it=>{ m[it.id]=Object.assign({day:di+1, slot:sl, date:d.dow+" "+d.dd+" Dec"},it); }))); return m; }
+function findItem(id){ const v=currentVersion(); const m=flatItems(v.days); if(m[id]) return m[id]; for(const x of versions()){ const mm=flatItems(x.days); if(mm[id]) return mm[id]; } const b=flatItems(PLAN_A); if(b[id]) return b[id]; return flatItems(PLAN_B)[id]||null; }
+function labelFor(target){
+  if(!target) return "the trip";
+  const d=DEST.find(x=>x.id===target); if(d) return d.name;
+  if(target.startsWith("poll-")){ const p=POLLS.find(x=>"poll-"+x.id===target); return p?p.q:"a decision"; }
+  if(target==="plan-compare") return "Plan A vs Plan B";
+  if(target.startsWith("prop-")){ const p=allPosts().find(x=>x.id===target.slice(5)); return p?"the proposal for “"+clip(p.title,40)+"”":"a proposal"; }
+  if(target.startsWith("bk-")){ const b=S.bookings[target.slice(3)]; return b?b.title:"a booking"; }
+  const it=findItem(target); if(it) return "“"+clip(it.text,46)+"”";
+  const p=allPosts().find(x=>x.id===target); if(p) return "“"+clip(p.title||p.body,46)+"”";
+  return "the trip";
+}
+function statusOf(post){
+  const d=S.decisions["post-"+post.id]; if(d) return d.status;
+  const r=S.reviews[post.id];
+  if(S.running[post.id]) return "reviewing";
+  if(r){ if(r.state==="running" && Date.now()-r.at<6*60000) return "reviewing"; if(r.state==="done") return "ai"; }
+  return "new";
+}
+function statusPill(post){
+  const s=statusOf(post);
+  if(s==="new") return html`<span class="pill neutral">New</span>`;
+  if(s==="reviewing") return html`<span class="pill ai"><span class="spinner" style="width:10px;height:10px;border-width:2px"></span>Under AI review</span>`;
+  if(s==="ai"){ const v=S.reviews[post.id].result&&S.reviews[post.id].result.verdict; return v==="not_recommended" ? html`<span class="pill bad">AI: not recommended</span>` : v==="needs_info" ? html`<span class="pill warn">AI: needs info</span>` : html`<span class="pill ai">AI recommended</span>`; }
+  if(s==="approved") return html`<span class="pill ok">Approved</span>`;
+  if(s==="rejected") return html`<span class="pill bad">Rejected</span>`;
+  if(s==="incorporated") return html`<span class="pill ok">In the itinerary</span>`;
+  return null;
+}
+function pendingDecisions(){
+  const out=[];
+  POLLS.forEach(p=>{ const voted=Object.values(pollVotes("poll-"+p.id)).reduce((n,x)=>n+x.length,0); if(!pollWinner(p.id)||voted<Math.max(2,members().length)) out.push({kind:"poll", poll:p}); });
+  allPosts().filter(p=>p.kind==="suggestion" && statusOf(p)==="ai").forEach(p=>out.push({kind:"post", post:p}));
+  return out;
+}
+const awaitingReview = () => allPosts().filter(p=>p.kind==="suggestion" && statusOf(p)==="new");
+
+/* ====================================================================
+   4. ACTIONS
+   ==================================================================== */
+function addPost(p){ return mutateMe(d=>{ d.posts.push(Object.assign({id:rid(), at:Date.now()}, p)); }); }
+function vote(target, v){ return mutateMe(d=>{ const cur=d.votes[target]; if(cur && cur.v===v) delete d.votes[target]; else d.votes[target]={v, at:Date.now()}; }); }
+function react(target, e){ return mutateMe(d=>{ const cur=d.reacts[target]; if(cur && cur.e===e) delete d.reacts[target]; else d.reacts[target]={e, at:Date.now()}; }); }
+function pollVote(pid, o){ return mutateMe(d=>{ d.polls[pid]={o, at:Date.now()}; }); }
+
+async function ownerWrite(path, data){ try{ await API.db.doc(path).set(data); return true; }catch(e){ toast(dbErr(e)); return false; } }
+async function createVersion(days, why, extra){
+  const vs=versions(); const n=(vs[0]?vs[0].n:0)+1; const cur=currentVersion();
+  const doc=Object.assign({n, at:Date.now(), by:S.me, why, status:"approved", plan:cur.plan||"A", days:clone(days), adjust:clone(cur.adjust)||{}, adjustNotes:clone(cur.adjustNotes)||[], basedOn:cur._id}, extra||{});
+  if(!await ownerWrite("itinerary/v"+n, doc)) return null;
+  await ownerWrite("meta/state", Object.assign({}, stripId(S.meta.state), {current:"v"+n, at:Date.now()}));
+  return "v"+n;
+}
+const stripId = o => { const c=clone(o)||{}; delete c._id; return c; };
+function applyChanges(days, changes){
+  const nd=clone(days);
+  (changes||[]).forEach(c=>{
+    const day=nd[(c.day|0)-1]; if(!day) return;
+    if(c.op==="add"){ const sl=SLOTS.some(s=>s[0]===c.slot)?c.slot:"optional"; (day.slots[sl]=day.slots[sl]||[]).push({id:"x"+rid(), t:c.time||"", text:c.text, src:"proposal"}); }
+    else { SLOTS.forEach(([sl])=>{ const arr=day.slots[sl]||[]; const i=arr.findIndex(x=>x.id===c.itemId); if(i<0) return; if(c.op==="remove") arr.splice(i,1); else if(c.op==="replace") arr[i]=Object.assign({},arr[i],{text:c.text, t:c.time||arr[i].t, src:"proposal"}); }); }
+    if(c.dayCost){ BUDGET_CATS.forEach(k=>{ if(typeof c.dayCost[k.id]==="number") day.cost[k.id]=Math.max(0,(day.cost[k.id]||0)+c.dayCost[k.id]); }); }
+  });
+  return nd;
+}
+
+/* --- AI review (Claude via the viewer's own account) --- */
+function tripContext(){
+  const v=currentVersion(); const pr=projection(v);
+  return {
+    travellers: members().map(m=>nameOf(m._id)),
+    party:"3 friends from Bengaluru (group may grow)",
+    fixed:["Budget cap: ₹15,000–20,000 per person including the return train (outbound already paid). The plan is the budget version of Plan A: KSRTC buses, budget rooms, cheapest licensed houseboat. Flag anything that pushes past ₹20,000 per person.","Outbound already booked: train 12684 SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec. Do not change it.","Return on Sat 26 Dec night from Ernakulam; 16316 (daily, Ernakulam Jn about 20:35–21:00) is the current pick, not yet booked.","Christmas week: peak prices, gala-dinner surcharges on 24/25 Dec at many resorts, sell-out risk, Christmas Day traffic around Kochi."],
+    itineraryVersion: v.n ? "v"+v.n : "baseline", plan: v.plan,
+    days: v.days.map((d,i)=>({day:i+1, date:d.dow+" "+d.dd+" Dec", title:d.title, base:d.base, stay:d.stay, travel:d.travel.text+" · "+d.travel.km+" · "+d.travel.time, items:SLOTS.flatMap(([sl])=>(d.slots[sl]||[]).map(it=>({id:it.id, slot:sl, time:it.t, text:it.text}))), cost:d.cost})),
+    budget:{baselineGroupTotal:BASELINE, projectedGroupTotal:pr.total, byCategory:pr.cat, contingencyPct:10},
+    researchNotes:["Considered and cut earlier: Thekkady (third hill base), Wayanad (6 h each way), Varkala/Kovalam (far south, party crowds, far from the return train).","Kumarakom was fully booked 23 Dec–3 Jan last year.","Munnar resorts list 24 Dec gala dinners at ₹3,000–4,500 per adult."]
+  };
+}
+function reviewPrompt(post){
+  const comments = commentsOn(post.id).map(c=>({by:nameOf(c.by), text:c.body}));
+  const others = allPosts().filter(p=>p.kind==="suggestion" && p.id!==post.id && !["rejected"].includes(statusOf(p))).map(p=>({by:nameOf(p.by), category:p.cat, title:p.title}));
+  const target = post.target ? labelFor(post.target) : null;
+  return `You are the AI trip planner inside "Kerala Trip HQ", a private app three friends use to plan a Kerala trip on 22–26 December 2026. Review ONE suggestion from a traveller and give the group a decisive, specific recommendation.
+
+Working rules:
+- Evaluate travel time, distance, season (late December: dry, cool hills, peak Christmas crowds), likely opening hours, and fit with the current itinerary below.
+- Calculate the budget impact for the whole group in INR, by category. Use 0 where nothing changes.
+- Challenge impractical ideas. Do not accept everything. If it doesn't fit, say so and offer the closest workable alternative.
+- If it fits only by dropping something, name exactly what to drop (by item id).
+- If it conflicts with another traveller's suggestion, propose a compromise.
+- You cannot browse the web. Mark every fact as basis "trip data" (from the data below), "general knowledge" (your own knowledge; may be outdated) or "estimate". Never claim live prices, availability or confirmed timings. List what must be verified before booking.
+- Be concrete: real place names, times, distances, rupee amounts. No generic advice.
+
+TRIP DATA (JSON):
+${JSON.stringify(tripContext())}
+
+SUGGESTION (JSON):
+${JSON.stringify({author:nameOf(post.by), category:(CATS.find(c=>c.id===post.cat)||{}).label, title:post.title, details:post.body, estimatedCostByAuthor:post.cost||null, attachedTo:target})}
+
+GROUP COMMENTS ON IT: ${JSON.stringify(comments)}
+OTHER OPEN SUGGESTIONS: ${JSON.stringify(others)}
+
+Reply with ONLY a JSON object of this shape:
+{"summary":"one sentence verdict for a phone screen",
+ "verdict":"recommend" | "recommend_with_changes" | "not_recommended" | "needs_info",
+ "fit":"2-3 sentences on how it fits the 5-day plan",
+ "facts":[{"text":"...","basis":"trip data"|"general knowledge"|"estimate"}],
+ "travel":{"extraKm":number|null,"extraHours":number|null,"note":"..."},
+ "costDelta":{"transport":0,"stays":0,"food":0,"activities":0,"misc":0},
+ "conflicts":["..."],
+ "alternatives":["..."],
+ "pros":["..."], "cons":["..."],
+ "reasoning":"why this recommendation is good for this group",
+ "proposal": null | {"title":"short name of the change","current":"what the plan says now","proposed":"what it would say","changes":[{"day":1-5,"op":"add"|"replace"|"remove","slot":"morning"|"afternoon"|"evening"|"optional","itemId":"existing item id for replace/remove","time":"HH:MM or empty","text":"new item text for add/replace"}]},
+ "checkBeforeBooking":["..."]}
+Use "proposal": null when the itinerary should not change (for example a restaurant that fits an existing meal slot, or a rejected idea).`;
+}
+const arr = (x,n) => Array.isArray(x) ? x.filter(s=>typeof s==="string"&&s.trim()).slice(0,n).map(s=>clip(s,400)) : [];
+function sanitizeReview(r){
+  r = r||{}; const cd={}; BUDGET_CATS.forEach(c=>{ const v=Number(r.costDelta&&r.costDelta[c.id]); cd[c.id]=isFinite(v)?Math.round(v):0; });
+  let prop=null;
+  if(r.proposal && typeof r.proposal==="object"){
+    const ids=flatItems(currentVersion().days);
+    const ch=(Array.isArray(r.proposal.changes)?r.proposal.changes:[]).slice(0,8).map(c=>({day:Math.max(1,Math.min(5,c.day|0)), op:["add","replace","remove"].includes(c.op)?c.op:"add", slot:SLOTS.some(s=>s[0]===c.slot)?c.slot:"optional", itemId:typeof c.itemId==="string"?c.itemId:"", time:typeof c.time==="string"?clip(c.time,5):"", text:clip(c.text||"",200)})).filter(c=>c.op==="add" ? c.text : ids[c.itemId] && (c.op==="remove"||c.text));
+    prop={title:clip(r.proposal.title||"Proposed change",90), current:clip(r.proposal.current||"",400), proposed:clip(r.proposal.proposed||"",400), changes:ch};
+  }
+  const t=r.travel||{};
+  return {summary:clip(r.summary||"",240), verdict:["recommend","recommend_with_changes","not_recommended","needs_info"].includes(r.verdict)?r.verdict:"needs_info",
+    fit:clip(r.fit||"",700), facts:(Array.isArray(r.facts)?r.facts:[]).slice(0,8).map(f=>({text:clip(f&&f.text||"",300), basis:["trip data","general knowledge","estimate"].includes(f&&f.basis)?f.basis:"estimate"})).filter(f=>f.text),
+    travel:{extraKm:isFinite(Number(t.extraKm))&&t.extraKm!==null?Number(t.extraKm):null, extraHours:isFinite(Number(t.extraHours))&&t.extraHours!==null?Number(t.extraHours):null, note:clip(t.note||"",300)},
+    costDelta:cd, conflicts:arr(r.conflicts,5), alternatives:arr(r.alternatives,5), pros:arr(r.pros,5), cons:arr(r.cons,5), reasoning:clip(r.reasoning||"",900), proposal:prop, checkBeforeBooking:arr(r.checkBeforeBooking,6)};
+}
+function sampleMsg(e){ const c=e&&e.code; if(c==="not_granted"||c==="sampling_disabled"||c==="capability_disabled") return "Claude isn't allowed on this page for you. Use the manual review instead."; if(c==="rate_limited") return "Claude is busy or your usage limit is reached. Try again later."; if(c==="invalid_json") return "Claude's answer wasn't readable. Try again."; if(c==="cancelled") return "Review stopped."; if(c==="session_expired") return "Sign in to claude.ai again, then retry."; return "The AI review failed. Try again in a moment."; }
+async function runReview(post){
+  if(!API.sample){ toast("AI isn't available in this view."); return false; }
+  set({running:Object.assign({},S.running,{[post.id]:true})});
+  const ref=API.db.doc("reviews/"+post.id);
+  try{
+    await ref.set({state:"running", by:S.me, at:Date.now(), source:"ai"});
+    const raw = await API.sample.json(reviewPrompt(post), {modelTier:"default"});
+    const result = sanitizeReview(raw);
+    await ref.set({state:"done", by:S.me, at:Date.now(), source:"ai", result, itineraryVersion:currentVersion()._id});
+    toast("AI review saved for everyone");
+    return true;
+  }catch(e){
+    try{ await ref.set({state:"failed", by:S.me, at:Date.now(), source:"ai", error:(e&&e.code)||"error"}); }catch(_){}
+    toast(e && e.code ? sampleMsg(e) : dbErr(e)); return false;
+  }finally{ const r=Object.assign({},S.running); delete r[post.id]; set({running:r}); }
+}
+async function decide(post, status, note, apply){
+  const rv=S.reviews[post.id]; let ver=null;
+  if(apply && rv && rv.result){
+    const cur=currentVersion(); const res=rv.result;
+    const days=applyChanges(cur.days, res.proposal ? res.proposal.changes : []);
+    const adjust=Object.assign({}, cur.adjust||{}); BUDGET_CATS.forEach(c=>adjust[c.id]=(adjust[c.id]||0)+(res.costDelta[c.id]||0));
+    const notes=(cur.adjustNotes||[]).concat([{post:post.id, title:post.title, delta:res.costDelta}]);
+    ver = await createVersion(days, (res.proposal&&res.proposal.title||post.title)+" (suggested by "+nameOf(post.by)+")", {adjust, adjustNotes:notes, fromPost:post.id});
+    if(!ver) return;
+    status="incorporated";
+  }
+  if(await ownerWrite("decisions/post-"+post.id, {status, by:S.me, at:Date.now(), note:note||"", version:ver||null})) toast(status==="incorporated"?"Itinerary "+ver+" created":"Decision saved");
+}
+
+/* ====================================================================
+   5. ILLUSTRATIONS (inline so they work inside the artifact sandbox)
+   ==================================================================== */
+function palm(x,y,hh,lean,c){ const tx=x+lean, ty=y-hh, k=hh/90; let s=`<path d="M${x} ${y}Q${(x+lean*.15).toFixed(1)} ${(y-hh*.55).toFixed(1)} ${tx} ${ty}" stroke="${c}" stroke-width="${(4*k).toFixed(1)}" fill="none" stroke-linecap="round"/>`;
+  [[-46,18],[-40,0],[-24,-14],[0,-20],[24,-14],[40,0],[46,18],[-16,24],[18,26]].forEach(([dx,dy])=>{ s+=`<path d="M${tx} ${ty}q${(dx*.5*k).toFixed(1)} ${((dy-16)*k).toFixed(1)} ${(dx*k).toFixed(1)} ${((dy+10)*k).toFixed(1)}" stroke="${c}" stroke-width="${(3.4*k).toFixed(1)}" fill="none" stroke-linecap="round"/>`; }); return s; }
+function pine(x,y,hh,c){ return `<path d="M${x} ${y-hh}L${x-hh*.22} ${y-hh*.5}L${x+hh*.22} ${y-hh*.5}ZM${x} ${y-hh*.75}L${x-hh*.32} ${y-hh*.12}L${x+hh*.32} ${y-hh*.12}Z" fill="${c}"/><rect x="${x-1.5}" y="${y-hh*.14}" width="3" height="${hh*.14}" fill="${c}"/>`; }
+function rows(y0,n,gap,c,w){ let s=""; for(let i=0;i<n;i++){ const y=y0+i*gap; s+=`<path d="M-20 ${y}Q100 ${y-30} 200 ${y-6}T420 ${y-14}" stroke="${c}" stroke-width="${w}" fill="none"/>`; } return s; }
+function boat(x,y,sc){ return `<g transform="translate(${x} ${y}) scale(${sc})"><path d="M-80 0Q0 16 85 -4L78 -12L-74 -10Z" fill="#4A2E1C"/><path d="M-62 -10Q-58 -40 -30 -42L40 -42Q66 -40 70 -12Z" fill="#C79A55"/><path d="M-50 -12V-36M-30 -12V-42M-10 -12V-42M10 -12V-42M30 -12V-42M50 -12V-38" stroke="#9C7238" stroke-width="2"/><rect x="-44" y="-30" width="10" height="9" rx="2" fill="#F7D28A"/><rect x="-4" y="-30" width="10" height="9" rx="2" fill="#F7D28A"/><rect x="36" y="-30" width="10" height="9" rx="2" fill="#F7D28A"/></g>`; }
+function birds(x,y,n,c){ let s=""; for(let i=0;i<n;i++){ const bx=x+i*16+(i%2)*6, by=y+(i%3)*7; s+=`<path d="M${bx} ${by}q4 -4 8 0q4 -4 8 0" stroke="${c}" stroke-width="1.6" fill="none"/>`; } return s; }
+const SCENES = {
+  tea: ()=>`<defs><linearGradient id="tS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D3A2"/><stop offset=".7" stop-color="#D6E8DA"/></linearGradient><clipPath id="tC"><path d="M0 168Q110 120 220 160T400 140V250H0Z"/></clipPath><clipPath id="tC2"><path d="M0 214Q120 182 240 210T400 196V250H0Z"/></clipPath></defs>
+    <rect width="400" height="250" fill="url(#tS)"/><circle cx="305" cy="66" r="24" fill="#FFF1D6"/>
+    <path d="M0 118Q60 72 140 100T290 78T400 92V250H0Z" fill="#9CC2AE"/><path d="M0 140Q90 98 200 128T400 112V250H0Z" fill="#6FA77C"/>
+    <rect x="0" y="118" width="400" height="22" fill="#FFFFFF" opacity=".28"/>
+    <path d="M0 168Q110 120 220 160T400 140V250H0Z" fill="#3F8A4F"/><g clip-path="url(#tC)">${rows(172,9,11,"#63B16E",4)}</g>
+    <g stroke="#2D5A35" stroke-width="2">${[60,150,250,330].map((x,i)=>`<line x1="${x}" y1="${150-i%2*8}" x2="${x}" y2="${128-i%2*8}"/><circle cx="${x}" cy="${124-i%2*8}" r="7" fill="#2D5A35"/>`).join("")}</g>
+    <path d="M0 214Q120 182 240 210T400 196V250H0Z" fill="#2E6E3E"/><g clip-path="url(#tC2)">${rows(216,4,10,"#4C9A5A",4)}</g>`,
+  houseboat: ()=>`<defs><linearGradient id="hS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2A86E"/><stop offset=".55" stop-color="#F8D9AE"/><stop offset="1" stop-color="#F6E7C9"/></linearGradient><linearGradient id="hW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5C8F8E"/><stop offset="1" stop-color="#2C5E66"/></linearGradient></defs>
+    <rect width="400" height="250" fill="url(#hS)"/><circle cx="250" cy="120" r="30" fill="#FFE6B0"/>
+    <path d="M0 150Q60 140 120 148T240 146T400 150V160H0Z" fill="#2F4F2C"/>
+    ${palm(30,152,70,-6,"#25402A")}${palm(70,152,90,10,"#25402A")}${palm(330,152,80,-10,"#25402A")}${palm(370,152,62,8,"#25402A")}${palm(300,152,50,4,"#25402A")}
+    <rect y="156" width="400" height="94" fill="url(#hW)"/>
+    <g stroke="#F8D9AE" stroke-width="2" opacity=".45"><line x1="215" y1="172" x2="285" y2="172"/><line x1="228" y1="184" x2="272" y2="184"/><line x1="238" y1="196" x2="262" y2="196"/></g>
+    ${boat(170,206,1)}<g stroke="#FFFFFF" stroke-width="1.5" opacity=".3"><line x1="40" y1="222" x2="120" y2="222"/><line x1="280" y1="232" x2="370" y2="232"/></g>`,
+  nets: ()=>`<defs><linearGradient id="nS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E77A45"/><stop offset=".55" stop-color="#F5B66E"/><stop offset="1" stop-color="#F9DDB0"/></linearGradient></defs>
+    <rect width="400" height="250" fill="url(#nS)"/><circle cx="120" cy="168" r="34" fill="#FFE3A3"/>
+    <rect y="176" width="400" height="74" fill="#2F5A6E"/><g stroke="#F5B66E" stroke-width="2" opacity=".5"><line x1="90" y1="186" x2="150" y2="186"/><line x1="100" y1="198" x2="140" y2="198"/></g>
+    <g stroke="#2A2320" stroke-width="3" fill="none" stroke-linecap="round"><path d="M318 196L196 60"/><path d="M318 196L236 72"/><path d="M196 60L150 134M196 60L248 140M196 60L198 150"/><path d="M150 134Q198 168 248 140"/><path d="M236 72L270 60"/><path d="M290 196V176H352V196"/></g>
+    <g stroke="#2A2320" stroke-width="1" opacity=".75">${[0,1,2,3,4].map(i=>`<line x1="${158+i*20}" y1="${138+i*4}" x2="${196}" y2="64"/>`).join("")}</g>
+    <circle cx="276" cy="58" r="6" fill="#2A2320"/><circle cx="286" cy="64" r="5" fill="#2A2320"/>
+    <path d="M0 196H400V250H0Z" fill="#244A5A"/><path d="M40 214Q70 222 110 212L104 206H46Z" fill="#2A2320"/><path d="M74 206V188" stroke="#2A2320" stroke-width="2"/>${birds(250,40,4,"#3A2A22")}`,
+  meadow: ()=>`<defs><linearGradient id="mS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFDDEB"/><stop offset="1" stop-color="#EEF6EC"/></linearGradient></defs>
+    <rect width="400" height="250" fill="url(#mS)"/><g fill="#FFFFFF" opacity=".9"><ellipse cx="90" cy="54" rx="34" ry="11"/><ellipse cx="112" cy="46" rx="22" ry="12"/><ellipse cx="300" cy="72" rx="40" ry="10"/></g>
+    <path d="M0 140Q80 96 170 124T330 106T400 118V250H0Z" fill="#A9CF8C"/><path d="M0 170Q120 120 230 156T400 140V250H0Z" fill="#7DBB62"/>
+    ${[290,306,322,338,354,372,388].map((x,i)=>pine(x,150+(i%3)*4,44+(i%2)*14,"#2F5F3A")).join("")}
+    <path d="M0 206Q140 176 260 202T400 192V250H0Z" fill="#5EA34B"/>
+    <g transform="translate(150 70) rotate(-8)"><path d="M-30 0Q0 -16 30 0Z" fill="#D9493A"/><path d="M-26 0L0 26M26 0L0 26M0 0V26" stroke="#5B3B2A" stroke-width="1"/><circle cx="0" cy="29" r="3.5" fill="#3A2A22"/></g>`,
+  lake: ()=>`<defs><linearGradient id="lS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9D6B8"/><stop offset="1" stop-color="#D3E6DD"/></linearGradient></defs>
+    <rect width="400" height="250" fill="url(#lS)"/><path d="M0 132Q120 126 240 130T400 128V140H0Z" fill="#7FA48F"/>
+    <rect y="138" width="400" height="112" fill="#6E9FA2"/><g stroke="#E9D6B8" stroke-width="1.5" opacity=".5"><line x1="30" y1="160" x2="130" y2="160"/><line x1="200" y1="176" x2="330" y2="176"/><line x1="90" y1="206" x2="190" y2="206"/></g>
+    <path d="M0 176Q50 168 96 178L96 250H0Z" fill="#3E6B3F"/>${palm(26,180,96,14,"#264A2A")}${palm(66,182,74,-12,"#264A2A")}
+    <path d="M318 190Q360 180 400 186V250H306Z" fill="#3E6B3F"/>${palm(360,190,84,-14,"#264A2A")}
+    <path d="M170 196Q210 204 250 194L246 190H174Z" fill="#3A2A22"/><path d="M212 190L224 168" stroke="#3A2A22" stroke-width="2"/>${birds(170,60,5,"#3E4A44")}`,
+  coast: ()=>`<defs><linearGradient id="cS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD0DE"/><stop offset="1" stop-color="#E9F2EC"/></linearGradient></defs>
+    <rect width="400" height="250" fill="url(#cS)"/><rect y="130" width="400" height="120" fill="#3B8AA0"/><path d="M220 120Q300 96 400 104V250H250Q236 200 220 120Z" fill="#B5643B"/><path d="M226 120Q300 100 400 108V122Q310 112 236 132Z" fill="#4E8C46"/>${palm(330,112,56,-6,"#2B5A33")}${palm(370,108,64,6,"#2B5A33")}<g stroke="#FFFFFF" stroke-width="2" opacity=".5"><path d="M20 170Q60 162 100 170T180 170"/><path d="M0 200Q50 192 100 200T200 200"/></g>`,
+  hero: ()=>`<defs><linearGradient id="eS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9A56A"/><stop offset=".5" stop-color="#F6D7A6"/><stop offset="1" stop-color="#DCE9D9"/></linearGradient><clipPath id="eC"><path d="M0 150Q120 104 240 140T400 122V250H0Z"/></clipPath></defs>
+    <rect width="400" height="250" fill="url(#eS)"/><circle cx="292" cy="78" r="26" fill="#FFF0CF"/>
+    <path d="M0 108Q70 66 160 92T320 70T400 86V250H0Z" fill="#9DBFA8"/><path d="M0 150Q120 104 240 140T400 122V250H0Z" fill="#3F8A4F"/><g clip-path="url(#eC)">${rows(152,6,10,"#5FAE6A",3.5)}</g>
+    <rect y="186" width="400" height="64" fill="#2B6470"/><g stroke="#F6D7A6" stroke-width="1.6" opacity=".45"><line x1="250" y1="200" x2="330" y2="200"/><line x1="40" y1="214" x2="120" y2="214"/></g>
+    ${boat(268,212,.55)}${palm(18,196,110,18,"#1F3D26")}${palm(64,198,80,-8,"#1F3D26")}${palm(384,200,96,-14,"#1F3D26")}`
+};
+function Scene({kind, cls, style}){ const svg=useMemo(()=>`<svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${(SCENES[kind]||SCENES.coast)()}</svg>`,[kind]); return html`<div class=${"scene "+(cls||"")} style=${style} dangerouslySetInnerHTML=${{__html:svg}}></div>`; }
+
+/* --- icons --- */
+const ic = d => html`<svg viewBox="0 0 24 24" width="20" height="20" style="flex:none" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" dangerouslySetInnerHTML=${{__html:d}}></svg>`;
+const IC = {
+  home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  explore:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+  itin:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  crew:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.2c2.6.3 4.5 2.6 4.5 5.8"/>',
+  budget:'<rect x="3" y="6" width="18" height="14" rx="3"/><path d="M3 10h18"/><circle cx="16.5" cy="15" r="1.4"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>', plus:'<path d="M12 5v14M5 12h14"/>', up:'<path d="M7 11l5-5 5 5M12 6v13"/>', down:'<path d="M7 13l5 5 5-5M12 18V5"/>',
+  chat:'<path d="M4 5h16v11H9l-5 4z"/>', spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
+  car:'<path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v3H3z"/><circle cx="7.5" cy="13" r="1"/><circle cx="16.5" cy="13" r="1"/>',
+  train:'<rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14M8 20l2-4M16 20l-2-4"/><circle cx="9" cy="13" r=".8"/><circle cx="15" cy="13" r=".8"/>',
+  bed:'<path d="M3 18V7M3 13h18v5M21 18v-5a3 3 0 0 0-3-3h-7v3"/><circle cx="7" cy="10.5" r="1.8"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  wallet:'<path d="M4 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4z"/><path d="M4 7V5h12"/><circle cx="16" cy="13.5" r="1.2"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>', chev:'<path d="M9 6l6 6-6 6"/>', chevd:'<path d="M6 9l6 6 6-6"/>', clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  edit:'<path d="M4 20h4l11-11-4-4L4 16z"/>', ask:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2.1-2.4 3.6M12 17h.01"/>', history:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 8v4l3 2"/>'
+};
+const Icon = ({n}) => ic(IC[n]);
+
+/* ====================================================================
+   6. SHARED UI PIECES
+   ==================================================================== */
+function Avatar({id, size}){
+  const s=useStore(); const p=s.profiles[id]; const name=nameOf(id);
+  if(id==="ai") return html`<span class=${"av "+(size||"")} style=${{background:"var(--ai)"}} title="AI planner">${ic(IC.spark)}</span>`;
+  const col=(p&&p.color)||hashColor(id);
+  const real = p && p.avatarUrl && !p.avatarUrl.startsWith("data:");
+  return html`<span class=${"av "+(size||"")} style=${{background:col}} title=${name}>${real ? html`<img src=${p.avatarUrl} alt=""/>` : name.slice(0,1).toUpperCase()}</span>`;
+}
+function Who({id, at, extra}){ return html`<div class="row" style="gap:8px"><${Avatar} id=${id} size="sm"/><span class="small"><b>${nameOf(id)}</b>${roleOf(id)==="owner"&&id!=="ai"?html` <span class="tag">Admin</span>`:null} <span class="faint">· ${ago(at)}</span>${extra}</span></div>`; }
+function Seg({value, opts, onChange}){ return html`<div class="seg" role="tablist">${opts.map(([v,l])=>html`<button role="tab" aria-selected=${value===v} class=${value===v?"on":""} onClick=${()=>onChange(v)}>${l}</button>`)}</div>`; }
+function Sheet({title, onClose, children}){
+  useEffect(()=>{ const o=document.body.style.overflow; document.body.style.overflow="hidden"; const k=e=>{ if(e.key==="Escape") onClose(); }; addEventListener("keydown",k); return ()=>{ document.body.style.overflow=o; removeEventListener("keydown",k); }; },[]);
+  return html`<div class="sheet-bg" onClick=${e=>{ if(e.target===e.currentTarget) onClose(); }}><div class="sheet" role="dialog" aria-modal="true" aria-label=${title}><div class="sheet-head"><span class="grab"></span><h2>${title}</h2><button class="icon-btn" onClick=${onClose} aria-label="Close">${ic(IC.x)}</button></div><div class="sheet-body">${children}</div></div></div>`;
+}
+function VoteBar({target, compact}){
+  const s=useStore(); const v=votesFor(target); const mine=s.people[s.me]&&s.people[s.me].votes&&s.people[s.me].votes[target];
+  const r=reactsFor(target); const myR=s.people[s.me]&&s.people[s.me].reacts&&s.people[s.me].reacts[target];
+  const can=canContribute(); const nc=commentsOn(target).length;
+  return html`<div class="actions">
+    <button class=${"act "+(mine&&mine.v===1?"on":"")} disabled=${!can} onClick=${()=>vote(target,1)} aria-label="Vote for">${ic(IC.up)}<span class="num">${v.up.length}</span></button>
+    <button class=${"act "+(mine&&mine.v===-1?"onbad":"")} disabled=${!can} onClick=${()=>vote(target,-1)} aria-label="Vote against">${ic(IC.down)}<span class="num">${v.down.length}</span></button>
+    ${compact ? html`<span class="act" style="cursor:default">${ic(IC.chat)}<span class="num">${nc}</span></span>` : ["🔥","😍","🤔","💸"].map(e=>html`<button class=${"act "+(myR&&myR.e===e?"on":"")} disabled=${!can} onClick=${()=>react(target,e)} aria-label=${"React "+e}>${e}${r[e]?html`<span class="num">${r[e].length}</span>`:null}</button>`)}
+    ${!compact && (v.up.length||v.down.length) ? html`<span class="tiny faint">${v.up.length?"For: "+v.up.map(nameOf).join(", "):""}${v.up.length&&v.down.length?" · ":""}${v.down.length?"Against: "+v.down.map(nameOf).join(", "):""}</span>`:null}
+  </div>`;
+}
+function Thread({target}){
+  const s=useStore(); const [text,setText]=useState(""); const [reply,setReply]=useState(null); const [busy,setBusy]=useState(false);
+  const all=commentsOn(target).sort((a,b)=>a.at-b.at); const roots=all.filter(c=>!c.parent);
+  const send=async()=>{ const t=text.trim(); if(!t) return; setBusy(true); const ok=await addPost({kind:"comment", target, parent:reply?reply.id:null, body:clip(t,1200)}); setBusy(false); if(ok!==false){ setText(""); setReply(null);} };
+  const C=(c)=>html`<div class="comment" key=${c.id}><${Avatar} id=${c.by}/><div class="bubble"><div class="small"><b>${nameOf(c.by)}</b> <span class="faint">· ${ago(c.at)}</span></div><div style="white-space:pre-wrap;overflow-wrap:anywhere">${c.body}</div>${canContribute()&&!c.parent?html`<button class="link-btn small" onClick=${()=>setReply(c)}>Reply</button>`:null}</div></div>`;
+  return html`<div class="stack" style="gap:12px">
+    <div class="eyebrow">Discussion · ${all.length}</div>
+    ${roots.length===0 ? html`<div class="small faint">No comments yet. Start the conversation.</div>` : roots.map(c=>html`<div key=${c.id}>${C(c)}${all.some(x=>x.parent===c.id)?html`<div class="replies">${all.filter(x=>x.parent===c.id).map(C)}</div>`:null}</div>`)}
+    ${canContribute() ? html`<div class="stack" style="gap:6px">${reply?html`<div class="tiny muted">Replying to ${nameOf(reply.by)} <button class="link-btn tiny" onClick=${()=>setReply(null)}>Cancel</button></div>`:null}
+      <div class="composer"><textarea id=${"cm-"+target} class="field grow" placeholder=${reply?"Write a reply":"Add a comment"} value=${text} onInput=${e=>setText(e.target.value)} maxlength="1200" aria-label="Comment"></textarea><button class="btn primary" disabled=${busy||!text.trim()} onClick=${send}>Send</button></div></div>` : html`<div class="small faint">${s.mode==="live"?"Join the trip to comment.":"Open the shared link in Claude to comment."}</div>`}
+  </div>`;
+}
+function Banner(){
+  const s=useStore();
+  if(s.mode==="offline") return html`<div class="wrap" style="padding-top:12px"><div class="banner info">Preview mode. Open the trip link inside Claude and sign in to vote, comment and see the crew's plans.</div></div>`;
+  if(s.mode==="signin") return html`<div class="wrap" style="padding-top:12px"><div class="banner info">Sign in to claude.ai to join the crew.</div></div>`;
+  if(s.mode==="revoked") return html`<div class="wrap" style="padding-top:12px"><div class="banner warn">Your access to this trip was removed.</div></div>`;
+  if(s.mode==="live" && s.canWrite===false) return html`<div class="wrap" style="padding-top:12px"><div class="banner warn">You can view this trip but not contribute.</div></div>`;
+  if(s.mode==="live" && isRemoved(s.me)) return html`<div class="wrap" style="padding-top:12px"><div class="banner warn">Bhargava removed you from this trip's crew.</div></div>`;
+  return null;
+}
+
+/* ====================================================================
+   7. HOME
+   ==================================================================== */
+function Countdown(){
+  const [now,setNow]=useState(Date.now()); useEffect(()=>{ const t=setInterval(()=>setNow(Date.now()),30000); return ()=>clearInterval(t); },[]);
+  let ms=DEPART_AT-now;
+  if(ms<=0) return html`<div class="count"><div><b>${now<TRIP_END?"On":"Done"}</b><span>${now<TRIP_END?"the trip":"trip"}</span></div></div>`;
+  const d=Math.floor(ms/864e5); ms-=d*864e5; const hh=Math.floor(ms/36e5); ms-=hh*36e5; const m=Math.floor(ms/6e4);
+  return html`<div class="count" aria-label=${d+" days until the train leaves"}><div><b>${d}</b><span>days</span></div><div><b>${hh}</b><span>hrs</span></div><div><b>${m}</b><span>min</span></div></div>`;
+}
+function Home({go}){
+  const s=useStore(); const v=currentVersion(); const pr=projection(v); const mem=members();
+  const bks=Object.values(s.bookings); const booked=bks.filter(b=>b.status==="booked").length;
+  const outstanding=bks.filter(b=>b.status!=="booked"&&b.status!=="cancelled").sort((a,b)=>(a.order||99)-(b.order||99));
+  const spent=allExpenses().reduce((a,e)=>a+(e.amount||0),0);
+  const pend=pendingDecisions(); const waiting=awaitingReview();
+  const latest=allPosts().filter(p=>p.kind==="comment").sort((a,b)=>b.at-a.at).slice(0,3);
+  const ev=feed().slice(0,5);
+  const plan = pollWinner("plan") || v.plan || "A";
+  const shortlist=DEST.filter(d=>d.plan.includes(plan));
+  const outbound = bks.find(b=>b._id==="outbound");
+  return html`<div>
+    <section class="hero"><${Scene} kind="hero"/><div class="shade"></div>
+      <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–26 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">Three friends. One Kerala adventure.</div><${Countdown}/></div></section>
+    <div class="wrap stack" style="margin-top:16px">
+            <div class="row between">
+        <div class="row" style="gap:10px"><div class="avs">${mem.length?mem.map(m=>html`<${Avatar} id=${m._id} key=${m._id}/>`):html`<span class="small faint">Crew appears as people join</span>`}</div><span class="small muted">${mem.map(m=>nameOf(m._id)).join(", ")}</span></div>
+      </div>
+      <div class="card row" style="gap:12px"><span class="av" style="background:var(--ok);border-color:var(--ok-bg)">${ic(IC.train)}</span><div class="grow"><div class="row between"><b>Outbound train 12684</b><span class="pill ok">${ic(IC.check)} ${outbound&&outbound.status!=="booked"?outbound.status:"Booked"}</span></div><div class="small muted">Mon 21 Dec, 19:00 SMVT Bengaluru → Ernakulam Jn about 06:00 Tue</div></div></div>
+      <div class="quick">
+        <button onClick=${()=>canContribute()?openSheet("newpost",{}):go("crew")}>${ic(IC.plus)}Suggest</button>
+        ${s.isOwner?html`<button onClick=${()=>openSheet("ask",{})}>${ic(IC.spark)}Ask AI</button>`:null}
+        <button onClick=${()=>canContribute()?openSheet("expense",{}):go("budget")}>${ic(IC.wallet)}Expense</button>
+        <button onClick=${()=>go("itinerary")}>${ic(IC.itin)}Day plan</button>
+      </div>
+      ${waiting.length && s.mode==="live" ? html`<button class="card press banner ai" style="border:0;text-align:left" onClick=${()=>go("crew")}>${ic(IC.spark)}<div class="grow"><b>${waiting.length} new suggestion${waiting.length>1?"s":""} waiting for AI review</b><div class="small">${waiting.slice(0,2).map(p=>nameOf(p.by)+": "+clip(p.title,40)).join(" · ")}</div></div></button>`:null}
+      <div class="section-title"><h2>Pending decisions</h2><button class="link-btn" onClick=${()=>go("crew")}>Crew board</button></div>
+      ${pend.length===0 ? html`<div class="small faint">Nothing waiting on a decision.</div>` : html`<div class="stack" style="gap:10px">${pend.slice(0,4).map(x=> x.kind==="poll" ? html`<${PollCard} poll=${x.poll} key=${x.poll.id}/>` : html`<button key=${x.post.id} class="card press" style="text-align:left" onClick=${()=>openSheet("post",{id:x.post.id})}><div class="row between"><b>${clip(x.post.title,60)}</b>${statusPill(x.post)}</div><div class="small muted">AI reviewed · waiting for the group and Bhargava</div></button>`)}</div>`}
+      <div class="section-title"><h2>Bookings</h2><button class="link-btn" onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}>All</button></div>
+      <div class="card stack" style="gap:10px">
+        ${bks.length ? html`<div class="row between"><span class="num"><b>${booked}</b> of ${bks.filter(b=>b.status!=="cancelled").length} booked</span><span class="small muted">${outstanding.length} outstanding</span></div><div class="bar"><span style=${{width:(booked/Math.max(1,bks.filter(b=>b.status!=="cancelled").length)*100)+"%",background:"var(--ok)"}}></span></div>${outstanding[0]?html`<div class="small">Next: <b>${outstanding[0].title}</b> <span class="faint">${outstanding[0].when||""}</span></div>`:null}` : html`<div class="small faint">${s.mode==="live"?"Booking tracker is empty.":"Booking status shows once you're signed in."}</div>`}
+      </div>
+      <div class="section-title"><h2>Budget</h2><button class="link-btn" onClick=${()=>go("budget")}>Details</button></div>
+      <div class="card stack" style="gap:8px">
+        <div class="row between"><div><div class="eyebrow">Projected, group</div><div style="font-family:var(--f-display);font-size:28px;font-weight:800" class="num">${inr(pr.total)}</div></div><div style="text-align:right"><div class="eyebrow">Per person</div><div class="num" style="font-size:20px;font-weight:700">${inr(pr.total/Math.max(3,mem.length))}</div></div></div>
+        <div class="small muted num">Baseline ${inr(BASELINE)} · ${pr.total===BASELINE?"no change yet":signed(pr.total-BASELINE)+" vs baseline"} · spent so far ${inr(spent)}</div>
+      </div>
+      <div class="section-title"><h2>Shortlist</h2><button class="link-btn" onClick=${()=>go("explore")}>Explore</button></div>
+      <div class="scroller">${shortlist.map(d=>html`<button class="dcard" key=${d.id} onClick=${()=>openSheet("dest",{id:d.id})}><${Scene} kind=${d.scene}/><div class="body"><div class="row between"><b style="font-family:var(--f-display);font-size:19px">${d.name}</b><span class="tiny faint">${d.time.split(" (")[0]}</span></div><div class="small muted">${d.tagline}</div></div></button>`)}</div>
+      <div class="section-title"><h2>Up next</h2><button class="link-btn" onClick=${()=>go("itinerary")}>Itinerary</button></div>
+      <button class="card press" style="text-align:left" onClick=${()=>go("itinerary")}><div class="row" style="gap:12px"><div class="datebox"><b>${v.days[0].dd}</b><span>Dec</span></div><div class="grow"><b>${v.days[0].title}</b><div class="small muted">${v.days[0].travel.text} · ${v.days[0].travel.time}</div><div class="small">${(v.days[0].slots.morning||[]).slice(0,3).map(i=>i.t+" "+clip(i.text,34)).join(" · ")}</div></div></div></button>
+      <div class="section-title"><h2>Latest talk</h2></div>
+      ${latest.length ? html`<div class="card list">${latest.map(c=>html`<div class="li" key=${c.id}><${Avatar} id=${c.by} size="sm"/><div class="grow small"><b>${nameOf(c.by)}</b> on ${labelFor(c.target)}<div class="muted">${clip(c.body,110)}</div></div></div>`)}</div>` : html`<div class="small faint">No comments yet. Open any place or itinerary item to start one.</div>`}
+      <div class="section-title"><h2>Activity</h2><button class="link-btn" onClick=${()=>{ go("crew"); set({crewTab:"activity"}); }}>All</button></div>
+      ${ev.length ? html`<${FeedList} items=${ev}/>` : html`<div class="small faint">Activity appears here as the crew plans.</div>`}
+    </div></div>`;
+}
+function PollCard({poll}){
+  const s=useStore(); const pv=pollVotes("poll-"+poll.id); const mine=s.people[s.me]&&s.people[s.me].polls&&s.people[s.me].polls["poll-"+poll.id];
+  const win0=pollWinner(poll.id); const total=Object.values(pv).reduce((a,b)=>a+b.length,0);
+  return html`<div class="card stack" style="gap:10px"><div class="row between"><b>${poll.q}</b>${win0?html`<span class="pill ok">Majority</span>`:html`<span class="pill warn">${total?"Tied":"No votes"}</span>`}</div>
+    ${poll.opts.map(o=>{ const n=(pv[o.id]||[]).length; const on=mine&&mine.o===o.id; const win=win0===o.id;
+      return html`<button key=${o.id} class="card tight" disabled=${!canContribute()} onClick=${()=>pollVote("poll-"+poll.id,o.id)} style=${{textAlign:"left",cursor:canContribute()?"pointer":"default",borderColor:on||win?"var(--brand)":"var(--line)",position:"relative",overflow:"hidden",background:"var(--surface)"}}>
+        <span style=${{position:"absolute",inset:"0 auto 0 0",width:(total?n/total*100:0)+"%",background:"var(--surface-2)"}}></span>
+        <span style="position:relative" class="row between"><span class="small"><b>${win?"✓ ":""}${o.label}</b></span><span class="row" style="gap:6px"><span class="avs">${(pv[o.id]||[]).map(id=>html`<${Avatar} id=${id} size="sm" key=${id}/>`)}</span><span class="num small">${n}</span></span></span></button>`; })}
+    <div class="tiny faint">Tap to vote. The majority decides, and you can change your vote any time.</div>
+  </div>`;
+}
+
+/* ====================================================================
+   8. EXPLORE
+   ==================================================================== */
+function Explore(){
+  const s=useStore(); const tab=s.exploreTab||"places"; const setTab=t=>set({exploreTab:t});
+  const crewDest=allPosts().filter(p=>p.kind==="suggestion"&&p.cat==="destination");
+  return html`<div class="wrap stack">
+    <div class="page-head"><div class="eyebrow">Explore</div><h1>Where we could go</h1></div>
+    <${Seg} value=${tab} onChange=${setTab} opts=${[["places","Places"],["compare","A vs B"],["map","Map"],["stays","Stays"],["transport","Travel"]]}/>
+    ${tab==="places" ? html`<div class="stack">
+      <div class="section-title"><h2>Plan A</h2><span class="small faint">Recommended by research</span></div>
+      ${DEST.filter(d=>d.plan.includes("A")).map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
+      <div class="section-title"><h2>Plan B</h2><span class="small faint">Quieter fallback</span></div>
+      ${DEST.filter(d=>d.plan==="B").map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
+      <div class="section-title"><h2>Crew ideas</h2>${canContribute()?html`<button class="link-btn" onClick=${()=>openSheet("newpost",{cat:"destination"})}>Suggest a place</button>`:null}</div>
+      ${crewDest.length ? crewDest.map(p=>html`<button key=${p.id} class="dbig" onClick=${()=>openSheet("post",{id:p.id})}><div style="position:relative"><${Scene} kind="coast" style="height:120px"/><span class="plan-badge">Suggested by ${nameOf(p.by)}</span></div><div class="body stack" style="gap:6px"><div class="row between"><h3 style="font-size:20px">${p.title}</h3>${statusPill(p)}</div><div class="small muted">${clip(p.body,140)}</div></div></button>`) : html`<div class="card small muted">Know a place that should be on the list? Suggest it and the AI planner will check whether it fits the five days.</div>`}
+      <div class="section-title"><h2>Considered and cut</h2></div>
+      <div class="card list">${CUT.map(([n,t,src])=>html`<div class="li" key=${n}><div class="grow small"><b>${n}</b><div class="muted">${t} ${src?srcLink(src):null}</div></div></div>`)}</div>
+    </div>` : tab==="compare" ? html`<${Compare}/>` : tab==="map" ? html`<${MapView}/>` : tab==="stays" ? html`<${Stays}/>` : html`<${Transport}/>`}
+  </div>`;
+}
+function DestCard({d}){
+  useStore(); const v=votesFor(d.id); const n=commentsOn(d.id).length;
+  return html`<button class="dbig" onClick=${()=>openSheet("dest",{id:d.id})}><div style="position:relative"><${Scene} kind=${d.scene} style="height:190px"/><span class="plan-badge">${d.plan==="A+B"?"Plan A and B":"Plan "+d.plan}</span></div>
+    <div class="body stack" style="gap:6px"><div class="row between"><h3>${d.name}</h3><span class="small faint">${d.time.split(" (")[0]}</span></div><div class="muted">${d.tagline}</div>
+    <div class="row small faint" style="gap:14px"><span class="row" style="gap:4px">${ic(IC.up)} ${v.up.length}</span><span class="row" style="gap:4px">${ic(IC.chat)} ${n}</span><span>${d.dist[0][0]}: ${d.dist[0][1]}</span></div></div></button>`;
+}
+function DestSheet({id}){
+  const d=DEST.find(x=>x.id===id); if(!d) return null;
+  const Row=([a,b,basis,src])=>html`<div class="li"><div class="grow small"><b>${a}</b> ${basisTag(basis)}<div class="muted">${b} ${src?srcLink(src):null}</div></div></div>`;
+  return html`<${Sheet} title=${d.name} onClose=${closeSheet}>
+    <div style="position:relative;border-radius:18px;overflow:hidden"><${Scene} kind=${d.scene} style="height:200px"/><span class="plan-badge">${d.plan==="A+B"?"Plan A and B":"Plan "+d.plan} · ${d.time}</span></div>
+    <div><div class="eyebrow">${d.tagline}</div><p style="margin:.4em 0 0">${d.about}</p></div>
+    <${VoteBar} target=${d.id}/>
+    <div class="card"><div class="eyebrow" style="margin-bottom:6px">Why go</div><ul class="clean small">${d.why.map(w=>html`<li>${w}</li>`)}</ul></div>
+    <div class="card"><div class="eyebrow">Experiences</div><div class="list">${d.exp.map(e=>Row(e))}</div></div>
+    <div class="card"><div class="eyebrow">Hidden gems</div><div class="list">${d.gems.map(([a,b])=>Row([a,b]))}</div></div>
+    <div class="card"><div class="eyebrow">Getting there</div><div class="list">${d.dist.map(e=>Row(e))}</div></div>
+    <div class="card"><div class="eyebrow">Where to stay</div><div class="list">${d.stays.map(e=>Row(e))}</div></div>
+    <div class="card"><div class="eyebrow">Food</div><div class="list">${d.food.map(e=>Row(e))}</div><div class="tiny faint" style="margin-top:6px">Food research is thin. Add your favourites on the Crew board.</div></div>
+    <div class="card"><div class="eyebrow">Cost</div><div class="small">${d.cost}</div></div>
+    <div class="cmp"><div><div class="eyebrow" style="color:var(--ok)">Good</div><ul class="clean small">${d.pros.map(x=>html`<li>${x}</li>`)}</ul></div><div><div class="eyebrow" style="color:var(--bad)">Watch out</div><ul class="clean small">${d.cons.map(x=>html`<li>${x}</li>`)}</ul></div></div>
+    ${canContribute()?html`<button class="btn block" onClick=${()=>openSheet("newpost",{target:d.id, cat:"activity"})}>${ic(IC.plus)} Suggest something in ${d.name}</button>`:null}
+    <${Thread} target=${d.id}/>
+  <//>`;
+}
+function Compare(){
+  const [plan,setPlan]=useState("A"); const pa=projection({days:PLAN_A}), pb=projection({days:PLAN_B}), pab=projection({days:PLAN_AB});
+  const rowsC=[["Bases","Munnar ×2, Alleppey boat, Fort Kochi","Vagamon ×2, Kumarakom boat, Fort Kochi"],["Arrival-day drive","125 km · 3.5–4 h","100–110 km · 3.5–4.5 h"],["Longest drive","Munnar → Alleppey, about 180 km · 5–5.5 h","Vagamon → Kumarakom, 76 km · about 2 h"],["Group total (Est.)",inr(pa.total),inr(pb.total)],["Per person",inr(pa.total/3),inr(pb.total/3)],["Signature moment","Kolukkumalai sunrise, Eravikulam tahr","Paragliding over the meadows"],["Weather risk","Low","Paragliding is wind-dependent"],["Crowds","Munnar is among the busiest at year end","Quieter hills; Kumarakom sold out last year"]];
+  return html`<div class="stack">
+    <div class="card" style="padding:0;overflow:hidden"><div class="table-wrap"><table class="t"><thead><tr><th></th><th>Plan A (mid-range)</th><th>Plan B (mid-range)</th></tr></thead><tbody>${rowsC.map(([a,b,c])=>html`<tr key=${a}><th style="text-transform:none;letter-spacing:0;font-size:13px">${a}</th><td class="small">${b}</td><td class="small">${c}</td></tr>`)}</tbody></table></div></div>
+    <div class="card stack" style="gap:6px;border-color:var(--brand)"><div class="row between"><b>Our plan: Plan A, budget version</b><span class="pill ok">Under the cap</span></div><div class="kv num"><dt>Group</dt><dd><b>${inr(pab.total)}</b> ${basisTag("est")}</dd><dt>Per person</dt><dd><b>${inr(pab.total/3)}</b> of the ₹15,000–20,000 cap</dd></div><div class="small muted">Same route as Plan A, on KSRTC buses and a basic houseboat. The car goes (about ₹20,000 down to ₹5,600 of buses and a jeep). Munnar, a night on the water and Christmas in Fort Kochi all stay. The table below shows the mid-range versions, both well over the cap.</div></div>
+    <div class="banner info small">Headroom is about ₹11,000 for the group. Best upgrades: a private cab for the Christmas Eve Munnar → Alleppey leg (Est. ₹4,500–5,000), the Kolukkumalai sunrise jeep (Est. ₹4,000), or two rooms in Munnar (about ₹3,000). To go lower (about ₹13,500 each): sleeper class, and a ferry plus shikara instead of the houseboat.</div>
+    <${PollCard} poll=${POLLS[0]}/>
+    <${Seg} value=${plan} onChange=${setPlan} opts=${[["A","Route A"],["B","Route B"]]}/>
+    <div class="card map"><${RouteMap} plan=${plan}/></div>
+    <${VoteBar} target="plan-compare"/>
+    <${Thread} target="plan-compare"/>
+  </div>`;
+}
+const MAP_BOX={lat0:10.45,lat1:8.55,lng0:75.95,lng1:77.35,w:300,h:380};
+const P=(lat,lng)=>[+((lng-MAP_BOX.lng0)/(MAP_BOX.lng1-MAP_BOX.lng0)*MAP_BOX.w+10).toFixed(1), +((MAP_BOX.lat0-lat)/(MAP_BOX.lat0-MAP_BOX.lat1)*MAP_BOX.h+10).toFixed(1)];
+const PLACES={ekm:[9.969,76.29,"Ernakulam Jn"],fk:[9.964,76.242,"Fort Kochi"],munnar:[10.089,77.06,"Munnar"],alp:[9.498,76.338,"Alleppey"],vag:[9.686,76.905,"Vagamon"],kum:[9.617,76.43,"Kumarakom"],tek:[9.6,77.16,"Thekkady"],var:[8.737,76.716,"Varkala"]};
+const VIA={kothamangalam:[10.06,76.63],vyttila:[9.97,76.32],muvattu:[9.98,76.58],thodu:[9.89,76.72],vaikom:[9.75,76.39],tripu:[9.95,76.35]};
+function RouteMap({plan}){
+  const coast=[[10.45,76.02],[10.2,76.15],[10.0,76.22],[9.95,76.235],[9.7,76.29],[9.5,76.32],[9.3,76.40],[9.0,76.52],[8.75,76.70],[8.55,76.86]].map(([a,b])=>P(a,b));
+  const sea=`M0 0L${coast.map(p=>p.join(" ")).join("L")}L0 400Z`;
+  const ghats=`M${P(10.45,76.75).join(" ")}Q${P(10.0,76.7).join(" ")} ${P(9.6,76.82).join(" ")}T${P(8.55,77.05).join(" ")}L320 400L320 0Z`;
+  const pts=(...k)=>k.map(x=>(PLACES[x]?P(PLACES[x][0],PLACES[x][1]):P(VIA[x][0],VIA[x][1])).join(",")).join(" ");
+  const A=[["ekm","kothamangalam","munnar"],["munnar","kothamangalam","vyttila","alp"],["alp","fk"],["fk","ekm"]];
+  const B=[["ekm","muvattu","thodu","vag"],["vag","kum"],["kum","vaikom","tripu","fk"],["fk","ekm"]];
+  const legs=plan==="A"?A:B; const stops=plan==="A"?["ekm","munnar","alp","fk"]:["ekm","vag","kum","fk"];
+  return html`<svg viewBox="0 0 320 400" role="img" aria-label=${"Map of route "+plan}>
+    <rect width="320" height="400" fill="var(--map-land)"/><path d=${ghats} fill="var(--map-hill)"/><path d=${sea} fill="var(--map-sea)"/>
+    <ellipse cx=${P(9.72,76.39)[0]} cy=${P(9.72,76.39)[1]} rx="6" ry="38" fill="var(--map-sea)" transform=${`rotate(8 ${P(9.72,76.39).join(" ")})`}/>
+    <text x="24" y="250" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Arabian Sea</text><text x="230" y="310" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Western Ghats</text>
+    ${legs.map((l,i)=>html`<polyline key=${plan+i} class="route" points=${pts(...l)} stroke=${plan==="A"?"var(--laterite)":"var(--sea)"}/>`)}
+    ${Object.entries(PLACES).map(([k,[la,ln,name]])=>{ const [x,y]=P(la,ln); const on=stops.includes(k); return html`<g key=${k}><circle cx=${x} cy=${y} r=${on?6:3.5} fill=${on?"var(--brand)":"var(--ink-3)"} stroke="var(--surface)" stroke-width="2"/><text x=${k==="fk"?x-8:x+9} y=${y+(k==="fk"?16:4)} font-size=${on?12:10} font-weight=${on?700:500} fill="var(--ink)" text-anchor=${k==="fk"?"end":"start"}>${name}</text></g>`; })}
+  </svg>
+  <div class="tiny faint" style="margin-top:6px">Schematic: places to scale, roads simplified.</div>`;
+}
+function MapView(){
+  const [plan,setPlan]=useState("A"); const days=plan==="A"?PLAN_A:PLAN_B;
+  return html`<div class="stack"><${Seg} value=${plan} onChange=${setPlan} opts=${[["A","Plan A route"],["B","Plan B route"]]}/>
+    <div class="card map"><${RouteMap} plan=${plan}/></div>
+    <div class="card list">${days.map(d=>html`<div class="li" key=${d.key}><span class="av sm" style=${{background:"var(--brand)",color:"var(--brand-ink)"}}>${d.dd}</span><div class="grow small"><b>${d.travel.text}</b> ${basisTag(d.travel.basis)}<div class="muted">${d.travel.km} · ${d.travel.time}</div></div></div>`)}</div></div>`;
+}
+function Stays(){
+  const [loc,setLoc]=useState("alleppey"); const [cfg,setCfg]=useState("1br"); const o=HOUSEBOAT[loc][cfg]; const line=10000;
+  const nights=[["22, 23 Dec","Our plan: Munnar triple room","Old Munnar lodge or guesthouse. TrekGo lists lodges at ₹700–1,000 a double off-season; no December prices seen","₹3,000 / night","est",L("https://trekgo.in/blog/munnar-budget-travel-guide","TrekGo")],["24 Dec","Our plan: basic Alleppey houseboat","Cheapest licensed (KBOA or KTDC) 1BR with AC at night; agree a 13:30 boarding","₹10,000","est",SRC.paradiseHB],["25 Dec","Our plan: Fort Kochi budget room","Homestay or guesthouse; dorm beds are ₹500–700 off-peak","₹4,500","est",SRC.homestay],["22, 23 Dec","Mid-range: Munnar","Tea-estate stay, Chithirapuram/Pallivasal/Devikulam. Ama Stays and Trails, Windermere Estate, Zenha Resorts, The Tall Trees","₹7,000–8,000 / night","est",SRC.layla],["22, 23 Dec","Plan B: Vagamon","VAASTA Vagamon, Voye Homes Whitestone Cottage, Winter Vale Green Stay, Woodcastle Residency","₹5,000–6,500 / night","est",SRC.expediaV],["24 Dec","Mid-range: Alleppey houseboat","KBOA-certified or KTDC boats","₹14,000–18,000","est",SRC.paradiseHB],["24 Dec","Plan B: Kumarakom houseboat","Same standards; book early","₹13,500–32,000","listed",SRC.kumarakomHB],["25 Dec","Mid-range: Fort Kochi","The Old Courtyard (from ₹5,400), Walton's Homestay, Old Harbour Hotel","₹8,000–10,000","est",SRC.thrillo]];
+  return html`<div class="stack">
+    <div class="banner warn small">Nothing is reserved yet unless the Bookings tab says so. Book refundable rates now: Christmas-week rooms go first.</div>
+    <div class="card stack"><div class="row between"><h2 style="font-size:20px">Houseboat for 24 Dec</h2>${basisTag(o.basis)}</div>
+      <${Seg} value=${loc} onChange=${setLoc} opts=${[["alleppey","Alleppey"],["kumarakom","Kumarakom"]]}/>
+      <${Seg} value=${cfg} onChange=${setCfg} opts=${[["1br","1 bedroom + extra bed"],["2br","2 bedrooms"]]}/>
+      <div class="row" style="gap:14px;align-items:stretch">
+        <svg viewBox="0 0 120 70" style="width:120px;flex:none" aria-hidden="true"><rect x="2" y="10" width="116" height="50" rx="22" fill="var(--surface-2)" stroke="var(--line)"/>
+          ${cfg==="1br"?html`<g><rect x="16" y="20" width="36" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="58" y="26" width="16" height="22" rx="3" fill="var(--turmeric)"/><rect x="80" y="22" width="26" height="26" rx="4" fill="none" stroke="var(--ink-3)" stroke-dasharray="3 2"/></g>`:html`<g><rect x="14" y="20" width="32" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="52" y="20" width="32" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="88" y="22" width="20" height="26" rx="4" fill="none" stroke="var(--ink-3)" stroke-dasharray="3 2"/></g>`}</svg>
+        <div class="grow small">${cfg==="1br"?"One double bed plus an extra mattress, one bathroom. Snug for three.":"Two bedrooms and two bathrooms. One person gets a room to themselves."}<div class="faint" style="margin-top:4px">Deluxe AC usually runs only 21:00–06:00. All meals included.</div></div></div>
+      <div class="kv num"><dt>Price</dt><dd><b>${o.lo===o.hi?inr(o.lo):inr(o.lo)+"–"+inr(o.hi)}</b></dd><dt>Per person</dt><dd>${o.lo===o.hi?inr(o.lo/3):inr(o.lo/3)+"–"+inr(o.hi/3)}</dd><dt>vs budget line</dt><dd style=${{color:o.hi>line?"var(--bad)":"var(--ok)"}}>${signed(o.lo-line)} to ${signed(o.hi-line)}</dd><dt>Basis</dt><dd class="small muted">${o.note} ${srcLink(o.src)}</dd></div>
+      <${PollCard} poll=${POLLS[2]}/>
+    </div>
+    <div class="section-title"><h2>Every night</h2></div>
+    ${nights.map(([n,p,c,price,b,src])=>html`<div class="card stack" style="gap:6px" key=${p}><div class="row between"><span class="eyebrow">${n}</span>${basisTag(b)}</div><b>${p}</b><div class="small muted">${c}</div><div class="row between small"><span class="num"><b>${price}</b> for three</span>${srcLink(src)}</div></div>`)}
+    <div class="card small muted">Ask every property before paying a deposit: compulsory Christmas gala dinner (Munnar lists ₹3,000–4,500 per adult on 24 Dec, ${srcLink(SRC.kondody)}), early check-in at 11:00 on the 22nd, bag storage until 18:00 on the 26th, parking, and cancellation terms.</div>
+  </div>`;
+}
+function Transport(){
+  return html`<div class="stack">
+    <div class="card stack" style="gap:8px"><div class="row between"><b>Outbound · train 12684</b><span class="pill ok">${ic(IC.check)} Booked</span></div>
+      <div class="kv"><dt>Leaves</dt><dd>SMVT Bengaluru, Mon 21 Dec, 19:00</dd><dt>Arrives</dt><dd>Ernakulam Jn, Tue 22 Dec, about 06:00 ${basisTag("listed")}</dd><dt>Runs</dt><dd>Mon, Tue, Thu</dd></div>
+      <div class="tiny faint">Timetable: ${srcLink(SRC.t12684)}, ${srcLink(SRC.rm12684)}. Not counted as an outstanding booking.</div></div>
+    <div class="card stack" style="gap:8px"><div class="row" style="gap:8px">${ic(IC.car)}<b>Onward: KSRTC buses and one jeep day</b></div>
+      <div class="kv small"><dt>Tue</dt><dd>Auto to the KSRTC stand (₹100–150), bus to Munnar ₹140–230 each, 2–4 h ${basisTag("listed")} ${srcLink(SRC.rome2rio)}</dd><dt>Wed</dt><dd>Full-day jeep for three, about ₹2,500 ${basisTag("est")}</dd><dt>Thu</dt><dd>Munnar → Ernakulam bus ₹185–221 each ${basisTag("listed")} ${srcLink(L("https://www.tickettogetlost.com/?p=8088","Ticket to Get Lost"))}, then a bus to Alleppey</dd><dt>Fri</dt><dd>Bus to Ernakulam, ferry to Fort Kochi ₹6–10</dd></div>
+      <div class="banner warn small">Bus times for 22 and 24 Dec are not verified. Call the Munnar depot on 04865-230201 and reserve seats on KSRTC's online booking. Christmas Eve buses will be full.</div>
+      <div class="small"><b>First upgrade to buy:</b> a private cab for Thursday's Munnar → Alleppey leg, Est. ₹4,500–5,000. It saves 5+ hours of buses on Christmas Eve and fits inside the ₹11,000 headroom.</div>
+      <div class="eyebrow" style="margin-top:4px">If we go back to a car for all four days (mid-range plan)</div>
+      <div class="small muted">Rates seen: Innova ₹12.5–13.5/km and about ₹5,000 for a 145 km drop (${srcLink(SRC.cabbazar)}); ₹22/km on a multi-day Crysta package (${srcLink(SRC.mts)}). Expect about 250 km billed per day minimum and a Christmas premium. Get one all-inclusive written quote. Send the driver the 12684 PNR and coach.</div></div>
+    <div class="section-title"><h2>Return on Sat 26 Dec</h2></div>
+    <div class="banner warn small">Not booked. Booking opened on 27 Oct and Christmas week fills early. Check seats on ${srcLink(SRC.irctc)}; Tatkal opens the day before (10:00 AC, 11:00 sleeper; ${srcLink(SRC.goibibo)}). I could not see live seat counts, and sites disagree on 16316's Ernakulam time.</div>
+    ${RETURN.map(r=>html`<div class="card stack" style="gap:6px" key=${r.id}><div class="row between"><b>${r.name}</b>${r.pick?html`<span class="pill info">Research pick</span>`:null}</div>
+      <div class="kv"><dt>Runs</dt><dd>${r.runs}</dd><dt>Leaves</dt><dd>${r.leaves}</dd><dt>Arrives</dt><dd>${r.arrives}</dd><dt>Fare</dt><dd>${r.fare}</dd></div><div class="small muted">${r.note}</div><div class="tiny faint">Sources: ${r.src.map((s,i)=>html`${i?", ":""}${srcLink(s)}`)}</div></div>`)}
+    <${PollCard} poll=${POLLS[1]}/>
+    <div class="card"><div class="eyebrow" style="margin-bottom:6px">Station and luggage plan</div><ul class="clean small"><li>Tue: driver meets us at the Ernakulam Jn exit</li><li>Thu: one overnight bag on the boat; ask if main bags can stay locked in the car</li><li>Sat: check out 12:00, bags stay at the hotel until 18:00</li><li>18:15 cab to Ernakulam Jn (Est. ₹500–700); the ₹6 ferry is awkward with suitcases</li><li>Platform 1 cloak room reported at about ₹30 a bag, 06:00–22:00 (unconfirmed)</li></ul></div>
+  </div>`;
+}
+
+/* ====================================================================
+   9. ITINERARY
+   ==================================================================== */
+function Itinerary(){
+  const s=useStore(); const cur=currentVersion(); const [vid,setVid]=useState(null);
+  const v=(vid && (s.itin[vid])) || cur; const isCur=v._id===cur._id; const pr=projection(v);
+  const [open,setOpen]=useState({d1:true});
+  return html`<div class="wrap stack">
+    <div class="page-head"><div class="eyebrow">Itinerary · ${v.plan==="B"?"Plan B":"Plan A"}</div><h1>Five days in Kerala</h1></div>
+    <button class="card press row" style="gap:10px;text-align:left" onClick=${()=>openSheet("versions",{onPick:setVid})}>${ic(IC.history)}<div class="grow"><b>${v.unsaved?"Research baseline":"Version "+v.n}</b> ${v.status==="approved"?html`<span class="pill ok">Approved</span>`:html`<span class="pill warn">Draft</span>`} ${!isCur?html`<span class="pill neutral">Older version</span>`:null}<div class="small muted">${v.unsaved?"Not saved to the trip yet":clip(v.why,70)+" · "+nameOf(v.by)+" · "+ago(v.at)}</div></div>${ic(IC.chev)}</button>
+    ${!isCur?html`<button class="btn" onClick=${()=>setVid(null)}>Back to the current version</button>`:null}
+    ${s.isOwner && isCur && v.unsaved ? html`<button class="btn primary" onClick=${()=>createVersion(v.days,"Research baseline: Plan A, budget version",{status:"draft",adjust:{}})}>Save baseline as v1</button>`:null}
+    ${s.isOwner && isCur && !v.unsaved && v.status!=="approved" ? html`<button class="btn primary" onClick=${async()=>{ const d=stripId(v); d.status="approved"; d.approvedBy=s.me; d.approvedAt=Date.now(); if(await ownerWrite("itinerary/"+v._id,d)) toast("Itinerary approved"); }}>Approve this itinerary</button>`:null}
+    <div class="card row between"><div><div class="eyebrow">Projected cost</div><b class="num" style="font-size:20px">${inr(pr.total)}</b> <span class="small muted num">${inr(pr.total/3)} pp</span></div><div class="small muted" style="text-align:right">incl. 10%<br/>contingency</div></div>
+    <div class="day"><div class="day-head" style="cursor:default"><div class="datebox" style="background:var(--surface-2);color:var(--ink)"><b>21</b><span>Mon</span></div><div class="grow"><b>Night train south</b><div class="small muted">19:00 train 12684 from SMVT Bengaluru</div></div><span class="pill ok">Booked</span></div></div>
+    ${v.days.map((d,i)=>html`<${DayCard} key=${d.key} d=${d} i=${i} open=${!!open[d.key]} toggle=${()=>setOpen(Object.assign({},open,{[d.key]:!open[d.key]}))} readonly=${!isCur}/>`)}
+    ${s.isOwner && isCur && v.plan!=="B" && pollWinner("plan")==="B" ? html`<button class="btn" onClick=${()=>createVersion(PLAN_B,"Switched to Plan B after the group decision",{plan:"B",adjust:{},adjustNotes:[]})}>Switch the itinerary to Plan B</button>`:null}
+  </div>`;
+}
+function DayCard({d,i,open,toggle,readonly}){
+  useStore(); const tot=BUDGET_CATS.reduce((a,c)=>a+(d.cost[c.id]||0),0);
+  return html`<div class="day">
+    <button class="day-head" onClick=${toggle} aria-expanded=${open}><div class="datebox"><b>${d.dd}</b><span>${d.dow}</span></div><div class="grow"><div class="eyebrow">Day ${i+1} · ${d.base}</div><b style="font-size:17px">${d.title}</b><div class="small muted">${d.travel.time} · ${inr(tot)}</div></div><span style=${{transform:open?"rotate(180deg)":"none",transition:"transform .2s",display:"grid"}}>${ic(IC.chevd)}</span></button>
+    ${open?html`<div class="day-body">
+      <div class="travel">${ic(IC.car)}<div class="grow"><b>${d.travel.text}</b> ${basisTag(d.travel.basis)}<div class="small muted">${d.travel.km} · ${d.travel.time}</div></div></div>
+      ${SLOTS.map(([sl,label])=>(d.slots[sl]||[]).length?html`<div class="slot" key=${sl}><h4>${label}</h4>${d.slots[sl].map(it=>html`<${ItemRow} key=${it.id} it=${it} readonly=${readonly}/>`)}</div>`:null)}
+      <div class="kv small"><dt>Stay</dt><dd>${d.stay}</dd><dt>Food</dt><dd>${d.food}</dd></div>
+      <div class="costline num">${BUDGET_CATS.filter(c=>d.cost[c.id]).map(c=>html`<span key=${c.id}><span class="dot" style=${{background:c.color}}></span> ${c.label} ${inr(d.cost[c.id])}</span>`)}<span class="tag est">Est.</span></div>
+      ${canContribute()&&!readonly?html`<button class="btn sm" onClick=${()=>openSheet("newpost",{cat:"activity",dayHint:"Day "+(i+1)+" ("+d.dow+" "+d.dd+" Dec)"})}>${ic(IC.plus)} Suggest a change for this day</button>`:null}
+    </div>`:null}
+  </div>`;
+}
+function ItemRow({it, readonly}){
+  const v=votesFor(it.id); const n=commentsOn(it.id).length;
+  return html`<button class="item" onClick=${()=>openSheet("item",{id:it.id, readonly})}><span class="t">${it.t||"—"}</span><span class="grow"><span>${it.text}</span>${it.opt?html` <span class="tag">Optional</span>`:null}${it.src==="proposal"?html` <span class="tag gk">Changed</span>`:null}${v.up.length||v.down.length||n?html`<span class="meta"><span>▲ ${v.up.length}</span>${v.down.length?html`<span>▼ ${v.down.length}</span>`:null}<span>${n} comment${n===1?"":"s"}</span></span>`:null}</span></button>`;
+}
+function ItemSheet({id, readonly}){
+  const s=useStore(); const it=findItem(id); const [mode,setMode]=useState(null); const [text,setText]=useState(it?it.text:""); const [why,setWhy]=useState(""); const [busy,setBusy]=useState(false);
+  if(!it) return html`<${Sheet} title="Item" onClose=${closeSheet}><div class="muted">This item is no longer in the itinerary.</div><${Thread} target=${id}/><//>`;
+  const save=async()=>{ if(!why.trim()) return; setBusy(true); const cur=currentVersion(); const days=clone(cur.days);
+    SLOTS.forEach(([sl])=>{ const a=days[it.day-1].slots[sl]||[]; const k=a.findIndex(x=>x.id===id); if(k<0) return; if(mode==="remove") a.splice(k,1); else a[k]=Object.assign({},a[k],{text:clip(text,200)}); });
+    const ok=await createVersion(days, clip(why,140)); setBusy(false); if(ok){ toast("Itinerary "+ok+" saved"); closeSheet(); } };
+  return html`<${Sheet} title=${"Day "+it.day+" · "+it.date} onClose=${closeSheet}>
+    <div class="card"><div class="eyebrow">${it.slot}${it.t?" · "+it.t:""}</div><div style="font-size:17px;font-weight:600;margin-top:4px">${it.text}</div></div>
+    <${VoteBar} target=${id}/>
+    ${canContribute()&&!readonly?html`<button class="btn block" onClick=${()=>openSheet("newpost",{target:id, cat:"activity"})}>Suggest an alternative</button>`:null}
+    ${s.isOwner&&!readonly&&!currentVersion().unsaved?html`<div class="card stack" style="gap:10px"><div class="eyebrow">Admin</div>
+      ${!mode?html`<div class="row"><button class="btn sm" onClick=${()=>setMode("edit")}>${ic(IC.edit)} Edit</button><button class="btn sm danger" onClick=${()=>setMode("remove")}>Remove</button></div>`:html`<div class="stack" style="gap:8px">
+        ${mode==="edit"?html`<textarea id="item-edit" class="field" value=${text} onInput=${e=>setText(e.target.value)} aria-label="New text"></textarea>`:html`<div class="small">Remove this item from the itinerary.</div>`}
+        <input id="item-why" class="field" placeholder="Why? (saved in the change history)" value=${why} onInput=${e=>setWhy(e.target.value)}/>
+        <div class="row"><button class="btn primary sm" disabled=${busy||!why.trim()} onClick=${save}>Save as new version</button><button class="btn sm" onClick=${()=>setMode(null)}>Cancel</button></div>
+        <div class="tiny faint">The current version stays in the history.</div></div>`}</div>`:null}
+    <${Thread} target=${id}/>
+  <//>`;
+}
+function VersionsSheet({onPick}){
+  const s=useStore(); const vs=versions(); const cur=currentVersion(); const [cmp,setCmp]=useState(null);
+  return html`<${Sheet} title="Itinerary history" onClose=${closeSheet}>
+    ${vs.length===0?html`<div class="small muted">No saved versions yet. The research baseline is shown until Bhargava saves it as v1.</div>`:null}
+    ${vs.map(v=>{ const prev=vs.find(x=>x.n===v.n-1); const df=prev?diffVersions(prev,v):null; const pr=projection(v);
+      return html`<div class="card stack" style="gap:8px" key=${v._id}><div class="row between"><b>Version ${v.n}</b><span class="row" style="gap:6px">${v._id===cur._id?html`<span class="pill info">Current</span>`:null}${v.status==="approved"?html`<span class="pill ok">Approved</span>`:html`<span class="pill warn">Draft</span>`}</span></div>
+        <div class="small">${v.why}</div><div class="tiny faint">${nameOf(v.by)} · ${ago(v.at)} · Plan ${v.plan} · ${inr(pr.total)}</div>
+        ${df&&cmp===v._id?html`<div class="small stack" style="gap:4px">${df.added.map(x=>html`<div style="color:var(--ok)">+ Day ${x.day}: ${x.text}</div>`)}${df.removed.map(x=>html`<div style="color:var(--bad)">− Day ${x.day}: ${x.text}</div>`)}${df.changed.map(([a,b])=>html`<div>~ Day ${b.day}: <s class="faint">${a.text}</s> → ${b.text}</div>`)}<div class="num">Cost: ${signed(projection(v).total-projection(prev).total)}</div>${!df.added.length&&!df.removed.length&&!df.changed.length?html`<div class="faint">No item changes.</div>`:null}</div>`:null}
+        <div class="row wrapr">${df?html`<button class="btn sm" onClick=${()=>setCmp(cmp===v._id?null:v._id)}>${cmp===v._id?"Hide changes":"What changed"}</button>`:null}<button class="btn sm" onClick=${()=>{ onPick&&onPick(v._id===cur._id?null:v._id); closeSheet(); }}>View</button>${s.isOwner&&v._id!==cur._id?html`<button class="btn sm" onClick=${async()=>{ const id=await createVersion(v.days,"Restored version "+v.n,{plan:v.plan,adjust:clone(v.adjust)||{},adjustNotes:clone(v.adjustNotes)||[]}); if(id){ toast("Restored as "+id); closeSheet(); } }}>Restore</button>`:null}</div></div>`; })}
+  <//>`;
+}
+function diffVersions(a,b){ const A=flatItems(a.days), B=flatItems(b.days); return {added:Object.keys(B).filter(k=>!A[k]).map(k=>B[k]), removed:Object.keys(A).filter(k=>!B[k]).map(k=>A[k]), changed:Object.keys(B).filter(k=>A[k]&&A[k].text!==B[k].text).map(k=>[A[k],B[k]])}; }
+
+/* ====================================================================
+   10. CREW
+   ==================================================================== */
+function Crew(){
+  const s=useStore(); const tab=s.crewTab||"board";
+  return html`<div class="wrap stack">
+    <div class="page-head"><div class="eyebrow">The Crew Board</div><h1>Plan it together</h1></div>
+    <${Seg} value=${tab} onChange=${t=>set({crewTab:t})} opts=${[["board","Board"],["activity","Activity"],["crew","Crew"]]}/>
+    ${tab==="board"?html`<${Board}/>`:tab==="activity"?html`<${FeedList} items=${feed()} full=${true}/>`:html`<${Members}/>`}
+  </div>`;
+}
+function Board(){
+  const s=useStore(); const [cat,setCat]=useState("all"); const [busy,setBusy]=useState(false);
+  const posts=allPosts().filter(p=>p.kind==="suggestion" && (cat==="all"||p.cat===cat)).sort((a,b)=>b.at-a.at);
+  const waiting=awaitingReview();
+  const reviewAll=async()=>{ setBusy(true); for(const p of waiting){ const ok=await runReview(p); if(!ok) break; } setBusy(false); };
+  return html`<div class="stack">
+    ${canContribute()?html`<button class="btn primary block" style="min-height:52px" onClick=${()=>openSheet("newpost",{})}>${ic(IC.plus)} Suggest something</button>`:null}
+    ${waiting.length&&s.mode==="live"?html`<div class="ai-box"><div class="row between"><b>${waiting.length} waiting for AI review</b>${ic(IC.spark)}</div><div class="small">Claude researches each idea against our dates, routes and budget, then recommends what to do. It runs on Bhargava's Claude account, automatically when he has the app open, or when he taps review.</div>${s.isOwner&&s.sampleOK&&canContribute()?html`<button class="btn ai" disabled=${busy} onClick=${reviewAll}>${busy?html`<span class="spinner"></span> Reviewing…`:"Review "+(waiting.length>1?"all "+waiting.length:"it")+" now"}</button>`:html`<div class="small">${s.isOwner?"AI isn't available in this view. Open a suggestion to add a manual review.":"Bhargava's app reviews new suggestions, or he runs it himself. You can keep adding ideas and comments."}</div>`}</div>`:null}
+    <div class="chips" role="tablist">${[{id:"all",label:"All"}].concat(CATS).map(c=>html`<button key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}>${c.color?html`<span class="dot" style=${{background:c.color}}></span>`:null}${c.label}</button>`)}</div>
+    ${posts.length===0?html`<div class="card stack" style="gap:6px;text-align:center"><b>No suggestions${cat!=="all"?" here":""} yet</b><div class="small muted">Ideas for places, food, stays, routes or budget go here. Everyone can vote, react and comment, and the AI planner checks each one.</div></div>`:posts.map(p=>html`<${PostCard} p=${p} key=${p.id}/>`)}
+  </div>`;
+}
+function PostCard({p}){
+  const c=CATS.find(x=>x.id===p.cat)||CATS[6];
+  return html`<div class="card post"><${Who} id=${p.by} at=${p.at}/>
+    <button style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:6px" onClick=${()=>openSheet("post",{id:p.id})}>
+      <div class="row wrapr" style="gap:6px"><span class="pill neutral"><span class="dot" style=${{background:c.color}}></span>${c.label}</span>${statusPill(p)}${p.cost?html`<span class="pill neutral num">${inr(p.cost)}</span>`:null}</div>
+      <h3>${p.title}</h3>${p.body?html`<div class="small muted" style="overflow-wrap:anywhere">${clip(p.body,180)}</div>`:null}${p.target?html`<div class="tiny faint">On ${labelFor(p.target)}</div>`:null}
+    </button>
+    <${VoteBar} target=${p.id} compact=${true}/></div>`;
+}
+function NewPostSheet({cat:cat0, target, dayHint}){
+  const [cat,setCat]=useState(cat0||"activity"); const [title,setTitle]=useState(""); const [body,setBody]=useState(dayHint?dayHint+": ":""); const [cost,setCost]=useState(""); const [busy,setBusy]=useState(false);
+  const submit=async e=>{ e.preventDefault(); if(!title.trim()) return; setBusy(true); const ok=await addPost({kind:"suggestion", cat, title:clip(title.trim(),120), body:clip(body.trim(),1500), cost:Number(cost)||0, target:target||null}); setBusy(false); if(ok!==false){ toast("Shared with the crew"); closeSheet(); set({crewTab:"board"}); } };
+  return html`<${Sheet} title="Suggest something" onClose=${closeSheet}>
+    <form class="stack" onSubmit=${submit}>
+      ${target?html`<div class="small muted">On ${labelFor(target)}</div>`:null}
+      <div><span class="lbl">Category</span><div class="chips">${CATS.map(c=>html`<button type="button" key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}><span class="dot" style=${{background:c.color}}></span>${c.label}</button>`)}</div></div>
+      <div><label class="lbl" for="np-title">Your idea</label><input id="np-title" class="field" required maxlength="120" placeholder=${cat==="destination"?"e.g. Add a night in Varkala":cat==="food"?"e.g. Kashi Art Cafe for breakfast":"e.g. Kayak the Alleppey canals"} value=${title} onInput=${e=>setTitle(e.target.value)}/></div>
+      <div><label class="lbl" for="np-body">Details <span class="faint">(optional)</span></label><textarea id="np-body" class="field" maxlength="1500" placeholder="Why it's worth it, links, when it could fit" value=${body} onInput=${e=>setBody(e.target.value)}></textarea></div>
+      <div><label class="lbl" for="np-cost">Rough cost for the group, ₹ <span class="faint">(optional)</span></label><input id="np-cost" class="field" inputmode="numeric" pattern="[0-9]*" value=${cost} onInput=${e=>setCost(e.target.value.replace(/[^0-9]/g,""))}/></div>
+      <button class="btn primary block" type="submit" disabled=${busy||!title.trim()}>${busy?"Posting…":"Post to the Crew board"}</button>
+      <div class="tiny faint">Posted under your name. The AI planner can review it next.</div>
+    </form><//>`;
+}
+function PostSheet({id}){
+  const s=useStore(); const p=allPosts().find(x=>x.id===id);
+  if(!p) return html`<${Sheet} title="Suggestion" onClose=${closeSheet}><div class="muted">This suggestion was removed.</div><//>`;
+  const rv=s.reviews[p.id]; const st=statusOf(p); const dec=s.decisions["post-"+p.id]; const c=CATS.find(x=>x.id===p.cat)||CATS[6];
+  const mine=p.by===s.me;
+  return html`<${Sheet} title=${c.label} onClose=${closeSheet}>
+    <${Who} id=${p.by} at=${p.at}/>
+    <div class="stack" style="gap:6px"><div class="row wrapr" style="gap:6px">${statusPill(p)}${p.cost?html`<span class="pill neutral num">Author's estimate ${inr(p.cost)}</span>`:null}</div><h2 style="font-size:22px">${p.title}</h2>${p.body?html`<div style="white-space:pre-wrap;overflow-wrap:anywhere">${p.body}</div>`:null}${p.target?html`<div class="small faint">On ${labelFor(p.target)}</div>`:null}</div>
+    <${VoteBar} target=${p.id}/>
+    ${st==="reviewing"?html`<div class="ai-box"><div class="row" style="gap:10px"><span class="spinner"></span><b>Claude is researching this</b></div><div class="small">Usually 30–90 seconds. ${rv&&rv.by?"Started by "+nameOf(rv.by)+".":""}</div></div>`:null}
+    ${rv&&rv.state==="done"?html`<${ReviewView} p=${p} rv=${rv}/>`:null}
+    ${rv&&rv.state==="failed"&&st!=="reviewing"?html`<div class="banner warn small">The last AI review failed (${rv.error}). Try again.</div>`:null}
+    ${st!=="reviewing"&&!dec&&canContribute()&&s.isOwner?html`<${ReviewControls} p=${p} has=${rv&&rv.state==="done"}/>`:null}
+    ${dec?html`<div class="banner ${dec.status==="rejected"?"warn":"info"} small"><div><b>${dec.status==="rejected"?"Rejected":dec.status==="incorporated"?"Added to the itinerary"+(dec.version?" ("+dec.version+")":""):"Approved"}</b> by ${nameOf(dec.by)} · ${ago(dec.at)}${dec.note?html`<div>${dec.note}</div>`:null}</div></div>`:null}
+    ${s.isOwner&&!dec?html`<${OwnerDecide} p=${p} rv=${rv}/>`:null}
+    ${s.isOwner&&dec?html`<button class="link-btn small" style="align-self:flex-start" onClick=${async()=>{ try{ await API.db.doc("decisions/post-"+p.id).delete(); toast("Decision reopened. The itinerary version stays in the history."); }catch(e){ toast(dbErr(e)); } }}>Reopen decision</button>`:null}
+    ${mine&&!dec?html`<button class="btn sm danger" style="align-self:flex-start" onClick=${async()=>{ await mutateMe(d=>{ d.posts=d.posts.filter(x=>x.id!==p.id); }); closeSheet(); toast("Suggestion deleted"); }}>Delete my suggestion</button>`:null}
+    <${Thread} target=${p.id}/>
+  <//>`;
+}
+function ReviewControls({p, has}){
+  const s=useStore(); const [manual,setManual]=useState(false); const [verdict,setVerdict]=useState("recommend"); const [note,setNote]=useState(""); const [delta,setDelta]=useState(""); const [catD,setCatD]=useState("activities");
+  const saveManual=async()=>{ if(!note.trim()) return; const cd={}; BUDGET_CATS.forEach(c=>cd[c.id]=0); cd[catD]=Number(delta)||0;
+    try{ await API.db.doc("reviews/"+p.id).set({state:"done", by:s.me, at:Date.now(), source:"manual", result:{summary:clip(note,240), verdict, fit:"", facts:[], travel:{extraKm:null,extraHours:null,note:""}, costDelta:cd, conflicts:[], alternatives:[], pros:[], cons:[], reasoning:clip(note,900), proposal:null, checkBeforeBooking:[]}}); toast("Manual review saved"); setManual(false); }catch(e){ toast(dbErr(e)); } };
+  return html`<div class="stack" style="gap:8px">
+    ${s.sampleOK?html`<button class="btn ai block" onClick=${()=>runReview(p)}>${ic(IC.spark)} ${has?"Re-run AI review":"Run AI review"}</button>`:null}
+    ${!manual?html`<button class="link-btn small" style="align-self:flex-start" onClick=${()=>setManual(true)}>${s.sampleOK?"Or write a manual review":"Write a manual review (AI unavailable here)"}</button>`:html`<div class="card stack" style="gap:8px"><div class="eyebrow">Manual review</div>
+      <div class="chips">${[["recommend","Recommend"],["not_recommended","Not recommended"],["needs_info","Needs info"]].map(([k,l])=>html`<button type="button" class=${"chip "+(verdict===k?"on":"")} onClick=${()=>setVerdict(k)}>${l}</button>`)}</div>
+      <textarea id="mr-note" class="field" placeholder="Your assessment: fit, timing, cost" value=${note} onInput=${e=>setNote(e.target.value)}></textarea>
+      <div class="row"><select id="mr-cat" class="field" style="width:auto" value=${catD} onChange=${e=>setCatD(e.target.value)}>${BUDGET_CATS.map(c=>html`<option value=${c.id}>${c.label}</option>`)}</select><input id="mr-delta" class="field grow" inputmode="numeric" placeholder="Cost change ₹ (− to save)" value=${delta} onInput=${e=>setDelta(e.target.value.replace(/[^0-9-]/g,""))}/></div>
+      <div class="row"><button class="btn primary sm" disabled=${!note.trim()} onClick=${saveManual}>Save review</button><button class="btn sm" onClick=${()=>setManual(false)}>Cancel</button></div></div>`}
+  </div>`;
+}
+function ReviewView({p, rv}){
+  const r=rv.result||{}; const cur=currentVersion(); const pr=projection(cur);
+  const dsum=BUDGET_CATS.reduce((a,c)=>a+(r.costDelta&&r.costDelta[c.id]||0),0); const newTotal=Math.round((pr.sub+dsum)*(1+CONTINGENCY));
+  const stale = rv.itineraryVersion && rv.itineraryVersion!==cur._id;
+  const items=flatItems(cur.days);
+  const verdictL={recommend:"Recommended",recommend_with_changes:"Recommended with changes",not_recommended:"Not recommended",needs_info:"Needs more information"}[r.verdict]||"Reviewed";
+  const factTag=b=>b==="trip data"?html`<span class="tag">Trip data</span>`:b==="general knowledge"?html`<span class="tag gk">AI knowledge</span>`:html`<span class="tag est">Est.</span>`;
+  return html`<div class="ai-box">
+    <div class="row between"><h4>${rv.source==="manual"?"Manual review":rv.source==="claude"?"Claude research":"AI review"}</h4><span class=${"pill "+(r.verdict==="not_recommended"?"bad":r.verdict==="needs_info"?"warn":"ok")}>${verdictL}</span></div>
+    <b style="font-size:16px">${r.summary}</b>
+    ${r.fit?html`<div class="small">${r.fit}</div>`:null}
+    <div class="cmp num"><div><div class="eyebrow">Budget effect</div><b style=${{color:dsum>0?"var(--bad)":dsum<0?"var(--ok)":"inherit"}}>${dsum===0?"No change":signed(Math.round(dsum*(1+CONTINGENCY)))}</b><div class="tiny faint">${inr(pr.total)} → ${inr(newTotal)}</div></div><div><div class="eyebrow">Travel effect</div><b>${r.travel&&r.travel.extraHours!=null?(r.travel.extraHours>0?"+":"")+r.travel.extraHours+" h":"—"}</b><div class="tiny faint">${r.travel&&r.travel.extraKm!=null?(r.travel.extraKm>0?"+":"")+r.travel.extraKm+" km":""} ${r.travel?clip(r.travel.note,80):""}</div></div></div>
+    ${dsum!==0?html`<div class="costline num">${BUDGET_CATS.filter(c=>r.costDelta[c.id]).map(c=>html`<span key=${c.id}><span class="dot" style=${{background:c.color}}></span> ${c.label} ${signed(r.costDelta[c.id])}</span>`)}</div>`:null}
+    ${r.proposal?html`<div class="stack" style="gap:6px"><div class="eyebrow">Proposed change: ${r.proposal.title}</div>
+      <div class="cmp"><div><div class="tiny faint">Now</div>${r.proposal.current}</div><div><div class="tiny faint">Proposed</div>${r.proposal.proposed}</div></div>
+      ${r.proposal.changes.length?html`<div class="small stack" style="gap:3px">${r.proposal.changes.map((c,i)=>html`<div key=${i}>${c.op==="add"?html`<span style="color:var(--ok)">+ Day ${c.day} ${c.slot}: ${c.time} ${c.text}</span>`:c.op==="remove"?html`<span style="color:var(--bad)">− Day ${c.day}: ${items[c.itemId]?items[c.itemId].text:c.itemId}</span>`:html`<span>~ Day ${c.day}: <s class="faint">${items[c.itemId]?items[c.itemId].text:""}</s> → ${c.text}</span>`}</div>`)}</div>`:null}
+      <div class="eyebrow" style="margin-top:4px">Group approval</div><${VoteBar} target=${"prop-"+p.id}/></div>`:null}
+    ${r.reasoning&&r.reasoning!==r.summary?html`<div><div class="eyebrow">Reasoning</div><div class="small">${r.reasoning}</div></div>`:null}
+    ${r.facts&&r.facts.length?html`<div><div class="eyebrow">What it's based on</div><ul class="clean small">${r.facts.map((f,i)=>html`<li key=${i}>${f.text} ${factTag(f.basis)}</li>`)}</ul></div>`:null}
+    ${(r.pros&&r.pros.length)||(r.cons&&r.cons.length)?html`<div class="cmp"><div><div class="eyebrow" style="color:var(--ok)">For</div><ul class="clean small">${r.pros.map((x,i)=>html`<li key=${i}>${x}</li>`)}</ul></div><div><div class="eyebrow" style="color:var(--bad)">Against</div><ul class="clean small">${r.cons.map((x,i)=>html`<li key=${i}>${x}</li>`)}</ul></div></div>`:null}
+    ${r.conflicts&&r.conflicts.length?html`<div><div class="eyebrow">Conflicts</div><ul class="clean small">${r.conflicts.map((x,i)=>html`<li key=${i}>${x}</li>`)}</ul></div>`:null}
+    ${r.alternatives&&r.alternatives.length?html`<div><div class="eyebrow">Alternatives</div><ul class="clean small">${r.alternatives.map((x,i)=>html`<li key=${i}>${x}</li>`)}</ul></div>`:null}
+    ${r.checkBeforeBooking&&r.checkBeforeBooking.length?html`<div><div class="eyebrow">Verify before booking</div><ul class="clean small">${r.checkBeforeBooking.map((x,i)=>html`<li key=${i}>${x}</li>`)}</ul></div>`:null}
+    ${stale?html`<div class="tiny">The itinerary changed since this review. Re-run it before approving.</div>`:null}
+    <div class="tiny faint">${rv.source==="manual"?"Written by "+nameOf(rv.by):rv.source==="claude"?"Researched by Claude for "+nameOf(rv.by):"By Claude, run by "+nameOf(rv.by)} · ${ago(rv.at)} · ${rv.source==="claude"?"web sources where cited":"no live web check: verify prices and availability"}</div>
+  </div>`;
+}
+function OwnerDecide({p, rv}){
+  const [note,setNote]=useState(""); const [busy,setBusy]=useState(false); const has=rv&&rv.state==="done"; const prop=has&&rv.result.proposal&&rv.result.proposal.changes.length;
+  const go=async(status,apply)=>{ setBusy(true); await decide(p,status,note,apply); setBusy(false); };
+  const pv=votesFor("prop-"+p.id), sv=votesFor(p.id);
+  return html`<div class="card stack" style="gap:8px"><div class="eyebrow">Your decision (admin)</div>
+    <div class="small muted">Group: ${pv.up.length+sv.up.length} for, ${pv.down.length+sv.down.length} against.${!has?" No review yet.":""}</div>
+    <input id="dec-note" class="field" placeholder="Note for the crew (optional)" value=${note} onInput=${e=>setNote(e.target.value)}/>
+    <div class="row wrapr">
+      ${has?html`<button class="btn primary sm" disabled=${busy} onClick=${()=>go("approved",true)}>${prop?"Approve and update itinerary":"Approve and update budget"}</button>`:null}
+      <button class="btn sm" disabled=${busy} onClick=${()=>go("approved",false)}>Approve only</button>
+      <button class="btn sm" disabled=${busy} onClick=${()=>go("incorporated",false)}>Mark as in the plan</button>
+      <button class="btn sm danger" disabled=${busy} onClick=${()=>go("rejected",false)}>Reject</button></div>
+    ${has?html`<div class="tiny faint">Updating the itinerary creates a new version; the old one stays in the history.</div>`:null}</div>`;
+}
+function feed(){
+  const ev=[]; const cur=currentVersion();
+  Object.values(S.people).forEach(p=>{ if(isRemoved(p._id)) return; const id=p._id;
+    if(p.joinedAt) ev.push({at:p.joinedAt, who:id, text:"joined the trip"});
+    (p.posts||[]).forEach(x=>{ if(x.kind==="suggestion") ev.push({at:x.at, who:id, text:"suggested “"+clip(x.title,60)+"”", open:["post",{id:x.id}]}); else if(x.kind==="comment") ev.push({at:x.at, who:id, text:(x.parent?"replied on ":"commented on ")+labelFor(x.target), quote:clip(x.body,90)}); });
+    (p.expenses||[]).forEach(x=>ev.push({at:x.at, who:id, text:"logged "+inr(x.amount)+" for "+clip(x.note||x.cat,40)+(x.paidBy&&resolvePayer(x.paidBy,id)!==id?", paid by "+nameOf(resolvePayer(x.paidBy,id)):"")}));
+    Object.entries(p.polls||{}).forEach(([k,v])=>{ const poll=POLLS.find(q=>"poll-"+q.id===k); const o=poll&&poll.opts.find(z=>z.id===v.o); if(o) ev.push({at:v.at, who:id, text:"voted for "+o.label.split(":")[0]+" on “"+poll.q+"”"}); });
+    Object.entries(p.votes||{}).forEach(([k,v])=>{ if(k.startsWith("prop-")) ev.push({at:v.at, who:id, text:(v.v===1?"supported ":"opposed ")+labelFor(k)}); });
+  });
+  Object.entries(S.reviews).forEach(([k,r])=>{ if(r.state!=="done") return; const p=allPosts().find(x=>x.id===k); if(!p) return; ev.push({at:r.at, who:r.source==="manual"?r.by:"ai", text:(r.source==="manual"?"reviewed “":"reviewed “")+clip(p.title,50)+"”: "+(r.result&&r.result.summary?clip(r.result.summary,90):""), open:["post",{id:k}]}); });
+  Object.entries(S.decisions).forEach(([k,d])=>{ if(k.startsWith("post-")){ const p=allPosts().find(x=>x.id===k.slice(5)); ev.push({at:d.at, who:d.by, text:(d.status==="rejected"?"rejected “":d.status==="incorporated"?"added to the itinerary “":"approved “")+(p?clip(p.title,50):"a suggestion")+"”", open:p?["post",{id:p.id}]:null}); } else if(k.startsWith("poll-")){ const poll=POLLS.find(q=>"poll-"+q.id===k); const o=poll&&poll.opts.find(z=>z.id===d.choice); ev.push({at:d.at, who:d.by, text:"locked the decision: "+(o?o.label:d.choice)}); } });
+  versions().forEach(v=>ev.push({at:v.at, who:v.by, text:"published itinerary v"+v.n+": "+clip(v.why,80)+(v._id===cur._id?" (current)":"")}));
+  Object.values(S.bookings).forEach(b=>{ if(b.updatedAt&&b.updatedBy) ev.push({at:b.updatedAt, who:b.updatedBy, text:"marked "+b.title+" as "+b.status}); });
+  return ev.filter(e=>e.at).sort((a,b)=>b.at-a.at).slice(0,120);
+}
+function FeedList({items, full}){
+  useStore();
+  if(!items.length) return html`<div class="card small muted">${full?"Nothing yet. Suggestions, votes, reviews and decisions will show up here.":""}</div>`;
+  return html`<div class="card list feed">${items.map((e,i)=>html`<div class="li" key=${i} style=${e.open?{cursor:"pointer"}:null} onClick=${e.open?()=>openSheet(e.open[0],e.open[1]):null}><${Avatar} id=${e.who} size="sm"/><div class="grow small"><b>${nameOf(e.who)}</b> ${e.text}${e.quote?html`<div class="muted">“${e.quote}”</div>`:null}<div class="tiny faint">${ago(e.at)}</div></div></div>`)}</div>`;
+}
+function Members(){
+  const s=useStore(); const all=Object.values(s.people).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); const [copied,setCopied]=useState(false); const [inv,setInv]=useState("");
+  useEffect(()=>{ if(s.isOwner) window.claude.inviteUrl().then(r=>setInv(r.url)).catch(()=>{}); },[s.isOwner]);
+  const msg=inv?"Join our Kerala trip planner: "+inv+"\nTap the link and you're in.":"";
+  const copy=async()=>{ try{ await navigator.clipboard.writeText(msg); setCopied(true); setTimeout(()=>setCopied(false),2000); }catch(e){ const el=document.getElementById("invite-msg"); if(el){ el.select(); } toast("Select the text and copy it"); } };
+  const regen=async()=>{ if(!confirm("Make a new invite link? The old link stops working for new people. Existing members stay in.")) return; try{ const r=await window.claude.regenerateInvite(); setInv(r.url); toast("New invite link created"); }catch(e){ toast(dbErr(e)); } };
+  return html`<div class="stack">
+    ${all.length===0?html`<div class="card small muted">No one has joined yet.</div>`:null}
+    ${all.map(p=>{ const id=p._id; const rem=isRemoved(id); const n=(p.posts||[]).length; const pr=s.profiles[id]; const ver=pr&&pr.verified;
+      return html`<div class="card row" key=${id} style=${{opacity:rem?.55:1}}><${Avatar} id=${id} size="lg"/><div class="grow"><b style="font-size:17px">${nameOf(id)}</b> ${id===s.me?html`<span class="tag">You</span>`:null} ${pr?(ver?html`<span class="tag verified">Google</span>`:html`<span class="tag est">Name only</span>`):null}<div class="small muted">${roleOf(id)==="owner"?"Administrator":rem?"Removed":"Member"} · joined ${ago(p.joinedAt)} · ${n} contribution${n===1?"":"s"}</div></div>
+        ${s.isOwner&&id!==s.me?html`<button class="btn sm ${rem?"":"danger"}" onClick=${()=>ownerWrite("roster/"+id,{role:"member",status:rem?"active":"removed",at:Date.now()}).then(ok=>ok&&toast(rem?"Restored":"Removed. They can no longer open the trip."))}>${rem?"Restore":"Remove"}</button>`:null}</div>`; })}
+    ${s.people[s.me]?html`<button class="btn" onClick=${()=>openSheet("join",{edit:true})}>Change my display name</button>`:null}
+    ${s.isOwner?html`<div class="card stack" style="gap:8px"><div class="eyebrow">Invite link</div>
+      <div class="small">One link for everyone. Post it in the group chat; whoever opens it joins automatically. Add as many travellers as you like.</div>
+      <textarea id="invite-msg" class="field small" readonly value=${msg}></textarea>
+      <div class="row wrapr"><button class="btn primary sm" disabled=${!inv} onClick=${copy}>${copied?"Copied":"Copy invite message"}</button><button class="btn sm danger" onClick=${regen}>Make a new link</button></div>
+      <div class="tiny faint">Remove a member above to cut off their access. Making a new link only stops the old link from admitting new people.</div></div>`:null}
+  </div>`;
+}
+function JoinSheet({edit}){
+  const s=useStore(); const cur=s.people[s.me]; const prof=s.profiles[s.me]; const [nick,setNick]=useState((cur&&cur.nick)||(prof&&prof.name)||""); const [busy,setBusy]=useState(false);
+  const save=async(nm)=>{ const n=clip((typeof nm==="string"?nm:nick).trim(),30); if(!n) return; setBusy(true);
+    try{ if(cur){ await mutateMe(d=>{ d.nick=n; }); } else { await API.db.doc("people/"+s.me).set({nick:n, joinedAt:Date.now(), posts:[], expenses:[], votes:{}, reacts:{}, polls:{}, updatedAt:Date.now()}); } toast(edit?"Name updated":"Welcome to the crew, "+n); closeSheet(); }catch(e){ toast(dbErr(e)); }
+    setBusy(false); };
+  return html`<${Sheet} title=${edit?"Your display name":"Welcome to Kerala Trip HQ"} onClose=${edit?closeSheet:()=>{}}>
+    ${!edit?html`<div class="small muted">You're signed in through Claude. Pick the name the crew will see on your votes and ideas.</div>`:null}
+    ${edit?html`<div class="chips">${CREW_NAMES.map(n=>html`<button key=${n} class=${"chip "+(nick===n?"on":"")} onClick=${()=>setNick(n)}>${n}</button>`)}</div>`:html`<div class="stack" style="gap:10px"><div class="eyebrow">Tap your name to join</div>${CREW_NAMES.map(n=>{ const taken=Object.values(s.people).some(q=>q._id!==s.me&&String(q.nick||"").toLowerCase()===n.toLowerCase()); return html`<button key=${n} class="btn primary block" style="min-height:56px;font-size:18px" disabled=${busy||taken} onClick=${()=>save(n)}>${taken?n+" (already joined)":"I'm "+n}</button>`; })}<div class="tiny faint">Someone else? Type a name below.</div></div>`}
+    <input id="join-nick" class="field" maxlength="30" placeholder="Or type your name" value=${nick} onInput=${e=>setNick(e.target.value)}/>
+    <button class="btn primary block" disabled=${busy||!nick.trim()} onClick=${save}>${edit?"Save":"Join the crew"}</button>
+    ${s.isOwner&&!edit?html`<div class="tiny faint">You own this trip, so you're the administrator.</div>`:null}
+  <//>`;
+}
+
+/* ====================================================================
+   11. BUDGET
+   ==================================================================== */
+function Donut({parts, size}){
+  const total=parts.reduce((a,p)=>a+p.v,0)||1; let acc=0; const r=52, c=2*Math.PI*r;
+  return html`<svg viewBox="0 0 132 132" style=${{width:size||132,height:size||132}} role="img" aria-label="Budget split"><circle cx="66" cy="66" r=${r} fill="none" stroke="var(--surface-2)" stroke-width="18"/>
+    ${parts.filter(p=>p.v>0).map(p=>{ const len=p.v/total*c; const el=html`<circle key=${p.label} cx="66" cy="66" r=${r} fill="none" stroke=${p.color} stroke-width="18" stroke-dasharray=${len+" "+(c-len)} stroke-dashoffset=${-acc} transform="rotate(-90 66 66)"/>`; acc+=len; return el; })}
+    <text x="66" y="62" text-anchor="middle" font-size="11" fill="var(--ink-3)">group</text><text x="66" y="79" text-anchor="middle" font-size="16" font-weight="700" fill="var(--ink)">${"₹"+Math.round(total/1000)+"k"}</text></svg>`;
+}
+function Budget(){
+  const s=useStore(); const tab=s.budgetTab||"overview";
+  return html`<div class="wrap stack">
+    <div class="page-head"><div class="eyebrow">Budget</div><h1>Money and bookings</h1></div>
+    <${Seg} value=${tab} onChange=${t=>set({budgetTab:t})} opts=${[["overview","Overview"],["expenses","Expenses"],["bookings","Bookings"]]}/>
+    ${tab==="overview"?html`<${BudgetOverview}/>`:tab==="expenses"?html`<${Expenses}/>`:html`<${Bookings}/>`}
+  </div>`;
+}
+function BudgetOverview(){
+  useStore(); const v=currentVersion(); const pr=projection(v); const base=projection({days:PLAN_AB}); const mem=Math.max(3,members().length);
+  const ex=allExpenses(); const spent=ex.reduce((a,e)=>a+(e.amount||0),0); const byCat={}; ex.forEach(e=>byCat[e.cat]=(byCat[e.cat]||0)+e.amount);
+  const max=Math.max(...BUDGET_CATS.map(c=>Math.max(base.cat[c.id],pr.cat[c.id],byCat[c.id]||0)),1);
+  return html`<div class="stack">
+    <div class="card stack" style="gap:10px"><div class="row between"><div><div class="eyebrow">Projected total</div><div class="num" style="font-family:var(--f-display);font-size:32px;font-weight:800">${inr(pr.total)}</div></div><div style="text-align:right"><div class="eyebrow">Each (÷${mem})</div><div class="num" style="font-size:20px;font-weight:700">${inr(pr.total/mem)}</div></div></div>
+      <div class="small muted num">Baseline ${inr(BASELINE)} · ${signed(pr.total-BASELINE)} · includes ${inr(pr.cont)} contingency (10%) · outbound train already paid, not included</div>
+      <div><div class="row between small"><span>Spent so far</span><b class="num">${inr(spent)} of ${inr(pr.total)}</b></div><div class="bar" style="margin-top:6px"><span style=${{width:Math.min(100,spent/pr.total*100)+"%",background:spent>pr.total?"var(--bad)":"var(--leaf)"}}></span></div><div class="tiny faint num" style="margin-top:4px">${inr(Math.max(0,pr.total-spent))} remaining</div></div></div>
+    <div class="card donut-wrap"><${Donut} parts=${BUDGET_CATS.map(c=>({label:c.label,color:c.color,v:pr.cat[c.id]})).concat([{label:"Contingency",color:"#83978A",v:pr.cont}])}/><div class="legend">${BUDGET_CATS.map(c=>html`<div key=${c.id}><span class="dot" style=${{background:c.color}}></span>${c.label}<span class="v">${inr(pr.cat[c.id])}</span></div>`)}<div><span class="dot" style="background:#83978A"></span>Contingency<span class="v">${inr(pr.cont)}</span></div></div></div>
+    <div class="card stack" style="gap:12px"><div class="row between"><b>Baseline vs projected vs spent</b></div>
+      ${BUDGET_CATS.map(c=>html`<div key=${c.id}><div class="row between small"><span><span class="dot" style=${{background:c.color}}></span> ${c.label}</span><span class="num">${inr(pr.cat[c.id])}${pr.cat[c.id]!==base.cat[c.id]?html` <span style=${{color:pr.cat[c.id]>base.cat[c.id]?"var(--bad)":"var(--ok)"}}>(${signed(pr.cat[c.id]-base.cat[c.id])})</span>`:null}</span></div>
+        <div style="display:flex;flex-direction:column;gap:3px;margin-top:5px"><div class="bar" style="height:6px"><span style=${{width:base.cat[c.id]/max*100+"%",background:"var(--ink-3)",opacity:.45}}></span></div><div class="bar" style="height:6px"><span style=${{width:pr.cat[c.id]/max*100+"%",background:c.color}}></span></div><div class="bar" style="height:6px"><span style=${{width:(byCat[c.id]||0)/max*100+"%",background:"var(--ink)"}}></span></div></div></div>`)}
+      <div class="row wrapr tiny faint" style="gap:12px"><span><span class="dot" style="background:var(--ink-3);opacity:.45"></span> Baseline</span><span><span class="dot" style="background:var(--leaf)"></span> Projected</span><span><span class="dot" style="background:var(--ink)"></span> Spent</span></div></div>
+    ${(v.adjustNotes||[]).length?html`<div class="card"><div class="eyebrow" style="margin-bottom:6px">Changes from approved suggestions</div><div class="list">${v.adjustNotes.map((a,i)=>{ const d=BUDGET_CATS.reduce((x,c)=>x+(a.delta[c.id]||0),0); return html`<div class="li small" key=${i}><span class="grow">${a.title}</span><b class="num">${signed(d)}</b></div>`; })}</div></div>`:null}
+    <div class="card small"><div class="eyebrow" style="margin-bottom:6px">How prices are labelled</div><div class="stack" style="gap:6px"><div>${basisTag("est")} our estimate from listed ranges</div><div>${basisTag("listed")} seen on a source page, not a live quote</div><div>${basisTag("verified")} confirmed live quote or booking</div><div>${basisTag("gk")} from the AI's own knowledge; may be out of date</div></div><div class="muted" style="margin-top:8px">Not included: the outbound ticket (already paid), shopping, alcohol. A compulsory Christmas dinner adds ₹3,000–4,500 per adult; a 2-bedroom houseboat ₹3,000–6,000.</div></div>
+  </div>`;
+}
+function Expenses(){
+  const s=useStore(); const ex=allExpenses(); const mem=payerOptions().map(id=>({_id:id})); const total=ex.reduce((a,e)=>a+e.amount,0); const share=mem.length?total/mem.length:0;
+  const paid={}; mem.forEach(m=>paid[m._id]=0); ex.forEach(e=>{ if(e.payer in paid) paid[e.payer]+=e.amount; });
+  return html`<div class="stack">
+    ${canContribute()?html`<button class="btn primary block" onClick=${()=>openSheet("expense",{})}>${ic(IC.plus)} Log an expense</button>`:null}
+    <div class="card stack" style="gap:10px"><div class="row between"><b>Who paid what</b><span class="small muted num">${inr(total)} total · ${inr(share)} each</span></div>
+      ${mem.map(m=>{ const bal=paid[m._id]-share; return html`<div class="row" key=${m._id}><${Avatar} id=${m._id} size="sm"/><span class="grow small">${nameOf(m._id)}</span><span class="num small">${inr(paid[m._id])}</span><span class=${"pill num "+(Math.abs(bal)<1?"neutral":bal>0?"ok":"warn")} style="min-width:92px;justify-content:center">${Math.abs(bal)<1?"settled":bal>0?"gets "+inr(bal):"owes "+inr(-bal)}</span></div>`; })}
+      ${mem.length===0?html`<div class="small faint">Balances appear once the crew has joined.</div>`:null}</div>
+    ${ex.length===0?html`<div class="card small muted">No expenses yet. Log deposits and on-trip spending here; everyone sees the running total and who owes whom.</div>`:html`<div class="card list">${ex.map(e=>{ const c=BUDGET_CATS.find(x=>x.id===e.cat)||BUDGET_CATS[4]; return html`<div class="li" key=${e.id}><${Avatar} id=${e.payer} size="sm"/><div class="grow small"><b>${e.note||c.label}</b><div class="faint">${nameOf(e.payer)} paid${e.payer!==e.by?" (added by "+(e.by===s.me?"you":nameOf(e.by))+")":""} ·<span class="dot" style=${{background:c.color}}></span> ${c.label} · ${ago(e.at)}</div></div><div style="text-align:right"><b class="num">${inr(e.amount)}</b>${e.by===s.me?html`<div><button class="link-btn tiny" style="color:var(--bad);min-height:28px" onClick=${()=>mutateMe(d=>{ d.expenses=d.expenses.filter(x=>x.id!==e.id); })}>Delete</button></div>`:null}</div></div>`; })}</div>`}
+  </div>`;
+}
+function ExpenseSheet(){
+  const s=useStore(); const mem=payerOptions().map(id=>({_id:id})); const [who,setWho]=useState(s.me); const [amt,setAmt]=useState(""); const [cat,setCat]=useState("stays"); const [note,setNote]=useState(""); const [busy,setBusy]=useState(false);
+  const save=async e=>{ e.preventDefault(); const a=Number(amt); if(!a) return; setBusy(true); const ok=await mutateMe(d=>{ d.expenses.push({id:rid(), amount:Math.round(a), cat, note:clip(note.trim(),80), paidBy:who, at:Date.now()}); }); setBusy(false); if(ok!==false){ toast("Expense logged"); closeSheet(); } };
+  return html`<${Sheet} title="Log an expense" onClose=${closeSheet}><form class="stack" onSubmit=${save}>
+    <div><span class="lbl">Paid by</span><div class="chips">${mem.map(m=>html`<button type="button" key=${m._id} class=${"chip "+(who===m._id?"on":"")} onClick=${()=>setWho(m._id)}>${nameOf(m._id)}${m._id===s.me?" (me)":""}</button>`)}</div></div>
+    <div><label class="lbl" for="ex-amt">Amount paid, ₹</label><input id="ex-amt" class="field num" style="font-size:24px;font-weight:700" inputmode="numeric" pattern="[0-9]*" required value=${amt} onInput=${e=>setAmt(e.target.value.replace(/[^0-9]/g,""))}/></div>
+    <div><span class="lbl">Category</span><div class="chips">${BUDGET_CATS.map(c=>html`<button type="button" key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}><span class="dot" style=${{background:c.color}}></span>${c.label}</button>`)}</div></div>
+    <div><label class="lbl" for="ex-note">What for</label><input id="ex-note" class="field" maxlength="80" placeholder="e.g. Houseboat deposit" value=${note} onInput=${e=>setNote(e.target.value)}/></div>
+    <button class="btn primary block" type="submit" disabled=${busy||!Number(amt)}>Save</button><div class="tiny faint">${who!==s.me?"Recorded as paid by "+nameOf(who)+", added by you. ":""}Split equally across the crew.</div></form><//>`;
+}
+const BK_STATUS=[["todo","To book","warn"],["enquired","Enquired","info"],["held","On hold","info"],["booked","Booked","ok"],["cancelled","Cancelled","neutral"]];
+function Bookings(){
+  const s=useStore(); const bks=Object.values(s.bookings).sort((a,b)=>(a.order||99)-(b.order||99));
+  return html`<div class="stack">
+    <div class="banner info small">Only Bhargava can mark something booked. A status here reflects what he entered: nothing is reserved automatically.</div>
+    ${bks.length===0?html`<div class="card small muted">${s.mode==="live"?"No bookings tracked yet.":"Sign in through Claude to see booking status."}</div>`:null}
+    ${bks.map(b=>{ const st=BK_STATUS.find(x=>x[0]===b.status)||BK_STATUS[0]; return html`<button key=${b._id} class="card press stack" style="gap:6px;text-align:left" onClick=${()=>openSheet("booking",{id:b._id})}>
+      <div class="row between"><b>${b.title}</b><span class=${"pill "+st[2]}>${st[1]}</span></div><div class="small muted">${b.detail||""}</div>
+      <div class="row between small"><span class="faint">${b.when||""}</span>${b.amount?html`<span class="num">${inr(b.amount)} ${basisTag(b.priceType)}</span>`:null}</div>
+      ${b.ref?html`<div class="tiny">Ref: ${b.ref}</div>`:null}</button>`; })}
+    ${s.isOwner?html`<button class="btn" onClick=${()=>openSheet("booking",{id:null})}>${ic(IC.plus)} Add a booking</button>`:null}
+  </div>`;
+}
+function BookingSheet({id}){
+  const s=useStore(); const b=id?s.bookings[id]:null; const [f,setF]=useState(b?stripId(b):{title:"",detail:"",when:"",status:"todo",amount:0,priceType:"est",ref:"",contact:"",cancel:"",link:"",order:50}); const [busy,setBusy]=useState(false);
+  const up=(k,v)=>setF(Object.assign({},f,{[k]:v}));
+  const save=async()=>{ if(!f.title.trim()) return; setBusy(true); const key=id||("bk"+rid()); if(await ownerWrite("bookings/"+key, Object.assign({},f,{amount:Number(f.amount)||0, updatedAt:Date.now(), updatedBy:s.me}))){ toast("Booking saved"); closeSheet(); } setBusy(false); };
+  if(!s.isOwner){ if(!b) return null; const st=BK_STATUS.find(x=>x[0]===b.status)||BK_STATUS[0];
+    return html`<${Sheet} title=${b.title} onClose=${closeSheet}><span class=${"pill "+st[2]} style="align-self:flex-start">${st[1]}</span><div class="kv"><dt>Details</dt><dd>${b.detail||"—"}</dd><dt>When</dt><dd>${b.when||"—"}</dd><dt>Price</dt><dd>${b.amount?html`${inr(b.amount)} ${basisTag(b.priceType)}`:"—"}</dd><dt>Reference</dt><dd>${b.ref||"—"}</dd><dt>Contact</dt><dd style="user-select:all">${b.contact||"—"}</dd><dt>Cancellation</dt><dd>${b.cancel||"—"}</dd>${b.link?html`<dt>Link</dt><dd><a href=${b.link} target="_blank" rel="noopener">Open</a></dd>`:null}</div>${b.updatedAt?html`<div class="tiny faint">Updated by ${nameOf(b.updatedBy)} · ${ago(b.updatedAt)}</div>`:null}<${Thread} target=${"bk-"+b._id}/><//>`; }
+  const F=(k,label,ph)=>html`<div><label class="lbl" for=${"bk-"+k}>${label}</label><input id=${"bk-"+k} class="field" placeholder=${ph||""} value=${f[k]||""} onInput=${e=>up(k,e.target.value)}/></div>`;
+  return html`<${Sheet} title=${b?"Edit booking":"New booking"} onClose=${closeSheet}>
+    ${F("title","What","e.g. Fort Kochi room, 25 Dec")}
+    <div><span class="lbl">Status</span><div class="chips">${BK_STATUS.map(([k,l])=>html`<button type="button" key=${k} class=${"chip "+(f.status===k?"on":"")} onClick=${()=>up("status",k)}>${l}</button>`)}</div></div>
+    ${F("detail","Details")}${F("when","When to book","e.g. This week")}
+    <div class="row"><div class="grow"><label class="lbl" for="bk-amount">Price, ₹</label><input id="bk-amount" class="field num" inputmode="numeric" value=${f.amount||""} onInput=${e=>up("amount",e.target.value.replace(/[^0-9]/g,""))}/></div><div><span class="lbl">Price type</span><div class="chips">${[["est","Est."],["listed","Listed"],["verified","Verified"]].map(([k,l])=>html`<button type="button" key=${k} class=${"chip "+(f.priceType===k?"on":"")} onClick=${()=>up("priceType",k)}>${l}</button>`)}</div></div></div>
+    ${F("ref","Booking reference / PNR")}${F("contact","Contact")}${F("cancel","Cancellation policy")}${F("link","Booking link","https://")}
+    <button class="btn primary block" disabled=${busy||!f.title.trim()} onClick=${save}>Save</button>
+    ${b?html`<button class="btn danger sm" style="align-self:flex-start" onClick=${async()=>{ try{ await API.db.doc("bookings/"+id).delete(); closeSheet(); toast("Booking removed"); }catch(e){ toast(dbErr(e)); } }}>Delete</button>`:null}
+    ${b?html`<${Thread} target=${"bk-"+id}/>`:null}
+  <//>`;
+}
+
+/* ====================================================================
+   12. ASK THE PLANNER
+   ==================================================================== */
+function AskSheet(){
+  const s=useStore(); const [q,setQ]=useState(""); const [a,setA]=useState(""); const [busy,setBusy]=useState(false); const ctl=useRef(null);
+  const ask=async e=>{ e&&e.preventDefault(); if(!q.trim()||!API.sample) return; setBusy(true); setA("Thinking…"); ctl.current=new AbortController();
+    try{ await API.sample(`You are the AI trip planner for "Kerala Trip HQ" (3 friends, Kerala, 22–26 Dec 2026). Answer the traveller's question in under 180 words, specific to this trip and its current itinerary. You cannot browse: say when something is from general knowledge and must be verified. Plain text, short paragraphs or "- " bullets.\n\nTRIP DATA: ${JSON.stringify(tripContext())}\n\nQUESTION from ${nameOf(s.me)}: ${q.trim()}`, {signal:ctl.current.signal, onText:({text})=>setA(text)}); }
+    catch(err){ setA(err.text||""); if(err.code!=="cancelled") toast(sampleMsg(err)); }
+    setBusy(false); };
+  const share=async()=>{ if(!a||!canContribute()) return; const ok=await addPost({kind:"suggestion", cat:"other", title:clip("Q: "+q.trim(),120), body:clip("AI planner answer:\n"+a,1500), cost:0, target:null}); if(ok!==false){ toast("Shared to the Crew board"); closeSheet(); } };
+  return html`<${Sheet} title="Ask the AI planner" onClose=${closeSheet}>
+    ${!s.sampleOK?html`<div class="banner warn small">AI is only available when this trip is opened inside Claude and signed in.</div>`:html`<form class="stack" onSubmit=${ask}>
+      <div class="chips">${["Is Kolukkumalai worth the 04:45 start?","What should we pack for Munnar in December?","Cheapest way to cut ₹10,000?"].map(t=>html`<button type="button" class="chip" key=${t} onClick=${()=>setQ(t)}>${t}</button>`)}</div>
+      <textarea id="ask-q" class="field" placeholder="Ask anything about the trip" value=${q} onInput=${e=>setQ(e.target.value)}></textarea>
+      <div class="row"><button class="btn ai grow" type="submit" disabled=${busy||!q.trim()}>${busy?html`<span class="spinner"></span> Asking…`:"Ask"}</button>${busy?html`<button type="button" class="btn" onClick=${()=>ctl.current&&ctl.current.abort()}>Stop</button>`:null}</div></form>`}
+    ${a?html`<div class="ai-box"><h4>Answer</h4><div class="small" style="white-space:pre-wrap">${a}</div><div class="tiny faint">Not live-verified. Answers aren't saved unless you share them.</div>${!busy&&canContribute()?html`<button class="btn sm" onClick=${share}>Share to the Crew board</button>`:null}</div>`:null}
+  <//>`;
+}
+
+/* ====================================================================
+   13. SHELL
+   ==================================================================== */
+const TABS=[["home","Home","home"],["explore","Explore","explore"],["itinerary","Itinerary","itin"],["crew","Crew","crew"],["budget","Budget","budget"]];
+const tabFromHash=()=>{ const t=(location.hash||"").slice(1); return TABS.some(x=>x[0]===t)?t:"home"; };
+function SheetHost(){
+  const s=useStore(); const sh=s.sheet;
+  const needJoin = s.mode==="live" && s.loaded.people && !s.people[s.me] && s.canWrite!==false;
+  if(needJoin && (!sh || sh.type!=="join")) return html`<${JoinSheet}/>`;
+  if(!sh) return null; const p=sh.props;
+  switch(sh.type){
+    case "dest": return html`<${DestSheet} ...${p}/>`; case "item": return html`<${ItemSheet} ...${p}/>`; case "versions": return html`<${VersionsSheet} ...${p}/>`;
+    case "newpost": return canContribute()?html`<${NewPostSheet} ...${p}/>`:null; case "post": return html`<${PostSheet} ...${p}/>`;
+    case "expense": return canContribute()?html`<${ExpenseSheet}/>`:null; case "booking": return html`<${BookingSheet} ...${p}/>`;
+    case "join": return html`<${JoinSheet} ...${p}/>`; case "ask": return s.isOwner?html`<${AskSheet}/>`:null;
+  } return null;
+}
+const autoTried=new Set(); let autoBusy=false;
+function App(){
+  const s=useStore(); const [tab,setTab]=useState(tabFromHash());
+  useEffect(()=>{ const f=()=>setTab(tabFromHash()); addEventListener("hashchange",f); return ()=>removeEventListener("hashchange",f); },[]);
+  const go=t=>{ try{ history.replaceState(null,"","#"+t); }catch(e){ location.hash=t; } setTab(t); window.scrollTo(0,0); };
+  const wIds=s.isOwner&&s.sampleOK&&s.mode==="live"&&canContribute()?awaitingReview().map(p=>p.id).join(","):"";
+  useEffect(()=>{ if(!wIds||autoBusy) return; (async()=>{ autoBusy=true; for(const id of wIds.split(",")){ if(autoTried.has(id)) continue; autoTried.add(id); const post=allPosts().find(x=>x.id===id); if(post&&statusOf(post)==="new"){ const ok=await runReview(post); if(!ok) break; } } autoBusy=false; })(); },[wIds]);
+  const badge=awaitingReview().length+pendingDecisions().filter(x=>x.kind==="post").length;
+  return html`<div class="app">
+    ${tab!=="home"?html`<${Banner}/>`:null}
+    <main>${tab==="home"?html`<${Home} go=${go}/>`:tab==="explore"?html`<${Explore}/>`:tab==="itinerary"?html`<${Itinerary}/>`:tab==="crew"?html`<${Crew}/>`:html`<${Budget}/>`}</main>
+    
+    <nav class="nav" aria-label="Main"><div class="nav-in">${TABS.map(([k,l,icn])=>html`<button key=${k} class=${"navbtn "+(tab===k?"on":"")} aria-current=${tab===k?"page":null} onClick=${()=>go(k)}><span class="ic">${ic(IC[icn])}</span>${l}${k==="crew"&&badge?html`<span class="badge">${badge}</span>`:null}</button>`)}</div></nav>
+    <${SheetHost}/>
+    <div class="toasts" aria-live="polite">${s.toasts.map(t=>html`<div class="toast" key=${t.id}>${t.msg}</div>`)}</div>
+  </div>`;
+}
+render(html`<${App}/>`, document.getElementById("app"));
+boot().catch(()=>set({mode:"offline"}));
+})();
+</script>
+
+</body></html>
