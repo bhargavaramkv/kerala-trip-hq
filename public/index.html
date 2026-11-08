@@ -1071,7 +1071,7 @@ function Itinerary(){
   const v=(vid && (s.itin[vid])) || cur; const isCur=v._id===cur._id; const pr=projection(v);
   const [open,setOpen]=useState({d1:true});
   return html`<div class="wrap stack">
-    <div class="page-head"><div class="eyebrow">Itinerary · ${v.plan==="B"?"Plan B":"Plan A"}</div><h1>Five days in Kerala</h1></div>
+    <div class="page-head"><div class="eyebrow">Itinerary · ${v.plan==="B"?"Plan B":"Plan A"}</div><h1>${["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][v.days.length]||v.days.length} days in Kerala</h1></div>
     <button class="card press row" style="gap:10px;text-align:left" onClick=${()=>openSheet("versions",{onPick:setVid})}>${ic(IC.history)}<div class="grow"><b>${v.unsaved?"Research baseline":"Version "+v.n}</b> ${v.status==="approved"?html`<span class="pill ok">Approved</span>`:html`<span class="pill warn">Draft</span>`} ${!isCur?html`<span class="pill neutral">Older version</span>`:null}<div class="small muted">${v.unsaved?"Not saved to the trip yet":clip(v.why,70)+" · "+nameOf(v.by)+" · "+ago(v.at)}</div></div>${ic(IC.chev)}</button>
     ${!isCur?html`<button class="btn" onClick=${()=>setVid(null)}>Back to the current version</button>`:null}
     ${s.isOwner && isCur && v.unsaved ? html`<button class="btn primary" onClick=${()=>createVersion(v.days,"Research baseline: Plan A, budget version",{status:"draft",adjust:{}})}>Save baseline as v1</button>`:null}
