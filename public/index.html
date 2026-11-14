@@ -251,8 +251,8 @@ const html = htm.bind(h);
    ==================================================================== */
 const SHARE_URL = location.origin;
 const DEPART_AT = Date.parse("2026-12-21T19:00:00+05:30");
-const TRIP_END = Date.parse("2026-12-27T09:00:00+05:30");
-const BASELINE = 48840; // research doc (revised): Plan A budget version, group total incl. 10% contingency (₹16,280 pp)
+const TRIP_END = Date.parse("2026-12-29T16:00:00+05:30");
+const BASELINE = 80685; // 8-day car plan (v4) as first written: group total incl. 10% contingency (₹26,895 pp)
 const CONTINGENCY = 0.10;
 const BUDGET_CATS = [
   {id:"transport", label:"Transport", color:"#1E6A7B"},
@@ -315,212 +315,104 @@ const SRC = {
 };
 
 const DEST = [
-  {id:"munnar", name:"Munnar", plan:"A", scene:"tea", tagline:"Tea-carpeted hills at about 1,600 m",
-   about:"Rolling tea estates, cool December air and the Nilgiri tahr of Eravikulam. The long climb happens on arrival day, when no hotel would release a room at 06:00 anyway.",
-   why:["The classic Kerala hill landscape: tea estates in every direction","Eravikulam National Park and its Nilgiri tahr","Its main sights don't depend on the weather","We leave before the 24 Dec resort gala-dinner surcharges"],
-   exp:[["Kolukkumalai sunrise jeep","About 2 h up a rough track from 04:45; one jeep for three (Est. ₹4,000)","est"],["Eravikulam National Park, Rajamala","Forest bus up, then a walk. Open 07:30–16:00. ₹200 + ₹50 booking each","listed",SRC.munnarcom],["Tata Tea Museum","Afternoon of day 1",""],["Mattupetty Dam, Echo Point, Kundala Lake","Easy afternoon loop",""],["Pothamedu viewpoint","Sunset over the tea estates",""]],
-   gems:[["Marayoor and Chinnar","Sandalwood country, megalithic dolmens and dry rain-shadow forest east of Munnar. About 6 h round trip; current Chinnar entry rules unconfirmed."],["Cheeyappara and Valara waterfalls","Roadside falls on the climb up from Kochi, a 30-minute stop"]],
+  {id:"kochi", name:"Kochi", scene:"nets", tagline:"Where the trip starts and ends",
+   about:"The trip begins at Ernakulam Jn at 06:00 on 22 Dec and ends at the same station for the 16:00 train on 29 Dec. There is no sightseeing here by design: both days are drive days.",
+   why:["Good road links to Munnar on day 1 and back on day 8","Station pickup avoids a morning in a city after a night train","Fort Kochi stays an optional extra if day 8 runs early"],
+   exp:[["Car pickup at the station exit","06:00 on 22 Dec; driver holds a sign with the group name, bags go straight in",""],["Fort Kochi walk and fishing nets","Only if you are in Kochi by 13:00 on 29 Dec; needs 2.5 h in hand before the train",""]],
+   gems:[["Kothamangalam breakfast stop","On the road up on 22 Dec"]],
+   time:"Start and end (22 and 29 Dec)",
+   dist:[["Munnar","about 130 km · 3.5–4 h plus stops","est",null],["Kovalam","about 215 km · 5–5.5 h","est",null]],
+   stays:[["No hotel planned","We arrive at 06:00 and leave on the 29th at 16:00",""]],
+   food:[["Breakfast on the way up","Kothamangalam or Neriamangalam",""]],
+   cost:"No separate cost. The car is counted under transport on the day it moves",
+   pros:["No time lost on arrival","Return day has a buffer if you leave Kovalam by 08:00"],
+   cons:["Day 8 is a 215 km drive to a fixed train","Christmas-week traffic around Kochi is a risk"]},
+  {id:"munnar", name:"Munnar", scene:"tea", tagline:"Tea-carpeted hills at about 1,600 m",
+   about:"Rolling tea estates, cool December air and the Nilgiri tahr of Eravikulam. Two nights give one full day on the hills after the arrival-day climb.",
+   why:["The classic Kerala hill landscape","Eravikulam National Park and its Nilgiri tahr","A full day on the ground, not just a stop"],
+   exp:[["Eravikulam National Park, Rajamala","Forest bus up, then a walk. Open 07:30–16:00. Go first thing, before the queue","est"],["Mattupetty Dam and Echo Point","Afternoon of day 2",""],["Top Station and Kundala viewpoint","Late light on day 2",""],["Tata Tea Museum","Afternoon of day 1; check which day it is closed","est"],["Kolukkumalai sunrise jeep","About 2 h up a rough track from 04:45; one jeep for three (Est. ₹4,000). Optional, not in the budget","est"]],
+   gems:[["Cheeyappara and Valara waterfalls","Roadside falls on the climb from Kochi, a 30-minute stop"],["Marayoor and Chinnar","Sandalwood country and dry forest, east of Munnar. Only with a spare day; not in this plan"]],
    time:"2 nights (22–23 Dec)",
-   dist:[["Ernakulam Jn","125 km · 3.5–4 h","listed",SRC.trekgo],["Alleppey jetty","about 180 km via Kochi · 5–5.5 h","est",SRC.transr],["Thekkady","90 km · about 3 h","listed",SRC.munnarReach]],
-   stays:[["Tea-estate stay 5–10 km out of town","Chithirapuram, Pallivasal or Devikulam: quieter than the bazaar","",null],["Names with good guest ratings","Ama Stays and Trails, Windermere Estate, Zenha Resorts, The Tall Trees","listed",SRC.layla],["Rate for three","₹7,000–8,000 per night","est",null]],
-   food:[["Christmas duck roast and plum cake","Most hotels serve them in Christmas week","listed",SRC.unstumbled],["Highway breakfast","Kothamangalam or Neriamangalam on the way up","",null]],
-   cost:"Our plan: ₹6,000 for 2 nights in a triple room, plus about ₹1,200 of entries and a ₹2,500 jeep day (Est.). Mid-range: about ₹15,000 for 2 nights",
-   pros:["Iconic scenery","Weather-proof activities","Uses the dead first morning for the drive"],
-   cons:["Among the busiest places at year end","Ghat roads after a night train","Early starts for the best of it"]},
-  {id:"alleppey", name:"Alleppey", plan:"A", scene:"houseboat", tagline:"Christmas Eve on the backwaters",
-   about:"An overnight kettuvallam houseboat on the Vembanad backwaters, with every meal cooked on board. Christmas Eve dinner on the water.",
-   why:["Meals included, so Christmas Eve costs no extra","The defining Kerala experience","Close to Fort Kochi for Christmas Day"],
-   exp:[["Overnight houseboat cruise","Board about 13:00, cruise until 17:30, moor for the night",""],["Village walk at the mooring","Sunset along the paddy bunds",""],["Karimeen on board","Ask the cook for pearl-spot fish for Christmas Eve",""]],
+   dist:[["Kochi (Ernakulam Jn)","about 130 km · 3.5–4 h plus stops","est",null],["Thekkady","about 105 km · 3–3.5 h plus stops","est",null]],
+   stays:[["Old Munnar or a tea-estate homestay","Triple room for the group, Est. ₹3,000 a night. No December price seen; resorts run higher","est",null],["Ask before booking","Compulsory Christmas gala dinner on 24 Dec is common; we leave on that day, so avoid paying for it","",null]],
+   food:[["Banana-leaf lunch","Small restaurants in the town centre",""],["Cardamom tea","Buy a packet at the bazaar before leaving",""]],
+   cost:"Our plan: about ₹6,000 for two nights, plus about ₹1,650 of entries across the two days (Est.)",
+   pros:["Iconic scenery","Weather-proof activities","Gets the hills done before the heat of the coast"],
+   cons:["Busiest place in Kerala at year end","Long climb right after a night train","Early start for Eravikulam"]},
+  {id:"thekkady", name:"Thekkady", scene:"meadow", tagline:"Periyar forest and spice country",
+   about:"Kumily is the gateway to the Periyar Tiger Reserve: boat cruises on the lake, guided walks, spice plantations and the Kathakali shows. Christmas Day is spent here.",
+   why:["Wildlife and forest on Christmas Day","Spice-plantation walks","A natural half-way point between the hills and the coast"],
+   exp:[["Periyar Tiger Reserve nature walk or border hike","Forest Department tickets, limited slots; book ahead","est"],["Periyar Lake boat cruise","Afternoon; elephants and bison often visible from the water","est"],["Spice-plantation walk","Afternoon of 24 Dec",""],["Kathakali or Kalaripayattu show","Evening, in Kumily",""]],
+   gems:[["Plantation cafés","Tea and coffee on the estate roads"],["Bamboo rafting","Alternative to the walk if slots are free (about ₹1,500 each, Est.)"]],
+   time:"2 nights (24–25 Dec)",
+   dist:[["Munnar","about 105 km · 3–3.5 h plus stops","est",null],["Alleppey jetty","about 145 km · 4–4.5 h","est",null]],
+   stays:[["Kumily homestay or small hotel","Triple room, Est. ₹3,500 a night; Christmas week may be higher","est",null]],
+   food:[["Kerala meals in Kumily","Fish curry and appam in the evenings",""]],
+   cost:"Our plan: about ₹7,000 for two nights, about ₹4,000 of activities (Est.)",
+   pros:["Forest and wildlife","Cooler weather","Fills Christmas Day with something special"],
+   cons:["Forest tickets sell out in Christmas week","Reserve boat and walk slots early"]},
+  {id:"alleppey", name:"Alleppey", scene:"houseboat", tagline:"A night on the backwaters",
+   about:"An overnight kettuvallam houseboat on the Vembanad backwaters, with every meal cooked on board. This is the only night with no town stay, so it carries the highest single bill in the plan.",
+   why:["Meals included","The defining Kerala experience","Arrival at the jetty fits the Thekkady drive"],
+   exp:[["Overnight houseboat cruise","Board 12:00–13:00, cruise, moor at about 17:30",""],["Village walk at the mooring","Late afternoon",""],["Karimeen on board","Ask the cook for pearl-spot fish",""]],
    gems:[["Choose a licensed boat","KBOA-certified or KTDC boats; ask for photos of the actual boat"]],
-   time:"1 night (24 Dec)",
-   dist:[["Munnar","about 180 km · 5–5.5 h","est",SRC.transr],["Fort Kochi","55–60 km · 1.5–2 h, longer on Christmas Day","listed",SRC.transr]],
-   stays:[["1-bedroom boat in December","₹8,000–14,000","listed",SRC.paradiseHB],["For 24 Dec with an extra bed","₹14,000–18,000","est",null],["AC hours","Deluxe AC usually runs only 21:00–06:00","",SRC.ktdc]],
-   food:[["All meals on board","Lunch, snacks, dinner and breakfast are included","",null]],
-   cost:"Our plan: cheapest licensed 1BR, about ₹10,000 (Est.). Mid-range: about ₹16,000",
-   pros:["Meals included","Christmas Eve on the water","Sets up an easy Christmas Day"],
-   cons:["AC limited to night hours","Anonymous portal listings and scams","Sells out first"]},
-  {id:"fortkochi", name:"Fort Kochi", plan:"A+B", scene:"nets", tagline:"Fishing nets, churches and Christmas lights",
-   about:"The old port quarter: Chinese fishing nets at sunset, centuries-old churches, Jew Town and Kathakali. It ends the trip 30–60 minutes from the return train.",
-   why:["Christmas Day atmosphere on Princess Street","Close to the return train","A full Saturday before a late departure"],
-   exp:[["Santa Cruz Basilica and St Francis Church","Afternoon of 25 Dec",""],["Chinese fishing nets at sunset","17:30 on the beach front",""],["Jew Town and Mattancherry Palace","Saturday morning; the palace is thought to close on Fridays (verify)",""],["Kathakali at the Kerala Kathakali Centre","17:00 on Saturday",""],["Princess Street lights","Christmas night",""]],
-   gems:[["Kumbalangi fishing village","About 1.5 h round trip by cab on Saturday afternoon"],["Ferry to Ernakulam","₹6 a person, 20 minutes"]],
-   time:"1 night (25 Dec) + Saturday",
-   dist:[["Ernakulam Jn","about 12 km · 30–60 min by road","listed",SRC.ersInfo],["Alleppey","55–60 km · 1.5–2 h","listed",SRC.transr],["Kumarakom","about 70 km · 2–2.5 h","est",null]],
-   stays:[["The Old Courtyard","Princess Street, from ₹5,400 a night","listed",SRC.thrillo],["Walton's Homestay","₹2,000–4,000 off-peak","listed",SRC.homestay],["Old Harbour Hotel","₹5,000–12,000","listed",SRC.homestay],["Rate for Christmas night","₹8,000–10,000 for three","est",null]],
-   food:[["Fort House","Waterfront seafood","",null],["Ask about Christmas dinner charges","A hotel may add a compulsory one on the 25th (₹3,000–4,500 per adult)","listed",SRC.fog]],
-   cost:"Our plan: about ₹4,500 for the night (Est.). Mid-range: about ₹9,000",
-   pros:["Close to the station","Christmas atmosphere","Walkable"],
-   cons:["Christmas Day traffic on the Goshree bridges","Synagogue closed Fri and Sat (verify)","Cochin Carnival 2026 dates unconfirmed"]},
-  {id:"vagamon", name:"Vagamon", plan:"B", scene:"meadow", tagline:"Meadows, pine forest and paragliding",
-   about:"Open grassy hills and pine forest at about 1,100 m, quieter than Munnar, with tandem paragliding at Kolahalamedu.",
-   why:["Far fewer year-end crowds than Munnar","Paragliding over the meadows","Cheaper stays"],
-   exp:[["Tandem paragliding, Kolahalamedu","About 20 min, 4 km from town. ₹3,000–4,500 each. Wind-dependent","listed",null],["Vagamon Meadows and the pine forest","Afternoon of day 1",""],["Kurisumala Ashram","A quiet hilltop monastery",""],["Marmala waterfall","Reached through forest",""]],
-   gems:[["Tea-estate walk at dusk","Day 2 evening"]],
-   time:"2 nights (22–23 Dec)",
-   dist:[["Ernakulam Jn","100–110 km · 3.5–4.5 h","listed",SRC.hosteller],["Kumarakom","76 km · about 2 h","listed",SRC.hostNear],["Alleppey","98 km · about 3 h","listed",SRC.hostNear]],
-   stays:[["Names seen on listings","VAASTA Vagamon, Voye Homes Whitestone Cottage, Winter Vale Green Stay, Woodcastle Residency (prices not seen)","listed",SRC.expediaV],["Rate for three","₹5,000–6,500 per night","est",null]],
-   food:[["The Spice Route","Kerala meals","listed",SRC.spiceRoute]],
-   cost:"About ₹11,000 for 2 nights + ₹12,250 activities incl. paragliding (Est.)",
-   pros:["Quieter","Paragliding","Shorter hops between bases"],
-   cons:["Paragliding cancelled in strong wind or fog","Fewer headline sights"]},
-  {id:"kumarakom", name:"Kumarakom", plan:"B", scene:"lake", tagline:"Lake village on Vembanad",
-   about:"Houseboats on the open lake, a bird sanctuary and the best toddy-shop food in Kuttanad.",
-   why:["Open-lake houseboat cruise","Bird sanctuary","Kuttanad toddy-shop food"],
-   exp:[["Kumarakom Bird Sanctuary","Short visit before boarding",""],["Lake houseboat","Board 12:30, cruise lake and canals, moor at dusk",""],["Kilikkoodu toddy shop","Karimeen, duck and 'shaap' curries","listed",SRC.kilikkoodu]],
-   gems:[["Dawn village walk from the mooring","07:00 on Christmas morning"]],
-   time:"1 night (24 Dec)",
-   dist:[["Vagamon","76 km · about 2 h","listed",SRC.hostNear],["Fort Kochi","about 70 km · 2–2.5 h","est",null]],
-   stays:[["Peak 1BR deluxe / premium","₹13,500 / ₹18,000","listed",SRC.kumarakomHB],["Peak 2BR luxury","₹32,000","listed",SRC.kumarakomHB]],
-   food:[["Kilikkoodu","Toddy-shop meal","listed",SRC.kilikkoodu]],
-   cost:"About ₹16,000 for the boat (Est.)",
-   pros:["Calmer than Alleppey","Bird life","Great local food"],
-   cons:["Every room was booked 23 Dec–3 Jan last year","Fallback to Alleppey adds about 1 h of driving"]}
+   time:"1 night (26 Dec)",
+   dist:[["Thekkady","about 145 km · 4–4.5 h","est",null],["Varkala","about 125 km · 3–3.5 h","est",null]],
+   stays:[["1-bedroom AC houseboat, peak week","Est. ₹12,000. December listings of ₹8,000–14,000 were seen for 1BR; Christmas week is at the top",  "est",null],["AC hours","Deluxe AC usually runs only 21:00–06:00","",null]],
+   food:[["All meals on board","Lunch, snacks, dinner and breakfast are included",""]],
+   cost:"Our plan: about ₹12,000 (Est.). A 2-bedroom boat runs about ₹3,000–6,000 more",
+   pros:["Meals included","Quiet night after Periyar","Easy parking and a short drive south next morning"],
+   cons:["AC limited to night hours","Anonymous portal listings can be scams","Sells out first in Christmas week"]},
+  {id:"varkala", name:"Varkala", scene:"coast", tagline:"Red cliffs over the Arabian Sea",
+   about:"A cliff-top village above a long beach, with cafés along the edge, quiet evenings and a calmer pace than Kovalam. One night, arriving after the houseboat.",
+   why:["Dramatic cliffs and sunsets","Easy walking","The natural stop between Alleppey and Thiruvananthapuram"],
+   exp:[["North Cliff walk and sunset","Evening of 27 Dec",""],["Papanasam Beach","Afternoon; swim only between the lifeguard flags",""],["Janardhana Swami Temple","Optional; check entry and dress rules","est"]],
+   gems:[["Early morning on the cliff","Quiet before the cafés open"]],
+   time:"1 night (27 Dec)",
+   dist:[["Alleppey","about 125 km · 3–3.5 h","est",null],["Thiruvananthapuram","about 50 km · 1.5 h","est",null]],
+   stays:[["Cliff-area guesthouse","Triple room, Est. ₹3,500; the cliff itself is priciest, so look 5–10 minutes back from it","est",null]],
+   food:[["Seafood cafés on the cliff path","Fish and prawn plates, local style",""]],
+   cost:"Our plan: about ₹3,500 for the night and ₹600 of small costs (Est.)",
+   pros:["Beautiful and relaxed","Short day on 28 Dec","Beach access on foot"],
+   cons:["New Year party crowds start building","Cliff paths are uneven after dark","Beach currents; stay near the flags"]},
+  {id:"trivandrum", name:"Thiruvananthapuram", scene:"coast", tagline:"The state capital and Padmanabhaswamy",
+   about:"The old city around the Sree Padmanabhaswamy Temple, with the Napier Museum, a zoo, Chalai market and Veli Lagoon. We pass through it between Varkala and Kovalam on the morning of 28 Dec.",
+   why:["Temple architecture and the old market","On the road between Varkala and Kovalam","Gives a city half-day without an extra night"],
+   exp:[["Padmanabhaswamy Temple","Strict dress code; morning darshan; entry rules apply, so check first","est"],["Chalai market","Spices, banana chips and handloom fabric",""],["Napier Museum and zoo","Probably closed on Mondays, so check first","est"],["Veli Tourist Village or Shanghumugham Beach","Backup if the museum is closed",""]],
+   gems:[["Kuthiramalika Palace Museum","Near the temple; check opening days"]],
+   time:"Half day (28 Dec)",
+   dist:[["Varkala","about 50 km · 1.5 h","est",null],["Kovalam","about 16 km · 30–45 min","est",null]],
+   stays:[["No night here","The 28 Dec night is at Kovalam",""]],
+   food:[["Old-town meals near Chalai","Simple Kerala meals",""]],
+   cost:"Mostly entries: about ₹900 for the day in the budget (Est.)",
+   pros:["Culture without a hotel night","Close to Kovalam"],
+   cons:["28 Dec is a Monday: several museums close","Temple has dress and entry rules"]},
+  {id:"kovalam", name:"Kovalam", scene:"coast", tagline:"Crescent beaches and a red-and-white lighthouse",
+   about:"The last night: Lighthouse Beach at sunset, a beach road for dinner, and a sunrise walk before the 215 km drive to Kochi.",
+   why:["Beach finish to the trip","Sunset from the lighthouse","Close to Thiruvananthapuram"],
+   exp:[["Lighthouse Beach at sunset","Evening of 28 Dec",""],["Vizhinjam lighthouse","Climb if open",""],["Vizhinjam rock-cut cave temple","A short stop on the way in",""]],
+   gems:[["Sunrise on the beach","Short walk before breakfast on 29 Dec"]],
+   time:"1 night (28 Dec)",
+   dist:[["Thiruvananthapuram","about 16 km · 30–45 min","est",null],["Kochi (Ernakulam Jn)","about 215 km · 5–5.5 h","est",null]],
+   stays:[["Budget hotel or homestay near Lighthouse or Hawah Beach","Triple room, Est. ₹4,000; ask about early breakfast for an 08:00 departure","est",null]],
+   food:[["Beach-road seafood","Fresh catch; agree the price before cooking",""]],
+   cost:"Our plan: about ₹4,000 for the night and about ₹900 of small costs (Est.)",
+   pros:["Easy scenic finish","Short drive from Thiruvananthapuram"],
+   cons:["The 29 Dec drive is the trip's hard deadline","Strong sea currents; swim only between the flags"]}
 ];
 const CUT = [
-  ["Thekkady","90 km and about 3 h from Munnar; forces a third hill base into four nights.",SRC.munnarReach],
-  ["Wayanad","About 6 h each way from Ernakulam (estimate) and closer to Bengaluru than to our arrival station.",null],
-  ["Varkala and Kovalam","Far south of Ernakulam, New Year party crowds, and they end far from the return train.",SRC.paradiseCrowd]
+  ["Fort Kochi and Kochi sightseeing","No slack: day 1 is a 130 km drive after a night train, and day 8 is a 215 km drive to a 16:00 train. It becomes an optional stop only if day 8 runs early.",null],
+  ["Backtracking for Alleppey first","Alleppey → Munnar → Thekkady → coast would add about 150 km and a night; going hills first and coast south avoids that.",null],
+  ["Kanyakumari","About 90 km south of Kovalam, which would push day 8 past the train. Not added.",null],
+  ["Wayanad","About 6 h each way from Ernakulam (estimate) and out of the way.",null]
 ];
-
-function I(id,t,text,extra){ return Object.assign({id,t,text},extra||{}); }
-const PLAN_A = [
-  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and climb",base:"Munnar",
-   stay:"Tea-estate stay near Munnar (Est. ₹7,500)",
-   travel:{text:"Ernakulam Jn → Munnar",km:"125 km",time:"3.5–4 h",basis:"listed"},
-   slots:{morning:[I("a1-1","06:00","Arrive Ernakulam Jn on 12684; driver waits at the exit, bags straight into the car"),I("a1-2","06:30","Leave on NH85"),I("a1-3","08:00","Breakfast at Kothamangalam or Neriamangalam"),I("a1-4","09:15","Cheeyappara and Valara waterfall viewpoints, 30 min"),I("a1-5","11:30","Reach Munnar, leave bags, ask for early check-in")],
-     afternoon:[I("a1-6","13:00","Lunch in town"),I("a1-7","14:30","Tata Tea Museum"),I("a1-8","16:30","Pothamedu viewpoint over the tea estates")],
-     evening:[I("a1-9","19:00","Early dinner, in bed by 21:30 after the overnight train")],optional:[]},
-   food:"Highway breakfast stop; hotel dinner",
-   cost:{transport:5000,stays:7500,food:2700,activities:500,misc:500}},
-  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Munnar's big day",base:"Munnar",
-   stay:"Same Munnar stay",travel:{text:"Local sightseeing",km:"about 60 km",time:"in short hops",basis:"est"},
-   slots:{morning:[I("a2-1","04:45","Kolukkumalai sunrise jeep, about 2 h up a rough track",{opt:true}),I("a2-2","09:30","Back for breakfast"),I("a2-3","11:00","Eravikulam National Park at Rajamala: forest bus up, Nilgiri tahr walk")],
-     afternoon:[I("a2-4","13:30","Lunch"),I("a2-5","15:00","Mattupetty Dam, Echo Point and Kundala Lake loop")],
-     evening:[I("a2-6","19:00","Early night")],
-     optional:[I("a2-7","","Hidden-gem swap: Marayoor and Chinnar instead of Eravikulam (about 6 h round trip)")]},
-   food:"Skip Kolukkumalai if tired and take the first 08:30 Eravikulam slot instead",
-   cost:{transport:5000,stays:7500,food:2700,activities:4750,misc:500}},
-  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Hills to backwaters",base:"Alleppey houseboat",
-   stay:"Alleppey houseboat, all meals included (Est. ₹16,000)",
-   travel:{text:"Munnar → Alleppey jetty via Kochi",km:"about 180 km",time:"5–5.5 h with stops",basis:"est"},
-   slots:{morning:[I("a3-1","07:30","Check out"),I("a3-2","09:30","Tea stop at Kothamangalam")],
-     afternoon:[I("a3-3","12:30","Reach the Alleppey boat jetty"),I("a3-4","13:00","Board the houseboat, lunch on board"),I("a3-5","14:00","Cruise until about 17:30")],
-     evening:[I("a3-6","17:30","Moor, village walk, sunset"),I("a3-7","20:00","Christmas Eve dinner on board: ask the cook for karimeen")],optional:[]},
-   food:"Houseboat meals included. Take one overnight bag",
-   cost:{transport:5000,stays:16000,food:1200,activities:0,misc:500}},
-  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
-   stay:"Fort Kochi heritage hotel or homestay (Est. ₹9,000)",
-   travel:{text:"Alleppey → Fort Kochi",km:"55–60 km",time:"1.5–2 h, longer on Christmas Day",basis:"listed"},
-   slots:{morning:[I("a4-1","08:30","Breakfast on board"),I("a4-2","09:00","Disembark, cab to Fort Kochi"),I("a4-3","11:30","Arrive, bags to the hotel (rooms usually from 14:00)")],
-     afternoon:[I("a4-4","13:00","Lunch"),I("a4-5","15:00","Santa Cruz Basilica and St Francis Church"),I("a4-6","17:30","Chinese fishing nets at sunset")],
-     evening:[I("a4-7","19:30","Princess Street lights, dinner, Christmas Day crowds")],
-     optional:[I("a4-8","","Cochin Carnival events (2026 dates unconfirmed)")]},
-   food:"Fort House for waterfront seafood",
-   cost:{transport:5000,stays:9000,food:2700,activities:0,misc:500}},
-  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
-   stay:"Night on the train",travel:{text:"Fort Kochi → Ernakulam Jn",km:"about 12 km",time:"30–60 min by cab (Est. ₹500–700)",basis:"listed"},
-   slots:{morning:[I("a5-1","08:00","Breakfast"),I("a5-2","10:00","Jew Town and Mattancherry Palace (verify opening days)"),I("a5-3","12:00","Check out; bags stay at the hotel")],
-     afternoon:[I("a5-4","12:30","Lunch"),I("a5-5","14:30","Kumbalangi fishing village by cab, about 1.5 h round trip",{opt:true})],
-     evening:[I("a5-6","17:00","Kathakali at the Kerala Kathakali Centre"),I("a5-7","18:15","Collect bags, cab to Ernakulam Jn"),I("a5-8","19:30","At the station, dinner"),I("a5-9","20:35","Return train 16316 (time to confirm on IRCTC; not booked yet)")],optional:[]},
-   food:"Station dinner or a packed meal",
-   cost:{transport:3900,stays:0,food:2700,activities:1250,misc:500}}
-];
-const PLAN_AB = [
-  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and bus up to Munnar",base:"Munnar",
-   stay:"Triple room in Old Munnar (Est. ₹3,000)",
-   travel:{text:"Ernakulam Jn → Munnar by KSRTC bus",km:"125 km",time:"2–4 h on the bus",basis:"listed"},
-   slots:{morning:[I("c1-1","06:00","Arrive Ernakulam Jn on 12684"),I("c1-2","06:20","Auto to the KSRTC stand, 1.6 km (₹100–150)"),I("c1-3","07:00","First Munnar bus, ₹140–230 each; bus times for 22 Dec not verified")],
-     afternoon:[I("c1-4","12:00","Reach Old Munnar, check in to the triple room"),I("c1-5","13:00","Banana-leaf lunch (₹80–120 each)"),I("c1-6","15:00","Walk to the Tata Tea Museum (₹150 each)")],
-     evening:[I("c1-7","19:00","Early night after the train")],optional:[]},
-   food:"Banana-leaf lunch in town; simple dinner",
-   cost:{transport:1000,stays:3000,food:1800,activities:450,misc:600}},
-  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Jeep day around Munnar",base:"Munnar",
-   stay:"Same Munnar room",travel:{text:"Full-day jeep for three",km:"about 60 km",time:"in short hops",basis:"est"},
-   slots:{morning:[I("c2-1","07:30","Eravikulam National Park, first slot booked online (₹250 each)")],
-     afternoon:[I("c2-2","13:00","Lunch"),I("c2-3","14:30","Mattupetty Dam (₹20) and Echo Point")],
-     evening:[I("c2-4","19:00","Dinner in town")],
-     optional:[I("c2-5","","Save about ₹2,000: local buses at ₹15–40 a leg instead of the jeep"),I("c2-6","","Upgrade: Kolukkumalai sunrise jeep (Est. ₹4,000)")]},
-   food:"Local meals, about ₹600 per person a day",
-   cost:{transport:2500,stays:3000,food:1800,activities:750,misc:600}},
-  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Down to the backwaters",base:"Alleppey houseboat",
-   stay:"Cheapest licensed 1BR houseboat, meals included (Est. ₹10,000)",
-   travel:{text:"Munnar → Ernakulam → Alleppey by bus",km:"about 180 km",time:"6+ h with the change",basis:"est"},
-   slots:{morning:[I("c3-1","06:30","Earliest Munnar–Ernakulam bus, ₹185–221 each"),I("c3-2","10:30","Ernakulam–Alleppey bus")],
-     afternoon:[I("c3-3","13:30","Board the houseboat (agreed in advance; a later boarding shortens the cruise)"),I("c3-4","14:00","Cruise and lunch on board")],
-     evening:[I("c3-5","18:00","Moor for the night, Christmas Eve dinner on board")],
-     optional:[I("c3-6","","First upgrade to buy: private cab Munnar → Alleppey (Est. ₹4,500–5,000), saves 5+ hours of buses on Christmas Eve")]},
-   food:"Houseboat meals included",
-   cost:{transport:1000,stays:10000,food:600,activities:0,misc:600}},
-  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
-   stay:"Budget room or homestay in Fort Kochi (Est. ₹4,500)",
-   travel:{text:"Alleppey → Ernakulam bus, ferry to Fort Kochi",km:"about 60 km",time:"2–3 h",basis:"est"},
-   slots:{morning:[I("c4-1","09:00","Disembark"),I("c4-2","09:30","Bus to Ernakulam"),I("c4-3","12:00","Ferry to Fort Kochi (₹6–10)")],
-     afternoon:[I("c4-4","13:00","Lunch, check in"),I("c4-5","15:00","Free walking day: St Francis Church, Santa Cruz Basilica"),I("c4-6","17:30","Chinese fishing nets at sunset")],
-     evening:[I("c4-7","19:30","Christmas lights on Princess Street")],optional:[]},
-   food:"Cafés and seafood along the front",
-   cost:{transport:600,stays:4500,food:1800,activities:0,misc:600}},
-  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
-   stay:"Night on the train",travel:{text:"Ferry to Ernakulam, auto to Ernakulam Jn",km:"about 12 km",time:"45–60 min",basis:"listed"},
-   slots:{morning:[I("c5-1","10:00","Jew Town (verify opening days)"),I("c5-2","12:00","Check out; leave bags at the stay")],
-     afternoon:[I("c5-3","13:00","Lunch"),I("c5-4","15:00","Shikara hour on the backwaters",{opt:true})],
-     evening:[I("c5-5","17:00","Kathakali show",{opt:true}),I("c5-6","18:30","Ferry back to Ernakulam, auto to the Junction"),I("c5-7","19:30","At Ernakulam Jn"),I("c5-8","20:35","Return train 16316, 3A (time to confirm on IRCTC; not booked yet)")],optional:[]},
-   food:"Station dinner or a packed meal",
-   cost:{transport:4400,stays:0,food:2000,activities:2200,misc:600}}
-];
-const PLAN_B = [
-  {key:"d1",date:"2026-12-22",dow:"Tue",dd:"22",title:"Arrive and head for the meadows",base:"Vagamon",
-   stay:"Vagamon cottage or resort (Est. ₹5,500)",travel:{text:"Ernakulam Jn → Vagamon",km:"100–110 km",time:"3.5–4.5 h",basis:"listed"},
-   slots:{morning:[I("b1-1","06:00","Arrive Ernakulam Jn on 12684"),I("b1-2","06:30","Car via Muvattupuzha and Thodupuzha"),I("b1-3","08:15","Breakfast at Muvattupuzha"),I("b1-4","11:00","Reach Vagamon, early check-in if possible")],
-     afternoon:[I("b1-5","13:00","Lunch"),I("b1-6","14:30","Vagamon Meadows and the pine forest")],
-     evening:[I("b1-7","17:00","Sunset on the hills, early dinner and bed")],optional:[]},
-   food:"The Spice Route for Kerala meals",
-   cost:{transport:4000,stays:5500,food:2700,activities:750,misc:500}},
-  {key:"d2",date:"2026-12-23",dow:"Wed",dd:"23",title:"Fly and wander",base:"Vagamon",
-   stay:"Same Vagamon stay",travel:{text:"Local sightseeing",km:"about 40 km",time:"in short hops",basis:"est"},
-   slots:{morning:[I("b2-1","08:00","Tandem paragliding at Kolahalamedu, about 20 min; wind-dependent, keep the morning free"),I("b2-2","11:30","Kurisumala Ashram")],
-     afternoon:[I("b2-3","13:00","Lunch"),I("b2-4","14:30","Marmala waterfall through the forest")],
-     evening:[I("b2-5","17:00","Tea-estate walk, evening in town")],optional:[]},
-   food:"Local Kerala meals",
-   cost:{transport:4000,stays:5500,food:2700,activities:11500,misc:500}},
-  {key:"d3",date:"2026-12-24",dow:"Thu",dd:"24",title:"Down to the lake",base:"Kumarakom houseboat",
-   stay:"Kumarakom houseboat, all meals included (Est. ₹16,000)",travel:{text:"Vagamon → Kumarakom",km:"76 km",time:"about 2 h",basis:"listed"},
-   slots:{morning:[I("b3-1","08:30","Check out"),I("b3-2","10:30","Reach Kumarakom"),I("b3-3","11:00","Kumarakom Bird Sanctuary, short visit")],
-     afternoon:[I("b3-4","12:30","Board the houseboat, lunch on board"),I("b3-5","14:00","Cruise the open lake and canals")],
-     evening:[I("b3-6","18:00","Moor at dusk, Christmas Eve dinner on board")],optional:[]},
-   food:"Houseboat meals included",
-   cost:{transport:4000,stays:16000,food:1200,activities:500,misc:500}},
-  {key:"d4",date:"2026-12-25",dow:"Fri",dd:"25",title:"Christmas in Fort Kochi",base:"Fort Kochi",
-   stay:"Fort Kochi heritage hotel or homestay (Est. ₹9,000)",travel:{text:"Kumarakom → Fort Kochi",km:"about 70 km",time:"2–2.5 h",basis:"est"},
-   slots:{morning:[I("b4-1","07:00","Village walk from the mooring",{opt:true}),I("b4-2","09:00","Disembark, cab to Fort Kochi"),I("b4-3","11:45","Arrive, bags to the hotel")],
-     afternoon:[I("b4-4","13:00","Lunch"),I("b4-5","15:00","Santa Cruz Basilica and St Francis Church"),I("b4-6","17:30","Chinese fishing nets at sunset")],
-     evening:[I("b4-7","19:30","Princess Street lights and dinner")],optional:[]},
-   food:"Fort House for waterfront seafood",
-   cost:{transport:4000,stays:9000,food:2700,activities:0,misc:500}},
-  {key:"d5",date:"2026-12-26",dow:"Sat",dd:"26",title:"Last day and the train",base:"Fort Kochi → train",
-   stay:"Night on the train",travel:{text:"Fort Kochi → Ernakulam Jn",km:"about 12 km",time:"30–60 min by cab",basis:"listed"},
-   slots:{morning:[I("b5-1","08:00","Breakfast"),I("b5-2","10:00","Jew Town and Mattancherry Palace (verify opening days)"),I("b5-3","12:00","Check out; bags stay at the hotel")],
-     afternoon:[I("b5-4","12:30","Lunch"),I("b5-5","15:00","Mangalavanam bird sanctuary, 4 km from Ernakulam Jn",{opt:true})],
-     evening:[I("b5-6","17:00","Kathakali at the Kerala Kathakali Centre"),I("b5-7","18:15","Collect bags, cab to Ernakulam Jn"),I("b5-8","20:35","Return train 16316 (time to confirm on IRCTC; not booked yet)")],optional:[]},
-   food:"Station dinner or a packed meal",
-   cost:{transport:3900,stays:0,food:2700,activities:1250,misc:500}}
-];
-
+const PLAN_AB = [{"key":"d1","date":"2026-12-22","dow":"Tue","dd":"22","title":"Arrive in Kochi, drive up to Munnar","base":"Munnar","stay":"Triple room in Munnar town or a tea-estate homestay (Est. ₹3,000)","travel":{"text":"Ernakulam Jn → Munnar by hired car","km":"about 130 km","time":"3.5–4 h plus stops","basis":"est"},"slots":{"morning":[{"id":"h1-1","t":"06:00","text":"Train 12684 arrives at Ernakulam Jn. Driver waits at the exit; freshen up at the station, bags straight into the car"},{"id":"h1-2","t":"07:00","text":"Leave on the Kothamangalam road (NH85). Breakfast at Kothamangalam or Neriamangalam"},{"id":"h1-3","t":"09:30","text":"Cheeyappara and Valara waterfall viewpoints, 30 min"},{"id":"h1-4","t":"11:30","text":"Reach Munnar, leave bags, ask for early check-in"}],"afternoon":[{"id":"h1-5","t":"13:00","text":"Lunch in town"},{"id":"h1-6","t":"14:30","text":"Tata Tea Museum (check the closing day before going)"},{"id":"h1-7","t":"16:30","text":"Pothamedu viewpoint over the tea estates"}],"evening":[{"id":"h1-8","t":"19:00","text":"Early dinner, early night after the overnight train"}],"optional":[{"id":"h1-9","t":"","text":"If everyone is still fresh at 15:00: skip the museum and do Mattupetty Dam instead, moving the museum to Wed evening"}]},"food":"Banana-leaf lunch in town; simple dinner","cost":{"transport":2300,"stays":3000,"food":1800,"activities":450,"misc":600}},{"key":"d2","date":"2026-12-23","dow":"Wed","dd":"23","title":"A full day in the Munnar hills","base":"Munnar","stay":"Same Munnar room","travel":{"text":"Munnar sightseeing loop by car: Eravikulam, Mattupetty, Echo Point, Top Station","km":"about 70 km round trip","time":"about 3 h of driving, in hops","basis":"est"},"slots":{"morning":[{"id":"h2-1","t":"07:30","text":"Eravikulam National Park first, before the queues: forest bus up, then the walk to the Rajamala tahr area (open 07:30–16:00; closed to visitors in the Feb–Mar calving season, so December is fine)"},{"id":"h2-2","t":"11:00","text":"Tea-estate stop and a tea-factory tasting on the way back"}],"afternoon":[{"id":"h2-3","t":"13:00","text":"Lunch in town"},{"id":"h2-4","t":"14:30","text":"Mattupetty Dam and Echo Point"},{"id":"h2-5","t":"16:30","text":"Kundala and Top Station viewpoint for the late light"}],"evening":[{"id":"h2-6","t":"18:30","text":"Munnar bazaar: tea, spices and cardamom to take home"},{"id":"h2-7","t":"19:30","text":"Dinner; pack tonight, tomorrow is a travel day"}],"optional":[{"id":"h2-8","t":"04:45","text":"Kolukkumalai sunrise jeep, about 2 h up a rough track (Est. ₹4,000 for the jeep, not in the budget). Skip if the group is tired"}]},"food":"Simple local meals; try the cardamom tea","cost":{"transport":1700,"stays":3000,"food":1800,"activities":1200,"misc":600}},{"key":"d3","date":"2026-12-24","dow":"Thu","dd":"24","title":"Over the cardamom hills to Thekkady","base":"Thekkady","stay":"Kumily or Thekkady homestay, triple room (Est. ₹3,500; Christmas Eve may carry a gala-dinner surcharge)","travel":{"text":"Munnar → Thekkady (Kumily) by car, via Pooppara and Nedumkandam","km":"about 105 km","time":"3–3.5 h plus stops","basis":"est"},"slots":{"morning":[{"id":"h3-1","t":"09:00","text":"Check out and leave Munnar after a proper breakfast"},{"id":"h3-2","t":"10:30","text":"Cardamom and tea estate photo stops on the descent"}],"afternoon":[{"id":"h3-3","t":"12:30","text":"Reach Kumily, lunch, check in"},{"id":"h3-4","t":"15:00","text":"Guided spice-plantation walk in Kumily"},{"id":"h3-5","t":"17:00","text":"Kathakali or Kalaripayattu show in Kumily (evening shows are usual; check the time)"}],"evening":[{"id":"h3-6","t":"19:30","text":"Christmas Eve dinner: ask the homestay about any compulsory gala dinner and its price before accepting the room"}],"optional":[{"id":"h3-7","t":"","text":"Kumily town walk for spices, tea and coffee to take home"}]},"food":"Kerala meals in Kumily; ask for fish or Christmas appam and stew in the evening","cost":{"transport":2000,"stays":3500,"food":1800,"activities":1000,"misc":600}},{"key":"d4","date":"2026-12-25","dow":"Fri","dd":"25","title":"Christmas Day in the Periyar forest","base":"Thekkady","stay":"Same Thekkady homestay","travel":{"text":"Local only, by auto or the car","km":"under 30 km","time":"short hops","basis":"est"},"slots":{"morning":[{"id":"h4-1","t":"06:30","text":"Guided nature walk or border hike in Periyar Tiger Reserve (Forest Department; tickets and slots sell out in Christmas week, so book online ahead)"},{"id":"h4-2","t":"10:30","text":"Breakfast back in Kumily"}],"afternoon":[{"id":"h4-3","t":"13:00","text":"Lunch and rest"},{"id":"h4-4","t":"14:30","text":"Boat cruise on Periyar Lake, best slot you can get (elephants and bison often come to the shore)"},{"id":"h4-5","t":"17:00","text":"Tea or coffee at a plantation café"}],"evening":[{"id":"h4-6","t":"19:00","text":"Christmas dinner out; most places are open, and a few raise prices"}],"optional":[{"id":"h4-7","t":"","text":"Bamboo rafting instead of the walk, if slots are free (about ₹1,500 each, Est.)"}]},"food":"Plantation-café snacks; a proper Christmas dinner","cost":{"transport":1000,"stays":3500,"food":1800,"activities":3000,"misc":600}},{"key":"d5","date":"2026-12-26","dow":"Sat","dd":"26","title":"Down to the backwaters: night on a houseboat","base":"Alleppey houseboat","stay":"Cheapest licensed Alleppey 1-bedroom houseboat, meals included (Est. ₹12,000 in peak week)","travel":{"text":"Thekkady → Alleppey jetty by car, via Kanjirappally and Kottayam","km":"about 145 km","time":"4–4.5 h plus a stop","basis":"est"},"slots":{"morning":[{"id":"h5-1","t":"07:30","text":"Leave Kumily after breakfast; the long descent is slower than the distance suggests"},{"id":"h5-2","t":"09:45","text":"Short stop in Kottayam for a toddy-shop-style fish meal or a coffee break"}],"afternoon":[{"id":"h5-3","t":"12:30","text":"Reach the Alleppey jetty and board (agree 12:00–13:00 boarding when you book; the driver parks the car at the jetty)"},{"id":"h5-4","t":"13:00","text":"Lunch on board, cruise through the canals into Vembanad lake"},{"id":"h5-5","t":"17:30","text":"Moor for the night; village walk along the paddy bund"}],"evening":[{"id":"h5-6","t":"19:30","text":"Karimeen dinner on board; deluxe-boat AC usually runs only from about 21:00 to 06:00"}],"optional":[]},"food":"All meals on the houseboat (included in the price)","cost":{"transport":2500,"stays":12000,"food":600,"activities":0,"misc":600}},{"key":"d6","date":"2026-12-27","dow":"Sun","dd":"27","title":"Backwaters to the Varkala cliffs","base":"Varkala","stay":"Cliff-area guesthouse or homestay, triple room (Est. ₹3,500)","travel":{"text":"Alleppey → Varkala by car on NH66, via Kayamkulam and Kollam","km":"about 125 km","time":"3–3.5 h","basis":"est"},"slots":{"morning":[{"id":"h6-1","t":"08:30","text":"Breakfast on board, disembark by 09:00"},{"id":"h6-2","t":"09:15","text":"Leave Alleppey for Varkala; a coffee stop around Kollam"}],"afternoon":[{"id":"h6-3","t":"13:00","text":"Reach Varkala, check in, lunch at a North Cliff café"},{"id":"h6-4","t":"15:30","text":"Cliff walk, then Papanasam Beach (swim only between the lifeguard flags)"}],"evening":[{"id":"h6-5","t":"17:45","text":"Sunset from the cliff"},{"id":"h6-6","t":"19:30","text":"Seafood dinner on the cliff path"}],"optional":[{"id":"h6-7","t":"","text":"Janardhana Swami Temple (check entry and dress rules first)"}]},"food":"Seafood and cafés on the cliff","cost":{"transport":2200,"stays":3500,"food":1500,"activities":600,"misc":600}},{"key":"d7","date":"2026-12-28","dow":"Mon","dd":"28","title":"Thiruvananthapuram morning, Kovalam sunset","base":"Kovalam","stay":"Budget hotel or homestay in Kovalam, triple room (Est. ₹4,000)","travel":{"text":"Varkala → Thiruvananthapuram → Kovalam by car","km":"about 90 km in all","time":"about 2.5 h of driving","basis":"est"},"slots":{"morning":[{"id":"h7-1","t":"07:00","text":"Leave Varkala early so the temple stop is possible"},{"id":"h7-2","t":"08:30","text":"Padmanabhaswamy Temple, if you want the interior: strict dress code and morning darshan hours, and entry rules apply (check before going). Otherwise see the Kuthiramalika area from outside"}],"afternoon":[{"id":"h7-3","t":"11:30","text":"Chalai market and lunch in the old town"},{"id":"h7-4","t":"13:30","text":"Napier Museum and zoo complex: a Monday closure is likely, so check; if closed, go to Veli Tourist Village or Shanghumugham Beach instead"},{"id":"h7-5","t":"16:00","text":"Drive to Kovalam, check in"}],"evening":[{"id":"h7-6","t":"17:30","text":"Sunset at Lighthouse Beach; climb the Vizhinjam lighthouse if open"},{"id":"h7-7","t":"19:30","text":"Dinner on the beach road"}],"optional":[{"id":"h7-8","t":"","text":"Vizhinjam rock-cut cave temple, a short stop on the way into Kovalam"}]},"food":"Seafood on the beach road; try puttu with kadala curry for breakfast","cost":{"transport":1800,"stays":4000,"food":1800,"activities":900,"misc":600}},{"key":"d8","date":"2026-12-29","dow":"Tue","dd":"29","title":"Drive back to Kochi for the 16:00 train","base":"Kochi","stay":"No stay tonight; train home","travel":{"text":"Kovalam → Ernakulam by car on NH66","km":"about 215 km","time":"5–5.5 h plus stops","basis":"est"},"slots":{"morning":[{"id":"h8-1","t":"06:30","text":"Short sunrise walk on the beach"},{"id":"h8-2","t":"07:30","text":"Breakfast, check out"},{"id":"h8-3","t":"08:00","text":"Leave Kovalam. Hard rule: not later than 09:00, or the train is at risk"}],"afternoon":[{"id":"h8-4","t":"11:30","text":"Lunch near Kollam or Alleppey, 45 min at most"},{"id":"h8-5","t":"13:30","text":"Arrive Ernakulam; bags are in the car, so go straight to the station if needed"},{"id":"h8-6","t":"14:30","text":"Be at the station, which still leaves about 1.5 h before the 16:00 train"},{"id":"h8-7","t":"16:00","text":"Return train from Kochi"}],"evening":[],"optional":[{"id":"h8-8","t":"","text":"If you arrive at 13:00 or earlier, a quick Fort Kochi walk and fishing-net stop is possible; only if there are 2.5 h or more in hand"}]},"food":"Breakfast before leaving, a quick lunch on NH66, snacks for the train","cost":{"transport":3400,"stays":0,"food":1200,"activities":0,"misc":300}}];
 const POLLS = [
-  {id:"plan",q:"Which plan do we book?",opts:[{id:"A",label:"Plan A: Munnar, Alleppey, Fort Kochi"},{id:"B",label:"Plan B: Vagamon, Kumarakom, Fort Kochi"}]},
-  {id:"return",q:"How do we get home on Sat 26 Dec?",opts:[{id:"16316",label:"Train 16316 from Ernakulam Jn, about 20:35–21:00"},{id:"16525",label:"Train 16525 from Ernakulam Town, 17:40"},{id:"bus",label:"KSRTC Volvo sleeper bus"}]},
+  {id:"car",q:"Which car for the 8 days?",opts:[{id:"sedan",label:"Dzire-class sedan (cheapest; snug for 3 people and bags)"},{id:"ertiga",label:"Ertiga (roomier, about ₹1–2 per km more)"},{id:"innova",label:"Innova (most room, highest rate)"}]},
   {id:"boat",q:"Houseboat layout",opts:[{id:"1br",label:"1 bedroom + extra bed (cheaper, snug)"},{id:"2br",label:"2 bedrooms (about ₹3,000–6,000 more)"}]}
 ];
-
-const RETURN = [
-  {id:"16316",name:"16316 Kochuveli–Mysuru Express",pick:true,runs:"Daily",leaves:"Ernakulam Jn about 20:35–21:00 (sources differ)",arrives:"KSR Bengaluru about 08:20–08:50 Sun 27 Dec",fare:"3A Est. ₹1,250–1,450 pp · SL Listed ₹360–400",note:"Leaves from Ernakulam Jn, so we keep Saturday evening.",src:[SRC.erail,SRC.ctkt16316,SRC.tk16316]},
-  {id:"16525",name:"16525 Island Express",runs:"Daily",leaves:"Ernakulam Town 17:40",arrives:"KSR Bengaluru about 06:40–07:00",fare:"Similar to 16316",note:"Boards at Ernakulam Town, 4 km from the Junction, and costs us the evening.",src:[SRC.ts16525,SRC.t16525]},
-  {id:"bus",name:"KSRTC Volvo multi-axle sleeper",runs:"Daily",leaves:"Ernakulam about 21:00 or 23:10",arrives:"about 07:10 or 08:24",fare:"Listed from ₹1,273 pp; past Christmas surge ₹2,200–2,665",note:"Backup if both trains are waitlisted.",src:[SRC.mmt,SRC.kaumudi]},
-  {id:"12683",name:"12683 Ernakulam–SMVT Bengaluru",runs:"Sun, Mon, Wed only",leaves:"16:50",arrives:"03:55 next day",fare:"—",note:"Does not run on Saturday. Only usable if we stay until Sun 27 Dec.",src:[SRC.t12683]}
-];
-
 const HOUSEBOAT = {
-  alleppey:{label:"Alleppey (Plan A)", "1br":{lo:14000,hi:18000,basis:"est",note:"Listed 1BR ₹8,000–14,000 in December, plus an extra bed and peak-night premium",src:SRC.paradiseHB}, "2br":{lo:17000,hi:24000,basis:"est",note:"1BR estimate plus ₹3,000–6,000",src:null}},
-  kumarakom:{label:"Kumarakom (Plan B)", "1br":{lo:13500,hi:18000,basis:"listed",note:"Peak 1BR deluxe ₹13,500, premium ₹18,000",src:SRC.kumarakomHB}, "2br":{lo:32000,hi:32000,basis:"listed",note:"Peak 2BR luxury ₹32,000",src:SRC.kumarakomHB}}
+  alleppey:{label:"Alleppey", "1br":{lo:14000,hi:18000,basis:"est",note:"Listed 1BR ₹8,000–14,000 in December, plus an extra bed and a peak-night premium. Our plan line is ₹12,000"}, "2br":{lo:17000,hi:24000,basis:"est",note:"1BR estimate plus ₹3,000–6,000"}}
 };
 
 /* ====================================================================
@@ -611,7 +503,7 @@ function pollVotes(pid){ const m={}; Object.values(S.people).forEach(p=>{ if(isR
 const commentsOn = target => allPosts().filter(p=>p.kind==="comment" && p.target===target);
 
 function versions(){ return Object.values(S.itin).filter(v=>v.days).sort((a,b)=>b.n-a.n); }
-function baseVersion(){ return {_id:"base", n:0, plan:"A", days:PLAN_AB, status:"draft", why:"Research baseline: Plan A budget version (not saved yet)", adjust:{}, unsaved:true}; }
+function baseVersion(){ return {_id:"base", n:0, plan:"A", days:PLAN_AB, status:"draft", why:"Research baseline: 8-day car trip (not saved yet)", adjust:{}, unsaved:true}; }
 function currentVersion(){ const m=S.meta.state; if(m && m.current && S.itin[m.current]) return S.itin[m.current]; const v=versions(); return v[0] || baseVersion(); }
 function projection(v){
   const cat={}; BUDGET_CATS.forEach(c=>cat[c.id]=0);
@@ -621,12 +513,12 @@ function projection(v){
   return {cat, sub, cont, total:sub+cont};
 }
 function flatItems(days){ const m={}; (days||[]).forEach((d,di)=>SLOTS.forEach(([sl])=>((d.slots&&d.slots[sl])||[]).forEach(it=>{ m[it.id]=Object.assign({day:di+1, slot:sl, date:d.dow+" "+d.dd+" Dec"},it); }))); return m; }
-function findItem(id){ const v=currentVersion(); const m=flatItems(v.days); if(m[id]) return m[id]; for(const x of versions()){ const mm=flatItems(x.days); if(mm[id]) return mm[id]; } const b=flatItems(PLAN_A); if(b[id]) return b[id]; return flatItems(PLAN_B)[id]||null; }
+function findItem(id){ const v=currentVersion(); const m=flatItems(v.days); if(m[id]) return m[id]; for(const x of versions()){ const mm=flatItems(x.days); if(mm[id]) return mm[id]; } return flatItems(PLAN_AB)[id]||null; }
 function labelFor(target){
   if(!target) return "the trip";
   const d=DEST.find(x=>x.id===target); if(d) return d.name;
   if(target.startsWith("poll-")){ const p=POLLS.find(x=>"poll-"+x.id===target); return p?p.q:"a decision"; }
-  if(target==="plan-compare") return "Plan A vs Plan B";
+  if(target==="route") return "the route";
   if(target.startsWith("prop-")){ const p=allPosts().find(x=>x.id===target.slice(5)); return p?"the proposal for “"+clip(p.title,40)+"”":"a proposal"; }
   if(target.startsWith("bk-")){ const b=S.bookings[target.slice(3)]; return b?b.title:"a booking"; }
   const it=findItem(target); if(it) return "“"+clip(it.text,46)+"”";
@@ -692,18 +584,18 @@ function tripContext(){
   return {
     travellers: members().map(m=>nameOf(m._id)),
     party:"3 friends from Bengaluru (group may grow)",
-    fixed:["Budget cap: ₹15,000–20,000 per person including the return train (outbound already paid). The plan is the budget version of Plan A: KSRTC buses, budget rooms, cheapest licensed houseboat. Flag anything that pushes past ₹20,000 per person.","Outbound already booked: train 12684 SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec. Do not change it.","Return on Sat 26 Dec night from Ernakulam; 16316 (daily, Ernakulam Jn about 20:35–21:00) is the current pick, not yet booked.","Christmas week: peak prices, gala-dinner surcharges on 24/25 Dec at many resorts, sell-out risk, Christmas Day traffic around Kochi."],
+    fixed:["Trip: 22–29 Dec 2026, 8 days, 3 friends from Bengaluru, one hired car with driver for the whole trip, about 910 km. Route is fixed unless a suggestion clearly beats it: Kochi → Munnar (2 nights) → Thekkady (2) → Alleppey houseboat (1) → Varkala (1) → Thiruvananthapuram and Kovalam (1) → Kochi.","Outbound already booked: train 12684 SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec. Return train from Kochi at 16:00 on Tue 29 Dec is already held. Do not change either; the car must be back in Ernakulam by 14:30 on 29 Dec, so Kovalam departure is 08:00 and never later than 09:00.","Earlier budget cap was ₹15,000–20,000 per person for the 5-day bus plan; this car plan is about ₹26,900 per person (Est.), so flag costs that push it higher and name cheaper alternatives.","Christmas week: peak prices, gala-dinner surcharges on 24/25 Dec at many resorts, Periyar forest tickets and boat slots sell out, and 28 Dec is a Monday (some Thiruvananthapuram museums close)."],
     itineraryVersion: v.n ? "v"+v.n : "baseline", plan: v.plan,
     days: v.days.map((d,i)=>({day:i+1, date:d.dow+" "+d.dd+" Dec", title:d.title, base:d.base, stay:d.stay, travel:d.travel.text+" · "+d.travel.km+" · "+d.travel.time, items:SLOTS.flatMap(([sl])=>(d.slots[sl]||[]).map(it=>({id:it.id, slot:sl, time:it.t, text:it.text}))), cost:d.cost})),
     budget:{baselineGroupTotal:BASELINE, projectedGroupTotal:pr.total, byCategory:pr.cat, contingencyPct:10},
-    researchNotes:["Considered and cut earlier: Thekkady (third hill base), Wayanad (6 h each way), Varkala/Kovalam (far south, party crowds, far from the return train).","Kumarakom was fully booked 23 Dec–3 Jan last year.","Munnar resorts list 24 Dec gala dinners at ₹3,000–4,500 per adult."]
+    researchNotes:["Distances and drive times are estimates from general knowledge, not live checks.","Considered and cut: Fort Kochi sightseeing (no slack on the two travel days), Kanyakumari (would break the 29 Dec deadline), Wayanad (too far), and doing Alleppey first (adds backtracking)."]
   };
 }
 function reviewPrompt(post){
   const comments = commentsOn(post.id).map(c=>({by:nameOf(c.by), text:c.body}));
   const others = allPosts().filter(p=>p.kind==="suggestion" && p.id!==post.id && !["rejected"].includes(statusOf(p))).map(p=>({by:nameOf(p.by), category:p.cat, title:p.title}));
   const target = post.target ? labelFor(post.target) : null;
-  return `You are the AI trip planner inside "Kerala Trip HQ", a private app three friends use to plan a Kerala trip on 22–26 December 2026. Review ONE suggestion from a traveller and give the group a decisive, specific recommendation.
+  return `You are the AI trip planner inside "Kerala Trip HQ", a private app three friends use to plan a Kerala trip on 22–29 December 2026 (8 days, one hired car). Review ONE suggestion from a traveller and give the group a decisive, specific recommendation.
 
 Working rules:
 - Evaluate travel time, distance, season (late December: dry, cool hills, peak Christmas crowds), likely opening hours, and fit with the current itinerary below.
@@ -726,7 +618,7 @@ OTHER OPEN SUGGESTIONS: ${JSON.stringify(others)}
 Reply with ONLY a JSON object of this shape:
 {"summary":"one sentence verdict for a phone screen",
  "verdict":"recommend" | "recommend_with_changes" | "not_recommended" | "needs_info",
- "fit":"2-3 sentences on how it fits the 5-day plan",
+ "fit":"2-3 sentences on how it fits the 8-day plan",
  "facts":[{"text":"...","basis":"trip data"|"general knowledge"|"estimate"}],
  "travel":{"extraKm":number|null,"extraHours":number|null,"note":"..."},
  "costDelta":{"transport":0,"stays":0,"food":0,"activities":0,"misc":0},
@@ -938,17 +830,17 @@ function Home({go}){
   const pend=pendingDecisions(); const waiting=awaitingReview();
   const latest=allPosts().filter(p=>p.kind==="comment").sort((a,b)=>b.at-a.at).slice(0,3);
   const ev=feed().slice(0,5);
-  const plan = pollWinner("plan") || v.plan || "A";
-  const shortlist=DEST.filter(d=>d.plan.includes(plan));
+  const shortlist=DEST;
   const outbound = bks.find(b=>b._id==="outbound");
   return html`<div>
     <section class="hero"><${Scene} kind="hero"/><div class="shade"></div>
-      <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–26 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">Three friends. One Kerala adventure.</div><${Countdown}/></div></section>
+      <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–29 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">Three friends. One Kerala adventure.</div><${Countdown}/></div></section>
     <div class=${"wrap stack"+(stag?" stagger":"")} style="margin-top:16px">
             <div class="row between">
         <div class="row" style="gap:10px"><div class="avs">${mem.length?mem.map(m=>html`<${Avatar} id=${m._id} key=${m._id}/>`):html`<span class="small faint">Crew appears as people join</span>`}</div><span class="small muted">${mem.map(m=>nameOf(m._id)).join(", ")}</span></div>
       </div>
       <div class="card row" style="gap:12px"><span class="av" style="background:var(--ok);border-color:var(--ok-bg)">${ic(IC.train)}</span><div class="grow"><div class="row between"><b>Outbound train 12684</b><span class="pill ok">${ic(IC.check)} ${outbound&&outbound.status!=="booked"?outbound.status:"Booked"}</span></div><div class="small muted">Mon 21 Dec, 19:00 SMVT Bengaluru → Ernakulam Jn about 06:00 Tue</div></div></div>
+      <div class="card row" style="gap:12px"><span class="av" style="background:var(--ok);border-color:var(--ok-bg)">${ic(IC.train)}</span><div class="grow"><div class="row between"><b>Return train from Kochi</b><span class="pill ok">${ic(IC.check)} Held</span></div><div class="small muted">Tue 29 Dec, 16:00. Be at the station by 14:30</div></div></div>
       <div class="quick">
         <button onClick=${()=>canContribute()?openSheet("newpost",{}):go("crew")}>${ic(IC.plus)}Suggest</button>
         ${s.isOwner?html`<button onClick=${()=>openSheet("ask",{})}>${ic(IC.spark)}Ask AI</button>`:null}
@@ -996,23 +888,21 @@ function Explore(){
   const s=useStore(); const tab=s.exploreTab||"places"; const setTab=t=>set({exploreTab:t});
   const crewDest=allPosts().filter(p=>p.kind==="suggestion"&&p.cat==="destination");
   return html`<div class="wrap stack">
-    <div class="page-head"><div class="eyebrow">Explore</div><h1>Where we could go</h1></div>
-    <${Seg} value=${tab} onChange=${setTab} opts=${[["places","Places"],["compare","A vs B"],["map","Map"],["stays","Stays"],["transport","Travel"]]}/>
+    <div class="page-head"><div class="eyebrow">Explore</div><h1>Where we go</h1></div>
+    <${Seg} value=${tab} onChange=${setTab} opts=${[["places","Places"],["route","Route"],["stays","Stays"],["transport","Travel"]]}/>
     ${tab==="places" ? html`<div class="stack">
-      <div class="section-title"><h2>Plan A</h2><span class="small faint">Recommended by research</span></div>
-      ${DEST.filter(d=>d.plan.includes("A")).map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
-      <div class="section-title"><h2>Plan B</h2><span class="small faint">Quieter fallback</span></div>
-      ${DEST.filter(d=>d.plan==="B").map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
+      <div class="section-title"><h2>The route, in order</h2><span class="small faint">8 days, one car</span></div>
+      ${DEST.map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
       <div class="section-title"><h2>Crew ideas</h2>${canContribute()?html`<button class="link-btn" onClick=${()=>openSheet("newpost",{cat:"destination"})}>Suggest a place</button>`:null}</div>
       ${crewDest.length ? crewDest.map(p=>html`<button key=${p.id} class="dbig" onClick=${()=>openSheet("post",{id:p.id})}><div style="position:relative"><${Scene} kind="coast" style="height:120px"/><span class="plan-badge">Suggested by ${nameOf(p.by)}</span></div><div class="body stack" style="gap:6px"><div class="row between"><h3 style="font-size:20px">${p.title}</h3>${statusPill(p)}</div><div class="small muted">${clip(p.body,140)}</div></div></button>`) : html`<div class="card small muted">Know a place that should be on the list? Suggest it and the AI planner will check whether it fits the five days.</div>`}
       <div class="section-title"><h2>Considered and cut</h2></div>
       <div class="card list">${CUT.map(([n,t,src])=>html`<div class="li" key=${n}><div class="grow small"><b>${n}</b><div class="muted">${t} ${src?srcLink(src):null}</div></div></div>`)}</div>
-    </div>` : tab==="compare" ? html`<${Compare}/>` : tab==="map" ? html`<${MapView}/>` : tab==="stays" ? html`<${Stays}/>` : html`<${Transport}/>`}
+    </div>` : tab==="route" ? html`<${RouteView}/>` : tab==="stays" ? html`<${Stays}/>` : html`<${Transport}/>`}
   </div>`;
 }
 function DestCard({d}){
   useStore(); const v=votesFor(d.id); const n=commentsOn(d.id).length;
-  return html`<button class="dbig" onClick=${()=>openSheet("dest",{id:d.id})}><div style="position:relative"><${Scene} kind=${d.scene} style="height:190px"/><span class="plan-badge">${d.plan==="A+B"?"Plan A and B":"Plan "+d.plan}</span></div>
+  return html`<button class="dbig" onClick=${()=>openSheet("dest",{id:d.id})}><div style="position:relative"><${Scene} kind=${d.scene} style="height:190px"/><span class="plan-badge">${d.time}</span></div>
     <div class="body stack" style="gap:6px"><div class="row between"><h3>${d.name}</h3><span class="small faint">${d.time.split(" (")[0]}</span></div><div class="muted">${d.tagline}</div>
     <div class="row small faint" style="gap:14px"><span class="row" style="gap:4px">${ic(IC.up)} ${v.up.length}</span><span class="row" style="gap:4px">${ic(IC.chat)} ${n}</span><span>${d.dist[0][0]}: ${d.dist[0][1]}</span></div></div></button>`;
 }
@@ -1020,7 +910,7 @@ function DestSheet({id}){
   const d=DEST.find(x=>x.id===id); if(!d) return null;
   const Row=([a,b,basis,src])=>html`<div class="li"><div class="grow small"><b>${a}</b> ${basisTag(basis)}<div class="muted">${b} ${src?srcLink(src):null}</div></div></div>`;
   return html`<${Sheet} title=${d.name} onClose=${closeSheet}>
-    <div style="position:relative;border-radius:18px;overflow:hidden"><${Scene} kind=${d.scene} style="height:200px"/><span class="plan-badge">${d.plan==="A+B"?"Plan A and B":"Plan "+d.plan} · ${d.time}</span></div>
+    <div style="position:relative;border-radius:18px;overflow:hidden"><${Scene} kind=${d.scene} style="height:200px"/><span class="plan-badge">${d.time}</span></div>
     <div><div class="eyebrow">${d.tagline}</div><p style="margin:.4em 0 0">${d.about}</p></div>
     <${VoteBar} target=${d.id}/>
     <div class="card"><div class="eyebrow" style="margin-bottom:6px">Why go</div><ul class="clean small">${d.why.map(w=>html`<li>${w}</li>`)}</ul></div>
@@ -1035,84 +925,75 @@ function DestSheet({id}){
     <${Thread} target=${d.id}/>
   <//>`;
 }
-function Compare(){
-  const [plan,setPlan]=useState("A"); const pa=projection({days:PLAN_A}), pb=projection({days:PLAN_B}), pab=projection({days:PLAN_AB});
-  const rowsC=[["Bases","Munnar ×2, Alleppey boat, Fort Kochi","Vagamon ×2, Kumarakom boat, Fort Kochi"],["Arrival-day drive","125 km · 3.5–4 h","100–110 km · 3.5–4.5 h"],["Longest drive","Munnar → Alleppey, about 180 km · 5–5.5 h","Vagamon → Kumarakom, 76 km · about 2 h"],["Group total (Est.)",inr(pa.total),inr(pb.total)],["Per person",inr(pa.total/3),inr(pb.total/3)],["Signature moment","Kolukkumalai sunrise, Eravikulam tahr","Paragliding over the meadows"],["Weather risk","Low","Paragliding is wind-dependent"],["Crowds","Munnar is among the busiest at year end","Quieter hills; Kumarakom sold out last year"]];
+function RouteView(){
+  useStore(); const v=currentVersion(); const pr=projection(v);
+  const kmTotal=910;
   return html`<div class="stack">
-    <div class="card" style="padding:0;overflow:hidden"><div class="table-wrap"><table class="t"><thead><tr><th></th><th>Plan A (mid-range)</th><th>Plan B (mid-range)</th></tr></thead><tbody>${rowsC.map(([a,b,c])=>html`<tr key=${a}><th style="text-transform:none;letter-spacing:0;font-size:13px">${a}</th><td class="small">${b}</td><td class="small">${c}</td></tr>`)}</tbody></table></div></div>
-    <div class="card stack" style="gap:6px;border-color:var(--brand)"><div class="row between"><b>Our plan: Plan A, budget version</b><span class="pill ok">Under the cap</span></div><div class="kv num"><dt>Group</dt><dd><b>${inr(pab.total)}</b> ${basisTag("est")}</dd><dt>Per person</dt><dd><b>${inr(pab.total/3)}</b> of the ₹15,000–20,000 cap</dd></div><div class="small muted">Same route as Plan A, on KSRTC buses and a basic houseboat. The car goes (about ₹20,000 down to ₹5,600 of buses and a jeep). Munnar, a night on the water and Christmas in Fort Kochi all stay. The table below shows the mid-range versions, both well over the cap.</div></div>
-    <div class="banner info small">Headroom is about ₹11,000 for the group. Best upgrades: a private cab for the Christmas Eve Munnar → Alleppey leg (Est. ₹4,500–5,000), the Kolukkumalai sunrise jeep (Est. ₹4,000), or two rooms in Munnar (about ₹3,000). To go lower (about ₹13,500 each): sleeper class, and a ferry plus shikara instead of the houseboat.</div>
-    <${PollCard} poll=${POLLS[0]}/>
-    <${Seg} value=${plan} onChange=${setPlan} opts=${[["A","Route A"],["B","Route B"]]}/>
-    <div class="card map"><${RouteMap} plan=${plan}/></div>
-    <${VoteBar} target="plan-compare"/>
-    <${Thread} target="plan-compare"/>
+    <div class="card stack" style="gap:8px;border-color:var(--brand)"><div class="row between"><b>The route, in order</b><span class="pill info">Car with driver</span></div>
+      <div class="small">Kochi → Munnar → Thekkady → Alleppey → Varkala → Thiruvananthapuram → Kovalam → Kochi</div>
+      <div class="kv num small"><dt>Distance</dt><dd>about ${kmTotal} km ${basisTag("est")}</dd><dt>Driving</dt><dd>about 24 h in 8 days, longest day 5–5.5 h</dd><dt>Group</dt><dd><b>${inr(pr.total)}</b> ${basisTag("est")}</dd><dt>Per person</dt><dd><b>${inr(pr.total/3)}</b></dd></div>
+      <div class="small muted">Hills first, then south down the coast, then straight back up NH66. There is no backtracking: every leg goes forward, and the last leg is the shortest road home.</div></div>
+    <div class="card map"><${RouteMap}/></div>
+    <div class="card list">${v.days.map(d=>html`<div class="li" key=${d.key}><span class="av sm" style=${{background:"var(--brand)",color:"var(--brand-ink)"}}>${d.dd}</span><div class="grow small"><b>${d.travel.text}</b> ${basisTag(d.travel.basis)}<div class="muted">${d.travel.km} · ${d.travel.time}</div></div></div>`)}</div>
+    <div class="card stack" style="gap:6px"><div class="eyebrow">Pressure points</div>
+      <ul class="clean small"><li><b>Tue 29 Dec</b> is the hard deadline: leave Kovalam by 08:00 (never later than 09:00) for a 16:00 train from Kochi.</li>
+      <li><b>Thu 24 and Fri 25 Dec</b>: Periyar forest tickets and Kumily rooms sell out in Christmas week. Book first.</li>
+      <li><b>Mon 28 Dec</b>: several Thiruvananthapuram museums likely close on Mondays; the plan has a beach backup.</li></ul></div>
+    <div class="banner warn small">Distances and times are our estimates from general knowledge, not a live map check. Confirm each leg in a maps app once the driver is booked.</div>
+    <${VoteBar} target="route"/>
+    <${Thread} target="route"/>
   </div>`;
 }
-const MAP_BOX={lat0:10.45,lat1:8.55,lng0:75.95,lng1:77.35,w:300,h:380};
+const MAP_BOX={lat0:10.3,lat1:8.25,lng0:75.9,lng1:77.4,w:300,h:380};
 const P=(lat,lng)=>[+((lng-MAP_BOX.lng0)/(MAP_BOX.lng1-MAP_BOX.lng0)*MAP_BOX.w+10).toFixed(1), +((MAP_BOX.lat0-lat)/(MAP_BOX.lat0-MAP_BOX.lat1)*MAP_BOX.h+10).toFixed(1)];
-const PLACES={ekm:[9.969,76.29,"Ernakulam Jn"],fk:[9.964,76.242,"Fort Kochi"],munnar:[10.089,77.06,"Munnar"],alp:[9.498,76.338,"Alleppey"],vag:[9.686,76.905,"Vagamon"],kum:[9.617,76.43,"Kumarakom"],tek:[9.6,77.16,"Thekkady"],var:[8.737,76.716,"Varkala"]};
-const VIA={kothamangalam:[10.06,76.63],vyttila:[9.97,76.32],muvattu:[9.98,76.58],thodu:[9.89,76.72],vaikom:[9.75,76.39],tripu:[9.95,76.35]};
-function RouteMap({plan}){
-  const coast=[[10.45,76.02],[10.2,76.15],[10.0,76.22],[9.95,76.235],[9.7,76.29],[9.5,76.32],[9.3,76.40],[9.0,76.52],[8.75,76.70],[8.55,76.86]].map(([a,b])=>P(a,b));
+const PLACES={ekm:[9.969,76.29,"Ernakulam Jn","end",-9,-8],munnar:[10.089,77.06,"Munnar","start",9,4],tek:[9.6,77.16,"Thekkady","end",-9,16],alp:[9.498,76.338,"Alleppey","end",-9,4],var:[8.737,76.716,"Varkala","end",-9,4],tvm:[8.524,76.937,"Thiruvananthapuram","end",-10,-6],kov:[8.4,76.979,"Kovalam","start",9,12]};
+const VIA={kothamangalam:[10.06,76.63],pooppara:[9.97,77.15],kanjirappally:[9.55,76.78],kottayam:[9.59,76.52],kayamkulam:[9.17,76.5],kollam:[8.88,76.6],edappally:[9.99,76.31],tripunithura:[9.94,76.35]};
+function RouteMap(){
+  const coast=[[10.3,76.0],[10.0,76.2],[9.95,76.235],[9.7,76.29],[9.5,76.32],[9.3,76.4],[9.0,76.52],[8.75,76.7],[8.55,76.86],[8.4,76.96],[8.25,77.05]].map(([a,b])=>P(a,b));
   const sea=`M0 0L${coast.map(p=>p.join(" ")).join("L")}L0 400Z`;
-  const ghats=`M${P(10.45,76.75).join(" ")}Q${P(10.0,76.7).join(" ")} ${P(9.6,76.82).join(" ")}T${P(8.55,77.05).join(" ")}L320 400L320 0Z`;
+  const ghats=`M${P(10.3,76.7).join(" ")}Q${P(10.0,76.75).join(" ")} ${P(9.6,76.85).join(" ")}T${P(8.3,77.2).join(" ")}L320 400L320 0Z`;
   const pts=(...k)=>k.map(x=>(PLACES[x]?P(PLACES[x][0],PLACES[x][1]):P(VIA[x][0],VIA[x][1])).join(",")).join(" ");
-  const A=[["ekm","kothamangalam","munnar"],["munnar","kothamangalam","vyttila","alp"],["alp","fk"],["fk","ekm"]];
-  const B=[["ekm","muvattu","thodu","vag"],["vag","kum"],["kum","vaikom","tripu","fk"],["fk","ekm"]];
-  const legs=plan==="A"?A:B; const stops=plan==="A"?["ekm","munnar","alp","fk"]:["ekm","vag","kum","fk"];
-  return html`<svg viewBox="0 0 320 400" role="img" aria-label=${"Map of route "+plan}>
+  const out=[["ekm","kothamangalam","munnar"],["munnar","pooppara","tek"],["tek","kanjirappally","kottayam","alp"],["alp","kayamkulam","kollam","var"],["var","tvm","kov"]];
+  const back=[["kov","tvm","var","kollam","kayamkulam","edappally","ekm"]];
+  const stops=Object.keys(PLACES);
+  return html`<svg viewBox="0 0 320 400" role="img" aria-label="Map of the route: Kochi, Munnar, Thekkady, Alleppey, Varkala, Thiruvananthapuram, Kovalam and back to Kochi">
     <rect width="320" height="400" fill="var(--map-land)"/><path d=${ghats} fill="var(--map-hill)"/><path d=${sea} fill="var(--map-sea)"/>
-    <ellipse cx=${P(9.72,76.39)[0]} cy=${P(9.72,76.39)[1]} rx="6" ry="38" fill="var(--map-sea)" transform=${`rotate(8 ${P(9.72,76.39).join(" ")})`}/>
-    <text x="24" y="250" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Arabian Sea</text><text x="230" y="310" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Western Ghats</text>
-    ${legs.map((l,i)=>html`<polyline key=${plan+i} class="route" points=${pts(...l)} stroke=${plan==="A"?"var(--laterite)":"var(--sea)"}/>`)}
-    ${Object.entries(PLACES).map(([k,[la,ln,name]])=>{ const [x,y]=P(la,ln); const on=stops.includes(k); return html`<g key=${k}><circle cx=${x} cy=${y} r=${on?6:3.5} fill=${on?"var(--brand)":"var(--ink-3)"} stroke="var(--surface)" stroke-width="2"/><text x=${k==="fk"?x-8:x+9} y=${y+(k==="fk"?16:4)} font-size=${on?12:10} font-weight=${on?700:500} fill="var(--ink)" text-anchor=${k==="fk"?"end":"start"}>${name}</text></g>`; })}
+    <text x="24" y="250" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Arabian Sea</text><text x="236" y="200" fill="var(--map-ink)" font-size="10" opacity=".7" font-style="italic">Western Ghats</text>
+    ${back.map((l,i)=>html`<polyline key=${"b"+i} points=${pts(...l)} fill="none" stroke="var(--sea)" stroke-width="2.5" stroke-dasharray="3 5" stroke-linecap="round" opacity=".75" transform="translate(-6 0)"/>`)}
+    ${out.map((l,i)=>html`<polyline key=${"o"+i} class="route" points=${pts(...l)} stroke="var(--laterite)"/>`)}
+    ${Object.entries(PLACES).map(([k,[la,ln,name,anchor,dx,dy]])=>{ const [x,y]=P(la,ln); return html`<g key=${k}><circle cx=${x} cy=${y} r="6" fill="var(--brand)" stroke="var(--surface)" stroke-width="2"/><text x=${x+dx} y=${y+dy} font-size="12" font-weight="700" fill="var(--ink)" text-anchor=${anchor}>${name}</text></g>`; })}
+    <g transform="translate(12 372)"><line x1="0" y1="0" x2="26" y2="0" stroke="var(--laterite)" stroke-width="3"/><text x="32" y="4" font-size="10" fill="var(--ink)">Outbound</text><line x1="86" y1="0" x2="112" y2="0" stroke="var(--sea)" stroke-width="2.5" stroke-dasharray="3 5"/><text x="118" y="4" font-size="10" fill="var(--ink)">Return on 29 Dec</text></g>
   </svg>
   <div class="tiny faint" style="margin-top:6px">Schematic: places to scale, roads simplified.</div>`;
 }
-function MapView(){
-  const [plan,setPlan]=useState("A"); const days=plan==="A"?PLAN_A:PLAN_B;
-  return html`<div class="stack"><${Seg} value=${plan} onChange=${setPlan} opts=${[["A","Plan A route"],["B","Plan B route"]]}/>
-    <div class="card map"><${RouteMap} plan=${plan}/></div>
-    <div class="card list">${days.map(d=>html`<div class="li" key=${d.key}><span class="av sm" style=${{background:"var(--brand)",color:"var(--brand-ink)"}}>${d.dd}</span><div class="grow small"><b>${d.travel.text}</b> ${basisTag(d.travel.basis)}<div class="muted">${d.travel.km} · ${d.travel.time}</div></div></div>`)}</div></div>`;
-}
 function Stays(){
-  const [loc,setLoc]=useState("alleppey"); const [cfg,setCfg]=useState("1br"); const o=HOUSEBOAT[loc][cfg]; const line=10000;
-  const nights=[["22, 23 Dec","Our plan: Munnar triple room","Old Munnar lodge or guesthouse. TrekGo lists lodges at ₹700–1,000 a double off-season; no December prices seen","₹3,000 / night","est",L("https://trekgo.in/blog/munnar-budget-travel-guide","TrekGo")],["24 Dec","Our plan: basic Alleppey houseboat","Cheapest licensed (KBOA or KTDC) 1BR with AC at night; agree a 13:30 boarding","₹10,000","est",SRC.paradiseHB],["25 Dec","Our plan: Fort Kochi budget room","Homestay or guesthouse; dorm beds are ₹500–700 off-peak","₹4,500","est",SRC.homestay],["22, 23 Dec","Mid-range: Munnar","Tea-estate stay, Chithirapuram/Pallivasal/Devikulam. Ama Stays and Trails, Windermere Estate, Zenha Resorts, The Tall Trees","₹7,000–8,000 / night","est",SRC.layla],["22, 23 Dec","Plan B: Vagamon","VAASTA Vagamon, Voye Homes Whitestone Cottage, Winter Vale Green Stay, Woodcastle Residency","₹5,000–6,500 / night","est",SRC.expediaV],["24 Dec","Mid-range: Alleppey houseboat","KBOA-certified or KTDC boats","₹14,000–18,000","est",SRC.paradiseHB],["24 Dec","Plan B: Kumarakom houseboat","Same standards; book early","₹13,500–32,000","listed",SRC.kumarakomHB],["25 Dec","Mid-range: Fort Kochi","The Old Courtyard (from ₹5,400), Walton's Homestay, Old Harbour Hotel","₹8,000–10,000","est",SRC.thrillo]];
+  const o=HOUSEBOAT.alleppey["1br"]; const line=12000;
+  const nights=[["22, 23 Dec","Munnar triple room","Old Munnar lodge, homestay or a tea-estate stay. No December price seen; resorts run higher","₹3,000 / night","est"],["24, 25 Dec","Thekkady (Kumily) homestay","Triple room within reach of the Periyar gate; the 24th may come with a Christmas gala-dinner charge","₹3,500 / night","est"],["26 Dec","Alleppey 1BR houseboat","Licensed (KBOA or KTDC) boat, AC at night, meals included, boarding 12:00–13:00","₹12,000","est"],["27 Dec","Varkala cliff guesthouse","Look 5–10 minutes back from the cliff edge for the better price","₹3,500","est"],["28 Dec","Kovalam budget hotel","Near Lighthouse or Hawah Beach; ask for a 07:30 breakfast on the 29th","₹4,000","est"]];
   return html`<div class="stack">
-    <div class="banner warn small">Nothing is reserved yet unless the Bookings tab says so. Book refundable rates now: Christmas-week rooms go first.</div>
-    <div class="card stack"><div class="row between"><h2 style="font-size:20px">Houseboat for 24 Dec</h2>${basisTag(o.basis)}</div>
-      <${Seg} value=${loc} onChange=${setLoc} opts=${[["alleppey","Alleppey"],["kumarakom","Kumarakom"]]}/>
-      <${Seg} value=${cfg} onChange=${setCfg} opts=${[["1br","1 bedroom + extra bed"],["2br","2 bedrooms"]]}/>
-      <div class="row" style="gap:14px;align-items:stretch">
-        <svg viewBox="0 0 120 70" style="width:120px;flex:none" aria-hidden="true"><rect x="2" y="10" width="116" height="50" rx="22" fill="var(--surface-2)" stroke="var(--line)"/>
-          ${cfg==="1br"?html`<g><rect x="16" y="20" width="36" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="58" y="26" width="16" height="22" rx="3" fill="var(--turmeric)"/><rect x="80" y="22" width="26" height="26" rx="4" fill="none" stroke="var(--ink-3)" stroke-dasharray="3 2"/></g>`:html`<g><rect x="14" y="20" width="32" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="52" y="20" width="32" height="30" rx="4" fill="var(--brand)" opacity=".85"/><rect x="88" y="22" width="20" height="26" rx="4" fill="none" stroke="var(--ink-3)" stroke-dasharray="3 2"/></g>`}</svg>
-        <div class="grow small">${cfg==="1br"?"One double bed plus an extra mattress, one bathroom. Snug for three.":"Two bedrooms and two bathrooms. One person gets a room to themselves."}<div class="faint" style="margin-top:4px">Deluxe AC usually runs only 21:00–06:00. All meals included.</div></div></div>
-      <div class="kv num"><dt>Price</dt><dd><b>${o.lo===o.hi?inr(o.lo):inr(o.lo)+"–"+inr(o.hi)}</b></dd><dt>Per person</dt><dd>${o.lo===o.hi?inr(o.lo/3):inr(o.lo/3)+"–"+inr(o.hi/3)}</dd><dt>vs budget line</dt><dd style=${{color:o.hi>line?"var(--bad)":"var(--ok)"}}>${signed(o.lo-line)} to ${signed(o.hi-line)}</dd><dt>Basis</dt><dd class="small muted">${o.note} ${srcLink(o.src)}</dd></div>
-      <${PollCard} poll=${POLLS[2]}/>
+    <div class="banner warn small">Nothing is reserved yet unless the Bookings tab says so. Book refundable rates now: Christmas-week rooms go first. Prices are our estimates, not quotes.</div>
+    <div class="card stack"><div class="row between"><h2 style="font-size:20px">Houseboat for 26 Dec</h2>${basisTag(o.basis)}</div>
+      <div class="kv num"><dt>Price</dt><dd><b>${inr(o.lo)}–${inr(o.hi)}</b></dd><dt>Per person</dt><dd>${inr(o.lo/3)}–${inr(o.hi/3)}</dd><dt>vs budget line</dt><dd style=${{color:o.lo>line?"var(--bad)":"var(--ok)"}}>${signed(o.lo-line)} to ${signed(o.hi-line)}</dd><dt>Basis</dt><dd class="small muted">${o.note}</dd></div>
+      <${PollCard} poll=${POLLS[1]}/>
     </div>
     <div class="section-title"><h2>Every night</h2></div>
-    ${nights.map(([n,p,c,price,b,src])=>html`<div class="card stack" style="gap:6px" key=${p}><div class="row between"><span class="eyebrow">${n}</span>${basisTag(b)}</div><b>${p}</b><div class="small muted">${c}</div><div class="row between small"><span class="num"><b>${price}</b> for three</span>${srcLink(src)}</div></div>`)}
-    <div class="card small muted">Ask every property before paying a deposit: compulsory Christmas gala dinner (Munnar lists ₹3,000–4,500 per adult on 24 Dec, ${srcLink(SRC.kondody)}), early check-in at 11:00 on the 22nd, bag storage until 18:00 on the 26th, parking, and cancellation terms.</div>
+    ${nights.map(([n,p,c,price,b])=>html`<div class="card stack" style="gap:6px" key=${p}><div class="row between"><span class="eyebrow">${n}</span>${basisTag(b)}</div><b>${p}</b><div class="small muted">${c}</div><div class="row between small"><span class="num"><b>${price}</b> for three</span></div></div>`)}
+    <div class="card small muted">Ask every property before paying a deposit: compulsory Christmas gala dinner on 24 and 25 Dec, early check-in at 11:00 on the 22nd, parking for the car, and cancellation terms.</div>
   </div>`;
 }
 function Transport(){
   return html`<div class="stack">
     <div class="card stack" style="gap:8px"><div class="row between"><b>Outbound · train 12684</b><span class="pill ok">${ic(IC.check)} Booked</span></div>
-      <div class="kv"><dt>Leaves</dt><dd>SMVT Bengaluru, Mon 21 Dec, 19:00</dd><dt>Arrives</dt><dd>Ernakulam Jn, Tue 22 Dec, about 06:00 ${basisTag("listed")}</dd><dt>Runs</dt><dd>Mon, Tue, Thu</dd></div>
-      <div class="tiny faint">Timetable: ${srcLink(SRC.t12684)}, ${srcLink(SRC.rm12684)}. Not counted as an outstanding booking.</div></div>
-    <div class="card stack" style="gap:8px"><div class="row" style="gap:8px">${ic(IC.car)}<b>Onward: KSRTC buses and one jeep day</b></div>
-      <div class="kv small"><dt>Tue</dt><dd>Auto to the KSRTC stand (₹100–150), bus to Munnar ₹140–230 each, 2–4 h ${basisTag("listed")} ${srcLink(SRC.rome2rio)}</dd><dt>Wed</dt><dd>Full-day jeep for three, about ₹2,500 ${basisTag("est")}</dd><dt>Thu</dt><dd>Munnar → Ernakulam bus ₹185–221 each ${basisTag("listed")} ${srcLink(L("https://www.tickettogetlost.com/?p=8088","Ticket to Get Lost"))}, then a bus to Alleppey</dd><dt>Fri</dt><dd>Bus to Ernakulam, ferry to Fort Kochi ₹6–10</dd></div>
-      <div class="banner warn small">Bus times for 22 and 24 Dec are not verified. Call the Munnar depot on 04865-230201 and reserve seats on KSRTC's online booking. Christmas Eve buses will be full.</div>
-      <div class="small"><b>First upgrade to buy:</b> a private cab for Thursday's Munnar → Alleppey leg, Est. ₹4,500–5,000. It saves 5+ hours of buses on Christmas Eve and fits inside the ₹11,000 headroom.</div>
-      <div class="eyebrow" style="margin-top:4px">If we go back to a car for all four days (mid-range plan)</div>
-      <div class="small muted">Rates seen: Innova ₹12.5–13.5/km and about ₹5,000 for a 145 km drop (${srcLink(SRC.cabbazar)}); ₹22/km on a multi-day Crysta package (${srcLink(SRC.mts)}). Expect about 250 km billed per day minimum and a Christmas premium. Get one all-inclusive written quote. Send the driver the 12684 PNR and coach.</div></div>
-    <div class="section-title"><h2>Return on Sat 26 Dec</h2></div>
-    <div class="banner warn small">Not booked. Booking opened on 27 Oct and Christmas week fills early. Check seats on ${srcLink(SRC.irctc)}; Tatkal opens the day before (10:00 AC, 11:00 sleeper; ${srcLink(SRC.goibibo)}). I could not see live seat counts, and sites disagree on 16316's Ernakulam time.</div>
-    ${RETURN.map(r=>html`<div class="card stack" style="gap:6px" key=${r.id}><div class="row between"><b>${r.name}</b>${r.pick?html`<span class="pill info">Research pick</span>`:null}</div>
-      <div class="kv"><dt>Runs</dt><dd>${r.runs}</dd><dt>Leaves</dt><dd>${r.leaves}</dd><dt>Arrives</dt><dd>${r.arrives}</dd><dt>Fare</dt><dd>${r.fare}</dd></div><div class="small muted">${r.note}</div><div class="tiny faint">Sources: ${r.src.map((s,i)=>html`${i?", ":""}${srcLink(s)}`)}</div></div>`)}
-    <${PollCard} poll=${POLLS[1]}/>
-    <div class="card"><div class="eyebrow" style="margin-bottom:6px">Station and luggage plan</div><ul class="clean small"><li>Tue: driver meets us at the Ernakulam Jn exit</li><li>Thu: one overnight bag on the boat; ask if main bags can stay locked in the car</li><li>Sat: check out 12:00, bags stay at the hotel until 18:00</li><li>18:15 cab to Ernakulam Jn (Est. ₹500–700); the ₹6 ferry is awkward with suitcases</li><li>Platform 1 cloak room reported at about ₹30 a bag, 06:00–22:00 (unconfirmed)</li></ul></div>
+      <div class="kv"><dt>Leaves</dt><dd>SMVT Bengaluru, Mon 21 Dec, 19:00</dd><dt>Arrives</dt><dd>Ernakulam Jn, Tue 22 Dec, about 06:00 ${basisTag("listed")}</dd></div>
+      <div class="tiny faint">Not counted as an outstanding booking.</div></div>
+    <div class="card stack" style="gap:8px"><div class="row" style="gap:8px">${ic(IC.car)}<b>Car with driver, 22–29 Dec</b></div>
+      <div class="kv small"><dt>Pickup</dt><dd>Ernakulam Jn exit, 06:00 Tue 22 Dec</dd><dt>Drop</dt><dd>Ernakulam, Tue 29 Dec, by 14:30</dd><dt>Distance</dt><dd>about 910 km ${basisTag("est")}</dd><dt>Budget</dt><dd>About ₹16,900 all in: ${inr(13)}/km on the kilometres, ₹500 a day driver allowance, tolls and parking ${basisTag("est")}</dd></div>
+      <div class="small muted">Why a driver: the Munnar–Thekkady and Thekkady–Alleppey legs are hill roads, there are three 4+ hour drives, and the group arrives off a night train. Rates are our estimate; get one all-inclusive written quote that names the vehicle, the number of days, night halts and tolls. Send the driver the 12684 PNR and coach.</div>
+      <div class="banner warn small">Christmas week brings a rate premium and tight availability. Book the car before the stays.</div>
+      <${PollCard} poll=${POLLS[0]}/></div>
+    <div class="card stack" style="gap:8px"><div class="row between"><b>Return · train from Kochi, Tue 29 Dec 16:00</b><span class="pill ok">${ic(IC.check)} Held</span></div>
+      <div class="small muted">Already with the group. The station and PNR are not in the plan data, so check whether the ticket says Ernakulam Jn or Ernakulam Town, and add the PNR on the Bookings tab. Both are in the same city, about 4 km apart.</div>
+      <div class="kv small"><dt>Leave Kovalam</dt><dd>08:00, never later than 09:00</dd><dt>Reach Ernakulam</dt><dd>about 13:30–14:15 ${basisTag("est")}</dd><dt>At the station</dt><dd>by 14:30, which leaves about 1.5 h in hand</dd></div></div>
+    <div class="card"><div class="eyebrow" style="margin-bottom:6px">Station and luggage plan</div><ul class="clean small"><li>Tue 22: driver meets us at the station exit; freshen up at the station before leaving</li><li>Sat 26: one overnight bag on the boat; the main bags stay locked in the car</li><li>Tue 29: bags stay in the car all the way; car drops us at the station</li></ul></div>
   </div>`;
 }
 
@@ -1124,15 +1005,15 @@ function Itinerary(){
   const v=(vid && (s.itin[vid])) || cur; const isCur=v._id===cur._id; const pr=projection(v);
   const [open,setOpen]=useState({d1:true});
   return html`<div class="wrap stack">
-    <div class="page-head"><div class="eyebrow">Itinerary · ${v.plan==="B"?"Plan B":"Plan A"}</div><h1>${["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][v.days.length]||v.days.length} days in Kerala</h1></div>
+    <div class="page-head"><div class="eyebrow">Itinerary · 22–29 Dec</div><h1>${["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][v.days.length]||v.days.length} days in Kerala</h1></div>
     <button class="card press row" style="gap:10px;text-align:left" onClick=${()=>openSheet("versions",{onPick:setVid})}>${ic(IC.history)}<div class="grow"><b>${v.unsaved?"Research baseline":"Version "+v.n}</b> ${v.status==="approved"?html`<span class="pill ok">Approved</span>`:html`<span class="pill warn">Draft</span>`} ${!isCur?html`<span class="pill neutral">Older version</span>`:null}<div class="small muted">${v.unsaved?"Not saved to the trip yet":clip(v.why,70)+" · "+nameOf(v.by)+" · "+ago(v.at)}</div></div>${ic(IC.chev)}</button>
     ${!isCur?html`<button class="btn" onClick=${()=>setVid(null)}>Back to the current version</button>`:null}
-    ${s.isOwner && isCur && v.unsaved ? html`<button class="btn primary" onClick=${()=>createVersion(v.days,"Research baseline: Plan A, budget version",{status:"draft",adjust:{}})}>Save baseline as v1</button>`:null}
+    ${s.isOwner && isCur && v.unsaved ? html`<button class="btn primary" onClick=${()=>createVersion(v.days,"Research baseline: 8-day car trip",{status:"draft",adjust:{}})}>Save baseline as v1</button>`:null}
     ${s.isOwner && isCur && !v.unsaved && v.status!=="approved" ? html`<button class="btn primary" onClick=${async()=>{ const d=stripId(v); d.status="approved"; d.approvedBy=s.me; d.approvedAt=Date.now(); if(await ownerWrite("itinerary/"+v._id,d)) toast("Itinerary approved"); }}>Approve this itinerary</button>`:null}
     <div class="card row between"><div><div class="eyebrow">Projected cost</div><b class="num" style="font-size:20px">${inr(pr.total)}</b> <span class="small muted num">${inr(pr.total/3)} pp</span></div><div class="small muted" style="text-align:right">incl. 10%<br/>contingency</div></div>
     <div class="day"><div class="day-head" style="cursor:default"><div class="datebox" style="background:var(--surface-2);color:var(--ink)"><b>21</b><span>Mon</span></div><div class="grow"><b>Night train south</b><div class="small muted">19:00 train 12684 from SMVT Bengaluru</div></div><span class="pill ok">Booked</span></div></div>
     ${v.days.map((d,i)=>html`<${DayCard} key=${d.key} d=${d} i=${i} open=${!!open[d.key]} toggle=${()=>setOpen(Object.assign({},open,{[d.key]:!open[d.key]}))} readonly=${!isCur}/>`)}
-    ${s.isOwner && isCur && v.plan!=="B" && pollWinner("plan")==="B" ? html`<button class="btn" onClick=${()=>createVersion(PLAN_B,"Switched to Plan B after the group decision",{plan:"B",adjust:{},adjustNotes:[]})}>Switch the itinerary to Plan B</button>`:null}
+    <div class="day"><div class="day-head" style="cursor:default"><div class="datebox" style="background:var(--surface-2);color:var(--ink)"><b>29</b><span>Tue</span></div><div class="grow"><b>Return train from Kochi</b><div class="small muted">16:00, at the station by 14:30</div></div><span class="pill ok">Held</span></div></div>
   </div>`;
 }
 function DayCard({d,i,open,toggle,readonly}){
@@ -1447,7 +1328,7 @@ function BookingSheet({id}){
 function AskSheet(){
   const s=useStore(); const [q,setQ]=useState(""); const [a,setA]=useState(""); const [busy,setBusy]=useState(false); const ctl=useRef(null);
   const ask=async e=>{ e&&e.preventDefault(); if(!q.trim()||!API.sample) return; setBusy(true); setA("Thinking…"); ctl.current=new AbortController();
-    try{ await API.sample(`You are the AI trip planner for "Kerala Trip HQ" (3 friends, Kerala, 22–26 Dec 2026). Answer the traveller's question in under 180 words, specific to this trip and its current itinerary. You cannot browse: say when something is from general knowledge and must be verified. Plain text, short paragraphs or "- " bullets.\n\nTRIP DATA: ${JSON.stringify(tripContext())}\n\nQUESTION from ${nameOf(s.me)}: ${q.trim()}`, {signal:ctl.current.signal, onText:({text})=>setA(text)}); }
+    try{ await API.sample(`You are the AI trip planner for "Kerala Trip HQ" (3 friends, Kerala, 22–29 Dec 2026, hired car with driver). Answer the traveller's question in under 180 words, specific to this trip and its current itinerary. You cannot browse: say when something is from general knowledge and must be verified. Plain text, short paragraphs or "- " bullets.\n\nTRIP DATA: ${JSON.stringify(tripContext())}\n\nQUESTION from ${nameOf(s.me)}: ${q.trim()}`, {signal:ctl.current.signal, onText:({text})=>setA(text)}); }
     catch(err){ setA(err.text||""); if(err.code!=="cancelled") toast(sampleMsg(err)); }
     setBusy(false); };
   const share=async()=>{ if(!a||!canContribute()) return; const ok=await addPost({kind:"suggestion", cat:"other", title:clip("Q: "+q.trim(),120), body:clip("AI planner answer:\n"+a,1500), cost:0, target:null}); if(ok!==false){ toast("Shared to the Crew board"); closeSheet(); } };

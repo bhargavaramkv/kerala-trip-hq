@@ -1,6 +1,6 @@
 # Kerala Trip HQ
 
-Static trip planner for 22–26 Dec 2026, hosted on GitHub Pages. No server, no accounts, nothing to install.
+Static trip planner for 22–29 Dec 2026, hosted on GitHub Pages. No server, no accounts, nothing to install.
 
 * Open the page, tap **I'm Sahith / Manoj / Bhargava**, and start planning: explore places, vote, comment,
   suggest changes, log expenses (also on behalf of someone else).
