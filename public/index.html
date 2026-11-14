@@ -143,6 +143,18 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
 .sleep .arr{color:var(--ink-3);font-size:12px}
 .quick.slim button{min-height:58px;flex-direction:row;gap:8px;border-radius:14px;font-size:14px}
 .quick.slim svg{width:28px;height:28px;padding:6px}
+.chips.scrollx{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 2px}
+.chips.scrollx::-webkit-scrollbar{display:none}
+.chips.scrollx .chip{flex:none}
+details.fold{padding:0}
+details.fold>summary{list-style:none;cursor:pointer;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:after{content:"▾";color:var(--ink-3);transition:transform 200ms var(--ease-out)}
+details.fold[open]>summary:after{transform:rotate(180deg)}
+details.fold>.fold-body{padding:0 14px 14px}
+.thumb{width:62px;height:62px;flex:none;border-radius:14px;overflow:hidden;position:relative}
+.thumb .scene{position:absolute;inset:0;height:100%!important}
+.kv.tight{gap:4px 12px}
 .quick button{border:1px solid var(--line);background:var(--surface);border-radius:18px;min-height:84px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
 .quick svg{width:36px;height:36px;padding:8px;border-radius:50%;background:var(--ok-bg);color:var(--brand);box-sizing:border-box}
 /* destination cards */
@@ -931,6 +943,11 @@ function Home({go}){
       ${ev.length?html`<div class="section-title"><h2>Crew activity</h2><button class="link-btn" onClick=${()=>{ go("crew"); set({crewTab:"activity"}); }}>All</button></div><${FeedList} items=${ev}/>`:null}
     </div></div>`;
 }
+function PollRow({poll}){
+  useStore(); const [open,setOpen]=useState(false);
+  const w=pollWinner(poll.id); const o=w&&poll.opts.find(x=>x.id===w); const n=Object.values(pollVotes("poll-"+poll.id)).reduce((a,x)=>a+x.length,0);
+  return html`<div><button class="hrow" onClick=${()=>setOpen(!open)} aria-expanded=${open}><span class="ico">🗳️</span><span class="grow"><b>${poll.q}</b><span class="sub">${o?"Leaning: "+clip(o.label.split(" (")[0],30):n?"Tied":"No votes yet · tap to vote"}</span></span><span style=${{transform:open?"rotate(180deg)":"none",transition:"transform 200ms var(--ease-out)",display:"grid"}}>${ic(IC.chevd)}</span></button>${open?html`<div style="padding-bottom:12px"><${PollCard} poll=${poll}/></div>`:null}</div>`;
+}
 function PollCard({poll}){
   const s=useStore(); const pv=pollVotes("poll-"+poll.id); const mine=s.people[s.me]&&s.people[s.me].polls&&s.people[s.me].polls["poll-"+poll.id];
   const win0=pollWinner(poll.id); const total=Object.values(pv).reduce((a,b)=>a+b.length,0);
@@ -953,20 +970,16 @@ function Explore(){
     <div class="page-head"><div class="eyebrow">Explore</div><h1>Where we go</h1></div>
     <${Seg} value=${tab} onChange=${setTab} opts=${[["places","Places"],["route","Route"],["stays","Stays"],["transport","Travel"]]}/>
     ${tab==="places" ? html`<div class="stack">
-      <div class="section-title"><h2>The route, in order</h2><span class="small faint">8 days, one car</span></div>
-      ${DEST.map(d=>html`<${DestCard} d=${d} key=${d.id}/>`)}
-      <div class="section-title"><h2>Crew ideas</h2>${canContribute()?html`<button class="link-btn" onClick=${()=>openSheet("newpost",{cat:"destination"})}>Suggest a place</button>`:null}</div>
-      ${crewDest.length ? crewDest.map(p=>html`<button key=${p.id} class="dbig" onClick=${()=>openSheet("post",{id:p.id})}><div style="position:relative"><${Scene} kind="coast" style="height:120px"/><span class="plan-badge">Suggested by ${nameOf(p.by)}</span></div><div class="body stack" style="gap:6px"><div class="row between"><h3 style="font-size:20px">${p.title}</h3>${statusPill(p)}</div><div class="small muted">${clip(p.body,140)}</div></div></button>`) : html`<div class="card small muted">Know a place that should be on the list? Suggest it and the AI planner will check whether it fits the five days.</div>`}
-      <div class="section-title"><h2>Considered and cut</h2></div>
-      <div class="card list">${CUT.map(([n,t,src])=>html`<div class="li" key=${n}><div class="grow small"><b>${n}</b><div class="muted">${t} ${src?srcLink(src):null}</div></div></div>`)}</div>
+      <div class="section-title"><h2>The route, in order</h2>${canContribute()?html`<button class="link-btn" onClick=${()=>openSheet("newpost",{cat:"destination"})}>Suggest a place</button>`:html`<span class="small faint">8 days, one car</span>`}</div>
+      <div class="card hlist">${DEST.map((d,k)=>html`<${DestRow} d=${d} k=${k} key=${d.id}/>`)}</div>
+      ${crewDest.length?html`<div class="section-title"><h2>Crew ideas</h2></div><div class="card hlist">${crewDest.map(p=>html`<button key=${p.id} class="hrow" onClick=${()=>openSheet("post",{id:p.id})}><span class="ico">💡</span><span class="grow"><b>${p.title}</b><span class="sub">Suggested by ${nameOf(p.by)}</span></span>${statusPill(p)}</button>`)}</div>`:null}
+      <details class="card fold"><summary>Considered and cut <span class="small faint" style="font-weight:600;margin-left:auto;margin-right:8px">${CUT.length}</span></summary><div class="fold-body list">${CUT.map(([n,t,src])=>html`<div class="li" key=${n}><div class="grow small"><b>${n}</b><div class="muted">${t} ${src?srcLink(src):null}</div></div></div>`)}</div></details>
     </div>` : tab==="route" ? html`<${RouteView}/>` : tab==="stays" ? html`<${Stays}/>` : html`<${Transport}/>`}
   </div>`;
 }
-function DestCard({d}){
+function DestRow({d,k}){
   useStore(); const v=votesFor(d.id); const n=commentsOn(d.id).length;
-  return html`<button class="dbig" onClick=${()=>openSheet("dest",{id:d.id})}><div style="position:relative"><${Scene} kind=${d.scene} style="height:190px"/><span class="plan-badge">${d.time}</span></div>
-    <div class="body stack" style="gap:6px"><div class="row between"><h3>${d.name}</h3><span class="small faint">${d.time.split(" (")[0]}</span></div><div class="muted">${d.tagline}</div>
-    <div class="row small faint" style="gap:14px"><span class="row" style="gap:4px">${ic(IC.up)} ${v.up.length}</span><span class="row" style="gap:4px">${ic(IC.chat)} ${n}</span><span>${d.dist[0][0]}: ${d.dist[0][1]}</span></div></div></button>`;
+  return html`<button class="hrow" onClick=${()=>openSheet("dest",{id:d.id})}><span class="thumb"><${Scene} kind=${d.scene}/></span><span class="grow"><b style="font-size:16px">${d.name}</b><span class="sub">${d.time}</span><span class="sub" style="color:var(--ink-2)">${d.tagline}</span>${v.up.length||n?html`<span class="sub">▲ ${v.up.length} · ${n} comment${n===1?"":"s"}</span>`:null}</span>${ic(IC.chev)}</button>`;
 }
 function DestSheet({id}){
   const d=DEST.find(x=>x.id===id); if(!d) return null;
@@ -1002,7 +1015,7 @@ function RouteView(){
       <li><b>Tue 29 Dec</b> is the hard deadline: leave Kovalam at 07:30 (never later than 08:00), refuel, and return the car by 14:10 for a 16:00 train from Kochi.</li>
       <li><b>Thu 24 and Fri 25 Dec</b>: Kumily rooms, the first Periyar boat and a late houseboat boarding all need booking in Christmas week. The 25th is 4 h 30 min of driving after a 07:30 boat.</li>
       <li><b>Sun 27 Dec</b>: leave Varkala about 14:00 to fit the Napier Museum (closed Mondays) before dark.</li></ul></div>
-    <div class="banner warn small">Every drive is a timed leg in the itinerary, with distance and duration. They are our estimates from general knowledge, not a live map check, so add 10–15% in Christmas-week traffic. Confirm each leg in a maps app once the car is booked.</div>
+    <div class="tiny faint">Every drive is a timed leg in the itinerary, with distance and duration. They are our estimates from general knowledge, not a live map check, so add 10–15% in Christmas-week traffic. Confirm each leg in a maps app once the car is booked.</div>
     <${VoteBar} target="route"/>
     <${Thread} target="route"/>
   </div>`;
@@ -1042,34 +1055,31 @@ function RouteMap({day}){
   ${f?null:html`<div class="tiny faint" style="margin-top:6px">Schematic: places to scale, roads simplified.</div>`}`;
 }
 function Stays(){
-  
-  const nights=[["22, 23 Dec","Munnar: two doubles or a family room","Old Munnar lodge, homestay or a tea-estate stay. No December price seen; resorts run higher","Price to be confirmed",""],["24 Dec","Thekkady (Kumily) homestay, one night","Two doubles or a family room within reach of the Periyar boat landing; the 24th may come with a Christmas gala-dinner charge, and we leave at 06:45 on the 25th","Price to be confirmed",""],["25 Dec","Alleppey 2BR houseboat","Licensed (KBOA or KTDC) boat, AC at night, meals included. Christmas night is peak, and we arrive about 14:30, so agree a late boarding","Price to be confirmed",""],["26 Dec","Varkala cliff guesthouse","Two doubles or a family room; look 5–10 minutes back from the cliff edge for the better price, and ask for a late checkout on the 27th","Price to be confirmed",""],["27, 28 Dec","Kovalam budget hotel","Two doubles or a family room near Lighthouse or Hawah Beach; two nights, and a 07:30 departure on the 29th","Price to be confirmed",""]];
+  const nights=[["22–23 Dec","Munnar","Two doubles or a family room. Old Munnar lodge, homestay or a tea-estate stay"],["24 Dec","Thekkady (Kumily)","Two doubles or a family room near the Periyar boat landing. Ask about a Christmas Eve gala-dinner charge; we leave at 06:45"],["25 Dec","Alleppey houseboat","2-bedroom licensed (KBOA or KTDC) boat, meals included. Christmas night is peak; agree a late 14:45 boarding"],["26 Dec","Varkala","Two doubles or a family room, 5–10 minutes back from the cliff edge. Ask for a late checkout on the 27th"],["27–28 Dec","Kovalam","Two doubles or a family room near Lighthouse or Hawah Beach. Early breakfast on the 29th"]];
   return html`<div class="stack">
-    <div class="banner warn small">Nothing is reserved yet unless the Bookings tab says so. Book refundable rates now: Christmas-week rooms go first. Prices are not estimated here and are not in the budget until they are quoted or booked.</div>
-    <div class="card stack"><div class="row between"><h2 style="font-size:20px">Houseboat for 25 Dec</h2></div>
-      <div class="kv"><dt>Listed</dt><dd>1BR boats were listed at <b>₹8,000–14,000</b> in December; Christmas week is at the top</dd><dt>For four</dt><dd>A 2-bedroom boat costs more: get quotes from two or three licensed (KBOA or KTDC) operators</dd><dt>Budget</dt><dd class="small muted">Not counted until it is quoted or booked</dd></div>
-      <${PollCard} poll=${POLLS[1]}/>
-    </div>
-    <div class="section-title"><h2>Every night</h2></div>
-    ${nights.map(([n,p,c,price,b])=>html`<div class="card stack" style="gap:6px" key=${p}><div class="row between"><span class="eyebrow">${n}</span></div><b>${p}</b><div class="small muted">${c}</div><div class="row between small"><span class="small muted">${price}</span></div></div>`)}
-    <div class="card small muted">Ask every property before paying a deposit: compulsory Christmas gala dinner on 24 and 25 Dec, early check-in at 11:00 on the 22nd, parking for the car, and cancellation terms.</div>
+    <div class="section-title"><h2>Every night</h2><span class="small faint">nothing booked yet</span></div>
+    <div class="card hlist">${nights.map(([n,p,c])=>html`<div class="hrow" style="cursor:default" key=${p}><span class="ico">${p.includes("houseboat")?"⛵":"🛏️"}</span><span class="grow"><b>${p}</b><span class="sub" style="color:var(--ink-2);font-weight:600">${n}</span><span class="sub">${c}</span></span></div>`)}</div>
+    <div class="section-title"><h2>Houseboat, 25 Dec</h2></div>
+    <div class="card hlist"><div class="hrow" style="cursor:default"><span class="ico">⛵</span><span class="grow"><b>1BR listed at ₹8,000–14,000 in December</b><span class="sub">A 2-bedroom for four costs more. Get quotes from two or three licensed operators</span></span></div><${PollRow} poll=${POLLS[1]}/></div>
+    <div class="card small muted"><b style="color:var(--ink)">Before paying any deposit</b>, ask about a compulsory Christmas gala dinner (24 and 25 Dec), early check-in at 11:00 on the 22nd, parking, and cancellation terms. Book refundable rates; prices join the budget once quoted or booked.</div>
   </div>`;
 }
 function Transport(){
+  const row=(icon,title,sub,pill)=>html`<div class="hrow" style="cursor:default"><span class="ico">${icon}</span><span class="grow"><b>${title}</b><span class="sub">${sub}</span></span>${pill?html`<span class="pill ok">${pill}</span>`:null}</div>`;
   return html`<div class="stack">
-    <div class="card stack" style="gap:8px"><div class="row between"><b>Outbound · train 12684</b><span class="pill ok">${ic(IC.check)} Booked</span></div>
-      <div class="kv"><dt>Leaves</dt><dd>SMVT Bengaluru, Mon 21 Dec, 19:00</dd><dt>Arrives</dt><dd>Ernakulam Jn, Tue 22 Dec, about 06:00 ${basisTag("listed")}</dd></div>
-      <div class="tiny faint">Not counted as an outstanding booking.</div></div>
-    <div class="card stack" style="gap:8px"><div class="row" style="gap:8px">${ic(IC.car)}<b>Self-drive car, 22–29 Dec</b></div>
-      <div class="kv small"><dt>Pickup</dt><dd>Ernakulam Jn area about 07:45, Tue 22 Dec (the train gets in at 06:00)</dd><dt>Return</dt><dd>Ernakulam by 14:10, Tue 29 Dec</dd><dt>Distance</dt><dd>about 940 km, 29 h 25 min of driving ${basisTag("est")}</dd><dt>Cost</dt><dd>About ₹11,000 rental charges and about ₹7,000 of petrol (group figures, approximate); tolls and parking not counted</dd></div>
-      <div class="small muted">Christmas week is a peak and one-way or early-morning delivery may cost extra. Get one written quote that states the car, 8 days, the km limit, fuel policy, deposit, FASTag and any night-halt charge.</div>
-      <ul class="clean small"><li>Every driver needs a valid licence and ID; register everyone who will drive (ideally two or three of you, to swap) with the rental</li><li>Take a proper breakfast and a short rest before the first drive; the plan swaps drivers at Kothamangalam, Kottayam, Kollam and again on the way back</li><li>No ghat roads in the dark: reach Munnar before sunset on 22 Dec</li><li>Parking is tight in Fort Kochi, Varkala and around the temple in Thiruvananthapuram; park once and walk</li><li>Photograph the car at pickup, and keep the fuel receipts for the return</li></ul>
-      <div class="banner warn small">Christmas week brings a premium and tight availability. Book the car before the stays.</div>
-      <${PollCard} poll=${POLLS[0]}/></div>
-    <div class="card stack" style="gap:8px"><div class="row between"><b>Return · train from Kochi, Tue 29 Dec 16:00</b><span class="pill ok">${ic(IC.check)} Held</span></div>
-      <div class="small muted">Already with the group. The station and PNR are not in the plan data, so check whether the ticket says Ernakulam Jn or Ernakulam Town, and add the PNR on the Bookings tab. Both are in the same city, about 4 km apart.</div>
-      <div class="kv small"><dt>Leave Kovalam</dt><dd>07:30, never later than 08:00</dd><dt>Reach Ernakulam</dt><dd>about 13:55 ${basisTag("est")}, then refuel and return the car by 14:10</dd><dt>At the station</dt><dd>by 14:30, which leaves about 1.5 h in hand</dd></div></div>
-    <div class="card"><div class="eyebrow" style="margin-bottom:6px">Station and luggage plan</div><ul class="clean small"><li>Tue 22: bags in the car from the rental pickup; Fort Kochi is on foot from a parked car, so keep nothing visible on the seats</li><li>Sat 26: one overnight bag on the boat; the main bags stay locked in the car, so ask where it can be left</li><li>Tue 29: return the car first, then walk to the station with the bags</li></ul></div>
+    <div class="section-title"><h2>Trains</h2></div>
+    <div class="card hlist">
+      ${row("🚆","Mon 21 Dec · 19:00","Bengaluru (SMVT) → Ernakulam Jn, train 12684, arrives about 06:00","Booked")}
+      ${row("🚆","Tue 29 Dec · 16:00","Kochi → Bengaluru. Check whether the ticket says Ernakulam Jn or Town, and add the PNR on Bookings","Booked")}
+      ${row("⏱️","Return-day timing","Leave Kovalam 07:30 (08:00 at the latest) · reach Ernakulam about 13:55 · car back by 14:10 · station by 14:30")}
+    </div>
+    <div class="section-title"><h2>Self-drive car</h2></div>
+    <div class="card hlist">
+      <div style="padding:12px 0"><div class="kv small tight"><dt>Pickup</dt><dd>Ernakulam Jn area, about 07:45 on Tue 22 Dec</dd><dt>Return</dt><dd>Ernakulam, by 14:10 on Tue 29 Dec</dd><dt>Distance</dt><dd>about 940 km, 29 h 25 min of driving</dd><dt>Cost</dt><dd>about ₹11,000 rental + ₹7,000 petrol (approx.)</dd></div></div>
+      <${PollRow} poll=${POLLS[0]}/>
+    </div>
+    <details class="card fold"><summary>Car checklist</summary><div class="fold-body"><ul class="clean small"><li>Book the car before the stays: Christmas week brings a premium and tight availability</li><li>Get one written quote: the car, 8 days, km limit, fuel policy, deposit, FASTag, any night-halt charge</li><li>Every driver needs a licence and ID; register everyone who will drive</li><li>Swap drivers at Kothamangalam, Kottayam, Kollam and on the way back</li><li>No ghat roads in the dark: reach Munnar before sunset on 22 Dec</li><li>Park once and walk in Fort Kochi, Varkala and around the Thiruvananthapuram temple</li><li>Photograph the car at pickup; keep the fuel receipts</li></ul></div></details>
+    <details class="card fold"><summary>Luggage plan</summary><div class="fold-body"><ul class="clean small"><li>Tue 22: bags go in the car at pickup; keep nothing visible while in Fort Kochi</li><li>Thu 25: one overnight bag on the houseboat; the rest stays locked in the car</li><li>Tue 29: return the car first, then walk to the station with the bags</li></ul></div></details>
   </div>`;
 }
 
@@ -1089,13 +1099,12 @@ function Itinerary(){
   return html`<div class="wrap stack">
     <div class="page-head"><div class="eyebrow">Itinerary · 22–29 Dec</div><h1>${["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][v.days.length]||v.days.length} days in Kerala</h1></div>
     <div class="stats"><div class="stat"><b>${v.days.length}</b><span>days</span></div><div class="stat"><b>${Math.max(0,v.days.length-1)}</b><span>nights</span></div><div class="stat"><b class="num">${km||"–"}</b><span>km total</span></div><div class="stat"><b class="num">${mins?hm(mins).replace(" min","m").replace(" h ","h "):"–"}</b><span>driving time</span></div></div>
+    <div class="row between small"><button class="link-btn row" style="gap:6px" onClick=${()=>openSheet("versions",{onPick:setVid})}>${ic(IC.history)}${v._id==="draft"?"Working draft":v.unsaved?"Research baseline":"Version "+v.n} · history</button>${v._id==="draft"?html`<span class="pill warn">Not stored yet</span>`:v.status==="approved"?html`<span class="pill ok">Stable</span>`:html`<span class="pill warn">Draft</span>`}${!isCur?html`<span class="pill neutral">Older version</span>`:null}</div>
     <div class="section-title"><h2>The trip at a glance</h2><span class="small faint">tap a day</span></div>
     <${Glance} days=${v.days} onPick=${pick}/>
-    <button class="card press row" style="gap:10px;text-align:left" onClick=${()=>openSheet("versions",{onPick:setVid})}>${ic(IC.history)}<div class="grow"><b>${v._id==="draft"?"Working draft":v.unsaved?"Research baseline":"Version "+v.n}</b> ${v._id==="draft"?html`<span class="pill warn">Not stored yet</span>`:v.status==="approved"?html`<span class="pill ok">Stable</span>`:html`<span class="pill warn">Draft</span>`} ${!isCur?html`<span class="pill neutral">Older version</span>`:null}<div class="small muted">${v.unsaved?"Not saved to the trip yet":v._id==="draft"?"Based on "+(v.basedOn||"the stable version")+" · "+clip(v.why,60)+" · "+ago(v.at):clip(v.why,70)+" · "+nameOf(v.by)+" · "+ago(v.at)}</div></div>${ic(IC.chev)}</button>
     ${!isCur?html`<button class="btn" onClick=${()=>setVid(null)}>Back to the current version</button>`:null}
     ${s.isOwner && isCur && v.unsaved ? html`<button class="btn primary" onClick=${()=>createVersion(v.days,"Research baseline: 8-day car trip",{status:"draft",adjust:{}})}>Save baseline as v1</button>`:null}
     ${s.isOwner && isCur && !v.unsaved && v.status!=="approved" ? html`<button class="btn primary" onClick=${async()=>{ const d=stripId(v); d.status="approved"; d.approvedBy=s.me; d.approvedAt=Date.now(); if(await ownerWrite("itinerary/"+v._id,d)) toast("Itinerary approved"); }}>Approve this itinerary</button>`:null}
-    <div class="card row between"><div><div class="eyebrow">Known costs</div><b class="num" style="font-size:20px">${inr(pr.total)}</b> <span class="small muted num">${inr(pr.total/CREW_SIZE)} pp</span></div><div class="small muted" style="text-align:right">tickets, car, petrol<br/>no estimates</div></div>
     <div class="section-title"><h2>Day by day</h2></div>
     <div class="day"><div class="day-head" style="cursor:default"><div class="datebox" style="background:var(--surface-2);color:var(--ink)"><b>21</b><span>Mon</span></div><div class="grow"><b>Night train south</b><div class="small muted">19:00 train 12684 from SMVT Bengaluru</div></div><span class="pill ok">Booked</span></div></div>
     ${v.days.map((d,i)=>html`<${DayCard} key=${d.key} d=${d} i=${i} open=${open===d.key} toggle=${()=>setOpen(open===d.key?null:d.key)} readonly=${!isCur}/>`)}
@@ -1177,7 +1186,7 @@ function Board(){
   return html`<div class="stack">
     ${canContribute()?html`<button class="btn primary block" style="min-height:52px" onClick=${()=>openSheet("newpost",{})}>${ic(IC.plus)} Suggest something</button>`:null}
     ${waiting.length&&s.mode==="live"?html`<div class="ai-box"><div class="row between"><b>${waiting.length} waiting for Claude's review</b>${ic(IC.spark)}</div><div class="small">Claude Code reads the crew's suggestions, comments and votes, checks them against our dates, routes and budget, and updates the plan.</div>${s.isOwner&&s.sampleOK&&canContribute()?html`<button class="btn ai" disabled=${busy} onClick=${reviewAll}>${busy?html`<span class="spinner"></span> Reviewing…`:"Review "+(waiting.length>1?"all "+waiting.length:"it")+" now"}</button>`:html`<div class="small">${s.isOwner?"AI isn't available in this view. Open a suggestion to add a manual review.":"Keep adding ideas and comments. Claude Code reviews them and improves the plan."}</div>`}</div>`:null}
-    <div class="chips" role="tablist">${[{id:"all",label:"All"}].concat(CATS).map(c=>html`<button key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}>${c.color?html`<span class="dot" style=${{background:c.color}}></span>`:null}${c.label}</button>`)}</div>
+    ${allPosts().some(p=>p.kind==="suggestion")?html`<div class="chips scrollx" role="tablist">${[{id:"all",label:"All"}].concat(CATS).map(c=>html`<button key=${c.id} class=${"chip "+(cat===c.id?"on":"")} onClick=${()=>setCat(c.id)}>${c.color?html`<span class="dot" style=${{background:c.color}}></span>`:null}${c.label}</button>`)}</div>`:null}
     ${posts.length===0?html`<div class="card stack" style="gap:6px;text-align:center"><b>No suggestions${cat!=="all"?" here":""} yet</b><div class="small muted">Ideas for places, food, stays, routes or budget go here. Everyone can vote, react and comment, and the AI planner checks each one.</div></div>`:posts.map(p=>html`<${PostCard} p=${p} key=${p.id}/>`)}
   </div>`;
 }
@@ -1290,7 +1299,7 @@ function feed(){
   Object.entries(S.reviews).forEach(([k,r])=>{ if(r.state!=="done") return; const p=allPosts().find(x=>x.id===k); if(!p) return; ev.push({at:r.at, who:r.source==="manual"?r.by:"ai", text:(r.source==="manual"?"reviewed “":"reviewed “")+clip(p.title,50)+"”: "+(r.result&&r.result.summary?clip(r.result.summary,90):""), open:["post",{id:k}]}); });
   Object.entries(S.decisions).forEach(([k,d])=>{ if(k.startsWith("post-")){ const p=allPosts().find(x=>x.id===k.slice(5)); ev.push({at:d.at, who:d.by, text:(d.status==="rejected"?"rejected “":d.status==="incorporated"?"added to the itinerary “":"approved “")+(p?clip(p.title,50):"a suggestion")+"”", open:p?["post",{id:p.id}]:null}); } else if(k.startsWith("poll-")){ const poll=POLLS.find(q=>"poll-"+q.id===k); const o=poll&&poll.opts.find(z=>z.id===d.choice); ev.push({at:d.at, who:d.by, text:"locked the decision: "+(o?o.label:d.choice)}); } });
   versions().forEach(v=>ev.push({at:v.at, who:v.by, text:"published itinerary v"+v.n+": "+clip(v.why,80)+(v._id===cur._id?" (current)":"")}));
-  Object.values(S.bookings).forEach(b=>{ if(b.updatedAt&&b.updatedBy) ev.push({at:b.updatedAt, who:b.updatedBy, text:"marked "+b.title+" as "+b.status}); });
+  Object.values(S.bookings).forEach(b=>{ if(b.updatedAt&&b.updatedBy&&b.status==="booked") ev.push({at:b.updatedAt, who:b.updatedBy, text:"marked "+b.title+" as "+b.status}); });
   return ev.filter(e=>e.at).sort((a,b)=>b.at-a.at).slice(0,120);
 }
 function FeedList({items, full}){
@@ -1382,14 +1391,14 @@ function ExpenseSheet(){
 const BK_STATUS=[["todo","To book","warn"],["enquired","Enquired","info"],["held","On hold","info"],["booked","Booked","ok"],["cancelled","Cancelled","neutral"]];
 function Bookings(){
   const s=useStore(); const bks=Object.values(s.bookings).sort((a,b)=>(a.order||99)-(b.order||99));
+  const groups=[["To book",bks.filter(b=>!["booked","cancelled"].includes(b.status))],["Booked",bks.filter(b=>b.status==="booked")],["Cancelled",bks.filter(b=>b.status==="cancelled")]].filter(g=>g[1].length);
   return html`<div class="stack">
-    <div class="banner info small">Only Bhargava can mark something booked. A status here reflects what he entered: nothing is reserved automatically.</div>
     ${bks.length===0?html`<div class="card small muted">${s.mode==="live"?"No bookings tracked yet.":"Sign in through Claude to see booking status."}</div>`:null}
-    ${bks.map(b=>{ const st=BK_STATUS.find(x=>x[0]===b.status)||BK_STATUS[0]; return html`<button key=${b._id} class="card press stack" style="gap:6px;text-align:left" onClick=${()=>openSheet("booking",{id:b._id})}>
-      <div class="row between"><b>${b.title}</b><span class=${"pill "+st[2]}>${st[1]}</span></div><div class="small muted">${b.detail||""}</div>
-      <div class="row between small"><span class="faint">${b.when||""}</span>${b.amount?html`<span class="num">${inr(b.amount)} ${basisTag(b.priceType)}</span>`:null}</div>
-      ${b.ref?html`<div class="tiny">Ref: ${b.ref}</div>`:null}</button>`; })}
+    ${groups.map(([label,list])=>html`<div class="stack" style="gap:8px" key=${label}><div class="section-title"><h2>${label}</h2><span class="small faint">${list.length}</span></div>
+      <div class="card hlist">${list.map(b=>{ const st=BK_STATUS.find(x=>x[0]===b.status)||BK_STATUS[0]; const done=b.status==="booked";
+        return html`<button key=${b._id} class="hrow" onClick=${()=>openSheet("booking",{id:b._id})}>${done?html`<span class="ico" style="background:var(--ok-bg);color:var(--ok);font-weight:800">✓</span>`:html`<span class="ck"></span>`}<span class="grow"><b>${b.title}</b><span class="sub">${[b.when&&!done?b.when:null,b.amount?inr(b.amount)+(b.priceType==="est"?" approx.":""):null,b.ref?"Ref "+b.ref:null].filter(Boolean).join(" · ")||(done?"Booked":"")}</span></span>${!done&&b.status!=="todo"?html`<span class=${"pill "+st[2]}>${st[1]}</span>`:null}${ic(IC.chev)}</button>`; })}</div></div>`)}
     ${s.isOwner?html`<button class="btn" onClick=${()=>openSheet("booking",{id:null})}>${ic(IC.plus)} Add a booking</button>`:null}
+    <div class="tiny faint">Only Bhargava can mark something booked; nothing is reserved automatically. Tap a row for details.</div>
   </div>`;
 }
 function BookingSheet({id}){
