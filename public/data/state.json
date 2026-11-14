@@ -1001,9 +1001,9 @@
    "approvedAt": 1794687779407
   },
   "draft": {
-   "at": 1794687830481,
+   "at": 1794689053561,
    "by": "ai",
-   "why": "Real road distances from the OpenStreetMap road network (920 km in all, was 940 km); Kumily → Kottayam is 107 km, not 87. Times unchanged.",
+   "why": "Real road distances (920 km in all, was 940 km; Kumily → Kottayam is 107 km, not 87), and day 8 now follows the actual return tickets: 16:10 from Ernakulam Town to Palakkad, then 22:00 to Bengaluru Yesvantpur, arriving 07:50 Wed 30 Dec.",
    "status": "draft",
    "plan": "A",
    "days": [
@@ -1881,9 +1881,9 @@
      "date": "2026-12-29",
      "dow": "Tue",
      "dd": "29",
-     "title": "Drive back to Kochi, return the car, 16:00 train",
+     "title": "Drive back to Kochi, then two trains home via Palakkad",
      "base": "Kochi",
-     "stay": "No stay tonight; train home",
+     "stay": "Night on the train",
      "travel": {
       "text": "Kovalam → Kollam → Alleppey → Ernakulam on NH66",
       "km": "about 224 km",
@@ -1950,25 +1950,36 @@
        },
        {
         "id": "n8-10",
-        "t": "14:30",
-        "text": "Walk or auto to the station, which leaves about 1.5 h before the 16:00 train"
+        "t": "14:40",
+        "text": "Auto to Ernakulam Town station (ERN), not the Junction. Be on the platform by 15:40"
        },
        {
         "id": "n8-11",
-        "t": "16:00",
-        "text": "Return train from Kochi"
+        "t": "16:10",
+        "text": "Train 12625 Kerala Express to Palakkad Jn, sleeper coach S3, all four confirmed. Arrives 19:12"
        }
       ],
-      "evening": [],
-      "optional": [
+      "evening": [
        {
         "id": "n8-12",
+        "t": "19:12",
+        "text": "Palakkad Jn: dinner near the station, about 2 h 45 min to wait"
+       },
+       {
+        "id": "n8-13",
+        "t": "22:00",
+        "text": "Train 16528 to Bengaluru Yesvantpur, boarding at Palakkad Jn. Bhargav and Manoj are RAC, so check the chart. Arrives 07:50 Wed 30 Dec"
+       }
+      ],
+      "optional": [
+       {
+        "id": "n8-14",
         "t": "",
         "text": "If you are ahead of schedule, a longer lunch in Alleppey; never cut into the 14:10 car return"
        }
       ]
      },
-     "food": "Breakfast before leaving, lunch in Alleppey, snacks for the train",
+     "food": "Breakfast before leaving, lunch in Alleppey, dinner at Palakkad",
      "cost": {
       "transport": 0,
       "stays": 0,
@@ -1980,13 +1991,14 @@
       "Kovalam",
       "Kollam",
       "Alleppey",
-      "Ernakulam"
+      "Ernakulam",
+      "Palakkad"
      ],
-     "glance": "Kovalam → Kochi",
+     "glance": "Kovalam → Kochi → home",
      "night": "Train home",
      "hl": [
       "Car back by 14:10",
-      "Train at 16:00"
+      "Train 16:10 from Ernakulam Town"
      ]
     }
    ],
@@ -1997,7 +2009,7 @@
  },
  "bookings": {
   "outbound": {
-   "title": "Outbound train 12684",
+   "title": "Train 12684, Bengaluru → Ernakulam, 21 Dec",
    "detail": "SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec. Paid by Sahith (₹2,170 on 10 Nov), split four ways",
    "when": "Done",
    "status": "booked",
@@ -2008,23 +2020,90 @@
    "cancel": "",
    "link": "",
    "order": 1,
-   "updatedAt": 1794682413317,
-   "updatedBy": "ai"
+   "updatedAt": 1794689053470,
+   "updatedBy": "ai",
+   "pass": {
+    "type": "train",
+    "number": "12684",
+    "name": "",
+    "cls": "",
+    "from": {
+     "code": "SMVT",
+     "name": "SMVT Bengaluru",
+     "date": "Mon 21 Dec",
+     "time": "19:00"
+    },
+    "to": {
+     "code": "ERS",
+     "name": "Ernakulam Jn",
+     "date": "Tue 22 Dec",
+     "time": "06:00"
+    },
+    "duration": "about 11 h",
+    "pnr": "",
+    "bookingId": "",
+    "passengers": [],
+    "note": "Paid by Sahith, ₹2,170 for four. Add the PNR and berths when you have them."
+   }
   },
   "return": {
-   "title": "Return train from Kochi, Tue 29 Dec 16:00",
-   "detail": "Kochi → Bengaluru, Tue 29 Dec, 16:00. Paid by Sahith (₹3,110 on 14 Nov), split four ways. Confirm the station on the ticket (Ernakulam Jn or Ernakulam Town) and add the PNR",
+   "title": "Train 12625, Ernakulam Town → Palakkad, 29 Dec",
+   "detail": "Kerala Express, sleeper. All four confirmed in coach S3. Paid by Sahith with the Palakkad → Bengaluru ticket, ₹3,110 for both.",
    "when": "Done",
    "status": "booked",
    "amount": 3110,
    "priceType": "verified",
-   "ref": "",
+   "ref": "PNR 4955113196",
    "contact": "",
    "cancel": "",
    "link": "",
    "order": 2,
-   "updatedAt": 1794682413317,
-   "updatedBy": "ai"
+   "updatedAt": 1794689053470,
+   "updatedBy": "ai",
+   "pass": {
+    "type": "train",
+    "number": "12625",
+    "name": "Kerala Express",
+    "cls": "Sleeper",
+    "from": {
+     "code": "ERN",
+     "name": "Ernakulam Town",
+     "date": "Tue 29 Dec",
+     "time": "16:10"
+    },
+    "to": {
+     "code": "PGT",
+     "name": "Palakkad Jn",
+     "date": "Tue 29 Dec",
+     "time": "19:12"
+    },
+    "duration": "3 h 2 min",
+    "pnr": "4955113196",
+    "bookingId": "VDA58091268",
+    "passengers": [
+     {
+      "name": "Sahith Reddy",
+      "berth": "S3-10 · Middle",
+      "status": "CNF"
+     },
+     {
+      "name": "Dharshan",
+      "berth": "S3-11 · Upper",
+      "status": "CNF"
+     },
+     {
+      "name": "Bhargav",
+      "berth": "S3-14 · Upper",
+      "status": "CNF"
+     },
+     {
+      "name": "Manoj",
+      "berth": "S3-13 · Middle",
+      "status": "CNF"
+     }
+    ],
+    "note": "Leaves from Ernakulam Town, not the Junction. Then about 2 h 45 min at Palakkad before the next train."
+   }
   },
   "car": {
    "title": "Self-drive car, 22–29 Dec",
@@ -2130,13 +2209,72 @@
    "order": 9,
    "updatedAt": 1794682413317,
    "updatedBy": "ai"
+  },
+  "return-2": {
+   "title": "Train 16528, Palakkad → Bengaluru, 29–30 Dec",
+   "detail": "Kannur–Yesvantpur Express, sleeper. Two confirmed, Bhargav and Manoj on RAC. Paid together with the Ernakulam → Palakkad ticket.",
+   "when": "Done",
+   "status": "booked",
+   "amount": 0,
+   "priceType": "verified",
+   "ref": "PNR 4955113178",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 3,
+   "updatedAt": 1794689053470,
+   "updatedBy": "ai",
+   "pass": {
+    "type": "train",
+    "number": "16528",
+    "name": "Kannur–Yesvantpur Express",
+    "cls": "Sleeper",
+    "from": {
+     "code": "PGT",
+     "name": "Palakkad Jn",
+     "date": "Tue 29 Dec",
+     "time": "22:00"
+    },
+    "to": {
+     "code": "YPR",
+     "name": "Yesvantpur, Bengaluru",
+     "date": "Wed 30 Dec",
+     "time": "07:50"
+    },
+    "duration": "9 h 50 min",
+    "pnr": "4955113178",
+    "bookingId": "VDA75539990",
+    "passengers": [
+     {
+      "name": "Sahith Reddy",
+      "berth": "S4-5 · Middle",
+      "status": "CNF"
+     },
+     {
+      "name": "Dharshan",
+      "berth": "S5-64 · Side upper",
+      "status": "CNF"
+     },
+     {
+      "name": "Bhargav",
+      "berth": "RAC 1",
+      "status": "RAC"
+     },
+     {
+      "name": "Manoj",
+      "berth": "RAC 2",
+      "status": "RAC"
+     }
+    ],
+    "note": "Ticket is from Quilandi (19:00) with the boarding point moved to Palakkad Jn. RAC 1 and 2 share a berth unless they clear when the chart is made, about 4 h before departure. Chart not prepared yet."
+   }
   }
  },
  "meta": {
   "state": {
    "current": "draft",
    "stable": "v1",
-   "at": 1794687830481
+   "at": 1794689053561
   },
   "budget": {
    "at": 1794682413317,
@@ -2155,7 +2293,7 @@
     },
     {
      "id": "train-back",
-     "label": "Train Kochi → Bengaluru (29 Dec)",
+     "label": "Trains home via Palakkad (29 Dec)",
      "amount": 3110,
      "basis": "paid",
      "by": "Sahith",
@@ -2179,5 +2317,5 @@
    ]
   }
  },
- "updated": 1794687830481
+ "updated": 1794689053561
 }

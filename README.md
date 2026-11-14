@@ -27,3 +27,8 @@ Settings → Pages → Source: **GitHub Actions**. Then every push to `main` dep
 ## Maps
 * Maps use Leaflet with Esri topographic and satellite tiles (no key needed; attribution shown on the map).
 * `public/data/routes.json` holds the real road line for each day, built once from the OpenStreetMap road network through the public OSRM router. Rebuild it if the route changes. If Leaflet or the file cannot load, the app falls back to the simple drawn map.
+
+## Wallet (tickets and documents)
+* The Wallet tab has Tickets, To book and Money. A booking in `public/data/state.json` (`bookings/<id>`) shows as a ticket when it has a `pass` object: `type`, `number`, `name`, `cls`, `from`/`to` (`code`, `name`, `date`, `time`), `duration`, `pnr`, `bookingId`, `passengers` (`name`, `berth`, `status` CNF/RAC/WL) and a `note`.
+* To add a stay, houseboat or car confirmation, set its booking to `booked` and add a `pass` (use `type` "stay" or "car"; the card shows whatever fields are filled).
+* The site is public: anyone with the link can see what is stored here, including PNRs and names.
