@@ -105,11 +105,14 @@ h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.1;letter-spacing:-.
 .bar>span{height:100%;display:block;background:var(--accent)!important}
 .scene{position:relative;overflow:hidden;background:var(--surface-2)}
 .scene>svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero-art{position:relative;margin-top:28px;border-radius:28px;overflow:hidden;height:260px}
+.hero-art{position:relative;border-radius:28px;overflow:hidden;height:340px}
 .hero-art .scene{position:absolute;inset:0}
-.hero-art .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.45) 100%)}
-.hero-art .count{position:absolute;left:0;right:0;bottom:18px;margin:0;gap:10px;color:#fff}
-.hero-art .count div{background:rgba(255,255,255,.16);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border-radius:16px;padding:10px 14px 9px;min-width:74px;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.35)}
+.hero-art .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,0) 38%,rgba(0,0,0,0) 48%,rgba(0,0,0,.62) 100%)}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:0 22px 22px;color:#fff;text-align:left}
+.hero-date{position:absolute;left:22px;top:20px;font-size:15px;font-weight:600;color:#fff;letter-spacing:-.01em;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.hero-text h1{font-size:68px;line-height:1;font-weight:700;letter-spacing:-.045em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero-art .count{position:static;margin:14px 0 0;gap:8px;justify-content:flex-start;color:#fff}
+.hero-art .count div{text-align:left;background:rgba(255,255,255,.16);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border-radius:16px;padding:10px 14px 9px;min-width:74px;box-shadow:inset 0 0 0 .5px rgba(255,255,255,.35)}
 .hero-art .count b{font-size:28px}
 .hero-art .count span{color:rgba(255,255,255,.85);margin-top:3px}
 .gallery{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin-inline:-20px;padding:2px 20px 4px;scrollbar-width:none}
@@ -139,7 +142,7 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;f
 ul.clean li::marker{color:var(--ink-4)}
 
 /* home */
-.hero{padding-top:44px;padding-bottom:6px;text-align:center}
+.hero{padding-top:18px;padding-bottom:0;text-align:left}
 .hero .kicker{font-size:15px;font-weight:600;color:var(--ink-3);letter-spacing:-.01em}
 .hero h1{font-size:56px;line-height:1.04;font-weight:700;letter-spacing:-.04em;margin-top:6px}
 .hero .tagline{font-size:21px;color:var(--ink-3);margin-top:8px;letter-spacing:-.02em;line-height:1.3}
@@ -966,7 +969,7 @@ function Home({go}){
   const toBookings=()=>{ go("budget"); set({budgetTab:"bookings"}); };
   const train=(id,when,what)=>{ const b=s.bookings[id]; const ok=!b||b.status==="booked"; return html`<button class="hrow" onClick=${toBookings}><span class="ico">${ic(IC.train)}</span><span class="grow"><b>${when}</b><span class="sub">${what}</span></span><span class=${"pill "+(ok?"ok":"warn")}>${ok?"Booked":"To book"}</span></button>`; };
   return html`<div>
-    <section class="hero wrap"><div class="kicker">22–29 December 2026</div><h1>Kerala.</h1><div class="hero-art"><${Scene} kind="hero"/><div class="shade"></div><${Countdown}/></div></section>
+    <section class="hero wrap"><div class="hero-art"><${Scene} kind="hero"/><div class="shade"></div><div class="hero-date">22–29 December 2026</div><div class="hero-text"><h1>Kerala</h1><${Countdown}/></div></div></section>
     <div class="wrap stack" style="margin-top:30px">
       ${td?html`<button class="card press stack" style="gap:6px;text-align:left" onClick=${()=>go("itinerary")}><div class="eyebrow" style="color:var(--accent)">Today · Day ${ti+1}</div><h2 style="font-size:24px">${td.title}</h2>${upNext.map(i=>html`<div class="small muted" key=${i.id}><span class="num" style="color:var(--ink)">${i.t}</span>  ${clip(i.text,70)}</div>`)}</button>`:null}
       <div class="tiles">
