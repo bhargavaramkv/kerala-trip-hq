@@ -6,7 +6,7 @@
  "itinerary": {
   "v1": {
    "n": 1,
-   "at": 1794676780555,
+   "at": 1794678386653,
    "by": "ai",
    "why": "8-day self-drive trip, 22–29 Dec: Kochi (Fort Kochi morning) → Munnar (2 nights) → Thekkady (1) → Alleppey houseboat on Christmas night → Varkala (2 days) → Thiruvananthapuram and Kovalam (2 nights) → Kochi. About 940 km, 29 h 25 min of driving, every drive a timed leg. ₹89,870 for the group, about ₹30,000 each.",
    "status": "draft",
@@ -138,7 +138,21 @@
       "food": 1800,
       "activities": 300,
       "misc": 600
-     }
+     },
+     "route": [
+      "Ernakulam Jn",
+      "Fort Kochi",
+      "Mattancherry",
+      "Kothamangalam",
+      "Waterfalls",
+      "Munnar"
+     ],
+     "glance": "Kochi → Munnar",
+     "night": "Munnar",
+     "hl": [
+      "Fort Kochi morning",
+      "Valara and Cheeyappara falls"
+     ]
     },
     {
      "key": "d2",
@@ -261,7 +275,20 @@
       "food": 1800,
       "activities": 1200,
       "misc": 600
-     }
+     },
+     "route": [
+      "Munnar",
+      "Eravikulam",
+      "Mattupetty",
+      "Echo Point",
+      "Munnar"
+     ],
+     "glance": "Munnar hills",
+     "night": "Munnar",
+     "hl": [
+      "Eravikulam tahr",
+      "Mattupetty and Echo Point"
+     ]
     },
     {
      "key": "d3",
@@ -365,7 +392,19 @@
       "food": 1800,
       "activities": 1000,
       "misc": 600
-     }
+     },
+     "route": [
+      "Munnar",
+      "Pooppara",
+      "Kumily"
+     ],
+     "glance": "Munnar → Thekkady",
+     "night": "Thekkady",
+     "hl": [
+      "Cardamom hills",
+      "Spice walk",
+      "Kathakali"
+     ]
     },
     {
      "key": "d4",
@@ -485,7 +524,19 @@
       "food": 600,
       "activities": 1500,
       "misc": 600
-     }
+     },
+     "route": [
+      "Kumily",
+      "Periyar Lake",
+      "Kottayam",
+      "Alleppey"
+     ],
+     "glance": "Thekkady → Alleppey",
+     "night": "Houseboat",
+     "hl": [
+      "Periyar boat",
+      "Christmas on the water"
+     ]
     },
     {
      "key": "d5",
@@ -568,7 +619,17 @@
       "food": 1500,
       "activities": 600,
       "misc": 600
-     }
+     },
+     "route": [
+      "Alleppey",
+      "Kollam",
+      "Varkala"
+     ],
+     "glance": "Alleppey → Varkala",
+     "night": "Varkala",
+     "hl": [
+      "Cliff sunset"
+     ]
     },
     {
      "key": "d6",
@@ -677,7 +738,18 @@
       "food": 1800,
       "activities": 600,
       "misc": 600
-     }
+     },
+     "route": [
+      "Varkala",
+      "Thiruvananthapuram",
+      "Kovalam"
+     ],
+     "glance": "Varkala → Kovalam",
+     "night": "Kovalam",
+     "hl": [
+      "Papanasam Beach",
+      "Napier Museum"
+     ]
     },
     {
      "key": "d7",
@@ -792,7 +864,22 @@
       "food": 1800,
       "activities": 600,
       "misc": 600
-     }
+     },
+     "route": [
+      "Kovalam",
+      "Padmanabhaswamy",
+      "Chalai",
+      "Shanghumugham",
+      "Veli",
+      "Kovalam"
+     ],
+     "glance": "Thiruvananthapuram day",
+     "night": "Kovalam",
+     "hl": [
+      "Temple",
+      "Chalai market",
+      "Veli lagoon"
+     ]
     },
     {
      "key": "d8",
@@ -893,7 +980,19 @@
       "food": 1200,
       "activities": 0,
       "misc": 300
-     }
+     },
+     "route": [
+      "Kovalam",
+      "Kollam",
+      "Alleppey",
+      "Ernakulam"
+     ],
+     "glance": "Kovalam → Kochi",
+     "night": "Train home",
+     "hl": [
+      "Car back by 14:10",
+      "Train at 16:00"
+     ]
     }
    ],
    "adjust": {},
@@ -1041,8 +1140,8 @@
   "state": {
    "current": "v1",
    "stable": null,
-   "at": 1794676780555
+   "at": 1794678386653
   }
  },
- "updated": 1794676780555
+ "updated": 1794678386653
 }
