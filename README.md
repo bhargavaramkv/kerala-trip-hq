@@ -23,3 +23,7 @@ Settings → Pages → Source: **GitHub Actions**. Then every push to `main` dep
 * **Nothing stable yet:** the itinerary is `v1`, status `draft`. Changes overwrite `v1` in place (`node scripts/itinerary.mjs draft <days.json> "what changed"`). When the owner says it is stable: `node scripts/itinerary.mjs approve`.
 * **Once a version is stable** (`status: approved`, named in `meta.state.stable`): changes go to one working draft, `itinerary/draft`, which overwrites itself on each change and shows on the site as "Working draft". When the owner says it is good: `node scripts/itinerary.mjs promote` (it becomes the next `vN`, stable). To drop it: `node scripts/itinerary.mjs discard`.
 * Never save drafts as numbered versions. Check state with `node scripts/itinerary.mjs status`; `node scripts/test-itinerary.mjs` tests this.
+
+## Maps
+* Maps use Leaflet with Esri topographic and satellite tiles (no key needed; attribution shown on the map).
+* `public/data/routes.json` holds the real road line for each day, built once from the OpenStreetMap road network through the public OSRM router. Rebuild it if the route changes. If Leaflet or the file cannot load, the app falls back to the simple drawn map.
