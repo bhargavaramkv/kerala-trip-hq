@@ -933,6 +933,7 @@ function Banner(){
 /* ====================================================================
    7. HOME
    ==================================================================== */
+const stopDest=n=>DEST.find(d=>/houseboat/i.test(n)?d.id==="alleppey":n.toLowerCase().startsWith(d.name.toLowerCase().slice(0,6)));
 let homeEntered=false;
 function Home({go}){
   const s=useStore(); const v=currentVersion(); const pr=projection(v); const mem=members();
