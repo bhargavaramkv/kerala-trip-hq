@@ -6,9 +6,9 @@
  "itinerary": {
   "v1": {
    "n": 1,
-   "at": 1794680042651,
+   "at": 1794682449141,
    "by": "ai",
-   "why": "8-day self-drive trip for four (Darshan joins Bhargava, Sahith and Manoj), 22–29 Dec: Kochi (Fort Kochi morning) → Munnar (2 nights) → Thekkady (1) → Alleppey 2-bedroom houseboat on Christmas night → Varkala (2 days) → Thiruvananthapuram and Kovalam (2 nights) → Kochi. Ertiga-size car, two double rooms or a family room each night. About 940 km, 29 h 25 min of driving, every drive a timed leg. ₹1,22,375 for the group, about ₹30,600 each.",
+   "why": "8-day self-drive trip for four (Bhargava, Sahith, Manoj, Darshan), 22–29 Dec: Kochi (Fort Kochi morning) → Munnar (2 nights) → Thekkady (1) → Alleppey 2-bedroom houseboat on Christmas night → Varkala (2 days) → Thiruvananthapuram and Kovalam (2 nights) → Kochi. About 940 km, 29 h 25 min of driving, every drive a timed leg. Budget counts known costs only: train tickets ₹5,280 (paid), car about ₹11,000, petrol about ₹7,000.",
    "status": "draft",
    "plan": "A",
    "days": [
@@ -19,7 +19,7 @@
      "dd": "22",
      "title": "Arrive in Kochi, Fort Kochi morning, drive up to Munnar",
      "base": "Munnar",
-     "stay": "Two double rooms or a family room for four, in Munnar town or a tea-estate homestay (Est. ₹4,500)",
+     "stay": "Two double rooms or a family room for four, in Munnar town or a tea-estate homestay",
      "travel": {
       "text": "Ernakulam Jn → Fort Kochi → Mattancherry → Kothamangalam → waterfalls → Munnar in the self-drive car",
       "km": "about 161 km",
@@ -133,11 +133,11 @@
      },
      "food": "Fort Kochi lunch; simple dinner in Munnar",
      "cost": {
-      "transport": 4150,
-      "stays": 4500,
-      "food": 2400,
-      "activities": 400,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Ernakulam Jn",
@@ -270,11 +270,11 @@
      },
      "food": "Simple local meals; try the cardamom tea",
      "cost": {
-      "transport": 3450,
-      "stays": 4500,
-      "food": 2400,
-      "activities": 1600,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Munnar",
@@ -297,7 +297,7 @@
      "dd": "24",
      "title": "Over the cardamom hills to Thekkady",
      "base": "Thekkady",
-     "stay": "Kumily or Thekkady homestay, two double rooms or a family room, one night (Est. ₹5,200; Christmas Eve may carry a gala-dinner surcharge)",
+     "stay": "Kumily or Thekkady homestay, two double rooms or a family room, one night (Christmas Eve may carry a gala-dinner surcharge)",
      "travel": {
       "text": "Munnar → Pooppara → Kumily, then a spice plantation and back",
       "km": "about 115 km",
@@ -387,11 +387,11 @@
      },
      "food": "Kerala meals in Kumily; fish curry and appam in the evening",
      "cost": {
-      "transport": 3750,
-      "stays": 5200,
-      "food": 2400,
-      "activities": 1350,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Munnar",
@@ -413,7 +413,7 @@
      "dd": "25",
      "title": "Christmas morning on Periyar Lake, then the backwaters",
      "base": "Alleppey houseboat",
-     "stay": "Cheapest licensed Alleppey 2-bedroom houseboat, meals included (Est. ₹18,500 on Christmas night)",
+     "stay": "Cheapest licensed Alleppey 2-bedroom houseboat, meals included (Christmas night is peak, so ask for the price early)",
      "travel": {
       "text": "Kumily → Periyar boat landing → Kumily → Kottayam → Alleppey jetty",
       "km": "about 140 km",
@@ -519,11 +519,11 @@
      },
      "food": "Breakfast in Kumily; every other meal on the houseboat (included in the price)",
      "cost": {
-      "transport": 4100,
-      "stays": 18500,
-      "food": 800,
-      "activities": 2000,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Kumily",
@@ -545,7 +545,7 @@
      "dd": "26",
      "title": "Backwaters to Varkala, cliff sunset",
      "base": "Varkala",
-     "stay": "Cliff-area guesthouse or homestay, two double rooms or a family room (Est. ₹5,200)",
+     "stay": "Cliff-area guesthouse or homestay, two double rooms or a family room",
      "travel": {
       "text": "Alleppey → Kollam → Varkala on NH66",
       "km": "about 122 km",
@@ -614,11 +614,11 @@
      },
      "food": "Seafood and cafés on the cliff",
      "cost": {
-      "transport": 4000,
-      "stays": 5200,
-      "food": 2000,
-      "activities": 800,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Alleppey",
@@ -638,7 +638,7 @@
      "dd": "27",
      "title": "A slow Varkala morning, then south to Kovalam",
      "base": "Kovalam",
-     "stay": "Budget hotel or homestay in Kovalam, two double rooms or a family room, two nights: 27 and 28 Dec (Est. ₹6,000 a night)",
+     "stay": "Budget hotel or homestay in Kovalam, two double rooms or a family room, two nights: 27 and 28 Dec",
      "travel": {
       "text": "Varkala → Thiruvananthapuram (Napier Museum) → Kovalam",
       "km": "about 68 km",
@@ -733,11 +733,11 @@
      },
      "food": "Cliff-café lunch; seafood on the beach road",
      "cost": {
-      "transport": 3550,
-      "stays": 6000,
-      "food": 2400,
-      "activities": 800,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Varkala",
@@ -859,11 +859,11 @@
      },
      "food": "Seafood on the beach road; puttu with kadala curry for breakfast",
      "cost": {
-      "transport": 3450,
-      "stays": 6000,
-      "food": 2400,
-      "activities": 800,
-      "misc": 800
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
      },
      "route": [
       "Kovalam",
@@ -975,11 +975,11 @@
      },
      "food": "Breakfast before leaving, lunch in Alleppey, snacks for the train",
      "cost": {
-      "transport": 4750,
+      "transport": 0,
       "stays": 0,
-      "food": 1600,
+      "food": 0,
       "activities": 0,
-      "misc": 400
+      "misc": 0
      },
      "route": [
       "Kovalam",
@@ -1002,47 +1002,47 @@
  "bookings": {
   "outbound": {
    "title": "Outbound train 12684",
-   "detail": "SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec",
+   "detail": "SMVT Bengaluru 19:00 Mon 21 Dec → Ernakulam Jn about 06:00 Tue 22 Dec. Paid by Sahith (₹2,170 on 10 Nov), split four ways",
    "when": "Done",
    "status": "booked",
-   "amount": 0,
+   "amount": 2170,
    "priceType": "verified",
    "ref": "",
    "contact": "",
    "cancel": "",
    "link": "",
    "order": 1,
-   "updatedAt": 1794674556709,
+   "updatedAt": 1794682413317,
    "updatedBy": "ai"
   },
   "return": {
    "title": "Return train from Kochi, Tue 29 Dec 16:00",
-   "detail": "Already held by the group. Confirm the station on the ticket (Ernakulam Jn or Ernakulam Town) and the PNR/coach",
+   "detail": "Kochi → Bengaluru, Tue 29 Dec, 16:00. Paid by Sahith (₹3,110 on 14 Nov), split four ways. Confirm the station on the ticket (Ernakulam Jn or Ernakulam Town) and add the PNR",
    "when": "Done",
    "status": "booked",
-   "amount": 0,
+   "amount": 3110,
    "priceType": "verified",
    "ref": "",
    "contact": "",
    "cancel": "",
    "link": "",
    "order": 2,
-   "updatedAt": 1794674556709,
+   "updatedAt": 1794682413317,
    "updatedBy": "ai"
   },
   "car": {
    "title": "Self-drive car, 22–29 Dec",
-   "detail": "Ertiga-size MPV for four people and bags. Pickup at or near Ernakulam Jn about 07:45 on 22 Dec, return there by 14:10 on 29 Dec. Need every driver's licence and ID, a refundable deposit and a written km and fuel policy (full-to-full). Add the people who will drive as extra drivers, FASTag included, and check for night-halt or Christmas-week surcharges",
+   "detail": "Rental charges about ₹11,000 and petrol about ₹7,000 (group figures, approximate). Car for four people and bags, size to decide. Pickup at or near Ernakulam Jn about 07:45 on 22 Dec, return there by 14:10 on 29 Dec. Need every driver's licence and ID, a refundable deposit and a written km and fuel policy; add the people who will drive as extra drivers, and check FASTag and any night-halt or Christmas-week surcharge",
    "when": "This week",
    "status": "todo",
-   "amount": 31200,
+   "amount": 11000,
    "priceType": "est",
    "ref": "",
    "contact": "",
    "cancel": "",
    "link": "",
    "order": 3,
-   "updatedAt": 1794680042454,
+   "updatedAt": 1794682413317,
    "updatedBy": "ai"
   },
   "stay-munnar": {
@@ -1050,94 +1050,19 @@
    "detail": "Two double rooms or a family room for four, 2 nights; ask about 11:00 early check-in on the 22nd",
    "when": "This week",
    "status": "todo",
-   "amount": 9000,
+   "amount": 0,
    "priceType": "est",
    "ref": "",
    "contact": "",
    "cancel": "",
    "link": "",
    "order": 4,
-   "updatedAt": 1794680042454,
+   "updatedAt": 1794682413317,
    "updatedBy": "ai"
   },
   "stay-thekkady": {
    "title": "Thekkady (Kumily), 24 Dec",
    "detail": "Two doubles or a family room, 1 night; ask about any compulsory Christmas Eve gala dinner, and about leaving by 06:45 on the 25th",
-   "when": "This week",
-   "status": "todo",
-   "amount": 5200,
-   "priceType": "est",
-   "ref": "",
-   "contact": "",
-   "cancel": "",
-   "link": "",
-   "order": 5,
-   "updatedAt": 1794680042454,
-   "updatedBy": "ai"
-  },
-  "houseboat": {
-   "title": "Alleppey 2-bedroom houseboat, night of 25 Dec",
-   "detail": "Licensed (KBOA or KTDC) 2-bedroom AC boat for four, meals included. We arrive about 14:30, so agree a late 14:45 boarding. Christmas night is peak; car parking at the jetty",
-   "when": "This week",
-   "status": "todo",
-   "amount": 18500,
-   "priceType": "est",
-   "ref": "",
-   "contact": "",
-   "cancel": "",
-   "link": "",
-   "order": 6,
-   "updatedAt": 1794680042454,
-   "updatedBy": "ai"
-  },
-  "stay-varkala": {
-   "title": "Varkala, 26 Dec",
-   "detail": "Two doubles or a family room near the cliff, 1 night; late checkout on the 27th (we leave about 14:00)",
-   "when": "Next week",
-   "status": "todo",
-   "amount": 5200,
-   "priceType": "est",
-   "ref": "",
-   "contact": "",
-   "cancel": "",
-   "link": "",
-   "order": 7,
-   "updatedAt": 1794680042454,
-   "updatedBy": "ai"
-  },
-  "stay-kovalam": {
-   "title": "Kovalam, 27 and 28 Dec",
-   "detail": "Two doubles or a family room, 2 nights; early breakfast and 07:30 departure on the 29th",
-   "when": "Next week",
-   "status": "todo",
-   "amount": 12000,
-   "priceType": "est",
-   "ref": "",
-   "contact": "",
-   "cancel": "",
-   "link": "",
-   "order": 8,
-   "updatedAt": 1794680042454,
-   "updatedBy": "ai"
-  },
-  "periyar": {
-   "title": "Periyar Lake boat, about 07:30 on 25 Dec",
-   "detail": "First-boat tickets for four (verify the timetable); book online as soon as the date opens. KTDC or Forest Department counters",
-   "when": "This week",
-   "status": "todo",
-   "amount": 2000,
-   "priceType": "est",
-   "ref": "",
-   "contact": "",
-   "cancel": "",
-   "link": "",
-   "order": 9,
-   "updatedAt": 1794680042454,
-   "updatedBy": "ai"
-  },
-  "darshan-trains": {
-   "title": "Darshan: train tickets, both ways",
-   "detail": "Check that Darshan has a confirmed berth on 12684 (Mon 21 Dec, 19:00) and on the 16:00 return from Kochi on Tue 29 Dec. The existing tickets were for three, so confirm, and if he is waitlisted look at Tatkal or a nearby train",
    "when": "This week",
    "status": "todo",
    "amount": 0,
@@ -1146,8 +1071,68 @@
    "contact": "",
    "cancel": "",
    "link": "",
-   "order": 10,
-   "updatedAt": 1794680042454,
+   "order": 5,
+   "updatedAt": 1794682413317,
+   "updatedBy": "ai"
+  },
+  "houseboat": {
+   "title": "Alleppey 2-bedroom houseboat, night of 25 Dec",
+   "detail": "Licensed (KBOA or KTDC) 2-bedroom AC boat for four, meals included. We arrive about 14:30, so agree a late 14:45 boarding. Christmas night is peak; ask where the car can park",
+   "when": "This week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 6,
+   "updatedAt": 1794682413317,
+   "updatedBy": "ai"
+  },
+  "stay-varkala": {
+   "title": "Varkala, 26 Dec",
+   "detail": "Two doubles or a family room near the cliff, 1 night; late checkout on the 27th (we leave about 14:00)",
+   "when": "Next week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 7,
+   "updatedAt": 1794682413317,
+   "updatedBy": "ai"
+  },
+  "stay-kovalam": {
+   "title": "Kovalam, 27 and 28 Dec",
+   "detail": "Two doubles or a family room, 2 nights; early breakfast and 07:30 departure on the 29th",
+   "when": "Next week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 8,
+   "updatedAt": 1794682413317,
+   "updatedBy": "ai"
+  },
+  "periyar": {
+   "title": "Periyar Lake boat, about 07:30 on 25 Dec",
+   "detail": "First-boat tickets for four (verify the timetable); book online as soon as the date opens. KTDC or Forest Department counters",
+   "when": "This week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 9,
+   "updatedAt": 1794682413317,
    "updatedBy": "ai"
   }
  },
@@ -1155,8 +1140,48 @@
   "state": {
    "current": "v1",
    "stable": null,
-   "at": 1794680042651
+   "at": 1794682449141
+  },
+  "budget": {
+   "at": 1794682413317,
+   "mode": "known",
+   "people": 4,
+   "note": "Only costs that are paid or given by the group are counted. Stays, food, activities, tolls and parking are not estimated for now.",
+   "items": [
+    {
+     "id": "train-out",
+     "label": "Train Bengaluru → Kochi (21 Dec)",
+     "amount": 2170,
+     "basis": "paid",
+     "by": "Sahith",
+     "when": "10 Nov",
+     "cat": "transport"
+    },
+    {
+     "id": "train-back",
+     "label": "Train Kochi → Bengaluru (29 Dec)",
+     "amount": 3110,
+     "basis": "paid",
+     "by": "Sahith",
+     "when": "14 Nov",
+     "cat": "transport"
+    },
+    {
+     "id": "car",
+     "label": "Car rental charges",
+     "amount": 11000,
+     "basis": "approx",
+     "cat": "transport"
+    },
+    {
+     "id": "petrol",
+     "label": "Petrol",
+     "amount": 7000,
+     "basis": "approx",
+     "cat": "transport"
+    }
+   ]
   }
  },
- "updated": 1794680042651
+ "updated": 1794682449141
 }
