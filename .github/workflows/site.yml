@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 24
       - name: Tests
-        run: node scripts/test-merge.mjs && node --check public/shim.js
+        run: node scripts/test-merge.mjs && node scripts/test-itinerary.mjs && node --check public/shim.js
       - name: Merge a crew update from the issue
         if: github.event_name == 'issues'
         run: node scripts/merge-inputs.mjs
