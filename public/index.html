@@ -124,6 +124,25 @@ ul.clean{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
 .count b{font-family:var(--f-display);font-size:22px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
 .count span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
 .quick{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px}
+.snap{display:grid;grid-template-columns:repeat(3,1fr);padding:0;overflow:hidden}
+.snap button{background:none;border:0;border-left:1px solid var(--line);padding:14px 4px 12px;text-align:center;cursor:pointer;font:inherit;color:inherit}
+.snap button:first-child{border-left:0}
+.snap button:active{background:var(--surface-2)}
+.snap b{display:block;font-family:var(--f-display);font-size:21px;line-height:1.15;white-space:nowrap}
+.snap span{font-size:12px;color:var(--ink-3);font-weight:600}
+.hrow{display:flex;gap:12px;align-items:center;width:100%;background:none;border:0;border-top:1px dashed var(--line);padding:11px 0;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.hlist>.hrow:first-child,.hlist>div:first-child>.hrow{border-top:0}
+.hrow .grow{min-width:0}
+.hrow .sub{display:block;font-size:12.5px;color:var(--ink-3);margin-top:1px}
+.hlist{padding:2px 14px}
+.ico{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:16px;background:var(--surface-2)}
+.ck{width:20px;height:20px;flex:none;border:2px solid var(--line);border-radius:7px}
+.sleep{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.sleep .st{display:flex;flex-direction:column;background:var(--surface-2);border-radius:12px;padding:5px 10px;line-height:1.25}
+.sleep .st b{font-size:14px} .sleep .st span{font-size:11px;color:var(--ink-3);font-weight:600}
+.sleep .arr{color:var(--ink-3);font-size:12px}
+.quick.slim button{min-height:58px;flex-direction:row;gap:8px;border-radius:14px;font-size:14px}
+.quick.slim svg{width:28px;height:28px;padding:6px}
 .quick button{border:1px solid var(--line);background:var(--surface);border-radius:18px;min-height:84px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
 .quick svg{width:36px;height:36px;padding:8px;border-radius:50%;background:var(--ok-bg);color:var(--brand);box-sizing:border-box}
 /* destination cards */
@@ -870,49 +889,46 @@ let homeEntered=false;
 function Home({go}){
   const stag=useRef(!homeEntered).current; useEffect(()=>{ homeEntered=true; },[]);
   const s=useStore(); const v=currentVersion(); const pr=projection(v); const mem=members();
-  const bks=Object.values(s.bookings); const booked=bks.filter(b=>b.status==="booked").length;
-  const outstanding=bks.filter(b=>b.status!=="booked"&&b.status!=="cancelled").sort((a,b)=>(a.order||99)-(b.order||99));
-  const spent=allExpenses().reduce((a,e)=>a+(e.amount||0),0);
+  const [openPoll,setOpenPoll]=useState(null);
+  const bks=Object.values(s.bookings).filter(b=>b.status!=="cancelled"); const booked=bks.filter(b=>b.status==="booked").length;
+  const todo=bks.filter(b=>b.status!=="booked").sort((a,b)=>(a.order||99)-(b.order||99));
   const pend=pendingDecisions(); const waiting=awaitingReview();
+  const polls=pend.filter(x=>x.kind==="poll"), posts=pend.filter(x=>x.kind==="post");
   const latest=allPosts().filter(p=>p.kind==="comment").sort((a,b)=>b.at-a.at).slice(0,3);
-  const ev=feed().slice(0,5);
-  const shortlist=DEST;
-  const outbound = bks.find(b=>b._id==="outbound");
+  const ev=feed().filter(e=>e.who!=="ai").slice(0,4);
+  const each=pr.total/Math.max(CREW_SIZE,mem.length);
+  const ist=new Date(Date.now()+5.5*36e5).toISOString(); const today=ist.slice(0,10), hhmm=ist.slice(11,16);
+  const ti=v.days.findIndex(d=>d.date===today); const td=ti>=0?v.days[ti]:null;
+  const upNext=td?SLOTS.filter(([sl])=>sl!=="optional").flatMap(([sl])=>td.slots[sl]||[]).filter(i=>!i.t||i.t>=hhmm).slice(0,3):[];
+  const stops=[]; v.days.forEach(d=>{ const n=d.night||d.base; if(!n||/train/i.test(n)) return; const last=stops[stops.length-1]; if(last&&last.name===n) last.to=d.dd; else stops.push({name:n,from:d.dd,to:d.dd}); });
+  const train=(id,when,what)=>{ const b=s.bookings[id]; const ok=!b||b.status==="booked"; return html`<button class="hrow" onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}><span class="ico">🚆</span><span class="grow"><b>${when}</b><span class="sub">${what}</span></span><span class=${"pill "+(ok?"ok":"warn")}>${ok?"Booked":"To book"}</span></button>`; };
+  const pollLead=p=>{ const w=pollWinner(p.id); const o=w&&p.opts.find(x=>x.id===w); const n=Object.values(pollVotes("poll-"+p.id)).reduce((a,x)=>a+x.length,0); return o?"Leaning: "+clip(o.label.split(" (")[0],28):n?"Tied":"No votes yet"; };
   return html`<div>
     <section class="hero"><${Scene} kind="hero"/><div class="shade"></div>
-      <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–29 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">Four friends. One Kerala adventure.</div><${Countdown}/></div></section>
+      <div class="in wrap"><div class="eyebrow" style="color:rgba(255,255,255,.85)">22–29 December 2026</div><h1>Kerala Trip HQ</h1><div class="tagline">${CREW_NAMES.slice(0,-1).join(", ")} and ${CREW_NAMES[CREW_NAMES.length-1]}</div><${Countdown}/></div></section>
     <div class=${"wrap stack"+(stag?" stagger":"")} style="margin-top:16px">
-            <div class="row between">
-        <div class="row" style="gap:10px"><div class="avs">${mem.length?mem.map(m=>html`<${Avatar} id=${m._id} key=${m._id}/>`):html`<span class="small faint">Crew appears as people join</span>`}</div><span class="small muted">${mem.map(m=>nameOf(m._id)).join(", ")}</span></div>
+      <div class="card snap">
+        <button onClick=${()=>go("itinerary")}><b>${v.days.length} days</b><span>${Math.max(0,v.days.length-1)} nights</span></button>
+        <button onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}><b class="num">${booked}/${bks.length}</b><span>booked</span></button>
+        <button onClick=${()=>go("budget")}><b class="num">${inr(each)}</b><span>each so far</span></button>
       </div>
-      <div class="card row" style="gap:12px"><span class="av" style="background:var(--ok);border-color:var(--ok-bg)">${ic(IC.train)}</span><div class="grow"><div class="row between"><b>Outbound train 12684</b><span class="pill ok">${ic(IC.check)} ${outbound&&outbound.status!=="booked"?outbound.status:"Booked"}</span></div><div class="small muted">Mon 21 Dec, 19:00 SMVT Bengaluru → Ernakulam Jn about 06:00 Tue</div></div></div>
-      <div class="card row" style="gap:12px"><span class="av" style="background:var(--ok);border-color:var(--ok-bg)">${ic(IC.train)}</span><div class="grow"><div class="row between"><b>Return train from Kochi</b><span class="pill ok">${ic(IC.check)} Held</span></div><div class="small muted">Tue 29 Dec, 16:00. Be at the station by 14:30</div></div></div>
-      <div class="quick">
+      ${td?html`<button class="card press stack" style="gap:6px;text-align:left;border-color:var(--brand)" onClick=${()=>go("itinerary")}><div class="row between"><span class="eyebrow">Today · Day ${ti+1}</span><span class="pill info">${(()=>{ const st=driveStats(td); return st.mins?"🚗 "+hm(st.mins):"Local"; })()}</span></div><b style="font-size:18px">${td.title}</b>${upNext.map(i=>html`<div class="small" key=${i.id}><b class="num">${i.t}</b> ${clip(i.text,70)}</div>`)}</button>`:null}
+      ${waiting.length && s.mode==="live" ? html`<button class="card press banner ai" style="border:0;text-align:left" onClick=${()=>go("crew")}>${ic(IC.spark)}<div class="grow"><b>${waiting.length} new suggestion${waiting.length>1?"s":""} waiting for review</b><div class="small">${waiting.slice(0,2).map(p=>nameOf(p.by)+": "+clip(p.title,40)).join(" · ")}</div></div></button>`:null}
+      <div class="section-title"><h2>Getting there and back</h2></div>
+      <div class="card hlist">${train("outbound","Mon 21 Dec · 19:00","Bengaluru → Kochi, train 12684, arrives 06:00")}${train("return","Tue 29 Dec · 16:00","Kochi → Bengaluru, be at the station by 14:30")}</div>
+      <div class="section-title"><h2>Where we sleep</h2><button class="link-btn" onClick=${()=>go("itinerary")}>Day plan</button></div>
+      <button class="card press sleep" style="text-align:left" onClick=${()=>go("itinerary")}>${stops.map((x,k)=>html`${k?html`<span class="arr">→</span>`:null}<span class="st" key=${x.name}><b>${x.name}</b><span>${x.from===x.to?x.from+" Dec":x.from+"–"+x.to+" Dec"}</span></span>`)}</button>
+      ${todo.length?html`<div class="section-title"><h2>Still to book</h2><button class="link-btn" onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}>All ${todo.length}</button></div>
+      <div class="card hlist">${todo.slice(0,3).map(b=>html`<button class="hrow" key=${b._id} onClick=${()=>openSheet("booking",{id:b._id})}><span class="ck"></span><span class="grow"><b>${b.title}</b><span class="sub">${b.when||"To book"}</span></span>${ic(IC.chev)}</button>`)}</div>`:null}
+      ${polls.length||posts.length?html`<div class="section-title"><h2>Decide together</h2><button class="link-btn" onClick=${()=>go("crew")}>Crew board</button></div>
+      <div class="card hlist">${polls.map(x=>html`<div key=${x.poll.id}><button class="hrow" onClick=${()=>setOpenPoll(openPoll===x.poll.id?null:x.poll.id)} aria-expanded=${openPoll===x.poll.id}><span class="ico">🗳️</span><span class="grow"><b>${x.poll.q}</b><span class="sub">${pollLead(x.poll)}</span></span><span style=${{transform:openPoll===x.poll.id?"rotate(180deg)":"none",transition:"transform 200ms var(--ease-out)",display:"grid"}}>${ic(IC.chevd)}</span></button>${openPoll===x.poll.id?html`<div style="padding-bottom:12px"><${PollCard} poll=${x.poll}/></div>`:null}</div>`)}${posts.map(x=>html`<button class="hrow" key=${x.post.id} onClick=${()=>openSheet("post",{id:x.post.id})}><span class="ico">💡</span><span class="grow"><b>${clip(x.post.title,60)}</b><span class="sub">Reviewed · waiting for the group</span></span>${statusPill(x.post)}</button>`)}</div>`:null}
+      <div class="quick slim">
         <button onClick=${()=>canContribute()?openSheet("newpost",{}):go("crew")}>${ic(IC.plus)}Suggest</button>
+        <button onClick=${()=>canContribute()?openSheet("expense",{}):go("budget")}>${ic(IC.wallet)}Log expense</button>
         ${s.isOwner?html`<button onClick=${()=>openSheet("ask",{})}>${ic(IC.spark)}Ask AI</button>`:null}
-        <button onClick=${()=>canContribute()?openSheet("expense",{}):go("budget")}>${ic(IC.wallet)}Expense</button>
-        <button onClick=${()=>go("itinerary")}>${ic(IC.itin)}Day plan</button>
       </div>
-      ${waiting.length && s.mode==="live" ? html`<button class="card press banner ai" style="border:0;text-align:left" onClick=${()=>go("crew")}>${ic(IC.spark)}<div class="grow"><b>${waiting.length} new suggestion${waiting.length>1?"s":""} waiting for Claude's review</b><div class="small">${waiting.slice(0,2).map(p=>nameOf(p.by)+": "+clip(p.title,40)).join(" · ")}</div></div></button>`:null}
-      <div class="section-title"><h2>Pending decisions</h2><button class="link-btn" onClick=${()=>go("crew")}>Crew board</button></div>
-      ${pend.length===0 ? html`<div class="small faint">Nothing waiting on a decision.</div>` : html`<div class="stack" style="gap:10px">${pend.slice(0,4).map(x=> x.kind==="poll" ? html`<${PollCard} poll=${x.poll} key=${x.poll.id}/>` : html`<button key=${x.post.id} class="card press" style="text-align:left" onClick=${()=>openSheet("post",{id:x.post.id})}><div class="row between"><b>${clip(x.post.title,60)}</b>${statusPill(x.post)}</div><div class="small muted">AI reviewed · waiting for the group and Bhargava</div></button>`)}</div>`}
-      <div class="section-title"><h2>Bookings</h2><button class="link-btn" onClick=${()=>{ go("budget"); set({budgetTab:"bookings"}); }}>All</button></div>
-      <div class="card stack" style="gap:10px">
-        ${bks.length ? html`<div class="row between"><span class="num"><b>${booked}</b> of ${bks.filter(b=>b.status!=="cancelled").length} booked</span><span class="small muted">${outstanding.length} outstanding</span></div><div class="bar"><span style=${{width:(booked/Math.max(1,bks.filter(b=>b.status!=="cancelled").length)*100)+"%",background:"var(--ok)"}}></span></div>${outstanding[0]?html`<div class="small">Next: <b>${outstanding[0].title}</b> <span class="faint">${outstanding[0].when||""}</span></div>`:null}` : html`<div class="small faint">${s.mode==="live"?"Booking tracker is empty.":"Booking status shows once you're signed in."}</div>`}
-      </div>
-      <div class="section-title"><h2>Budget</h2><button class="link-btn" onClick=${()=>go("budget")}>Details</button></div>
-      <div class="card stack" style="gap:8px">
-        <div class="row between"><div><div class="eyebrow">Known costs, group</div><div style="font-family:var(--f-display);font-size:28px;font-weight:800" class="num">${inr(pr.total)}</div></div><div style="text-align:right"><div class="eyebrow">Per person</div><div class="num" style="font-size:20px;font-weight:700">${inr(pr.total/Math.max(CREW_SIZE,mem.length))}</div></div></div>
-        <div class="small muted">Train tickets (paid), car and petrol (approx). Stays, food and activities are not budgeted yet · logged so far ${inr(spent)}</div>
-      </div>
-      <div class="section-title"><h2>Shortlist</h2><button class="link-btn" onClick=${()=>go("explore")}>Explore</button></div>
-      <div class="scroller">${shortlist.map(d=>html`<button class="dcard" key=${d.id} onClick=${()=>openSheet("dest",{id:d.id})}><${Scene} kind=${d.scene}/><div class="body"><div class="row between"><b style="font-family:var(--f-display);font-size:19px">${d.name}</b><span class="tiny faint">${d.time.split(" (")[0]}</span></div><div class="small muted">${d.tagline}</div></div></button>`)}</div>
-      <div class="section-title"><h2>Up next</h2><button class="link-btn" onClick=${()=>go("itinerary")}>Itinerary</button></div>
-      <button class="card press" style="text-align:left" onClick=${()=>go("itinerary")}><div class="row" style="gap:12px"><div class="datebox"><b>${v.days[0].dd}</b><span>Dec</span></div><div class="grow"><b>${v.days[0].title}</b><div class="small muted">${v.days[0].travel.text} · ${v.days[0].travel.time}</div><div class="small">${(v.days[0].slots.morning||[]).slice(0,3).map(i=>i.t+" "+clip(i.text,34)).join(" · ")}</div></div></div></button>
-      <div class="section-title"><h2>Latest talk</h2></div>
-      ${latest.length ? html`<div class="card list">${latest.map(c=>html`<div class="li" key=${c.id}><${Avatar} id=${c.by} size="sm"/><div class="grow small"><b>${nameOf(c.by)}</b> on ${labelFor(c.target)}<div class="muted">${clip(c.body,110)}</div></div></div>`)}</div>` : html`<div class="small faint">No comments yet. Open any place or itinerary item to start one.</div>`}
-      <div class="section-title"><h2>Activity</h2><button class="link-btn" onClick=${()=>{ go("crew"); set({crewTab:"activity"}); }}>All</button></div>
-      ${ev.length ? html`<${FeedList} items=${ev}/>` : html`<div class="small faint">Activity appears here as the crew plans.</div>`}
+      ${latest.length?html`<div class="section-title"><h2>Latest talk</h2></div><div class="card list">${latest.map(c=>html`<div class="li" key=${c.id}><${Avatar} id=${c.by} size="sm"/><div class="grow small"><b>${nameOf(c.by)}</b> on ${labelFor(c.target)}<div class="muted">${clip(c.body,110)}</div></div></div>`)}</div>`:null}
+      ${ev.length?html`<div class="section-title"><h2>Crew activity</h2><button class="link-btn" onClick=${()=>{ go("crew"); set({crewTab:"activity"}); }}>All</button></div><${FeedList} items=${ev}/>`:null}
     </div></div>`;
 }
 function PollCard({poll}){
