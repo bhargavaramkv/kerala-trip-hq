@@ -28,7 +28,7 @@ export function parseIssue(issue) {
   if (!issue || !/^Crew update:/i.test(issue.title || "")) return null;
   const m = String(issue.body || "").match(/```(?:json)?\s*([\s\S]*?)```/) ; if (!m) return null;
   let p; try { p = JSON.parse(m[1]); } catch { return null; }
-  if (!p || p.v !== 1 || !ID.test(String(p.who || ""))) return null;
+  if (!p || p.v !== 1 || !ID.test(String(p.who || "")) || p.who === "ai") return null; // "ai" is reserved for the trip planner
   return { id: p.who, name: clip(p.name, 30), doc: sanitizeDoc(p.doc, p.name) };
 }
 

@@ -83,6 +83,13 @@
     NAMES,
     who, repo: REPO,
     pending() { const m = mine(); return !!m && hash(JSON.stringify(m)) !== store.get("tripSent:" + who().id); },
+    unsent() { // items on this phone that the shared crew data does not have yet
+      const w = who(), m = mine(); if (!w || !m) return 0; const b = (base.people && base.people[w.id]) || {};
+      const has = (arr, list) => { const ids = new Set((list || []).map(x => x.id)); return (arr || []).filter(x => !ids.has(x.id)).length; };
+      let n = has(m.posts, b.posts) + has(m.expenses, b.expenses);
+      for (const k of ["votes", "polls"]) { const mv = m[k] || {}, bv = b[k] || {}; for (const kk in mv) if (JSON.stringify(mv[kk]) !== JSON.stringify(bv[kk])) n++; }
+      return n;
+    },
     updatedAt: () => base.updated || 0,
     switchUser() { store.del("tripWho"); location.reload(); },
     sendUpdate() {

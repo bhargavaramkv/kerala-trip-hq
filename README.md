@@ -32,3 +32,7 @@ Settings → Pages → Source: **GitHub Actions**. Then every push to `main` dep
 * The Wallet tab has Tickets, To book and Money. A booking in `public/data/state.json` (`bookings/<id>`) shows as a ticket when it has a `pass` object: `type`, `number`, `name`, `cls`, `from`/`to` (`code`, `name`, `date`, `time`), `duration`, `pnr`, `bookingId`, `passengers` (`name`, `berth`, `status` CNF/RAC/WL) and a `note`.
 * To add a stay, houseboat or car confirmation, set its booking to `booked` and add a `pass` (use `type` "stay" or "car"; the card shows whatever fields are filled).
 * The site is public: anyone with the link can see what is stored here, including PNRs and names.
+
+## Crew input and the trip planner
+* Comments, votes and expenses are saved on the phone first. A bar at the top of every page shows "N changes only on this phone" with a Send button until they are sent as a GitHub issue; the workflow then merges them into `state.json`.
+* A scheduled Claude session follows `PLANNER.md` every few hours: it replies to new comments and suggestions as "Trip planner" (stored under `people.ai`) and puts sound plan changes in the working draft. Nobody can send an update as `ai`.

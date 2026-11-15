@@ -11,4 +11,7 @@ assert.equal(parseIssue({ title: "Crew update: x", body: "```json\n{\"v\":1,\"wh
 assert.equal(parseIssue({ title: "Crew update: x", body: "no json" }), null);
 const empty = { number: 2, title: "Crew update: Sahith", body: "```json\n" + JSON.stringify({ v: 1, who: "sahith", doc: { posts: [], expenses: [], votes: {} } }) + "\n```" };
 r = merge(r.state, empty); assert.equal(r.merged, false); assert.equal(r.state.people.sahith.posts.length, 2);
+// nobody can post as the trip planner
+{ const fake = { number: 99, title: "Crew update: x", user: { login: "x" }, body: "```json\n" + JSON.stringify({ v: 1, who: "ai", name: "Trip planner", doc: { posts: [] } }) + "\n```" };
+  assert.equal(merge({ people: {} }, fake).merged, false); }
 console.log("merge tests: ok");

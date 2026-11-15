@@ -620,7 +620,7 @@ const isRemoved = id => S.roster[id] && S.roster[id].status==="removed";
 
 /* --- derived data --- */
 function members(){
-  return Object.values(S.people).filter(p=>!isRemoved(p._id)).sort((a,b)=>(roleOf(b._id)==="owner")-(roleOf(a._id)==="owner") || (a.joinedAt||0)-(b.joinedAt||0));
+  return Object.values(S.people).filter(p=>p._id!=="ai"&&!isRemoved(p._id)).sort((a,b)=>(roleOf(b._id)==="owner")-(roleOf(a._id)==="owner") || (a.joinedAt||0)-(b.joinedAt||0));
 }
 const roleOf = id => (S.roster[id] && S.roster[id].role) || (id===S.me && S.isOwner ? "owner" : "member");
 function nameOf(id){ if(id==="ai") return "Trip planner"; if(String(id).startsWith("name:")) return id.slice(5); const p=S.people[id]; const pr=S.profiles[id]; return (p&&p.nick) || (pr&&pr.name) || "Traveller"; }
@@ -1356,7 +1356,7 @@ function FeedList({items, full}){
   return html`<div class="card list feed">${items.map((e,i)=>html`<div class="li" key=${i} style=${e.open?{cursor:"pointer"}:null} onClick=${e.open?()=>openSheet(e.open[0],e.open[1]):null}><${Avatar} id=${e.who} size="sm"/><div class="grow small"><b>${nameOf(e.who)}</b> ${e.text}${e.quote?html`<div class="muted">“${e.quote}”</div>`:null}<div class="tiny faint">${ago(e.at)}</div></div></div>`)}</div>`;
 }
 function Members(){
-  const s=useStore(); const all=Object.values(s.people).sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); const st=window.claude.static; const me=st.who();
+  const s=useStore(); const all=Object.values(s.people).filter(p=>p._id!=="ai").sort((a,b)=>(a.joinedAt||0)-(b.joinedAt||0)); const st=window.claude.static; const me=st.who();
   const [sent,setSent]=useState(null); const pend=st.pending(); const up=st.updatedAt();
   const send=()=>{ const r=st.sendUpdate(); setSent(r); window.open(r.url,"_blank","noopener"); };
   return html`<div class="stack">
@@ -1531,6 +1531,12 @@ function SheetHost(){
   } return null;
 }
 const autoTried=new Set(); let autoBusy=false;
+function SendBar({go}){
+  useStore(); const st=window.claude&&window.claude.static; if(!st||!st.unsent) return null;
+  const n=st.unsent(); if(!n||!st.pending()) return null;
+  const send=()=>{ const r=st.sendUpdate(); window.open(r.url,"_blank","noopener"); toast(r.pasted?"Copied. Paste it on GitHub, then press Submit.":"On GitHub, press Submit new issue."); set({}); };
+  return html`<div class="wrap" style="padding-top:12px"><div class="card row" style="gap:12px;padding:14px 16px"><div class="grow small"><b>${n} change${n>1?"s":""} only on this phone</b><div class="muted">The crew and the trip planner can't see ${n>1?"them":"it"} until you send.</div></div><button class="btn primary sm" onClick=${send}>Send</button></div></div>`;
+}
 function App(){
   const s=useStore(); const [tab,setTab]=useState(tabFromHash());
   useEffect(()=>{ const f=()=>setTab(tabFromHash()); addEventListener("hashchange",f); return ()=>removeEventListener("hashchange",f); },[]);
@@ -1540,6 +1546,7 @@ function App(){
   const badge=awaitingReview().length+pendingDecisions().filter(x=>x.kind==="post").length;
   return html`<div class="app">
     ${tab!=="home"?html`<${Banner}/>`:null}
+    <${SendBar} go=${go}/>
     <main key=${tab} class="view">${tab==="home"?html`<${Home} go=${go}/>`:tab==="explore"?html`<${Explore}/>`:tab==="itinerary"?html`<${Itinerary}/>`:tab==="crew"?html`<${Crew}/>`:html`<${Wallet}/>`}</main>
     
     <nav class="nav" aria-label="Main"><div class="nav-in">${TABS.map(([k,l,icn])=>html`<button key=${k} class=${"navbtn "+(tab===k?"on":"")} aria-current=${tab===k?"page":null} onClick=${()=>go(k)}><span class="ic">${ic(IC[icn])}</span>${l}${k==="crew"&&badge?html`<span class="badge">${badge}</span>`:null}</button>`)}</div></nav>
