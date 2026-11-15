@@ -277,7 +277,9 @@ details.fold>.fold-body{padding:0 20px 18px}
 .navbtn.on{color:var(--accent)}
 .navbtn .badge{position:absolute;top:4px;left:calc(50% + 6px);background:#ff3b30;color:#fff;border-radius:99px;font-size:11px;min-width:18px;height:18px;display:grid;place-items:center;padding:0 5px;font-variant-numeric:tabular-nums;font-weight:600}
 /* sheets */
-.sheet-bg{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.32);display:flex;align-items:flex-end;justify-content:center;animation:fade 220ms var(--ease-out)}
+.sheet-bg{border:0;padding:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;overflow:visible;color:inherit;background:rgba(0,0,0,.32);align-items:flex-end;justify-content:center;animation:fade 220ms var(--ease-out)}
+.sheet-bg[open]{display:flex}
+.sheet-bg::backdrop{background:none}
 .sheet{width:100%;max-width:600px;max-height:94%;background:var(--bg);border-radius:14px 14px 0 0;box-shadow:0 -4px 30px rgba(0,0,0,.12);display:flex;flex-direction:column;animation:sheet-in 420ms var(--ease-drawer);will-change:transform;padding-bottom:env(safe-area-inset-bottom,0px)}
 .sheet-bg.closing{animation:fade-out 180ms ease-out forwards}
 .sheet-bg.closing .sheet{animation:sheet-out 220ms var(--ease-out) forwards!important}
@@ -906,14 +908,14 @@ function Seg({value, opts, onChange}){
   return html`<div class="seg" role="tablist"><div class="seg-track" ref=${tr}>${opts.map(([v,l])=>html`<button role="tab" aria-selected=${value===v} class=${value===v?"on":""} onClick=${()=>onChange(v)}>${l}</button>`)}<div class="seg-hl" ref=${hl} aria-hidden="true">${opts.map(([v,l])=>html`<span>${l}</span>`)}</div></div></div>`;
 }
 function Sheet({title, onClose, children, nodrag}){
-  const s=useStore(); const el=useRef(null); const dr=useRef(null);
-  useEffect(()=>{ const o=document.body.style.overflow; document.body.style.overflow="hidden"; const k=e=>{ if(e.key==="Escape") onClose(); }; addEventListener("keydown",k); return ()=>{ document.body.style.overflow=o; removeEventListener("keydown",k); }; },[]);
+  const s=useStore(); const el=useRef(null); const dr=useRef(null); const bg=useRef(null);
+  useEffect(()=>{ const d=bg.current, op=document.activeElement, o=document.body.style.overflow; document.body.style.overflow="hidden"; const k=e=>{ e.preventDefault(); onClose(); }; d.addEventListener("cancel",k); if(!d.open) d.showModal(); return ()=>{ document.body.style.overflow=o; d.removeEventListener("cancel",k); if(op&&op.isConnected) op.focus(); }; },[]);
   const down=e=>{ if(nodrag||dr.current||e.target.closest("button")) return; e.currentTarget.setPointerCapture(e.pointerId); dr.current={id:e.pointerId,y:e.clientY,t:Date.now(),dy:0}; const st=el.current.style; st.transition="none"; st.animation="none"; };
   const move=e=>{ const d=dr.current; if(!d||e.pointerId!==d.id) return; let dy=e.clientY-d.y; if(dy<0) dy=-Math.pow(-dy,0.6); d.dy=dy; el.current.style.transform=`translateY(${dy}px)`; };
   const up=e=>{ const d=dr.current; if(!d||e.pointerId!==d.id) return; dr.current=null; const sh=el.current, st=sh.style, v=Math.abs(d.dy)/Math.max(1,Date.now()-d.t);
     if(d.dy>0&&(d.dy>sh.offsetHeight*0.25||v>0.11)){ st.transition="transform 200ms var(--ease-out)"; st.transform="translateY(100%)"; sh.parentNode.style.transition="opacity 200ms ease-out"; sh.parentNode.style.opacity="0"; setTimeout(()=>set({sheet:null, sheetClosing:false}),200); }
     else { st.transition="transform 300ms var(--ease-drawer)"; st.transform="translateY(0)"; setTimeout(()=>{ if(!dr.current){ st.transition=""; st.transform=""; } },300); } };
-  return html`<div class=${"sheet-bg"+(s.sheetClosing?" closing":"")} onClick=${e=>{ if(e.target===e.currentTarget) onClose(); }}><div class="sheet" ref=${el} role="dialog" aria-modal="true" aria-label=${title}><div class="sheet-head" onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerCancel=${up}><span class="grab"></span><h2>${title}</h2><button class="icon-btn" onClick=${onClose} aria-label="Close">${ic(IC.x)}</button></div><div class="sheet-body">${children}</div></div></div>`;
+  return html`<dialog class=${"sheet-bg"+(s.sheetClosing?" closing":"")} ref=${bg} aria-label=${title} onClick=${e=>{ if(e.target===e.currentTarget) onClose(); }}><div class="sheet" ref=${el}><div class="sheet-head" onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerCancel=${up}><span class="grab"></span><h2>${title}</h2><button class="icon-btn" onClick=${onClose} aria-label="Close">${ic(IC.x)}</button></div><div class="sheet-body">${children}</div></div></dialog>`;
 }
 function VoteBar({target, compact}){
   const s=useStore(); const v=votesFor(target); const mine=s.people[s.me]&&s.people[s.me].votes&&s.people[s.me].votes[target];
