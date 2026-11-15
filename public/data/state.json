@@ -1,5 +1,37 @@
 {
- "people": {},
+ "people": {
+  "bhargava": {
+   "nick": "Bhargava",
+   "joinedAt": 1794674401164,
+   "posts": [
+    {
+     "id": "mwguzdnhkdxjs",
+     "at": 1794688142813,
+     "kind": "suggestion",
+     "cat": "other",
+     "title": "Prioritise must visit places over the overrated places",
+     "body": "Day 1 (Tue 22 Dec):",
+     "cost": 0,
+     "target": null
+    },
+    {
+     "id": "mwgv3w4repv3c",
+     "at": 1794688353387,
+     "kind": "suggestion",
+     "cat": "stay",
+     "title": "Claude search for potential stays, try to balance budget over good rated places",
+     "body": "",
+     "cost": 0,
+     "target": null
+    }
+   ],
+   "expenses": [],
+   "votes": {},
+   "reacts": {},
+   "polls": {},
+   "updatedAt": 1794710979003
+  }
+ },
  "roster": {},
  "reviews": {},
  "decisions": {},
@@ -2362,5 +2394,13 @@
    ]
   }
  },
- "updated": 1794709835433
+ "updated": 1794710979003,
+ "inputLog": [
+  {
+   "at": 1794710979003,
+   "who": "bhargava",
+   "issue": 3,
+   "by": "bhargavaramkv"
+  }
+ ]
 }
