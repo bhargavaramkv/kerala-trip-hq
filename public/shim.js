@@ -32,10 +32,10 @@
 
   function pickWho() {
     return new Promise(resolve => {
-      const css = "position:fixed;inset:0;z-index:99;background:#EDF2EA;display:grid;place-items:center;padding:16px;font:16px/1.5 system-ui,-apple-system,sans-serif;color:#13241B";
+      const css = "position:fixed;inset:0;z-index:99;background:#EDF2EA;display:grid;place-items:center;align-content:safe center;overflow-y:auto;padding:16px;font:16px/1.5 system-ui,-apple-system,sans-serif;color:#13241B";
       const el = document.createElement("div"); el.style.cssText = css;
       const btn = "display:block;width:100%;min-height:58px;margin:10px 0;border:0;border-radius:14px;background:#1D5A3E;color:#F2F8F1;font:600 19px system-ui;cursor:pointer";
-      el.innerHTML = `<div style="background:#FBFDF9;border:1px solid #D2DDCD;border-radius:20px;padding:26px 20px;max-width:400px;width:100%;box-sizing:border-box"><div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E8275">22–26 December 2026</div><h1 style="margin:.1em 0 .2em;font-size:28px">Kerala Trip HQ</h1><p style="color:#4B5E53;margin:.2em 0 .8em">Who are you?</p>
+      el.innerHTML = `<div style="background:#FBFDF9;border:1px solid #D2DDCD;border-radius:20px;padding:26px 20px;max-width:400px;width:100%;box-sizing:border-box"><div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E8275">22–29 December 2026</div><h1 style="margin:.1em 0 .2em;font-size:28px">Kerala Trip HQ</h1><p style="color:#4B5E53;margin:.2em 0 .8em">Who are you?</p>
         ${NAMES.map(n => `<button data-n="${n}" style="${btn}">I'm ${n}</button>`).join("")}
         <div style="font-size:13px;color:#6E8275;margin-top:10px">Someone else?</div><div style="display:flex;gap:8px"><input id="who-other" maxlength="30" placeholder="Your name" style="flex:1;min-height:48px;border:1px solid #D2DDCD;border-radius:12px;padding:0 12px;font-size:16px"><button id="who-go" style="min-height:48px;padding:0 16px;border:0;border-radius:12px;background:#1D5A3E;color:#F2F8F1;font:600 16px system-ui">Go</button></div></div>`;
       const done = name => { name = String(name || "").trim(); if (!name) return; const id = slug(name); store.set("tripWho", JSON.stringify({ id, name })); el.remove(); resolve({ id, name }); };
