@@ -30,6 +30,33 @@
    "reacts": {},
    "polls": {},
    "updatedAt": 1794710979003
+  },
+  "ai": {
+   "nick": "Trip planner",
+   "joinedAt": 0,
+   "posts": [
+    {
+     "id": "ai-y8tp0thp",
+     "at": 1794837241072,
+     "kind": "comment",
+     "target": null,
+     "parent": "mwguzdnhkdxjs",
+     "body": "Done in the working draft: must-visits first (Periyar boat, Eravikulam, Top Station, Padmanabhaswamy, Napier, Anjengo, Fort Kochi). Dropped: Mattupetty and Echo Point photo stops, Veli and Shankhumugham. Saves about 2 h. It is not stored as v2 yet: say 'store it' to promote."
+    },
+    {
+     "id": "ai-3nrv41ki",
+     "at": 1794837241072,
+     "kind": "comment",
+     "target": null,
+     "parent": "mwgv3w4repv3c",
+     "body": "Stay shortlists added for every night, rated for value, with caveats. Picks: Thoppil Homestay (Munnar), Periyar Inn (Kumily), Magnolia Guesthouse (Varkala), Fort Abode or Fortkochi Beach Inn (Kochi), Marina Guest House (Kovalam). Ratings are Booking/Kayak snapshots; live prices are not verified, so check before booking."
+    }
+   ],
+   "expenses": [],
+   "votes": {},
+   "reacts": {},
+   "polls": {},
+   "updatedAt": 1794837241072
   }
  },
  "roster": {},
@@ -1033,9 +1060,9 @@
    "approvedAt": 1794687779407
   },
   "draft": {
-   "at": 1794709835433,
+   "at": 1794837219812,
    "by": "ai",
-   "why": "Must-visits first: Top Station replaces the long Mattupetty and Echo Point stops; Veli and Shanghumugham dropped; Kovalam becomes a sunset visit and Varkala the base for three nights, which cuts the last drive to 4 h. Also: real road distances, and day 8 follows the actual return tickets (16:10 from Ernakulam Town, then 22:00 from Palakkad).",
+   "why": "Owner's order: 22 Alleppey houseboat, 23-24 Varkala, 25 Thiruvananthapuram and Kovalam, 26 Thekkady, 27 Munnar, 28-29 Kochi. Daylight-only driving on every road; Periyar boat moved to 27 morning, Eravikulam to 28 morning, Kochi sights to 29 (Monday closures avoided).",
    "status": "draft",
    "plan": "A",
    "days": [
@@ -1044,13 +1071,13 @@
      "date": "2026-12-22",
      "dow": "Tue",
      "dd": "22",
-     "title": "Arrive in Kochi, Fort Kochi morning, drive up to Munnar",
-     "base": "Munnar",
-     "stay": "Two double rooms or a family room for four, in Munnar town or a tea-estate homestay",
+     "title": "Ernakulam to Alleppey, houseboat night",
+     "base": "Alleppey houseboat",
+     "stay": "Licensed 2-bedroom AC houseboat for four, meals included, night of 22 Dec (not Christmas peak)",
      "travel": {
-      "text": "Ernakulam Jn → Fort Kochi → Mattancherry → Kothamangalam → waterfalls → Munnar in the self-drive car",
-      "km": "about 145 km",
-      "time": "5 h 20 min of driving",
+      "text": "Ernakulam Jn → Alleppey jetty on NH66 (Aroor–Thuravoor widening: diversions likely)",
+      "km": "about 59 km",
+      "time": "1 h 15 min of driving",
       "basis": "est"
      },
      "slots": {
@@ -1058,590 +1085,173 @@
        {
         "id": "n1-1",
         "t": "06:00",
-        "text": "Train 12684 arrives at Ernakulam Jn. Freshen up and have breakfast near the station"
+        "text": "Train 12684 arrives at Ernakulam Jn. Breakfast near the station"
        },
        {
         "id": "n1-2",
         "t": "07:45",
-        "text": "Pick up the self-drive car (pickup point to be agreed with the rental company): documents, fuel level, photos of existing scratches. Allow 30 minutes"
+        "text": "Pick up the self-drive car at the agreed point near Ernakulam Jn: documents, fuel, photos of scratches. Allow 30 min"
        },
        {
         "id": "n1-3",
         "t": "08:15",
-        "text": "Ernakulam Jn → Fort Kochi (park near the Parade Ground or the beach lot; morning traffic)",
+        "text": "Ernakulam Jn → Alleppey jetty on NH66, through the Aroor–Thuravoor diversion (allow 30 min slack; MC Road is the fallback)",
         "drive": true,
-        "km": 13,
-        "mins": 45
+        "km": 59,
+        "mins": 75
        },
        {
         "id": "n1-4",
-        "t": "09:00",
-        "text": "Chinese fishing nets and the waterfront, 30 min"
+        "t": "09:30",
+        "text": "Alleppey beach and the Punnamada Lake front, about 1 h 15 min"
        },
        {
         "id": "n1-5",
-        "t": "09:30",
-        "text": "Walk to St Francis Church and Santa Cruz Basilica, about 45 min with the walk"
+        "t": "10:45",
+        "text": "Confirm the boarding time with the operator and where the car can park overnight"
        },
        {
         "id": "n1-6",
-        "t": "10:30",
-        "text": "Fort Kochi → Mattancherry (the car is easier than the walk with parking)",
-        "drive": true,
-        "km": 3,
-        "mins": 15
-       },
-       {
-        "id": "n1-7",
-        "t": "10:45",
-        "text": "Dutch Palace (check the closing day) and the Jew Town antique lanes"
-       },
-       {
-        "id": "n1-8",
-        "t": "11:30",
-        "text": "Early lunch near Mattancherry, 45 min"
-       },
-       {
-        "id": "n1-9",
-        "t": "12:15",
-        "text": "Mattancherry → Kothamangalam on NH85, through the city and the Aluva stretch",
-        "drive": true,
-        "km": 57,
-        "mins": 105
+        "t": "11:15",
+        "text": "Lunch at a jetty-side restaurant, 45 min"
        }
       ],
       "afternoon": [
        {
+        "id": "n1-7",
+        "t": "12:00",
+        "text": "Board the houseboat (noon check-in; confirm with the operator). Hand over the car at the jetty"
+       },
+       {
+        "id": "n1-8",
+        "t": "12:30",
+        "text": "Cruise the canals of Alleppey and Kuttanad; lunch on board"
+       },
+       {
+        "id": "n1-9",
+        "t": "15:30",
+        "text": "Slow cruise through paddy fields; rest on the deck"
+       },
+       {
         "id": "n1-10",
-        "t": "14:00",
-        "text": "Tea and a driver swap at Kothamangalam, 15 min"
-       },
-       {
-        "id": "n1-11",
-        "t": "14:15",
-        "text": "Kothamangalam → Valara and Cheeyappara waterfalls, on the climb through Neriamangalam",
-        "drive": true,
-        "km": 32,
-        "mins": 80
-       },
-       {
-        "id": "n1-12",
-        "t": "15:35",
-        "text": "Cheeyappara and Valara waterfall viewpoints, 25 min"
-       },
-       {
-        "id": "n1-13",
-        "t": "16:00",
-        "text": "Waterfalls → Munnar on the hill road",
-        "drive": true,
-        "km": 40,
-        "mins": 75
+        "t": "17:30",
+        "text": "Moor for the night; sunset from the deck"
        }
       ],
       "evening": [
        {
-        "id": "n1-14",
-        "t": "17:15",
-        "text": "Reach Munnar before sunset (about 18:10). Check in, short walk in the town"
-       },
-       {
-        "id": "n1-15",
-        "t": "19:00",
-        "text": "Early dinner, early night after the overnight train"
+        "id": "n1-11",
+        "t": "19:30",
+        "text": "Dinner on board"
        }
       ],
       "optional": [
        {
-        "id": "n1-16",
+        "id": "n1-12",
         "t": "",
-        "text": "If Mattancherry is not finished by 12:15, cut the Dutch Palace and leave by 12:45 at the latest, skipping the waterfall stop so that Munnar is reached by 17:45. Do not drive the ghat road in the dark"
+        "text": "If the operator can board earlier, use the time for the Alleppey beach walk instead of the slow cruise"
        }
       ]
      },
-     "food": "Fort Kochi lunch; simple dinner in Munnar",
+     "food": "Breakfast at the station; lunch at the jetty; dinner on board",
+     "route": [
+      "Ernakulam Jn",
+      "Alleppey"
+     ],
+     "glance": "Ernakulam → Alleppey",
+     "night": "Houseboat (Alleppey)",
+     "hl": [
+      "Alleppey backwaters",
+      "Houseboat night"
+     ],
      "cost": {
       "transport": 0,
       "stays": 0,
       "food": 0,
       "activities": 0,
       "misc": 0
-     },
-     "route": [
-      "Ernakulam Jn",
-      "Fort Kochi",
-      "Mattancherry",
-      "Kothamangalam",
-      "Waterfalls",
-      "Munnar"
-     ],
-     "glance": "Kochi → Munnar",
-     "night": "Munnar",
-     "hl": [
-      "Fort Kochi morning",
-      "Valara and Cheeyappara falls"
-     ]
+     }
     },
     {
      "key": "d2",
      "date": "2026-12-23",
      "dow": "Wed",
      "dd": "23",
-     "title": "Eravikulam, then the high road to Top Station",
-     "base": "Munnar",
-     "stay": "Same Munnar room",
+     "title": "Backwaters to Varkala, cliff sunset",
+     "base": "Varkala",
+     "stay": "Cliff-area guesthouse, two double rooms or a family room, 2 nights (23 and 24 Dec)",
      "travel": {
-      "text": "Munnar → Eravikulam → Munnar → Mattupetty → Top Station → Munnar",
-      "km": "about 87 km",
-      "time": "4 h 5 min of driving",
+      "text": "Alleppey jetty → Kollam → Varkala on NH66 (Ithikkara and Oachira are known bottlenecks)",
+      "km": "about 110 km",
+      "time": "3 h of driving",
       "basis": "est"
      },
      "slots": {
       "morning": [
        {
         "id": "n2-1",
-        "t": "06:45",
-        "text": "Breakfast at the hotel"
+        "t": "07:30",
+        "text": "Breakfast on board"
        },
        {
         "id": "n2-2",
-        "t": "07:00",
-        "text": "Munnar → Eravikulam National Park, Rajamala gate (be there for the 07:30 opening, forest-bus queue first)",
-        "drive": true,
-        "km": 9,
-        "mins": 35
+        "t": "08:45",
+        "text": "Disembark by 09:00; load the car; get the operator's receipt"
        },
        {
         "id": "n2-3",
-        "t": "07:35",
-        "text": "Eravikulam: forest bus up, then the walk to the tahr area and back, about 3 h (open 07:30–16:00; closed Feb–Mar for calving, so December is fine)"
+        "t": "09:00",
+        "text": "Alleppey → Kollam on NH66 (swap drivers at Kollam)",
+        "drive": true,
+        "km": 85,
+        "mins": 130
        },
        {
         "id": "n2-4",
-        "t": "10:30",
-        "text": "Eravikulam → Munnar town",
-        "drive": true,
-        "km": 8,
-        "mins": 35
+        "t": "11:10",
+        "text": "Lunch in Kollam, 45 min"
        }
       ],
       "afternoon": [
        {
         "id": "n2-5",
-        "t": "11:05",
-        "text": "Lunch and a rest in town"
+        "t": "11:55",
+        "text": "Kollam → Varkala",
+        "drive": true,
+        "km": 25,
+        "mins": 50
        },
        {
         "id": "n2-6",
-        "t": "12:15",
-        "text": "Munnar → Mattupetty Dam",
-        "drive": true,
-        "km": 11,
-        "mins": 35
+        "t": "12:45",
+        "text": "Check in at Varkala"
        },
        {
         "id": "n2-7",
-        "t": "12:50",
-        "text": "Mattupetty: a 15-minute photo stop only; skip the boating"
-       },
-       {
-        "id": "n2-8",
-        "t": "13:05",
-        "text": "Mattupetty → Top Station, past Echo Point and Kundala (photo stops only)",
-        "drive": true,
-        "km": 24,
-        "mins": 65
-       },
-       {
-        "id": "n2-9",
-        "t": "14:10",
-        "text": "Top Station: walk down to the viewpoint over the Tamil Nadu plains, about 1 h 15 min"
-       },
-       {
-        "id": "n2-10",
-        "t": "15:25",
-        "text": "Top Station → Munnar, back well before dark",
-        "drive": true,
-        "km": 35,
-        "mins": 75
-       }
-      ],
-      "evening": [
-       {
-        "id": "n2-11",
-        "t": "16:45",
-        "text": "Tata Tea Museum or a tea-factory tasting (check the closing time)"
-       },
-       {
-        "id": "n2-12",
-        "t": "18:00",
-        "text": "Munnar bazaar on foot: tea, spices and cardamom to take home"
-       },
-       {
-        "id": "n2-13",
-        "t": "19:30",
-        "text": "Dinner; pack tonight, tomorrow is a travel day"
-       }
-      ],
-      "optional": [
-       {
-        "id": "n2-14",
-        "t": "04:45",
-        "text": "Kolukkumalai sunrise jeep, the highest organic tea estate, about 2 h up a rough track (about ₹4,000 for the jeep, not in the budget). Skip if the group is tired"
-       }
-      ]
-     },
-     "food": "Simple local meals; try the cardamom tea",
-     "cost": {
-      "transport": 0,
-      "stays": 0,
-      "food": 0,
-      "activities": 0,
-      "misc": 0
-     },
-     "route": [
-      "Munnar",
-      "Eravikulam",
-      "Mattupetty",
-      "Top Station",
-      "Munnar"
-     ],
-     "glance": "Munnar hills",
-     "night": "Munnar",
-     "hl": [
-      "Eravikulam tahr",
-      "Top Station views"
-     ]
-    },
-    {
-     "key": "d3",
-     "date": "2026-12-24",
-     "dow": "Thu",
-     "dd": "24",
-     "title": "Over the cardamom hills to Thekkady",
-     "base": "Thekkady",
-     "stay": "Kumily or Thekkady homestay, two double rooms or a family room, one night (Christmas Eve may carry a gala-dinner surcharge)",
-     "travel": {
-      "text": "Munnar → Pooppara → Kumily, then a spice plantation and back",
-      "km": "about 111 km",
-      "time": "3 h 40 min of driving",
-      "basis": "est"
-     },
-     "slots": {
-      "morning": [
-       {
-        "id": "n3-1",
-        "t": "08:30",
-        "text": "Breakfast and check out"
-       },
-       {
-        "id": "n3-2",
-        "t": "09:30",
-        "text": "Munnar → Pooppara cardamom and tea viewpoint",
-        "drive": true,
-        "km": 29,
-        "mins": 60
-       },
-       {
-        "id": "n3-3",
-        "t": "10:30",
-        "text": "Photo stop and a tea or coffee break, 20 min"
-       },
-       {
-        "id": "n3-4",
-        "t": "10:50",
-        "text": "Pooppara → Kumily via Nedumkandam",
-        "drive": true,
-        "km": 72,
-        "mins": 130
-       }
-      ],
-      "afternoon": [
-       {
-        "id": "n3-5",
-        "t": "13:00",
-        "text": "Reach Kumily, check in"
-       },
-       {
-        "id": "n3-6",
-        "t": "13:30",
-        "text": "Lunch and a short rest"
-       },
-       {
-        "id": "n3-7",
-        "t": "14:15",
-        "text": "Kumily → spice plantation",
-        "drive": true,
-        "km": 5,
-        "mins": 15
-       },
-       {
-        "id": "n3-8",
-        "t": "14:30",
-        "text": "Guided spice-plantation walk, about 90 min"
-       },
-       {
-        "id": "n3-9",
-        "t": "16:00",
-        "text": "Plantation → Kumily town",
-        "drive": true,
-        "km": 5,
-        "mins": 15
-       },
-       {
-        "id": "n3-10",
-        "t": "16:15",
-        "text": "Tea and spice shopping on Kumily's main street"
-       }
-      ],
-      "evening": [
-       {
-        "id": "n3-11",
-        "t": "17:30",
-        "text": "Kathakali or Kalaripayattu show in Kumily (check the time)"
-       },
-       {
-        "id": "n3-12",
-        "t": "19:30",
-        "text": "Christmas Eve dinner: ask the homestay about any compulsory gala dinner and its price before accepting the room. Early night: tomorrow starts at 06:30"
-       }
-      ],
-      "optional": []
-     },
-     "food": "Kerala meals in Kumily; fish curry and appam in the evening",
-     "cost": {
-      "transport": 0,
-      "stays": 0,
-      "food": 0,
-      "activities": 0,
-      "misc": 0
-     },
-     "route": [
-      "Munnar",
-      "Pooppara",
-      "Kumily"
-     ],
-     "glance": "Munnar → Thekkady",
-     "night": "Thekkady",
-     "hl": [
-      "Cardamom hills",
-      "Spice walk",
-      "Kathakali"
-     ]
-    },
-    {
-     "key": "d4",
-     "date": "2026-12-25",
-     "dow": "Fri",
-     "dd": "25",
-     "title": "Christmas morning on Periyar Lake, then the backwaters",
-     "base": "Alleppey houseboat",
-     "stay": "Cheapest licensed Alleppey 2-bedroom houseboat, meals included (Christmas night is peak, so ask for the price early)",
-     "travel": {
-      "text": "Kumily → Periyar boat landing → Kumily → Kottayam → Alleppey jetty",
-      "km": "about 166 km",
-      "time": "4 h 30 min of driving",
-      "basis": "est"
-     },
-     "slots": {
-      "morning": [
-       {
-        "id": "n4-1",
-        "t": "06:30",
-        "text": "Wake up, load the car and check out of the homestay"
-       },
-       {
-        "id": "n4-2",
-        "t": "06:45",
-        "text": "Homestay → Periyar boat landing, bags in the car",
-        "drive": true,
-        "km": 4,
-        "mins": 15
-       },
-       {
-        "id": "n4-3",
-        "t": "07:00",
-        "text": "Ticket queue and boarding (book online ahead; the first boat leaves about 07:30, so verify the timetable)"
-       },
-       {
-        "id": "n4-4",
-        "t": "07:30",
-        "text": "Periyar Lake boat cruise, about 1 h 30 min; elephants and bison are often on the shore at this hour"
-       },
-       {
-        "id": "n4-5",
-        "t": "09:00",
-        "text": "Boat landing → Kumily town",
-        "drive": true,
-        "km": 8,
-        "mins": 15
-       },
-       {
-        "id": "n4-6",
-        "t": "09:15",
-        "text": "Breakfast in Kumily, 30 min; refuel"
-       },
-       {
-        "id": "n4-7",
-        "t": "09:45",
-        "text": "Kumily → Kottayam via Kanjirappally: a long hill descent, so a slower average",
-        "drive": true,
-        "km": 107,
-        "mins": 160
-       }
-      ],
-      "afternoon": [
-       {
-        "id": "n4-8",
-        "t": "12:25",
-        "text": "Lunch, coffee and a driver swap in Kottayam, 45 min"
-       },
-       {
-        "id": "n4-9",
-        "t": "13:10",
-        "text": "Kottayam → Alleppey jetty via Kumarakom",
-        "drive": true,
-        "km": 47,
-        "mins": 80
-       },
-       {
-        "id": "n4-10",
-        "t": "14:30",
-        "text": "Reach the jetty, repack one overnight bag, park the car (ask the boat operator where it can stay)"
-       },
-       {
-        "id": "n4-11",
-        "t": "14:45",
-        "text": "Board. This is a late boarding, so agree it with the operator when you book (many boats prefer 12:00–13:00)"
-       },
-       {
-        "id": "n4-12",
-        "t": "15:00",
-        "text": "Late lunch on board, then cruise the canals into Vembanad lake"
-       },
-       {
-        "id": "n4-13",
-        "t": "17:45",
-        "text": "Moor for the night; short walk along the paddy bund"
-       }
-      ],
-      "evening": [
-       {
-        "id": "n4-14",
-        "t": "19:30",
-        "text": "Christmas dinner on board; deluxe-boat AC usually runs only from about 21:00 to 06:00"
-       }
-      ],
-      "optional": [
-       {
-        "id": "n4-15",
-        "t": "",
-        "text": "Swap the boat for the 06:30 guided nature walk (about 3 h) if you prefer it: that moves the houseboat boarding to about 15:15, so check the operator allows it"
-       }
-      ]
-     },
-     "food": "Breakfast in Kumily; every other meal on the houseboat (included in the price)",
-     "cost": {
-      "transport": 0,
-      "stays": 0,
-      "food": 0,
-      "activities": 0,
-      "misc": 0
-     },
-     "route": [
-      "Kumily",
-      "Periyar Lake",
-      "Kottayam",
-      "Alleppey"
-     ],
-     "glance": "Thekkady → Alleppey",
-     "night": "Houseboat",
-     "hl": [
-      "Periyar boat",
-      "Christmas on the water"
-     ]
-    },
-    {
-     "key": "d5",
-     "date": "2026-12-26",
-     "dow": "Sat",
-     "dd": "26",
-     "title": "Backwaters to Varkala, cliff sunset",
-     "base": "Varkala",
-     "stay": "Cliff-area guesthouse or homestay, two double rooms or a family room, three nights: 26–28 Dec",
-     "travel": {
-      "text": "Alleppey → Kollam → Varkala on NH66",
-      "km": "about 115 km",
-      "time": "3 h 15 min of driving",
-      "basis": "est"
-     },
-     "slots": {
-      "morning": [
-       {
-        "id": "n5-1",
-        "t": "08:30",
-        "text": "Breakfast on board; disembark by 09:00 and load the car"
-       },
-       {
-        "id": "n5-2",
-        "t": "09:15",
-        "text": "Alleppey → Kollam on NH66",
-        "drive": true,
-        "km": 87,
-        "mins": 135
-       },
-       {
-        "id": "n5-3",
-        "t": "11:30",
-        "text": "Tea and a snack break in Kollam, 30 min; swap drivers"
-       },
-       {
-        "id": "n5-4",
-        "t": "12:00",
-        "text": "Kollam → Varkala",
-        "drive": true,
-        "km": 28,
-        "mins": 60
-       }
-      ],
-      "afternoon": [
-       {
-        "id": "n5-5",
-        "t": "13:00",
-        "text": "Reach Varkala, check in"
-       },
-       {
-        "id": "n5-6",
         "t": "13:30",
         "text": "Lunch at a North Cliff café"
        },
        {
-        "id": "n5-7",
-        "t": "15:30",
-        "text": "Cliff walk, then the steps down to Papanasam Beach (swim only between the lifeguard flags)"
+        "id": "n2-8",
+        "t": "15:00",
+        "text": "Papanasam Beach: swim only between the lifeguard flags"
        }
       ],
       "evening": [
        {
-        "id": "n5-8",
+        "id": "n2-9",
         "t": "17:45",
-        "text": "Sunset from the cliff"
+        "text": "Sunset from the North Cliff"
        },
        {
-        "id": "n5-9",
+        "id": "n2-10",
         "t": "19:30",
         "text": "Seafood dinner on the cliff path"
        }
       ],
       "optional": []
      },
-     "food": "Seafood and cafés on the cliff",
-     "cost": {
-      "transport": 0,
-      "stays": 0,
-      "food": 0,
-      "activities": 0,
-      "misc": 0
-     },
+     "food": "Breakfast on board; lunch in Kollam; seafood on the cliff",
      "route": [
       "Alleppey",
       "Kollam",
@@ -1650,21 +1260,377 @@
      "glance": "Alleppey → Varkala",
      "night": "Varkala",
      "hl": [
-      "Cliff sunset"
-     ]
+      "Cliff sunset",
+      "Papanasam Beach"
+     ],
+     "cost": {
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
+     }
+    },
+    {
+     "key": "d3",
+     "date": "2026-12-24",
+     "dow": "Thu",
+     "dd": "24",
+     "title": "Varkala day: Anjengo Fort, Black Beach and Kappil",
+     "base": "Varkala",
+     "stay": "Same Varkala room (night 2 of 2)",
+     "travel": {
+      "text": "Varkala → Anjengo Fort → Varkala → Kappil → Varkala",
+      "km": "about 40 km",
+      "time": "1 h of driving",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "n3-1",
+        "t": "06:15",
+        "text": "Sunrise walk on the cliff, 45 min"
+       },
+       {
+        "id": "n3-2",
+        "t": "07:30",
+        "text": "Breakfast at a cliff café"
+       },
+       {
+        "id": "n3-3",
+        "t": "08:30",
+        "text": "Varkala → Anjengo Fort (about 12 km)",
+        "drive": true,
+        "km": 12,
+        "mins": 25
+       },
+       {
+        "id": "n3-4",
+        "t": "09:00",
+        "text": "Anjengo Fort and lighthouse, about 1 h (most sources: 8 am–5 pm daily; entry free or a small fee)"
+       },
+       {
+        "id": "n3-5",
+        "t": "10:15",
+        "text": "Anjengo Fort → Varkala cliff",
+        "drive": true,
+        "km": 12,
+        "mins": 25
+       },
+       {
+        "id": "n3-6",
+        "t": "10:45",
+        "text": "Black Beach and Odayam walk along the North Cliff, about 1 h"
+       },
+       {
+        "id": "n3-7",
+        "t": "11:45",
+        "text": "Swim at Papanasam Beach between the flags"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "n3-8",
+        "t": "13:00",
+        "text": "Lunch on the cliff"
+       },
+       {
+        "id": "n3-9",
+        "t": "14:00",
+        "text": "Rest, or an Ayurvedic massage (optional)"
+       },
+       {
+        "id": "n3-10",
+        "t": "15:15",
+        "text": "Varkala → Kappil Beach",
+        "drive": true,
+        "km": 8,
+        "mins": 15
+       },
+       {
+        "id": "n3-11",
+        "t": "15:30",
+        "text": "Kappil: pedal boat or kayak on the lake, beach walk, about 1 h 45 min"
+       },
+       {
+        "id": "n3-12",
+        "t": "17:30",
+        "text": "Kappil → Varkala cliff",
+        "drive": true,
+        "km": 8,
+        "mins": 15
+       }
+      ],
+      "evening": [
+       {
+        "id": "n3-13",
+        "t": "17:50",
+        "text": "Sunset from the cliff"
+       },
+       {
+        "id": "n3-14",
+        "t": "19:30",
+        "text": "Christmas Eve dinner on the cliff: book a table, as restaurants fill on 24 Dec"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Cliff-café breakfast and lunch; Christmas Eve dinner on the cliff",
+     "route": [
+      "Varkala",
+      "Anjengo",
+      "Kappil",
+      "Varkala"
+     ],
+     "glance": "Varkala day trips",
+     "night": "Varkala",
+     "hl": [
+      "Anjengo Fort",
+      "Kappil Beach",
+      "Christmas Eve"
+     ],
+     "cost": {
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
+     }
+    },
+    {
+     "key": "d4",
+     "date": "2026-12-25",
+     "dow": "Fri",
+     "dd": "25",
+     "title": "Christmas: Padmanabhaswamy, Napier Museum, Kovalam at sunset",
+     "base": "Kovalam",
+     "stay": "Budget guesthouse or homestay in Kovalam, one night (25 Dec)",
+     "travel": {
+      "text": "Varkala → Padmanabhaswamy Temple → Chalai → Napier Museum → Kovalam",
+      "km": "about 61 km",
+      "time": "2 h 10 min of driving",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "n4-1",
+        "t": "07:30",
+        "text": "Breakfast and checkout at Varkala"
+       },
+       {
+        "id": "n4-2",
+        "t": "08:00",
+        "text": "Varkala → Padmanabhaswamy Temple, Thiruvananthapuram (Christmas morning, light traffic)",
+        "drive": true,
+        "km": 43,
+        "mins": 75
+       },
+       {
+        "id": "n4-3",
+        "t": "09:15",
+        "text": "Padmanabhaswamy Temple. Check first whether non-Hindus may enter (sources conflict) and the dress rule: men in mundu with shirt off, women in saree or long skirt. About 1 h 15 min, or see the outer temple"
+       },
+       {
+        "id": "n4-4",
+        "t": "10:30",
+        "text": "Walk to Chalai market, about 45 min"
+       },
+       {
+        "id": "n4-5",
+        "t": "11:15",
+        "text": "Lunch in the old town, 1 h"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "n4-6",
+        "t": "12:30",
+        "text": "Chalai → Napier Museum",
+        "drive": true,
+        "km": 3,
+        "mins": 10
+       },
+       {
+        "id": "n4-7",
+        "t": "12:45",
+        "text": "Napier Museum and gardens, about 1 h 30 min. Open Tue–Sun per most sources: confirm it is open on Christmas Day"
+       },
+       {
+        "id": "n4-8",
+        "t": "14:30",
+        "text": "Napier Museum → Kovalam",
+        "drive": true,
+        "km": 15,
+        "mins": 40
+       },
+       {
+        "id": "n4-9",
+        "t": "15:15",
+        "text": "Check in at Kovalam; rest"
+       },
+       {
+        "id": "n4-10",
+        "t": "16:45",
+        "text": "Vizhinjam (Kovalam) lighthouse: climb if open (sources disagree on hours; midday break reported)"
+       }
+      ],
+      "evening": [
+       {
+        "id": "n4-11",
+        "t": "17:45",
+        "text": "Sunset at Lighthouse Beach"
+       },
+       {
+        "id": "n4-12",
+        "t": "19:30",
+        "text": "Dinner on the beach road; book early, as Christmas night is busy"
+       }
+      ],
+      "optional": []
+     },
+     "food": "Breakfast at Varkala; lunch in the old town; beach-road dinner",
+     "route": [
+      "Varkala",
+      "Thiruvananthapuram",
+      "Kovalam"
+     ],
+     "glance": "Varkala → Kovalam",
+     "night": "Kovalam",
+     "hl": [
+      "Padmanabhaswamy Temple",
+      "Kovalam sunset"
+     ],
+     "cost": {
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
+     }
+    },
+    {
+     "key": "d5",
+     "date": "2026-12-26",
+     "dow": "Sat",
+     "dd": "26",
+     "title": "Long drive to the hills: Kovalam → Kollam → Kottayam → Kumily",
+     "base": "Thekkady (Kumily)",
+     "stay": "Two double rooms or a family room in Kumily, one night (26 Dec); arrive before 16:00",
+     "travel": {
+      "text": "Kovalam → Kollam (NH66) → Kottayam (MC Road) → Kumily (KK road, Vandiperiyar side)",
+      "km": "about 282 km",
+      "time": "6 h 20 min of driving",
+      "basis": "est"
+     },
+     "slots": {
+      "morning": [
+       {
+        "id": "n5-1",
+        "t": "06:45",
+        "text": "Breakfast and checkout at Kovalam"
+       },
+       {
+        "id": "n5-2",
+        "t": "07:00",
+        "text": "Kovalam → Kollam on NH66",
+        "drive": true,
+        "km": 79,
+        "mins": 100
+       },
+       {
+        "id": "n5-3",
+        "t": "08:40",
+        "text": "Tea and driver swap in Kollam, 15 min"
+       },
+       {
+        "id": "n5-4",
+        "t": "08:55",
+        "text": "Kollam → Kottayam by the MC Road",
+        "drive": true,
+        "km": 94,
+        "mins": 130
+       },
+       {
+        "id": "n5-5",
+        "t": "11:05",
+        "text": "Lunch in Kottayam, 45 min"
+       }
+      ],
+      "afternoon": [
+       {
+        "id": "n5-6",
+        "t": "11:50",
+        "text": "Kottayam → Kumily by the KK road (Kanjirappally, Vandiperiyar). Daylight only: do not start after 12:00",
+        "drive": true,
+        "km": 109,
+        "mins": 150
+       },
+       {
+        "id": "n5-7",
+        "t": "14:20",
+        "text": "Check in at Kumily"
+       },
+       {
+        "id": "n5-8",
+        "t": "15:00",
+        "text": "Short rest; spice shopping on Kumily's main street"
+       }
+      ],
+      "evening": [
+       {
+        "id": "n5-9",
+        "t": "17:30",
+        "text": "Kathakali or Kalaripayattu show in Kumily (check times)"
+       },
+       {
+        "id": "n5-10",
+        "t": "19:30",
+        "text": "Dinner; early night, as the Periyar boat is at 07:30"
+       }
+      ],
+      "optional": [
+       {
+        "id": "n5-11",
+        "t": "",
+        "text": "If the group is exhausted, a 10-minute stop at Kottayam's lake front instead of the market"
+       }
+      ]
+     },
+     "food": "Breakfast at Kovalam; lunch in Kottayam; Kerala dinner in Kumily",
+     "route": [
+      "Kovalam",
+      "Kollam",
+      "Kottayam",
+      "Kumily"
+     ],
+     "glance": "Kovalam → Thekkady",
+     "night": "Thekkady (Kumily)",
+     "hl": [
+      "Long drive",
+      "Kathakali"
+     ],
+     "cost": {
+      "transport": 0,
+      "stays": 0,
+      "food": 0,
+      "activities": 0,
+      "misc": 0
+     }
     },
     {
      "key": "d6",
      "date": "2026-12-27",
      "dow": "Sun",
      "dd": "27",
-     "title": "Thiruvananthapuram's best, Kovalam at sunset",
-     "base": "Varkala",
-     "stay": "Same Varkala room",
+     "title": "Periyar boat at first light, then over the hills to Munnar",
+     "base": "Munnar",
+     "stay": "Munnar homestay, two double rooms or a family room for four, one night (27 Dec)",
      "travel": {
-      "text": "Varkala → Padmanabhaswamy → Napier Museum → Kovalam → Varkala",
-      "km": "about 120 km",
-      "time": "3 h 50 min of driving",
+      "text": "Kumily → Periyar boat landing → Kumily → Munnar on the Munnar–Kumily state highway (daylight)",
+      "km": "about 95 km",
+      "time": "3 h 15 min of driving",
       "basis": "est"
      },
      "slots": {
@@ -1672,227 +1638,242 @@
        {
         "id": "n6-1",
         "t": "06:30",
-        "text": "Light breakfast"
+        "text": "Breakfast at Kumily"
        },
        {
         "id": "n6-2",
-        "t": "07:00",
-        "text": "Varkala → Padmanabhaswamy Temple, Thiruvananthapuram",
+        "t": "06:50",
+        "text": "Kumily → Periyar boat landing",
         "drive": true,
-        "km": 45,
-        "mins": 90
+        "km": 5,
+        "mins": 15
        },
        {
         "id": "n6-3",
-        "t": "08:30",
-        "text": "Padmanabhaswamy Temple, about 1.5 h: strict dress code, morning darshan hours and entry rules apply (check before going); otherwise see the temple tank and the Fort area from outside"
+        "t": "07:10",
+        "text": "Collect tickets and board. Book online at periyartigerreserve.org or KTDC; reports say five departures a day, first about 07:30"
        },
        {
         "id": "n6-4",
-        "t": "10:15",
-        "text": "Walk to Chalai market, about 1 h"
+        "t": "07:30",
+        "text": "Periyar Lake cruise, about 1 h 30 min. Elephants and bison are often near the shore this early"
+       },
+       {
+        "id": "n6-5",
+        "t": "09:00",
+        "text": "Boat landing → Kumily",
+        "drive": true,
+        "km": 5,
+        "mins": 15
+       },
+       {
+        "id": "n6-6",
+        "t": "09:20",
+        "text": "Checkout, load the car, refuel"
+       },
+       {
+        "id": "n6-7",
+        "t": "09:40",
+        "text": "Kumily → Munnar on the state highway. Daytime only; the 2023 night-travel order on the Udumbanchola–Cheriyar stretch could not be checked",
+        "drive": true,
+        "km": 85,
+        "mins": 165
        }
       ],
       "afternoon": [
        {
-        "id": "n6-5",
-        "t": "11:15",
-        "text": "Lunch in the old town, 1 h"
-       },
-       {
-        "id": "n6-6",
-        "t": "12:15",
-        "text": "Chalai → Napier Museum",
-        "drive": true,
-        "km": 5,
-        "mins": 20
-       },
-       {
-        "id": "n6-7",
-        "t": "12:35",
-        "text": "Napier Museum and the museum gardens, about 2 h (open on Sunday, closed on Monday; confirm the timing)"
-       },
-       {
         "id": "n6-8",
-        "t": "14:35",
-        "text": "Napier Museum → Kovalam",
-        "drive": true,
-        "km": 15,
-        "mins": 40
+        "t": "12:30",
+        "text": "Lunch in Munnar, 45 min; check in"
        },
        {
         "id": "n6-9",
-        "t": "15:15",
-        "text": "Kovalam: Lighthouse Beach and the lighthouse climb if open, then a walk to Hawah Beach"
+        "t": "13:30",
+        "text": "Munnar → Top Station",
+        "drive": true,
+        "km": 13,
+        "mins": 45
+       },
+       {
+        "id": "n6-10",
+        "t": "14:15",
+        "text": "Top Station viewpoint over the Tamil Nadu plains, about 1 h (open 06:00–18:00 per official listing)"
+       },
+       {
+        "id": "n6-11",
+        "t": "15:30",
+        "text": "Top Station → Munnar",
+        "drive": true,
+        "km": 13,
+        "mins": 45
+       },
+       {
+        "id": "n6-12",
+        "t": "16:30",
+        "text": "Tata Tea Museum or a tea-factory tasting (check the closing time)"
        }
       ],
       "evening": [
        {
-        "id": "n6-10",
-        "t": "17:45",
-        "text": "Sunset at Kovalam"
+        "id": "n6-13",
+        "t": "17:30",
+        "text": "Munnar bazaar on foot: tea, cardamom and spices"
        },
        {
-        "id": "n6-11",
-        "t": "18:15",
-        "text": "Kovalam → Varkala on NH66 (after dark, but no ghat roads)",
-        "drive": true,
-        "km": 55,
-        "mins": 80
-       },
-       {
-        "id": "n6-12",
-        "t": "19:45",
-        "text": "Dinner on the Varkala cliff"
+        "id": "n6-14",
+        "t": "19:30",
+        "text": "Dinner; pack tonight for the 07:00 Eravikulam start"
        }
       ],
       "optional": [
        {
-        "id": "n6-13",
+        "id": "n6-15",
         "t": "",
-        "text": "If the day feels long, skip Kovalam and be back on the Varkala cliff for sunset"
+        "text": "Kolukkumalai jeep: Tamil Nadu suspended tourist entry to Singappara in July 2026 after landslide risk. Re-check before going; skip if still closed"
        }
       ]
      },
-     "food": "Old-town lunch near Chalai; dinner back on the cliff",
+     "food": "Kumily breakfast; Munnar lunch; simple dinner in town",
+     "route": [
+      "Kumily",
+      "Periyar boat",
+      "Munnar",
+      "Top Station"
+     ],
+     "glance": "Thekkady → Munnar",
+     "night": "Munnar",
+     "hl": [
+      "Periyar boat",
+      "Top Station"
+     ],
      "cost": {
       "transport": 0,
       "stays": 0,
       "food": 0,
       "activities": 0,
       "misc": 0
-     },
-     "route": [
-      "Varkala",
-      "Padmanabhaswamy",
-      "Napier Museum",
-      "Kovalam",
-      "Varkala"
-     ],
-     "glance": "Thiruvananthapuram and Kovalam",
-     "night": "Varkala",
-     "hl": [
-      "Temple and Chalai",
-      "Kovalam sunset"
-     ]
+     }
     },
     {
      "key": "d7",
      "date": "2026-12-28",
      "dow": "Mon",
      "dd": "28",
-     "title": "A slow day at Varkala",
-     "base": "Varkala",
-     "stay": "Same Varkala room",
+     "title": "Eravikulam at opening, then down to Kochi",
+     "base": "Fort Kochi",
+     "stay": "Fort Kochi guesthouse or hotel, one night (28 Dec)",
      "travel": {
-      "text": "Varkala → Kappil → Varkala",
-      "km": "about 17 km",
-      "time": "30 min of driving",
+      "text": "Munnar → Eravikulam (Rajamala gate) → Munnar → Fort Kochi via Adimali, Neriamangalam and Kothamangalam",
+      "km": "about 150 km",
+      "time": "3 h 10 min of driving",
       "basis": "est"
      },
      "slots": {
       "morning": [
        {
         "id": "n7-1",
-        "t": "08:00",
-        "text": "Late breakfast at a cliff café"
+        "t": "06:45",
+        "text": "Breakfast; pack the car"
        },
        {
         "id": "n7-2",
-        "t": "09:30",
-        "text": "Walk the North Cliff to Black Beach and Odayam, a quieter stretch, about 1 h 30 min"
+        "t": "07:00",
+        "text": "Munnar → Eravikulam Rajamala gate",
+        "drive": true,
+        "km": 8,
+        "mins": 20
        },
        {
         "id": "n7-3",
-        "t": "11:30",
-        "text": "Swim at Papanasam Beach, between the lifeguard flags"
+        "t": "07:30",
+        "text": "Eravikulam: park bus up, walk to the tahr area and back, about 3 h. Entry is time-slotted: book online. No regular weekly closure reported; confirm"
        },
        {
         "id": "n7-4",
-        "t": "13:00",
-        "text": "Lunch on the cliff"
+        "t": "10:45",
+        "text": "Eravikulam → Munnar",
+        "drive": true,
+        "km": 8,
+        "mins": 20
+       },
+       {
+        "id": "n7-5",
+        "t": "11:15",
+        "text": "Check out; lunch in Munnar, 45 min"
        }
       ],
       "afternoon": [
        {
-        "id": "n7-5",
-        "t": "14:00",
-        "text": "Rest, or an Ayurvedic massage on the cliff (optional)"
-       },
-       {
         "id": "n7-6",
-        "t": "15:30",
-        "text": "Varkala → Kappil Beach",
+        "t": "12:00",
+        "text": "Munnar → Fort Kochi via Adimali and Neriamangalam. Daylight only; stop at Kothamangalam for tea",
         "drive": true,
-        "km": 8,
-        "mins": 15
+        "km": 133,
+        "mins": 150
        },
        {
         "id": "n7-7",
-        "t": "15:45",
-        "text": "Kappil: where the backwater meets the sea; pedal boat or kayak on the lake and a beach walk, about 1 h 45 min"
+        "t": "14:30",
+        "text": "Check in at Fort Kochi"
        },
        {
         "id": "n7-8",
-        "t": "17:30",
-        "text": "Kappil → Varkala cliff",
-        "drive": true,
-        "km": 9,
-        "mins": 15
+        "t": "15:30",
+        "text": "St Francis Church and Santa Cruz Basilica, about 1 h"
        }
       ],
       "evening": [
        {
         "id": "n7-9",
-        "t": "17:50",
-        "text": "Last sunset from the cliff"
+        "t": "17:00",
+        "text": "Chinese fishing nets at sunset (about 17:50)"
        },
        {
         "id": "n7-10",
-        "t": "19:30",
-        "text": "Farewell dinner; pack for an 08:30 start"
+        "t": "18:30",
+        "text": "Waterfront walk and fish dinner in Fort Kochi"
        }
       ],
       "optional": [
        {
         "id": "n7-11",
         "t": "",
-        "text": "Janardhana Swami Temple on the way to the beach (check entry and dress rules)"
+        "text": "Kathakali show in Fort Kochi (check times)"
        }
       ]
      },
-     "food": "Cliff cafés and seafood",
+     "food": "Munnar lunch; fish dinner in Fort Kochi",
+     "route": [
+      "Munnar",
+      "Eravikulam",
+      "Fort Kochi"
+     ],
+     "glance": "Munnar → Kochi",
+     "night": "Fort Kochi",
+     "hl": [
+      "Eravikulam tahr",
+      "Chinese fishing nets"
+     ],
      "cost": {
       "transport": 0,
       "stays": 0,
       "food": 0,
       "activities": 0,
       "misc": 0
-     },
-     "route": [
-      "Varkala",
-      "Kappil",
-      "Varkala"
-     ],
-     "glance": "Varkala rest day",
-     "night": "Varkala",
-     "hl": [
-      "Cliff beaches",
-      "Kappil backwater"
-     ]
+     }
     },
     {
      "key": "d8",
      "date": "2026-12-29",
      "dow": "Tue",
      "dd": "29",
-     "title": "Drive back to Kochi, then two trains home via Palakkad",
-     "base": "Kochi",
-     "stay": "Night on the train",
+     "title": "Mattancherry, Hill Palace, car back, train home via Palakkad",
+     "base": "Kochi, then train home",
+     "stay": "Night on the train: Kerala Express to Palakkad, then to Bengaluru",
      "travel": {
-      "text": "Varkala → Kollam → Alleppey → Ernakulam on NH66",
-      "km": "about 173 km",
-      "time": "4 h of driving",
+      "text": "Fort Kochi → Mattancherry → Hill Palace (Tripunithura) → Ernakulam, car return",
+      "km": "about 26 km",
+      "time": "1 h 15 min of driving",
       "basis": "est"
      },
      "slots": {
@@ -1900,106 +1881,112 @@
        {
         "id": "n8-1",
         "t": "07:30",
-        "text": "Breakfast, check out, fill the tank"
+        "text": "Breakfast; checkout by 08:00"
        },
        {
         "id": "n8-2",
-        "t": "08:30",
-        "text": "Varkala → Kollam. Hard rule: leave Varkala by 09:00 at the latest",
+        "t": "08:00",
+        "text": "Fort Kochi → Mattancherry",
         "drive": true,
-        "km": 27,
-        "mins": 40
+        "km": 3,
+        "mins": 15
        },
        {
         "id": "n8-3",
-        "t": "09:10",
-        "text": "Coffee break and driver swap in Kollam, 20 min"
+        "t": "08:20",
+        "text": "Jew Town antique lanes and the synagogue area, about 40 min"
        },
        {
         "id": "n8-4",
-        "t": "09:30",
-        "text": "Kollam → Alleppey",
+        "t": "09:15",
+        "text": "Mattancherry Palace (Dutch Palace): hours vary by source (about 9 to 5), closed Friday. Visit 45 min if open, otherwise skip"
+       },
+       {
+        "id": "n8-5",
+        "t": "10:00",
+        "text": "Mattancherry → Hill Palace, Tripunithura",
         "drive": true,
-        "km": 87,
-        "mins": 120
+        "km": 10,
+        "mins": 25
+       },
+       {
+        "id": "n8-6",
+        "t": "10:30",
+        "text": "Hill Palace Museum: open Tue–Sun (morning about 9:00–12:30). About 1 h 15 min"
        }
       ],
       "afternoon": [
        {
-        "id": "n8-5",
-        "t": "11:30",
-        "text": "Lunch in Alleppey, 45 min"
-       },
-       {
-        "id": "n8-6",
-        "t": "12:15",
-        "text": "Alleppey → Ernakulam",
-        "drive": true,
-        "km": 59,
-        "mins": 80
-       },
-       {
         "id": "n8-7",
-        "t": "13:35",
-        "text": "Refuel near the rental point (the rental will want it back at the level you took it)"
+        "t": "11:45",
+        "text": "Hill Palace → Ernakulam, car return",
+        "drive": true,
+        "km": 13,
+        "mins": 35
        },
        {
         "id": "n8-8",
-        "t": "13:50",
-        "text": "Return the car at the agreed point"
+        "t": "12:30",
+        "text": "Refuel; return the car by 13:00 at the agreed point; get the return receipt and deposit back"
        },
        {
         "id": "n8-9",
-        "t": "14:20",
-        "text": "Auto to Ernakulam Town station (ERN), not the Junction. Be on the platform by 15:40"
+        "t": "13:30",
+        "text": "Lunch near Ernakulam Town station"
        },
        {
         "id": "n8-10",
+        "t": "14:15",
+        "text": "Walk or auto to Ernakulam Town station (ERN, not the Junction). On the platform by 15:40"
+       },
+       {
+        "id": "n8-11",
         "t": "16:10",
         "text": "Train 12625 Kerala Express to Palakkad Jn, sleeper coach S3, all four confirmed. Arrives 19:12"
        }
       ],
       "evening": [
        {
-        "id": "n8-11",
+        "id": "n8-12",
         "t": "19:12",
-        "text": "Palakkad Jn: dinner near the station, about 2 h 45 min to wait"
+        "text": "Palakkad Jn: dinner near the station, about 2 h 45 min wait"
        },
        {
-        "id": "n8-12",
+        "id": "n8-13",
         "t": "22:00",
-        "text": "Train 16528 to Bengaluru Yesvantpur, boarding at Palakkad Jn. Bhargav and Manoj are RAC, so check the chart. Arrives 07:50 Wed 30 Dec"
+        "text": "Train 16528 to Bengaluru Yesvantpur. Bhargav and Manoj are on RAC: check the chart. Arrives 07:50 Wed 30 Dec"
        }
       ],
       "optional": [
        {
-        "id": "n8-13",
+        "id": "n8-14",
         "t": "",
-        "text": "If you are ahead of schedule, a longer lunch in Alleppey; never cut into the car return"
+        "text": "If behind schedule, skip Hill Palace; never cut into the 13:00 car return or the 16:10 train"
        }
       ]
      },
-     "food": "Breakfast before leaving, lunch in Alleppey, dinner at Palakkad",
+     "food": "Breakfast at Fort Kochi; lunch near Ernakulam Town; dinner at Palakkad",
+     "route": [
+      "Fort Kochi",
+      "Mattancherry",
+      "Hill Palace",
+      "Ernakulam Town",
+      "Palakkad"
+     ],
+     "glance": "Kochi → Bengaluru",
+     "night": "Train home",
+     "hl": [
+      "Mattancherry",
+      "Hill Palace",
+      "Trains home"
+     ],
      "cost": {
       "transport": 0,
       "stays": 0,
       "food": 0,
       "activities": 0,
       "misc": 0
-     },
-     "route": [
-      "Varkala",
-      "Kollam",
-      "Alleppey",
-      "Ernakulam",
-      "Palakkad"
-     ],
-     "glance": "Varkala → Kochi → home",
-     "night": "Train home",
-     "hl": [
-      "Car back by 14:00",
-      "Train 16:10 from Ernakulam Town"
-     ]
+     }
     }
    ],
    "adjust": {},
@@ -2107,7 +2094,7 @@
   },
   "car": {
    "title": "Self-drive car, 22–29 Dec",
-   "detail": "Rental charges about ₹11,000 and petrol about ₹7,000 (group figures, approximate). Car for four people and bags, size to decide. Pickup at or near Ernakulam Jn about 07:45 on 22 Dec, return there by 14:10 on 29 Dec. Need every driver's licence and ID, a refundable deposit and a written km and fuel policy; add the people who will drive as extra drivers, and check FASTag and any night-halt or Christmas-week surcharge",
+   "detail": "Rental charges about ₹11,000 and petrol about ₹7,000 (group figures, approximate). Car for four people and bags, size to decide. Pickup at or near Ernakulam Jn about 07:45 on 22 Dec, return there by 13:00 on 29 Dec. Need every driver's licence and ID, a refundable deposit and a written km and fuel policy; add the people who will drive as extra drivers, and check FASTag and any night-halt or Christmas-week surcharge",
    "when": "This week",
    "status": "todo",
    "amount": 11000,
@@ -2117,12 +2104,12 @@
    "cancel": "",
    "link": "",
    "order": 3,
-   "updatedAt": 1794682413317,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai"
   },
   "stay-munnar": {
-   "title": "Munnar, 22 and 23 Dec",
-   "detail": "Two double rooms or a family room for four, 2 nights; ask about 11:00 early check-in on the 22nd",
+   "title": "Munnar, 27 Dec (1 night)",
+   "detail": "Two double rooms or a family room for four, 1 night. Arrive by 12:30 after the Periyar boat. Eravikulam is on the morning of 28 Dec",
    "when": "This week",
    "status": "todo",
    "amount": 0,
@@ -2132,7 +2119,7 @@
    "cancel": "",
    "link": "",
    "order": 4,
-   "updatedAt": 1794709835389,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai",
    "options": [
     {
@@ -2159,8 +2146,8 @@
    ]
   },
   "stay-thekkady": {
-   "title": "Thekkady (Kumily), 24 Dec",
-   "detail": "Two doubles or a family room, 1 night; ask about any compulsory Christmas Eve gala dinner, and about leaving by 06:45 on the 25th",
+   "title": "Thekkady (Kumily), 26 Dec",
+   "detail": "Two doubles or a family room, 1 night. The drive from Kovalam is about 6 h 20 min, so arrive by 15:00. Ask about any compulsory Christmas gala dinner. Leave for the Periyar boat on 27 Dec at 06:50",
    "when": "This week",
    "status": "todo",
    "amount": 0,
@@ -2170,7 +2157,7 @@
    "cancel": "",
    "link": "",
    "order": 5,
-   "updatedAt": 1794709835389,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai",
    "options": [
     {
@@ -2197,8 +2184,8 @@
    ]
   },
   "houseboat": {
-   "title": "Alleppey 2-bedroom houseboat, night of 25 Dec",
-   "detail": "Licensed (KBOA or KTDC) 2-bedroom AC boat for four, meals included. We arrive about 14:30, so agree a late 14:45 boarding. Christmas night is peak; ask where the car can park",
+   "title": "Alleppey 2-bedroom houseboat, night of 22 Dec",
+   "detail": "Licensed (KBOA or KTDC) 2-bedroom AC boat for four, meals included. Night of 22 Dec, so not Christmas peak. Noon check-in; agree the boarding time and where the car can park overnight. Insist on photos of the actual boat and a 2-bedroom quote",
    "when": "This week",
    "status": "todo",
    "amount": 0,
@@ -2208,7 +2195,7 @@
    "cancel": "",
    "link": "",
    "order": 6,
-   "updatedAt": 1794709835389,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai",
    "options": [
     {
@@ -2235,8 +2222,8 @@
    ]
   },
   "stay-varkala": {
-   "title": "Varkala, 26–28 Dec (3 nights)",
-   "detail": "Two doubles or a family room near the cliff, 3 nights. Kovalam is now a sunset visit, not a stay.",
+   "title": "Varkala, 23–24 Dec (2 nights)",
+   "detail": "Two doubles or a family room near the cliff, 2 nights. 24 Dec is Christmas Eve: book the cliff dinner early",
    "when": "Next week",
    "status": "todo",
    "amount": 0,
@@ -2246,7 +2233,7 @@
    "cancel": "",
    "link": "",
    "order": 7,
-   "updatedAt": 1794709835389,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai",
    "options": [
     {
@@ -2269,12 +2256,19 @@
      "rating": "Booking.com reviews",
      "price": "Check live rate",
      "url": "https://www.booking.com/guest-house/city/in/varkkallai.en-gb.html"
+    },
+    {
+     "name": "Cliff Stories",
+     "why": "Right on Papanasam Beach; sea-facing",
+     "rating": "8.2 on Booking.com (220 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.booking.com/resorts/city/in/varkkallai.html"
     }
    ]
   },
   "periyar": {
-   "title": "Periyar Lake boat, about 07:30 on 25 Dec",
-   "detail": "First-boat tickets for four (verify the timetable); book online as soon as the date opens. KTDC or Forest Department counters",
+   "title": "Periyar Lake boat, about 07:30 on 27 Dec",
+   "detail": "Five departures a day, first about 07:30 (verify). Book online at periyartigerreserve.org or KTDC; tickets sell out in advance. Fares differ by source (roughly ₹255 to ₹450), so check the official tariff",
    "when": "This week",
    "status": "todo",
    "amount": 0,
@@ -2284,7 +2278,7 @@
    "cancel": "",
    "link": "",
    "order": 9,
-   "updatedAt": 1794682413317,
+   "updatedAt": 1794837241072,
    "updatedBy": "ai"
   },
   "return-2": {
@@ -2345,13 +2339,89 @@
     ],
     "note": "Ticket is from Quilandi (19:00) with the boarding point moved to Palakkad Jn. RAC 1 and 2 share a berth unless they clear when the chart is made, about 4 h before departure. Chart not prepared yet."
    }
+  },
+  "stay-kochi": {
+   "title": "Fort Kochi, 28 Dec (1 night)",
+   "detail": "Two rooms for four, 1 night, walkable to the Chinese nets and St Francis. Car returns at Ernakulam by 13:00 on 29 Dec",
+   "when": "This week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 7,
+   "updatedAt": 1794837241072,
+   "updatedBy": "ai",
+   "options": [
+    {
+     "name": "Fort Abode",
+     "why": "Best value in Fort Kochi; service complaints in some reviews",
+     "rating": "8.7 on Kayak (506 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.kayak.com/Kochi-Hotels-Fort-Abode.712526.ksp"
+    },
+    {
+     "name": "Fortkochi Beach Inn",
+     "why": "Quiet room near the seafront (January 2026 guest)",
+     "rating": "9.0 on Travelocity (62 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.travelocity.com/Kochi-Hotels-Fortkochi-Beach-Inn.h18804752.Hotel-Reviews"
+    },
+    {
+     "name": "Forte Kochi",
+     "why": "Premium option",
+     "rating": "9.6 on Travelocity",
+     "price": "From about US$138 a night (listing snapshot)",
+     "url": "https://www.travelocity.com/Kochi-Hotels-Forte-Kochi.h23447211.Hotel-Information"
+    }
+   ]
+  },
+  "stay-kovalam": {
+   "title": "Kovalam, 25 Dec (1 night)",
+   "detail": "Two double rooms or a family room, 1 night on Christmas Day. Book early, as beach stays fill up on 25 Dec. Ratings below are Booking.com snapshots without dates; confirm live",
+   "when": "This week",
+   "status": "todo",
+   "amount": 0,
+   "priceType": "est",
+   "ref": "",
+   "contact": "",
+   "cancel": "",
+   "link": "",
+   "order": 8,
+   "updatedAt": 1794837241072,
+   "updatedBy": "ai",
+   "options": [
+    {
+     "name": "Marina Guest House",
+     "why": "About 10 min walk to Lighthouse Beach",
+     "rating": "8.2 on Booking.com (89 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.booking.com/city/in/kovalam.html"
+    },
+    {
+     "name": "Kovalam Beach House",
+     "why": "Homestay option",
+     "rating": "8.1 on Booking.com (162 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.booking.com/homestay/city/in/kovalam.html"
+    },
+    {
+     "name": "Hotel Sumangali",
+     "why": "Budget hotel",
+     "rating": "7.8 on Kayak (86 reviews)",
+     "price": "Check live rate",
+     "url": "https://www.easemytrip.com/hotels/hotel-sumangali-388335/"
+    }
+   ]
   }
  },
  "meta": {
   "state": {
    "current": "draft",
    "stable": "v1",
-   "at": 1794709835433
+   "at": 1794837219812
   },
   "budget": {
    "at": 1794682413317,
@@ -2392,9 +2462,13 @@
      "cat": "transport"
     }
    ]
+  },
+  "planner": {
+   "lastSeen": 1794688353387,
+   "at": 1794837241072
   }
  },
- "updated": 1794710979003,
+ "updated": 1794837241072,
  "inputLog": [
   {
    "at": 1794710979003,
